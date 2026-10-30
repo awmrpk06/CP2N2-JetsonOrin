@@ -1,0 +1,3329 @@
+{
+  "phase": "attribution",
+  "planned_trials": 9,
+  "status_counts": {
+    "performance_failure": 2,
+    "success": 7
+  },
+  "trials": {
+    "attribution-r01-direct-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 60706,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 0,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 30746735795811
+          },
+          "last": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 54753,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 3000,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 31046736425214
+          },
+          "max_collection_duration_ns": 64194,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.680540623,
+          "energy_j": 1434.4557407908287,
+          "max_temperature_c": 55.218,
+          "mean_power_w": 4.708064840168999,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.634831460674157,
+          "tree_pss_max_mib": 75.2880859375,
+          "tree_rss_max_mib": 82.359375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.934861118602737,
+          "duration_s": 3.000090496,
+          "energy_j": 13.179203651995817,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.699024574050787,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.5909090909090909,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9051960121049868,
+          "duration_s": 3.000098438,
+          "energy_j": 12.768011812775809,
+          "max_temperature_c": 55.187,
+          "mean_power_w": 4.7015941679181426,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 1.0454545454545454,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.00094318,
+          "energy_j": 14.488689646381582,
+          "max_temperature_c": 55.156,
+          "mean_power_w": 4.8280453102019685,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 3.121212121212121,
+          "tree_pss_max_mib": 75.091796875,
+          "tree_rss_max_mib": 82.359375
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000219821,
+          "energy_j": 1411.2194682713468,
+          "max_temperature_c": 55.218,
+          "mean_power_w": 4.704061447399519,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.5149253731343286,
+          "tree_pss_max_mib": 75.2216796875,
+          "tree_rss_max_mib": 82.359375
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 311.16838283000106,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 31050323699615,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            30742443302551,
+            31047123843174
+          ],
+          "platform_after": [
+            31047123846246,
+            31050123936742
+          ],
+          "platform_before": [
+            30739442807684,
+            30742442906122
+          ],
+          "ready_worker_idle": [
+            30743735238244,
+            30746736181424
+          ],
+          "steady_workload": [
+            30746736181424,
+            31046736401245
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "direct",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 1,
+        "trial_id": "attribution-r01-direct-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999992672638703,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": 0.63167,
+            "mean": 0.3702619106666667,
+            "median": 0.372013,
+            "missing": 0,
+            "p95": 0.428847,
+            "samples": 3000,
+            "supported": true
+          },
+          "cycle_ms": {
+            "max": 0.782746,
+            "mean": 0.46774404833333333,
+            "median": 0.470224,
+            "missing": 0,
+            "p95": 0.548435,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": 0.753977,
+            "mean": 0.446457913,
+            "median": 0.448623,
+            "missing": 0,
+            "p95": 0.522993,
+            "samples": 3000,
+            "supported": true
+          },
+          "dispatch_lateness_ms": {
+            "max": 0.578301,
+            "mean": 0.15450205333333333,
+            "median": 0.1351275,
+            "missing": 0,
+            "p95": 0.356114,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 0.753977,
+            "mean": 0.446457913,
+            "median": 0.448623,
+            "missing": 0,
+            "p95": 0.522993,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": 0.160518,
+            "mean": 0.049218318,
+            "median": 0.0489295,
+            "missing": 0,
+            "p95": 0.065506,
+            "samples": 3000,
+            "supported": true
+          },
+          "recalibrate_ms": {
+            "max": 0.092643,
+            "mean": 0.005649546333333333,
+            "median": 0.005632,
+            "missing": 0,
+            "p95": 0.006784,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 1.14184,
+            "mean": 0.6222461016666667,
+            "median": 0.6113185,
+            "missing": 0,
+            "p95": 0.832673,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.040514,
+            "mean": 0.011267599333333333,
+            "median": 0.011424,
+            "missing": 0,
+            "p95": 0.013793,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": 0.099396,
+            "mean": 0.016363858,
+            "median": 0.01648,
+            "missing": 0,
+            "p95": 0.018273,
+            "samples": 3000,
+            "supported": true
+          }
+        },
+        "mode": "direct",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 60706,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 0,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 30746735795811
+        },
+        "retained_last": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 54753,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 3000,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 31046736425214
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r01-harness-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "collection_duration_ns": 12064,
+            "collections": {},
+            "completed_requests": 0,
+            "control_plane_present": false,
+            "monotonic_ns": 30375633895716
+          },
+          "last": {
+            "collection_duration_ns": 11073,
+            "collections": {},
+            "completed_requests": 3000,
+            "control_plane_present": false,
+            "monotonic_ns": 30675634444432
+          },
+          "max_collection_duration_ns": 12640,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 303.309265987,
+          "energy_j": 1427.4139507107882,
+          "max_temperature_c": 55.375,
+          "mean_power_w": 4.706133675362123,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.500289351851852,
+          "tree_pss_max_mib": 13.2841796875,
+          "tree_rss_max_mib": 18.5234375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9330332045711032,
+          "duration_s": 3.000099224,
+          "energy_j": 13.076815688844928,
+          "max_temperature_c": 55.187,
+          "mean_power_w": 4.6716390970032,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.7575757575757576,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9056649590047138,
+          "duration_s": 3.000091631,
+          "energy_j": 12.760568885134326,
+          "max_temperature_c": 55.343,
+          "mean_power_w": 4.696431064492425,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.9242424242424242,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.000852134,
+          "energy_j": 14.154834432342707,
+          "max_temperature_c": 55.281,
+          "mean_power_w": 4.716938322940608,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.9027777777777777,
+          "tree_pss_max_mib": 13.2763671875,
+          "tree_rss_max_mib": 18.5234375
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.00020845,
+          "energy_j": 1411.798514962636,
+          "max_temperature_c": 55.375,
+          "mean_power_w": 4.7059917799954984,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.4944395668715247,
+          "tree_pss_max_mib": 13.2841796875,
+          "tree_rss_max_mib": 18.5234375
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 309.79709362799986,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 30679043112587,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            30372529115268,
+            30675838381255
+          ],
+          "platform_after": [
+            30675838383975,
+            30678838483199
+          ],
+          "platform_before": [
+            30369528647818,
+            30372528739449
+          ],
+          "ready_worker_idle": [
+            30372633360936,
+            30375634213070
+          ],
+          "steady_workload": [
+            30375634213070,
+            30675634421520
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "harness",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 1,
+        "trial_id": "attribution-r01-harness-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999993051671494,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 0.014208,
+            "mean": 0.009180374333333333,
+            "median": 0.009184,
+            "missing": 0,
+            "p95": 0.01184,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 0.482742,
+            "mean": 0.153102421,
+            "median": 0.133524,
+            "missing": 0,
+            "p95": 0.356273,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 0.00432,
+            "mean": 0.0023266456666666668,
+            "median": 0.002336,
+            "missing": 0,
+            "p95": 0.003168,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.00144,
+            "mean": 0.0006733786666666666,
+            "median": 0.000608,
+            "missing": 0,
+            "p95": 0.001056,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 0.492598,
+            "mean": 0.16228279533333334,
+            "median": 0.1427095,
+            "missing": 0,
+            "p95": 0.36732,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.001152,
+            "mean": 0.0005964023333333334,
+            "median": 0.000576,
+            "missing": 0,
+            "p95": 0.000864,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "harness",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "collection_duration_ns": 12064,
+          "collections": {},
+          "completed_requests": 0,
+          "control_plane_present": false,
+          "monotonic_ns": 30375633895716
+        },
+        "retained_last": {
+          "collection_duration_ns": 11073,
+          "collections": {},
+          "completed_requests": 3000,
+          "control_plane_present": false,
+          "monotonic_ns": 30675634444432
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r01-orchestrated-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 59618,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 0,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 31118011509756
+          },
+          "last": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 49569,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 18003,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 3000,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 31418012185017
+          },
+          "max_collection_duration_ns": 59618,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [
+        "deadline_misses:1"
+      ],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.642051806,
+          "energy_j": 1456.7351410090978,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.781792705154066,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 4.5310880829015545,
+          "tree_pss_max_mib": 96.7578125,
+          "tree_rss_max_mib": 104.2421875
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9420209833285036,
+          "duration_s": 3.000297021,
+          "energy_j": 13.290173598965504,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.702251203950938,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.42424242424242425,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9058121201099407,
+          "duration_s": 3.000102522,
+          "energy_j": 12.776953735679117,
+          "max_temperature_c": 54.906,
+          "mean_power_w": 4.701680340154368,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 1.1515151515151514,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.001029853,
+          "energy_j": 14.411102752002387,
+          "max_temperature_c": 54.906,
+          "mean_power_w": 4.802052447960899,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.5303030303030303,
+          "tree_pss_max_mib": 75.087890625,
+          "tree_rss_max_mib": 82.3828125
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000223726,
+          "energy_j": 1433.7673175319812,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.779220827653408,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 4.441666666666666,
+          "tree_pss_max_mib": 96.7578125,
+          "tree_rss_max_mib": 104.2421875
+        }
+      },
+      "status": "performance_failure",
+      "terminal": {
+        "elapsed_s": 311.130318771,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 31421564777255,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            31113722496297,
+            31418364548103
+          ],
+          "platform_after": [
+            31418364551559,
+            31421364848580
+          ],
+          "platform_before": [
+            31110721934368,
+            31113722036890
+          ],
+          "ready_worker_idle": [
+            31115010906573,
+            31118011936426
+          ],
+          "steady_workload": [
+            31118011936426,
+            31418012160152
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "orchestrated",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 1,
+        "trial_id": "attribution-r01-orchestrated-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999992542472228,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 1,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 105.213083,
+            "mean": 12.573172403666666,
+            "median": 12.5613985,
+            "missing": 0,
+            "p95": 14.953506,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 5.570415,
+            "mean": 0.16108292033333332,
+            "median": 0.13004,
+            "missing": 0,
+            "p95": 0.362665,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 105.175258,
+            "mean": 12.543078652333334,
+            "median": 12.5316545,
+            "missing": 0,
+            "p95": 14.920448,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": 105.175258,
+            "mean": 12.543078652333334,
+            "median": 12.5316545,
+            "missing": 0,
+            "p95": 14.920448,
+            "samples": 3000,
+            "supported": true
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.04429,
+            "mean": 0.007039715333333333,
+            "median": 0.00704,
+            "missing": 0,
+            "p95": 0.00832,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 105.36052,
+            "mean": 12.734255324,
+            "median": 12.71965,
+            "missing": 0,
+            "p95": 15.112045,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.098691,
+            "mean": 0.014411431,
+            "median": 0.014112,
+            "missing": 0,
+            "p95": 0.017665,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "orchestrated",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 59618,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 0,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 31118011509756
+        },
+        "retained_last": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 49569,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 18003,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 3000,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 31418012185017
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r02-direct-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 64514,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 0,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 31489245715075
+          },
+          "last": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 55810,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 3000,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 31789246608945
+          },
+          "max_collection_duration_ns": 64514,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.781146318,
+          "energy_j": 1439.495110707268,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.7230451361493975,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.935321233074042,
+          "tree_pss_max_mib": 77.0380859375,
+          "tree_rss_max_mib": 84.203125
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9227050982904997,
+          "duration_s": 3.000098543,
+          "energy_j": 12.965330900424085,
+          "max_temperature_c": 54.937,
+          "mean_power_w": 4.68365788721493,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.6818181818181818,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.904989213880965,
+          "duration_s": 3.000087881,
+          "energy_j": 12.726896321171361,
+          "max_temperature_c": 55.0,
+          "mean_power_w": 4.68754150857303,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.8333333333333334,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.00102889,
+          "energy_j": 14.408191528387686,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.801083913719899,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.712121212121212,
+          "tree_pss_max_mib": 76.908203125,
+          "tree_rss_max_mib": 84.203125
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000447105,
+          "energy_j": 1415.8776146403263,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.719585014967561,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.8251390108282117,
+          "tree_pss_max_mib": 77.0380859375,
+          "tree_rss_max_mib": 84.203125
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 311.2773272300001,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 31792954029723,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            31484964733940,
+            31789745880258
+          ],
+          "platform_after": [
+            31789745883458,
+            31792745982001
+          ],
+          "platform_before": [
+            31481964142426,
+            31484964230307
+          ],
+          "ready_worker_idle": [
+            31486245104310,
+            31489246133200
+          ],
+          "steady_workload": [
+            31489246133200,
+            31789246580305
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "direct",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 2,
+        "trial_id": "attribution-r02-direct-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999985096522213,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": 0.99824,
+            "mean": 0.35885386933333335,
+            "median": 0.3580435,
+            "missing": 0,
+            "p95": 0.418446,
+            "samples": 3000,
+            "supported": true
+          },
+          "cycle_ms": {
+            "max": 1.120676,
+            "mean": 0.454198105,
+            "median": 0.453087,
+            "missing": 0,
+            "p95": 0.534001,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": 1.095139,
+            "mean": 0.4337601486666667,
+            "median": 0.43243,
+            "missing": 0,
+            "p95": 0.510929,
+            "samples": 3000,
+            "supported": true
+          },
+          "dispatch_lateness_ms": {
+            "max": 0.429629,
+            "mean": 0.16222944533333333,
+            "median": 0.136106,
+            "missing": 0,
+            "p95": 0.353588,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 1.095139,
+            "mean": 0.4337601486666667,
+            "median": 0.43243,
+            "missing": 0,
+            "p95": 0.510929,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": 0.094819,
+            "mean": 0.04774045033333333,
+            "median": 0.046978,
+            "missing": 0,
+            "p95": 0.062722,
+            "samples": 3000,
+            "supported": true
+          },
+          "recalibrate_ms": {
+            "max": 0.024897,
+            "mean": 0.005440298,
+            "median": 0.00544,
+            "missing": 0,
+            "p95": 0.006592,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 1.276397,
+            "mean": 0.6164275503333333,
+            "median": 0.5980055,
+            "missing": 0,
+            "p95": 0.818134,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.016097,
+            "mean": 0.010565295333333334,
+            "median": 0.010657,
+            "missing": 0,
+            "p95": 0.012576,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": 0.023137,
+            "mean": 0.016133374666666665,
+            "median": 0.016256,
+            "missing": 0,
+            "p95": 0.018081,
+            "samples": 3000,
+            "supported": true
+          }
+        },
+        "mode": "direct",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 64514,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 0,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 31489245715075
+        },
+        "retained_last": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 55810,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 3000,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 31789246608945
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r02-harness-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "collection_duration_ns": 9888,
+            "collections": {},
+            "completed_requests": 0,
+            "control_plane_present": false,
+            "monotonic_ns": 32230668981342
+          },
+          "last": {
+            "collection_duration_ns": 12001,
+            "collections": {},
+            "completed_requests": 3000,
+            "control_plane_present": false,
+            "monotonic_ns": 32530669488885
+          },
+          "max_collection_duration_ns": 13505,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 303.25960232,
+          "energy_j": 1425.525606924866,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.700677558168955,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.4137731481481484,
+          "tree_pss_max_mib": 13.2841796875,
+          "tree_rss_max_mib": 18.5234375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9131538507066984,
+          "duration_s": 3.000080454,
+          "energy_j": 12.762863421873998,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.658769949410162,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.6363636363636364,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9060536211101027,
+          "duration_s": 3.000108459,
+          "energy_j": 12.755137809065392,
+          "max_temperature_c": 54.937,
+          "mean_power_w": 4.692392146950396,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.9242424242424243,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.000833504,
+          "energy_j": 14.167627121399189,
+          "max_temperature_c": 54.937,
+          "mean_power_w": 4.721230652255204,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.861111111111111,
+          "tree_pss_max_mib": 13.2763671875,
+          "tree_rss_max_mib": 18.5234375
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000206125,
+          "energy_j": 1410.139220396191,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.700460838379002,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.40906432748538,
+          "tree_pss_max_mib": 13.2841796875,
+          "tree_rss_max_mib": 18.5234375
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 309.74585135000234,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 32534020764302,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            32227562629547,
+            32530822231867
+          ],
+          "platform_after": [
+            32530822235675,
+            32533822316129
+          ],
+          "platform_before": [
+            32224562105843,
+            32227562214302
+          ],
+          "ready_worker_idle": [
+            32227668426023,
+            32230669259527
+          ],
+          "steady_workload": [
+            32230669259527,
+            32530669465652
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "harness",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 2,
+        "trial_id": "attribution-r02-harness-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999993129171388,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 0.047585,
+            "mean": 0.009105696666666666,
+            "median": 0.009089,
+            "missing": 0,
+            "p95": 0.011681,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 0.424798,
+            "mean": 0.15306947333333334,
+            "median": 0.1368005,
+            "missing": 0,
+            "p95": 0.357346,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 0.004385,
+            "mean": 0.002565835,
+            "median": 0.00256,
+            "missing": 0,
+            "p95": 0.003456,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.001312,
+            "mean": 0.000638176,
+            "median": 0.000608,
+            "missing": 0,
+            "p95": 0.000896,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 0.436894,
+            "mean": 0.16217517,
+            "median": 0.14589950000000002,
+            "missing": 0,
+            "p95": 0.368183,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.014529,
+            "mean": 0.0006041893333333334,
+            "median": 0.000576,
+            "missing": 0,
+            "p95": 0.000896,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "harness",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "collection_duration_ns": 9888,
+          "collections": {},
+          "completed_requests": 0,
+          "control_plane_present": false,
+          "monotonic_ns": 32230668981342
+        },
+        "retained_last": {
+          "collection_duration_ns": 12001,
+          "collections": {},
+          "completed_requests": 3000,
+          "control_plane_present": false,
+          "monotonic_ns": 32530669488885
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r02-orchestrated-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 61730,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 0,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 31860627179121
+          },
+          "last": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 42786,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 18003,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 3000,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 32160627840968
+          },
+          "max_collection_duration_ns": 61730,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [
+        "deadline_misses:1"
+      ],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.634077105,
+          "energy_j": 1456.012269496655,
+          "max_temperature_c": 55.093,
+          "mean_power_w": 4.779544965334928,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 4.929188255613126,
+          "tree_pss_max_mib": 100.8671875,
+          "tree_rss_max_mib": 108.5078125
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9158515085000897,
+          "duration_s": 3.000367107,
+          "energy_j": 12.945790120420023,
+          "max_temperature_c": 55.0,
+          "mean_power_w": 4.711173529304462,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.7424242424242424,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9050903393025863,
+          "duration_s": 3.000094668,
+          "energy_j": 12.751698243667676,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.696141114341086,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.9393939393939394,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.000973601,
+          "energy_j": 14.449596188843564,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.814969443259546,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.7121212121212124,
+          "tree_pss_max_mib": 79.068359375,
+          "tree_rss_max_mib": 86.3515625
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000253003,
+          "energy_j": 1433.0218060337972,
+          "max_temperature_c": 55.093,
+          "mean_power_w": 4.776735325018099,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 4.848232544551563,
+          "tree_pss_max_mib": 100.8671875,
+          "tree_rss_max_mib": 108.5078125
+        }
+      },
+      "status": "performance_failure",
+      "terminal": {
+        "elapsed_s": 311.0931109109988,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 32164159352646,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            31856327890693,
+            32160961967798
+          ],
+          "platform_after": [
+            32160961970902,
+            32163962338009
+          ],
+          "platform_before": [
+            31853327382187,
+            31856327476855
+          ],
+          "ready_worker_idle": [
+            31857626594908,
+            31860627568509
+          ],
+          "steady_workload": [
+            31860627568509,
+            32160627821512
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "orchestrated",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 2,
+        "trial_id": "attribution-r02-orchestrated-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999991566573778,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 1,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 102.302543,
+            "mean": 12.099307451333333,
+            "median": 12.344456999999998,
+            "missing": 0,
+            "p95": 14.441354,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 2.620446,
+            "mean": 0.17234201833333335,
+            "median": 0.130603,
+            "missing": 0,
+            "p95": 0.36714,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 102.270606,
+            "mean": 12.070058051,
+            "median": 12.285510500000001,
+            "missing": 0,
+            "p95": 14.41153,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": 102.270606,
+            "mean": 12.070058051,
+            "median": 12.285510500000001,
+            "missing": 0,
+            "p95": 14.41153,
+            "samples": 3000,
+            "supported": true
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.043969,
+            "mean": 0.0070977,
+            "median": 0.0071684999999999995,
+            "missing": 0,
+            "p95": 0.00848,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 102.427224,
+            "mean": 12.271649469666666,
+            "median": 12.501080000000002,
+            "missing": 0,
+            "p95": 14.608185,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.048257,
+            "mean": 0.013474969666666666,
+            "median": 0.013472,
+            "missing": 0,
+            "p95": 0.016673,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "orchestrated",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 61730,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 0,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 31860627179121
+        },
+        "retained_last": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 42786,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 18003,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 3000,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 32160627840968
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r03-direct-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 59938,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 0,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 33342963929357
+          },
+          "last": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 57634,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 3000,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 33642964618591
+          },
+          "max_collection_duration_ns": 64322,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.786945971,
+          "energy_j": 1433.392936877837,
+          "max_temperature_c": 55.187,
+          "mean_power_w": 4.702934150645094,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.6122625215889466,
+          "tree_pss_max_mib": 77.0498046875,
+          "tree_rss_max_mib": 84.21484375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9553519737747902,
+          "duration_s": 3.000085207,
+          "energy_j": 13.399163891754727,
+          "max_temperature_c": 54.906,
+          "mean_power_w": 4.674990196580939,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.6818181818181818,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9051147143043248,
+          "duration_s": 3.000138187,
+          "energy_j": 12.738160564194889,
+          "max_temperature_c": 54.875,
+          "mean_power_w": 4.6909611347304505,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 1.0,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.000992902,
+          "energy_j": 14.420585181302654,
+          "max_temperature_c": 54.937,
+          "mean_power_w": 4.805271339259787,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.4242424242424243,
+          "tree_pss_max_mib": 76.919921875,
+          "tree_rss_max_mib": 84.21484375
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.00024346,
+          "energy_j": 1409.724650765435,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.699078355759395,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.4957602339181286,
+          "tree_pss_max_mib": 77.0498046875,
+          "tree_rss_max_mib": 84.21484375
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 311.2805787880061,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 33646671976428,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            33338678746316,
+            33643465692287
+          ],
+          "platform_after": [
+            33643465694431,
+            33646465779638
+          ],
+          "platform_before": [
+            33335678212628,
+            33338678350815
+          ],
+          "ready_worker_idle": [
+            33339963352596,
+            33342964345498
+          ],
+          "steady_workload": [
+            33342964345498,
+            33642964588958
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "direct",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 3,
+        "trial_id": "attribution-r03-direct-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999991884673253,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": 0.752856,
+            "mean": 0.35717533766666665,
+            "median": 0.3560275,
+            "missing": 0,
+            "p95": 0.421965,
+            "samples": 3000,
+            "supported": true
+          },
+          "cycle_ms": {
+            "max": 0.907516,
+            "mean": 0.45228030133333336,
+            "median": 0.451294,
+            "missing": 0,
+            "p95": 0.539889,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": 0.885148,
+            "mean": 0.4323182913333333,
+            "median": 0.43100499999999997,
+            "missing": 0,
+            "p95": 0.51608,
+            "samples": 3000,
+            "supported": true
+          },
+          "dispatch_lateness_ms": {
+            "max": 0.469862,
+            "mean": 0.15035143066666667,
+            "median": 0.13296249999999998,
+            "missing": 0,
+            "p95": 0.35043,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 0.885148,
+            "mean": 0.4323182913333333,
+            "median": 0.43100499999999997,
+            "missing": 0,
+            "p95": 0.51608,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": 0.132196,
+            "mean": 0.047969671,
+            "median": 0.047041,
+            "missing": 0,
+            "p95": 0.065474,
+            "samples": 3000,
+            "supported": true
+          },
+          "recalibrate_ms": {
+            "max": 0.008192,
+            "mean": 0.005217158666666667,
+            "median": 0.005216,
+            "missing": 0,
+            "p95": 0.006273,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 1.136888,
+            "mean": 0.602631732,
+            "median": 0.5901905000000001,
+            "missing": 0,
+            "p95": 0.803364,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.090339,
+            "mean": 0.010548061,
+            "median": 0.010561,
+            "missing": 0,
+            "p95": 0.0128,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": 0.056705,
+            "mean": 0.016452663333333332,
+            "median": 0.016545,
+            "missing": 0,
+            "p95": 0.018657,
+            "samples": 3000,
+            "supported": true
+          }
+        },
+        "mode": "direct",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 59938,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 0,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 33342963929357
+        },
+        "retained_last": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 57634,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 3000,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 33642964618591
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r03-harness-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "collection_duration_ns": 12513,
+            "collections": {},
+            "completed_requests": 0,
+            "control_plane_present": false,
+            "monotonic_ns": 32971915693521
+          },
+          "last": {
+            "collection_duration_ns": 9313,
+            "collections": {},
+            "completed_requests": 3000,
+            "control_plane_present": false,
+            "monotonic_ns": 33271916277941
+          },
+          "max_collection_duration_ns": 13088,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 303.276794516,
+          "energy_j": 1430.5788072982427,
+          "max_temperature_c": 55.25,
+          "mean_power_w": 4.7170730935128296,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.8115062156692687,
+          "tree_pss_max_mib": 13.2841796875,
+          "tree_rss_max_mib": 18.5234375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9636739991574893,
+          "duration_s": 3.000075854,
+          "energy_j": 13.46878913151874,
+          "max_temperature_c": 54.906,
+          "mean_power_w": 4.658715360194689,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.6060606060606061,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.905242930245336,
+          "duration_s": 3.000093109,
+          "energy_j": 12.781731812593575,
+          "max_temperature_c": 55.062,
+          "mean_power_w": 4.70641073232949,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.9848484848484849,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.000861581,
+          "energy_j": 14.202929082248321,
+          "max_temperature_c": 54.968,
+          "mean_power_w": 4.732950420697302,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 3.125,
+          "tree_pss_max_mib": 13.2763671875,
+          "tree_rss_max_mib": 18.5234375
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.00026553,
+          "energy_j": 1415.0703873976443,
+          "max_temperature_c": 55.25,
+          "mean_power_w": 4.716897116399844,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.8074561403508773,
+          "tree_pss_max_mib": 13.2841796875,
+          "tree_rss_max_mib": 18.5234375
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 309.75864159499906,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 33275281094673,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            32968810109908,
+            33272086904424
+          ],
+          "platform_after": [
+            33272086908457,
+            33275086984311
+          ],
+          "platform_before": [
+            32965809633139,
+            32968809726248
+          ],
+          "ready_worker_idle": [
+            32968915128462,
+            32971915990043
+          ],
+          "steady_workload": [
+            32971915990043,
+            33271916255573
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "harness",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 3,
+        "trial_id": "attribution-r03-harness-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999991149007835,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 0.01488,
+            "mean": 0.008960254333333334,
+            "median": 0.009152,
+            "missing": 0,
+            "p95": 0.011041,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 0.480834,
+            "mean": 0.15553107366666666,
+            "median": 0.129635,
+            "missing": 0,
+            "p95": 0.357748,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 0.007937,
+            "mean": 0.0025011356666666666,
+            "median": 0.00256,
+            "missing": 0,
+            "p95": 0.003201,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.001185,
+            "mean": 0.0006063823333333333,
+            "median": 0.000576,
+            "missing": 0,
+            "p95": 0.000832,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 0.491139,
+            "mean": 0.164491328,
+            "median": 0.138513,
+            "missing": 0,
+            "p95": 0.368334,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.001024,
+            "mean": 0.0005760583333333333,
+            "median": 0.000576,
+            "missing": 0,
+            "p95": 0.000832,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "harness",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "collection_duration_ns": 12513,
+          "collections": {},
+          "completed_requests": 0,
+          "control_plane_present": false,
+          "monotonic_ns": 32971915693521
+        },
+        "retained_last": {
+          "collection_duration_ns": 9313,
+          "collections": {},
+          "completed_requests": 3000,
+          "control_plane_present": false,
+          "monotonic_ns": 33271916277941
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "attribution-r03-orchestrated-10hz": {
+      "diagnostics": {
+        "retained_counts": {
+          "first": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 63330,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 3,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 0,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 32601709654543
+          },
+          "last": {
+            "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+            "collection_duration_ns": 49474,
+            "collections": {
+              "idempotency.entries": 0,
+              "leases.leases_by_resource": 0,
+              "leases.resource_by_lease": 0,
+              "lifecycle.history": 18003,
+              "lifecycle.states": 3
+            },
+            "completed_requests": 3000,
+            "control_plane_present": true,
+            "method": "len() under the existing store locks; no history() query or state copying",
+            "monotonic_ns": 32901710376419
+          },
+          "max_collection_duration_ns": 63330,
+          "path": "workload/retained-state.jsonl",
+          "samples": 31
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": true,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.797387722,
+          "energy_j": 1457.4989817223995,
+          "max_temperature_c": 55.125,
+          "mean_power_w": 4.781861788959153,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 4.6502732240437155,
+          "tree_pss_max_mib": 96.80078125,
+          "tree_rss_max_mib": 104.2734375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9662525323436972,
+          "duration_s": 3.000082496,
+          "energy_j": 13.68781941520333,
+          "max_temperature_c": 55.093,
+          "mean_power_w": 4.721830843251138,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 1.2272727272727273,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9056088112986213,
+          "duration_s": 3.000100432,
+          "energy_j": 12.760875143233301,
+          "max_temperature_c": 54.875,
+          "mean_power_w": 4.696821187493149,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.8030303030303031,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.0010451,
+          "energy_j": 14.451884576362453,
+          "max_temperature_c": 54.875,
+          "mean_power_w": 4.815617258255283,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.606060606060606,
+          "tree_pss_max_mib": 75.087890625,
+          "tree_rss_max_mib": 82.37109375
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000263238,
+          "energy_j": 1433.7020299071035,
+          "max_temperature_c": 55.125,
+          "mean_power_w": 4.779002572973414,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 4.567192521180251,
+          "tree_pss_max_mib": 96.80078125,
+          "tree_rss_max_mib": 104.2734375
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 311.2824042050015,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 32905414253181,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            32597421482320,
+            32902218870042
+          ],
+          "platform_after": [
+            32902218872506,
+            32905218955002
+          ],
+          "platform_before": [
+            32594420963891,
+            32597421064323
+          ],
+          "ready_worker_idle": [
+            32598709041424,
+            32601710086524
+          ],
+          "steady_workload": [
+            32601710086524,
+            32901710349762
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "mode": "orchestrated",
+        "phase": "attribution",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 3,
+        "trial_id": "attribution-r03-orchestrated-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.9999912254077,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 21.177406,
+            "mean": 11.828044593333333,
+            "median": 12.277588,
+            "missing": 0,
+            "p95": 14.490282,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 1.375148,
+            "mean": 0.151011282,
+            "median": 0.128786,
+            "missing": 0,
+            "p95": 0.358151,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 21.142525,
+            "mean": 11.800256133333333,
+            "median": 12.25018,
+            "missing": 0,
+            "p95": 14.458026,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": 21.142525,
+            "mean": 11.800256133333333,
+            "median": 12.25018,
+            "missing": 0,
+            "p95": 14.458026,
+            "samples": 3000,
+            "supported": true
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.039521,
+            "mean": 0.006511504,
+            "median": 0.006592,
+            "missing": 0,
+            "p95": 0.008256,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 21.304611,
+            "mean": 11.979055875333334,
+            "median": 12.411482,
+            "missing": 0,
+            "p95": 14.649319,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.074243,
+            "mean": 0.013083455,
+            "median": 0.013249,
+            "missing": 0,
+            "p95": 0.016544,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "orchestrated",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 63330,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 3,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 0,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 32601709654543
+        },
+        "retained_last": {
+          "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
+          "collection_duration_ns": 49474,
+          "collections": {
+            "idempotency.entries": 0,
+            "leases.leases_by_resource": 0,
+            "leases.resource_by_lease": 0,
+            "lifecycle.history": 18003,
+            "lifecycle.states": 3
+          },
+          "completed_requests": 3000,
+          "control_plane_present": true,
+          "method": "len() under the existing store locks; no history() query or state copying",
+          "monotonic_ns": 32901710376419
+        },
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "controller/client/events.jsonl": "df8494873f5a37cebf261ad08a45f43588d4110bc9db5c7d457955d7e155057d",
+  "controller/client/reconciled.jsonl": "ec5129b65388a8a6c5232d422d7fdb022f801875604dc6f7e74275138958b224",
+  "controller/config.json": "dad161be19aa55c7d5d4280880d56a8272214c28c0bf4d37f9fb28e52e265533",
+  "controller/proxy/command.json": "db5b500b4099561cbb77c1f9c14fca735dd2ee2d19b7819f7b0b7d747b5ec9cf",
+  "controller/proxy/events.jsonl": "361418bbd3bd7b1d6e66bdf7539c2cca76276b505bce58f47f2521504475f9ed",
+  "controller/proxy/ready.json": "b774d47fc2ddd21949c497d3f84c0db718eb2194b38fb9abb073660f1f2daa3f",
+  "controller/proxy/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "controller/proxy/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "controller/summary.json": "144d22cf79769e75f262059e90bfda1e451994f0c6bc435388bb5ec5818ee68e",
+  "controller/supervisor/command.json": "8584fc6701d44ac436906c187cd0f9e1e16e4df5d7edb2baf1cbcf42b6d0784d",
+  "controller/supervisor/events.jsonl": "5980e0aa27b9d6dc053b123883eed731aca69d287cfe7b5572a4263a2e479595",
+  "controller/supervisor/final.json": "28f8ead7dda39fd98cbd806d160aa66e923f0f62790afd3ad338ee14cbde1b6f",
+  "controller/supervisor/ready.json": "fb2d8706f93be009dd180d57cf6672e41c415fd38b6632bb06a8e4b2eba547da",
+  "controller/supervisor/results.jsonl": "ec5129b65388a8a6c5232d422d7fdb022f801875604dc6f7e74275138958b224",
+  "controller/supervisor/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "controller/supervisor/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "provenance.json": "4909bb2ebaedeab01f866b49713936640488c402436c9afd80d6590c90bc4a1a",
+  "result.json": "96af7847ffea874ca240e23bf3daf4a3863b5af5fd88822e55571fd41d694022",
+  "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout.log": "184edb05b955dd8dfd9f3c4b3750effe8b36c2a16ba39e6dde1cd96ef02a0b5c"
+}

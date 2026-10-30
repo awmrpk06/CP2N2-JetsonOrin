@@ -1,0 +1,4 @@
+{"changed": true, "changed_ns": 47379705639691, "cut_connections": 0, "event": "link_down"}
+{"changed": true, "changed_ns": 47409705332694, "cut_connections": 0, "event": "link_up"}
+{"event": "proxy_stopped", "stats": {"accepted": 731, "cut_connections": 0, "refused_while_down": 330, "upstream_connect_errors": 0}}
+{"changed": true, "changed_ns": 47440322388379, "cut_connections": 0, "event": "link_down"}

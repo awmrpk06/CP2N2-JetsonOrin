@@ -1,0 +1,68 @@
+{
+  "accepted_ns": 45511661594146,
+  "counters": {
+    "duplicate_starts": 2,
+    "early_triggers": 0,
+    "execution_errors": 0,
+    "in_progress_conflicts": 0,
+    "late_triggers": 0,
+    "native_idempotent_replays": 0,
+    "rejected_starts": 0,
+    "supervisor_dedup_hits": 0
+  },
+  "fault": {
+    "armed_ns": 45556658980706,
+    "consumed_ns": 45556664943835,
+    "consumed_task_id": "lc-r01-client-connected-fault-job:step:0450"
+  },
+  "invocations": {
+    "by_backend": {
+      "edge-fallback": 1,
+      "edge-primary": 899
+    },
+    "native_idempotency_entries": 900,
+    "steps_with_multiple": [],
+    "total": 900
+  },
+  "job": {
+    "committed": 900,
+    "executed": 900,
+    "job_id": "lc-r01-client-connected-fault-job",
+    "missed": 0,
+    "mode": "client",
+    "owner": "campaign-client",
+    "plan_hash": "6cd4d1d524910c545dd8db362d0c507d5b04ce8cd6eea0aac851a73dbad5093d",
+    "state": "completed",
+    "steps": 900
+  },
+  "peak_rss_kib": 122240,
+  "provenance": {
+    "backend_kind": "pinned",
+    "cp2n2_imported": true,
+    "orchestrator_module": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+    "python": "3.12.15 (main, Oct 21 2026, 17:46:20) [Clang 23.1.3 ]",
+    "root_legacy_core_loaded": false,
+    "upstream": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1"
+  },
+  "resources": {
+    "edge-fallback": {
+      "lease_id": null,
+      "lifecycle": "ready",
+      "version": 7
+    },
+    "edge-primary": {
+      "lease_id": null,
+      "lifecycle": "ready",
+      "version": 5399
+    }
+  },
+  "retained": {
+    "ledger_offsets": 900,
+    "step_status_slots": 900
+  },
+  "terminal_ns": 45601658857982,
+  "trial": {
+    "fault_at_s": 45.0,
+    "t0_ns": 45511658724276
+  }
+}

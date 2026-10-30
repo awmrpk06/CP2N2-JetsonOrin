@@ -1,0 +1,3919 @@
+{
+  "generated_utc": "2026-10-30T00:30:29.251032+00:00",
+  "notes": [
+    "Generated offline from verified trial archives; never run concurrently with measurements.",
+    "Per-trial nearest-rank statistics; across-trial values summarize trials, not pooled requests.",
+    "Deadlines are experimental release-relative deadlines of one interarrival period unless stated otherwise.",
+    "Intrusive allocation/calls trials are diagnostics only; their timings are not primary evidence.",
+    "Power is platform VDD_IN; idle-adjusted values subtract the same worker's ready/post idle windows."
+  ],
+  "phases": {
+    "allocation-profiling": {
+      "conditions": {
+        "direct@10Hz/allocation": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999989068311951,
+              "mean": 9.999989068311951,
+              "median": 9.999989068311951,
+              "min": 9.999989068311951,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 1.0512335,
+              "mean": 1.0512335,
+              "median": 1.0512335,
+              "min": 1.0512335,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 1.180645,
+              "mean": 1.180645,
+              "median": 1.180645,
+              "min": 1.180645,
+              "n": 1,
+              "stdev": null
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.10395276536929732,
+              "mean": -0.10395276536929732,
+              "median": -0.10395276536929732,
+              "min": -0.10395276536929732,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 0.9880795,
+              "mean": 0.9880795,
+              "median": 0.9880795,
+              "min": 0.9880795,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 1.11306,
+              "mean": 1.11306,
+              "median": 1.11306,
+              "min": 1.11306,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.70513133307398,
+              "mean": 4.70513133307398,
+              "median": 4.70513133307398,
+              "min": 4.70513133307398,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 3000,
+              "deadline_misses": 0,
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "planned_releases": 3000,
+              "skipped_releases": 0,
+              "successful_requests": 3000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "diagnostic_not_primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999989068311951,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 1.84265,
+                "median": 1.0512335,
+                "p95": 1.180645
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 1.770712,
+                "median": 0.9880795,
+                "p95": 1.11306
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.10395276536929732,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.6956822259089,
+                "platform_before_w": 4.69776802568055,
+                "post_idle_w": null,
+                "ready_idle_w": 4.809084098443277,
+                "steady_w": 4.70513133307398
+              },
+              "release_to_completion_ms": {
+                "max": 23.092727,
+                "median": 1.334332,
+                "p95": 1.545959
+              },
+              "repetition": 1,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 82.91796875,
+              "successful_requests": 3000,
+              "trial_id": "allocation-profiling-r01-direct-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/allocation": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.969981777897537,
+              "mean": 9.969981777897537,
+              "median": 9.969981777897537,
+              "min": 9.969981777897537,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 32.697417,
+              "mean": 32.697417,
+              "median": 32.697417,
+              "min": 32.697417,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 36.672327,
+              "mean": 36.672327,
+              "median": 36.672327,
+              "min": 36.672327,
+              "n": 1,
+              "stdev": null
+            },
+            "idle_adjusted_power_w": {
+              "max": 0.07640705264196512,
+              "mean": 0.07640705264196512,
+              "median": 0.07640705264196512,
+              "min": 0.07640705264196512,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 32.612647,
+              "mean": 32.612647,
+              "median": 32.612647,
+              "min": 32.612647,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 36.581221,
+              "mean": 36.581221,
+              "median": 36.581221,
+              "min": 36.581221,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.8807980965943,
+              "mean": 4.8807980965943,
+              "median": 4.8807980965943,
+              "min": 4.8807980965943,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 2991,
+              "deadline_misses": 2,
+              "late_dispatches": 2991,
+              "maintenance_failures": 0,
+              "planned_releases": 3000,
+              "skipped_releases": 9,
+              "successful_requests": 2991,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "diagnostic_not_primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.969981777897537,
+              "completed_requests": 2991,
+              "cycle_ms": {
+                "max": 127.604097,
+                "median": 32.697417,
+                "p95": 36.672327
+              },
+              "deadline_misses": 2,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 127.510398,
+                "median": 32.612647,
+                "p95": 36.581221
+              },
+              "late_dispatches": 2991,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:9",
+                "deadline_misses:2"
+              ],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.07640705264196512,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.725664336041484,
+                "platform_before_w": 4.69225472120358,
+                "post_idle_w": null,
+                "ready_idle_w": 4.804391043952335,
+                "steady_w": 4.8807980965943
+              },
+              "release_to_completion_ms": {
+                "max": 1021.263093,
+                "median": 33.014057,
+                "p95": 37.033142
+              },
+              "repetition": 1,
+              "retained_last": null,
+              "skipped_releases": 9,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 122.80078125,
+              "successful_requests": 2991,
+              "trial_id": "allocation-profiling-r01-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "intrusive_diagnostics": {
+        "allocation-profiling-r01-direct-10hz": {
+          "allocation_checkpoints": [
+            {
+              "elapsed_ns": 1946461,
+              "label": "start",
+              "raw_snapshot": "allocation-start.tracemalloc",
+              "total_count_diff": 0,
+              "total_size_diff_bytes": 0,
+              "traced_current_bytes": 5827,
+              "traced_peak_bytes": 11017,
+              "tracemalloc_overhead_bytes": 12432
+            },
+            {
+              "elapsed_ns": 60005718770,
+              "label": "60s",
+              "raw_snapshot": "allocation-60s.tracemalloc",
+              "total_count_diff": 222,
+              "total_size_diff_bytes": 157638,
+              "traced_current_bytes": 173893,
+              "traced_peak_bytes": 210693,
+              "tracemalloc_overhead_bytes": 51360
+            },
+            {
+              "elapsed_ns": 300005892510,
+              "label": "end",
+              "raw_snapshot": "allocation-end.tracemalloc",
+              "total_count_diff": 225,
+              "total_size_diff_bytes": 153632,
+              "traced_current_bytes": 173014,
+              "traced_peak_bytes": 218540,
+              "tracemalloc_overhead_bytes": 57184
+            }
+          ],
+          "call_windows": [],
+          "errors": [],
+          "files": [
+            "workload/diagnostics/allocation-60s.json",
+            "workload/diagnostics/allocation-60s.tracemalloc",
+            "workload/diagnostics/allocation-end.json",
+            "workload/diagnostics/allocation-end.tracemalloc",
+            "workload/diagnostics/allocation-start.json",
+            "workload/diagnostics/allocation-start.tracemalloc",
+            "workload/diagnostics/gc-events.jsonl",
+            "workload/diagnostics/diagnostics.json"
+          ],
+          "gc": {
+            "callback_errors": 0,
+            "delivery": "buffered in the callback and written outside it by request hooks and close()",
+            "dropped": 0,
+            "events_written": 1
+          },
+          "instrumentation": {
+            "close_ns": 26375426,
+            "hook_calls": 6000,
+            "hook_max_ns": 21757744,
+            "hook_total_ns": 68110013,
+            "start_ns": 5203620,
+            "total_ns": 99689059
+          },
+          "kind": "allocation",
+          "late_window_reached": null,
+          "path": "workload/diagnostics/diagnostics.json",
+          "role": "diagnostic only; timings from this trial are not primary evidence"
+        },
+        "allocation-profiling-r01-orchestrated-10hz": {
+          "allocation_checkpoints": [
+            {
+              "elapsed_ns": 1888060,
+              "label": "start",
+              "raw_snapshot": "allocation-start.tracemalloc",
+              "total_count_diff": 0,
+              "total_size_diff_bytes": 0,
+              "traced_current_bytes": 5833,
+              "traced_peak_bytes": 11023,
+              "tracemalloc_overhead_bytes": 12432
+            },
+            {
+              "elapsed_ns": 60005592143,
+              "label": "60s",
+              "raw_snapshot": "allocation-60s.tracemalloc",
+              "total_count_diff": 32151,
+              "total_size_diff_bytes": 4757767,
+              "traced_current_bytes": 4775363,
+              "traced_peak_bytes": 7456940,
+              "tracemalloc_overhead_bytes": 1608928
+            },
+            {
+              "elapsed_ns": 300006040258,
+              "label": "end",
+              "raw_snapshot": "allocation-end.tracemalloc",
+              "total_count_diff": 132664,
+              "total_size_diff_bytes": 21567490,
+              "traced_current_bytes": 21590006,
+              "traced_peak_bytes": 27937893,
+              "tracemalloc_overhead_bytes": 8519584
+            }
+          ],
+          "call_windows": [],
+          "errors": [],
+          "files": [
+            "workload/diagnostics/allocation-60s.json",
+            "workload/diagnostics/allocation-60s.tracemalloc",
+            "workload/diagnostics/allocation-end.json",
+            "workload/diagnostics/allocation-end.tracemalloc",
+            "workload/diagnostics/allocation-start.json",
+            "workload/diagnostics/allocation-start.tracemalloc",
+            "workload/diagnostics/gc-events.jsonl",
+            "workload/diagnostics/diagnostics.json"
+          ],
+          "gc": {
+            "callback_errors": 0,
+            "delivery": "buffered in the callback and written outside it by request hooks and close()",
+            "dropped": 0,
+            "events_written": 108
+          },
+          "instrumentation": {
+            "close_ns": 4140958464,
+            "hook_calls": 5982,
+            "hook_max_ns": 1000199614,
+            "hook_total_ns": 1071469253,
+            "start_ns": 5143779,
+            "total_ns": 5217571496
+          },
+          "kind": "allocation",
+          "late_window_reached": null,
+          "path": "workload/diagnostics/diagnostics.json",
+          "role": "diagnostic only; timings from this trial are not primary evidence"
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 2,
+      "status_counts": {
+        "performance_failure": 1,
+        "success": 1
+      }
+    },
+    "attribution": {
+      "conditions": {
+        "direct@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999992672638703,
+              "mean": 9.99998988461139,
+              "median": 9.999991884673253,
+              "min": 9.999985096522213,
+              "n": 3,
+              "stdev": 4.16528160636891e-06
+            },
+            "cycle_median_ms": {
+              "max": 0.470224,
+              "mean": 0.4582016666666667,
+              "median": 0.453087,
+              "min": 0.451294,
+              "n": 3,
+              "stdev": 0.010450171593487503
+            },
+            "cycle_p95_ms": {
+              "max": 0.548435,
+              "mean": 0.540775,
+              "median": 0.539889,
+              "min": 0.534001,
+              "n": 3,
+              "stdev": 0.007257674283129578
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.08149889875233818,
+              "mean": -0.10389191501839316,
+              "median": -0.10619298350039141,
+              "min": -0.12398386280244988,
+              "n": 3,
+              "stdev": 0.02133575003846725
+            },
+            "invocation_median_ms": {
+              "max": 0.448623,
+              "mean": 0.43735266666666667,
+              "median": 0.43243,
+              "min": 0.43100499999999997,
+              "n": 3,
+              "stdev": 0.009786366349842701
+            },
+            "invocation_p95_ms": {
+              "max": 0.522993,
+              "mean": 0.5166673333333334,
+              "median": 0.51608,
+              "min": 0.510929,
+              "n": 3,
+              "stdev": 0.006053407662906389
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.719585014967561,
+              "mean": 4.707574939375491,
+              "median": 4.704061447399519,
+              "min": 4.699078355759395,
+              "n": 3,
+              "stdev": 0.010695290429384332
+            },
+            "totals": {
+              "completed_requests": 9000,
+              "deadline_misses": 0,
+              "late_dispatches": 9000,
+              "maintenance_failures": 0,
+              "planned_releases": 9000,
+              "skipped_releases": 0,
+              "successful_requests": 9000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999992672638703,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 0.782746,
+                "median": 0.470224,
+                "p95": 0.548435
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.753977,
+                "median": 0.448623,
+                "p95": 0.522993
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.12398386280244988,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.699024574050787,
+                "platform_before_w": 4.7015941679181426,
+                "post_idle_w": null,
+                "ready_idle_w": 4.8280453102019685,
+                "steady_w": 4.704061447399519
+              },
+              "release_to_completion_ms": {
+                "max": 1.14184,
+                "median": 0.6113185,
+                "p95": 0.832673
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 3,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 82.359375,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r01-direct-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999985096522213,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 1.120676,
+                "median": 0.453087,
+                "p95": 0.534001
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 1.095139,
+                "median": 0.43243,
+                "p95": 0.510929
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.08149889875233818,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.68365788721493,
+                "platform_before_w": 4.68754150857303,
+                "post_idle_w": null,
+                "ready_idle_w": 4.801083913719899,
+                "steady_w": 4.719585014967561
+              },
+              "release_to_completion_ms": {
+                "max": 1.276397,
+                "median": 0.5980055,
+                "p95": 0.818134
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 3,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.203125,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r02-direct-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999991884673253,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 0.907516,
+                "median": 0.451294,
+                "p95": 0.539889
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.885148,
+                "median": 0.43100499999999997,
+                "p95": 0.51608
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.10619298350039141,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.674990196580939,
+                "platform_before_w": 4.6909611347304505,
+                "post_idle_w": null,
+                "ready_idle_w": 4.805271339259787,
+                "steady_w": 4.699078355759395
+              },
+              "release_to_completion_ms": {
+                "max": 1.136888,
+                "median": 0.5901905000000001,
+                "p95": 0.803364
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 3,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.21484375,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r03-direct-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "harness@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999993129171388,
+              "mean": 9.999992443283572,
+              "median": 9.999993051671494,
+              "min": 9.999991149007835,
+              "n": 3,
+              "stdev": 1.1215452828308622e-06
+            },
+            "cycle_median_ms": {
+              "max": 0.009184,
+              "mean": 0.009141666666666666,
+              "median": 0.009152,
+              "min": 0.009089,
+              "n": 3,
+              "stdev": 4.833563212924107e-05
+            },
+            "cycle_p95_ms": {
+              "max": 0.01184,
+              "mean": 0.011520666666666667,
+              "median": 0.011681,
+              "min": 0.011041,
+              "n": 3,
+              "stdev": 0.00042294247047717153
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.010946542945109883,
+              "mean": -0.01592322037292308,
+              "median": -0.01605330429745777,
+              "min": -0.02076981387620158,
+              "n": 3,
+              "stdev": 0.004912927265589687
+            },
+            "invocation_median_ms": {
+              "max": 0.00256,
+              "mean": 0.0024853333333333333,
+              "median": 0.00256,
+              "min": 0.002336,
+              "n": 3,
+              "stdev": 0.0001293264602984763
+            },
+            "invocation_p95_ms": {
+              "max": 0.003456,
+              "mean": 0.0032749999999999997,
+              "median": 0.003201,
+              "min": 0.003168,
+              "n": 3,
+              "stdev": 0.00015761662348876787
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.716897116399844,
+              "mean": 4.707783244924782,
+              "median": 4.7059917799954984,
+              "min": 4.700460838379002,
+              "n": 3,
+              "stdev": 0.00836330190410692
+            },
+            "totals": {
+              "completed_requests": 9000,
+              "deadline_misses": 0,
+              "late_dispatches": 9000,
+              "maintenance_failures": 0,
+              "planned_releases": 9000,
+              "skipped_releases": 0,
+              "successful_requests": 9000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999993051671494,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 0.014208,
+                "median": 0.009184,
+                "p95": 0.01184
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.00432,
+                "median": 0.002336,
+                "p95": 0.003168
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.010946542945109883,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.6716390970032,
+                "platform_before_w": 4.696431064492425,
+                "post_idle_w": null,
+                "ready_idle_w": 4.716938322940608,
+                "steady_w": 4.7059917799954984
+              },
+              "release_to_completion_ms": {
+                "max": 0.492598,
+                "median": 0.1427095,
+                "p95": 0.36732
+              },
+              "repetition": 1,
+              "retained_last": {},
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 18.5234375,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r01-harness-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999993129171388,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 0.047585,
+                "median": 0.009089,
+                "p95": 0.011681
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.004385,
+                "median": 0.00256,
+                "p95": 0.003456
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.02076981387620158,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.658769949410162,
+                "platform_before_w": 4.692392146950396,
+                "post_idle_w": null,
+                "ready_idle_w": 4.721230652255204,
+                "steady_w": 4.700460838379002
+              },
+              "release_to_completion_ms": {
+                "max": 0.436894,
+                "median": 0.14589950000000002,
+                "p95": 0.368183
+              },
+              "repetition": 2,
+              "retained_last": {},
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 18.5234375,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r02-harness-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999991149007835,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 0.01488,
+                "median": 0.009152,
+                "p95": 0.011041
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.007937,
+                "median": 0.00256,
+                "p95": 0.003201
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.01605330429745777,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.658715360194689,
+                "platform_before_w": 4.70641073232949,
+                "post_idle_w": null,
+                "ready_idle_w": 4.732950420697302,
+                "steady_w": 4.716897116399844
+              },
+              "release_to_completion_ms": {
+                "max": 0.491139,
+                "median": 0.138513,
+                "p95": 0.368334
+              },
+              "repetition": 3,
+              "retained_last": {},
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 18.5234375,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r03-harness-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999992542472228,
+              "mean": 9.999991778151236,
+              "median": 9.999991566573778,
+              "min": 9.9999912254077,
+              "n": 3,
+              "stdev": 6.835484682027733e-07
+            },
+            "cycle_median_ms": {
+              "max": 12.5613985,
+              "mean": 12.394481166666665,
+              "median": 12.344456999999998,
+              "min": 12.277588,
+              "n": 3,
+              "stdev": 0.14837086275810124
+            },
+            "cycle_p95_ms": {
+              "max": 14.953506,
+              "mean": 14.628380666666667,
+              "median": 14.490282,
+              "min": 14.441354,
+              "n": 3,
+              "stdev": 0.282627580178109
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.02283162030749164,
+              "mean": -0.03256014127693607,
+              "median": -0.03661468528186962,
+              "min": -0.03823411824144696,
+              "n": 3,
+              "stdev": 0.008463966621350263
+            },
+            "invocation_median_ms": {
+              "max": 12.5316545,
+              "mean": 12.355781666666667,
+              "median": 12.285510500000001,
+              "min": 12.25018,
+              "n": 3,
+              "stdev": 0.15333134443447388
+            },
+            "invocation_p95_ms": {
+              "max": 14.920448,
+              "mean": 14.596668000000001,
+              "median": 14.458026,
+              "min": 14.41153,
+              "n": 3,
+              "stdev": 0.2813637961856499
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.779220827653408,
+              "mean": 4.778319575214973,
+              "median": 4.779002572973414,
+              "min": 4.776735325018099,
+              "n": 3,
+              "stdev": 0.0013763340041782412
+            },
+            "totals": {
+              "completed_requests": 9000,
+              "deadline_misses": 2,
+              "late_dispatches": 9000,
+              "maintenance_failures": 0,
+              "planned_releases": 9000,
+              "skipped_releases": 0,
+              "successful_requests": 9000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999992542472228,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 105.213083,
+                "median": 12.5613985,
+                "p95": 14.953506
+              },
+              "deadline_misses": 1,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 105.175258,
+                "median": 12.5316545,
+                "p95": 14.920448
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:1"
+              ],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.02283162030749164,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.702251203950938,
+                "platform_before_w": 4.701680340154368,
+                "post_idle_w": null,
+                "ready_idle_w": 4.802052447960899,
+                "steady_w": 4.779220827653408
+              },
+              "release_to_completion_ms": {
+                "max": 105.36052,
+                "median": 12.71965,
+                "p95": 15.112045
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 18003,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 104.2421875,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r01-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999991566573778,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 102.302543,
+                "median": 12.344456999999998,
+                "p95": 14.441354
+              },
+              "deadline_misses": 1,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 102.270606,
+                "median": 12.285510500000001,
+                "p95": 14.41153
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:1"
+              ],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.03823411824144696,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.711173529304462,
+                "platform_before_w": 4.696141114341086,
+                "post_idle_w": null,
+                "ready_idle_w": 4.814969443259546,
+                "steady_w": 4.776735325018099
+              },
+              "release_to_completion_ms": {
+                "max": 102.427224,
+                "median": 12.501080000000002,
+                "p95": 14.608185
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 18003,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 108.5078125,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r02-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.9999912254077,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 21.177406,
+                "median": 12.277588,
+                "p95": 14.490282
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 21.142525,
+                "median": 12.25018,
+                "p95": 14.458026
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.03661468528186962,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.721830843251138,
+                "platform_before_w": 4.696821187493149,
+                "post_idle_w": null,
+                "ready_idle_w": 4.815617258255283,
+                "steady_w": 4.779002572973414
+              },
+              "release_to_completion_ms": {
+                "max": 21.304611,
+                "median": 12.411482,
+                "p95": 14.649319
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 18003,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 104.2734375,
+              "successful_requests": 3000,
+              "trial_id": "attribution-r03-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 9,
+      "status_counts": {
+        "performance_failure": 2,
+        "success": 7
+      }
+    },
+    "call-profiling": {
+      "conditions": {
+        "orchestrated@10Hz/calls": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.99998245563078,
+              "mean": 9.99998245563078,
+              "median": 9.99998245563078,
+              "min": 9.99998245563078,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 12.102223,
+              "mean": 12.102223,
+              "median": 12.102223,
+              "min": 12.102223,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 16.494025,
+              "mean": 16.494025,
+              "median": 16.494025,
+              "min": 16.494025,
+              "n": 1,
+              "stdev": null
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.031218337232282067,
+              "mean": -0.031218337232282067,
+              "median": -0.031218337232282067,
+              "min": -0.031218337232282067,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 12.072109999999999,
+              "mean": 12.072109999999999,
+              "median": 12.072109999999999,
+              "min": 12.072109999999999,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 16.457608,
+              "mean": 16.457608,
+              "median": 16.457608,
+              "min": 16.457608,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.788742215786186,
+              "mean": 4.788742215786186,
+              "median": 4.788742215786186,
+              "min": 4.788742215786186,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 3000,
+              "deadline_misses": 1,
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "planned_releases": 3000,
+              "skipped_releases": 0,
+              "successful_requests": 3000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "diagnostic_not_primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.99998245563078,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 105.863153,
+                "median": 12.102223,
+                "p95": 16.494025
+              },
+              "deadline_misses": 1,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 105.8196,
+                "median": 12.072109999999999,
+                "p95": 16.457608
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:1"
+              ],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.031218337232282067,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.7147368571078045,
+                "platform_before_w": 4.704403811311912,
+                "post_idle_w": null,
+                "ready_idle_w": 4.819960553018468,
+                "steady_w": 4.788742215786186
+              },
+              "release_to_completion_ms": {
+                "max": 106.001296,
+                "median": 12.273524,
+                "p95": 16.656376
+              },
+              "repetition": 1,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 106.375,
+              "successful_requests": 3000,
+              "trial_id": "call-profiling-r01-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "intrusive_diagnostics": {
+        "call-profiling-r01-orchestrated-10hz": {
+          "allocation_checkpoints": [],
+          "call_windows": [
+            {
+              "instrumentation_ns": 21656172,
+              "label": "early",
+              "profiled_ns": 5009845317,
+              "start_elapsed_ns": 1890012
+            },
+            {
+              "instrumentation_ns": 12864214,
+              "label": "late",
+              "profiled_ns": 5000558812,
+              "start_elapsed_ns": 295002430447
+            }
+          ],
+          "errors": [],
+          "files": [
+            "workload/diagnostics/calls-early.json",
+            "workload/diagnostics/calls-early.pstats",
+            "workload/diagnostics/calls-late.json",
+            "workload/diagnostics/calls-late.pstats",
+            "workload/diagnostics/gc-events.jsonl",
+            "workload/diagnostics/diagnostics.json"
+          ],
+          "gc": {
+            "callback_errors": 0,
+            "delivery": "buffered in the callback and written outside it by request hooks and close()",
+            "dropped": 0,
+            "events_written": 123
+          },
+          "instrumentation": {
+            "close_ns": 13552972,
+            "hook_calls": 6000,
+            "hook_max_ns": 31816109,
+            "hook_total_ns": 87702948,
+            "start_ns": 1975647,
+            "total_ns": 103231567
+          },
+          "kind": "calls",
+          "late_window_reached": true,
+          "path": "workload/diagnostics/diagnostics.json",
+          "role": "diagnostic only; timings from this trial are not primary evidence"
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 1,
+      "status_counts": {
+        "performance_failure": 1
+      }
+    },
+    "local-control": {
+      "conditions": {
+        "client/connected-fault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 0,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "n": 3,
+            "stdev": 0.0
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r01-client-connected-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r02-client-connected-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r03-client-connected-fault"
+            }
+          ]
+        },
+        "client/connected-nofault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 0,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "n": 3,
+            "stdev": 0.0
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r01-client-connected-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r02-client-connected-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r03-client-connected-nofault"
+            }
+          ]
+        },
+        "client/partition-fault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 301,
+            "mean": 300.6666666666667,
+            "median": 301,
+            "min": 300,
+            "n": 3,
+            "stdev": 0.5773502691896257
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "after",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 600,
+              "steps_missed": 300,
+              "steps_succeeded": 600,
+              "trial_id": "lc-r01-client-partition-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "after",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 599,
+              "steps_missed": 301,
+              "steps_succeeded": 599,
+              "trial_id": "lc-r02-client-partition-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "after",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 599,
+              "steps_missed": 301,
+              "steps_succeeded": 599,
+              "trial_id": "lc-r03-client-partition-fault"
+            }
+          ]
+        },
+        "client/partition-nofault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 301,
+            "mean": 300.6666666666667,
+            "median": 301,
+            "min": 300,
+            "n": 3,
+            "stdev": 0.5773502691896257
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 599,
+              "steps_missed": 301,
+              "steps_succeeded": 599,
+              "trial_id": "lc-r01-client-partition-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 600,
+              "steps_missed": 300,
+              "steps_succeeded": 600,
+              "trial_id": "lc-r02-client-partition-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 599,
+              "steps_missed": 301,
+              "steps_succeeded": 599,
+              "trial_id": "lc-r03-client-partition-nofault"
+            }
+          ]
+        },
+        "local/connected-fault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 0,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "n": 3,
+            "stdev": 0.0
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r01-local-connected-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r02-local-connected-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r03-local-connected-fault"
+            }
+          ]
+        },
+        "local/connected-nofault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 0,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "n": 3,
+            "stdev": 0.0
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r01-local-connected-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r02-local-connected-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r03-local-connected-nofault"
+            }
+          ]
+        },
+        "local/partition-fault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 0,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "n": 3,
+            "stdev": 0.0
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r01-local-partition-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r02-local-partition-fault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 1,
+              "fault_consumed_phase": "during",
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r03-local-partition-fault"
+            }
+          ]
+        },
+        "local/partition-nofault": {
+          "failed_assertion_counts": {},
+          "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+          "status_counts": {
+            "success": 3
+          },
+          "steps_missed": {
+            "max": 0,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "n": 3,
+            "stdev": 0.0
+          },
+          "trials": [
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r01-local-partition-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r02-local-partition-nofault"
+            },
+            {
+              "failed_assertions": [],
+              "fallback_steps": 0,
+              "fault_consumed_phase": null,
+              "infrastructure_failures": [],
+              "status": "success",
+              "steps_executed": 900,
+              "steps_missed": 0,
+              "steps_succeeded": 900,
+              "trial_id": "lc-r03-local-partition-nofault"
+            }
+          ]
+        }
+      },
+      "kind": "local-control",
+      "planned_trials": 24,
+      "status_counts": {
+        "success": 24
+      }
+    },
+    "long-baseline": {
+      "conditions": {
+        "orchestrated@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999442939733827,
+              "mean": 9.999442444828198,
+              "median": 9.99944277666516,
+              "min": 9.999441618085605,
+              "n": 3,
+              "stdev": 7.20607613956421e-07
+            },
+            "cycle_median_ms": {
+              "max": 29.514565,
+              "mean": 28.781656333333334,
+              "median": 28.888113,
+              "min": 27.942291,
+              "n": 3,
+              "stdev": 0.7915245726933141
+            },
+            "cycle_p95_ms": {
+              "max": 47.681731,
+              "mean": 47.266742,
+              "median": 47.352057,
+              "min": 46.766438,
+              "n": 3,
+              "stdev": 0.4635723307974705
+            },
+            "idle_adjusted_power_w": {
+              "max": 0.07793529621092077,
+              "mean": 0.06966145930444838,
+              "median": 0.06661394329192039,
+              "min": 0.06443513841050397,
+              "n": 3,
+              "stdev": 0.007247694843465715
+            },
+            "invocation_median_ms": {
+              "max": 29.474211,
+              "mean": 28.742102666666668,
+              "median": 28.847599,
+              "min": 27.904498,
+              "n": 3,
+              "stdev": 0.7901562078806528
+            },
+            "invocation_p95_ms": {
+              "max": 47.640226,
+              "mean": 47.225578,
+              "median": 47.310423,
+              "min": 46.726085,
+              "n": 3,
+              "stdev": 0.46293892414550813
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.895174517250919,
+              "mean": 4.892685630302798,
+              "median": 4.8936939427558555,
+              "min": 4.889188430901619,
+              "n": 3,
+              "stdev": 0.0031178242329487783
+            },
+            "totals": {
+              "completed_requests": 53997,
+              "deadline_misses": 15,
+              "late_dispatches": 53997,
+              "maintenance_failures": 0,
+              "planned_releases": 54000,
+              "skipped_releases": 3,
+              "successful_requests": 53997,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999441618085605,
+              "completed_requests": 17999,
+              "cycle_ms": {
+                "max": 235.343566,
+                "median": 28.888113,
+                "p95": 47.681731
+              },
+              "deadline_misses": 5,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 235.307021,
+                "median": 28.847599,
+                "p95": 47.640226
+              },
+              "late_dispatches": 17999,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:1",
+                "deadline_misses:5"
+              ],
+              "planned_releases": 18000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.06443513841050397,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.7484912713157135,
+                "platform_before_w": 4.701526780236359,
+                "post_idle_w": null,
+                "ready_idle_w": 4.8292588043453515,
+                "steady_w": 4.8936939427558555
+              },
+              "release_to_completion_ms": {
+                "max": 235.711951,
+                "median": 29.102802,
+                "p95": 48.009176
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 107997,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 1,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 210.16015625,
+              "successful_requests": 17999,
+              "trial_id": "long-baseline-r01-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.99944277666516,
+              "completed_requests": 17999,
+              "cycle_ms": {
+                "max": 229.040135,
+                "median": 27.942291,
+                "p95": 47.352057
+              },
+              "deadline_misses": 5,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 229.003942,
+                "median": 27.904498,
+                "p95": 47.310423
+              },
+              "late_dispatches": 17999,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:1",
+                "deadline_misses:5"
+              ],
+              "planned_releases": 18000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.06661394329192039,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.725811800020216,
+                "platform_before_w": 4.70844780267555,
+                "post_idle_w": null,
+                "ready_idle_w": 4.822574487609699,
+                "steady_w": 4.889188430901619
+              },
+              "release_to_completion_ms": {
+                "max": 229.174532,
+                "median": 28.099107,
+                "p95": 47.661987
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 107997,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 1,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 210.26171875,
+              "successful_requests": 17999,
+              "trial_id": "long-baseline-r02-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999442939733827,
+              "completed_requests": 17999,
+              "cycle_ms": {
+                "max": 236.114215,
+                "median": 29.514565,
+                "p95": 46.766438
+              },
+              "deadline_misses": 5,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 236.074341,
+                "median": 29.474211,
+                "p95": 46.726085
+              },
+              "late_dispatches": 17999,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:1",
+                "deadline_misses:5"
+              ],
+              "planned_releases": 18000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.07793529621092077,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.717206747695791,
+                "platform_before_w": 4.707856902968517,
+                "post_idle_w": null,
+                "ready_idle_w": 4.817239221039999,
+                "steady_w": 4.895174517250919
+              },
+              "release_to_completion_ms": {
+                "max": 236.230725,
+                "median": 29.73634,
+                "p95": 47.043207
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 107997,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 1,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 210.0625,
+              "successful_requests": 17999,
+              "trial_id": "long-baseline-r03-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 3,
+      "status_counts": {
+        "performance_failure": 3
+      }
+    },
+    "paired-power": {
+      "conditions": {
+        "direct@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.99997781738254,
+              "mean": 9.999973387141399,
+              "median": 9.999976619804663,
+              "min": 9.999961160567517,
+              "n": 5,
+              "stdev": 6.988973894633727e-06
+            },
+            "cycle_median_ms": {
+              "max": 0.549985,
+              "mean": 0.4938116,
+              "median": 0.49629100000000004,
+              "min": 0.43340500000000004,
+              "n": 5,
+              "stdev": 0.04961288453416107
+            },
+            "cycle_p95_ms": {
+              "max": 0.635443,
+              "mean": 0.572883,
+              "median": 0.569525,
+              "min": 0.49384,
+              "n": 5,
+              "stdev": 0.05495644128307436
+            },
+            "idle_adjusted_power_w": {
+              "max": 0.010349659424379709,
+              "mean": 0.0019513198273214626,
+              "median": 0.007445811427950311,
+              "min": -0.024824859907440988,
+              "n": 5,
+              "stdev": 0.015048447966409053
+            },
+            "invocation_median_ms": {
+              "max": 0.5264,
+              "mean": 0.47161210000000003,
+              "median": 0.47363350000000004,
+              "min": 0.4130845,
+              "n": 5,
+              "stdev": 0.04815652460908073
+            },
+            "invocation_p95_ms": {
+              "max": 0.608563,
+              "mean": 0.5479731999999999,
+              "median": 0.544212,
+              "min": 0.471118,
+              "n": 5,
+              "stdev": 0.05349311202108175
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.7226698525510225,
+              "mean": 4.720722505049846,
+              "median": 4.721005293939347,
+              "min": 4.717071649392448,
+              "n": 5,
+              "stdev": 0.002188514637283902
+            },
+            "totals": {
+              "completed_requests": 6000,
+              "deadline_misses": 0,
+              "late_dispatches": 6000,
+              "maintenance_failures": 0,
+              "planned_releases": 6000,
+              "skipped_releases": 0,
+              "successful_requests": 6000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 5
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999976619804663,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 0.810393,
+                "median": 0.43340500000000004,
+                "p95": 0.49384
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.78172,
+                "median": 0.4130845,
+                "p95": 0.471118
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.024824859907440988,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.656366678447091,
+                "platform_before_w": 4.661115230261128,
+                "post_idle_w": 4.780879281094766,
+                "ready_idle_w": 4.714110143822162,
+                "steady_w": 4.7226698525510225
+              },
+              "release_to_completion_ms": {
+                "max": 0.894794,
+                "median": 0.570507,
+                "p95": 0.799339
+              },
+              "repetition": 1,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.0078125,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p01-1-direct-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.99997781738254,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 4.004124,
+                "median": 0.549985,
+                "p95": 0.635443
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 3.980379,
+                "median": 0.5264,
+                "p95": 0.608563
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.010349659424379709,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.700194152949723,
+                "platform_before_w": 4.710259756311166,
+                "post_idle_w": 4.707657144191917,
+                "ready_idle_w": 4.71588642628412,
+                "steady_w": 4.722121444662399
+              },
+              "release_to_completion_ms": {
+                "max": 4.123702,
+                "median": 0.6956505,
+                "p95": 0.885107
+              },
+              "repetition": 2,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 82.25,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p02-2-direct-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999974025317469,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 0.82617,
+                "median": 0.455742,
+                "p95": 0.553553
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.798969,
+                "median": 0.4347655,
+                "p95": 0.529233
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.007445811427950311,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.824147254918603,
+                "platform_before_w": 4.734774534357328,
+                "post_idle_w": 4.711264465295191,
+                "ready_idle_w": 4.7158544997276035,
+                "steady_w": 4.721005293939347
+              },
+              "release_to_completion_ms": {
+                "max": 1.05239,
+                "median": 0.6149089999999999,
+                "p95": 0.876129
+              },
+              "repetition": 3,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 82.28125,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p03-1-direct-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999977312634805,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 0.836895,
+                "median": 0.49629100000000004,
+                "p95": 0.569525
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.808222,
+                "median": 0.47363350000000004,
+                "p95": 0.544212
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.006788708756245043,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.699038552641843,
+                "platform_before_w": 4.817157332496342,
+                "post_idle_w": 4.707691937806903,
+                "ready_idle_w": 4.720219214088634,
+                "steady_w": 4.720744284704013
+              },
+              "release_to_completion_ms": {
+                "max": 0.946857,
+                "median": 0.6408175,
+                "p95": 0.757482
+              },
+              "repetition": 4,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.09765625,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p04-2-direct-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999961160567517,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 0.829213,
+                "median": 0.5336350000000001,
+                "p95": 0.612054
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.800508,
+                "median": 0.510177,
+                "p95": 0.58674
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.009997279435473239,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.662384814173767,
+                "platform_before_w": 4.6534695739842995,
+                "post_idle_w": 4.704534221119331,
+                "ready_idle_w": 4.709614518794619,
+                "steady_w": 4.717071649392448
+              },
+              "release_to_completion_ms": {
+                "max": 1.034598,
+                "median": 0.6944835,
+                "p95": 0.843964
+              },
+              "repetition": 5,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 87.99609375,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p05-1-direct-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999980945452974,
+              "mean": 9.999979110110623,
+              "median": 9.999979638791457,
+              "min": 9.999976150140215,
+              "n": 5,
+              "stdev": 1.992740397938256e-06
+            },
+            "cycle_median_ms": {
+              "max": 11.4776665,
+              "mean": 10.5221628,
+              "median": 10.382101500000001,
+              "min": 10.034998,
+              "n": 5,
+              "stdev": 0.5666815433317243
+            },
+            "cycle_p95_ms": {
+              "max": 12.946864,
+              "mean": 12.4665662,
+              "median": 12.406271,
+              "min": 11.768292,
+              "n": 5,
+              "stdev": 0.4925191964504525
+            },
+            "idle_adjusted_power_w": {
+              "max": 0.07948078667511815,
+              "mean": 0.05108069455047346,
+              "median": 0.07632779398003908,
+              "min": -0.04856292807541607,
+              "n": 5,
+              "stdev": 0.05577170706499566
+            },
+            "invocation_median_ms": {
+              "max": 11.446738,
+              "mean": 10.4945717,
+              "median": 10.356597,
+              "min": 10.007861,
+              "n": 5,
+              "stdev": 0.5647887825235643
+            },
+            "invocation_p95_ms": {
+              "max": 12.916271,
+              "mean": 12.4353652,
+              "median": 12.37203,
+              "min": 11.741539,
+              "n": 5,
+              "stdev": 0.4907996129829367
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.789501669294247,
+              "mean": 4.787895145585656,
+              "median": 4.787474443595357,
+              "min": 4.787131234829773,
+              "n": 5,
+              "stdev": 0.0009995881294629473
+            },
+            "totals": {
+              "completed_requests": 6000,
+              "deadline_misses": 0,
+              "late_dispatches": 6000,
+              "maintenance_failures": 0,
+              "planned_releases": 6000,
+              "skipped_releases": 0,
+              "successful_requests": 6000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 5
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.99998069203728,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 17.655234,
+                "median": 10.532229000000001,
+                "p95": 12.281916
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 17.622561,
+                "median": 10.5037165,
+                "p95": 12.250459
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.07948078667511815,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.692103433737646,
+                "platform_before_w": 4.717834472435213,
+                "post_idle_w": 4.7061570380227735,
+                "ready_idle_w": 4.709830275817705,
+                "steady_w": 4.787474443595357
+              },
+              "release_to_completion_ms": {
+                "max": 17.81258,
+                "median": 10.659538000000001,
+                "p95": 12.432328
+              },
+              "repetition": 1,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 91.37890625,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p01-2-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999980945452974,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 18.311926,
+                "median": 11.4776665,
+                "p95": 12.946864
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 18.277461,
+                "median": 11.446738,
+                "p95": 12.916271
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.07170566254301747,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.677773669347029,
+                "platform_before_w": 4.656945274965965,
+                "post_idle_w": 4.706585977635043,
+                "ready_idle_w": 4.724265166938468,
+                "steady_w": 4.787131234829773
+              },
+              "release_to_completion_ms": {
+                "max": 18.446602,
+                "median": 11.6336545,
+                "p95": 13.132224
+              },
+              "repetition": 2,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 91.40625,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p02-1-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999979638791457,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 16.273015,
+                "median": 10.183819,
+                "p95": 12.929488
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 16.23823,
+                "median": 10.157945999999999,
+                "p95": 12.896527
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.04856292807541607,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.690311427977059,
+                "platform_before_w": 4.706498360456323,
+                "post_idle_w": 4.704872207257014,
+                "ready_idle_w": 4.966557855197488,
+                "steady_w": 4.7871521031518345
+              },
+              "release_to_completion_ms": {
+                "max": 16.391955,
+                "median": 10.331517999999999,
+                "p95": 13.134967
+              },
+              "repetition": 3,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 93.24609375,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p03-2-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.99997812413119,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 16.320536,
+                "median": 10.034998,
+                "p95": 12.406271
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 16.286711,
+                "median": 10.007861,
+                "p95": 12.37203
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.07645215762960866,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.660865405848451,
+                "platform_before_w": 4.661811771902096,
+                "post_idle_w": 4.709764685327567,
+                "ready_idle_w": 4.7137635535273565,
+                "steady_w": 4.788216277057071
+              },
+              "release_to_completion_ms": {
+                "max": 16.674999,
+                "median": 10.184803500000001,
+                "p95": 12.559802
+              },
+              "repetition": 4,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 93.421875,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p04-1-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999976150140215,
+              "completed_requests": 1200,
+              "cycle_ms": {
+                "max": 15.440827,
+                "median": 10.382101500000001,
+                "p95": 11.768292
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 15.411418,
+                "median": 10.356597,
+                "p95": 11.741539
+              },
+              "late_dispatches": 1200,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 1200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.07632779398003908,
+                "idle_reference": "ready_worker_idle+post_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.70469798333345,
+                "platform_before_w": 4.7193001655155165,
+                "post_idle_w": 4.711084299482302,
+                "ready_idle_w": 4.715263451146115,
+                "steady_w": 4.789501669294247
+              },
+              "release_to_completion_ms": {
+                "max": 15.60629,
+                "median": 10.520230999999999,
+                "p95": 11.916879
+              },
+              "repetition": 5,
+              "retained_last": null,
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 91.43359375,
+              "successful_requests": 1200,
+              "trial_id": "paired-power-p05-2-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "paired_power": {
+        "delta_idle_adjusted_w": {
+          "max": 0.10430564658255914,
+          "mean": 0.049129374723152,
+          "median": 0.06633051454456584,
+          "min": -0.05600873950336638,
+          "n": 5,
+          "stdev": 0.06116670232588795
+        },
+        "delta_steady_w": {
+          "max": 0.07243001990179909,
+          "mean": 0.06717264053581058,
+          "median": 0.06614680921248706,
+          "min": 0.06480459104433489,
+          "n": 5,
+          "stdev": 0.0031252023663535327
+        },
+        "difference": "orchestrated_minus_direct",
+        "excluded_pairs": [],
+        "note": "Platform VDD_IN over windows with >= 90% sensor coverage; across-pair spread, signs kept, not control-plane-only power",
+        "pairs": [
+          {
+            "delta_idle_adjusted_w": 0.10430564658255914,
+            "delta_steady_w": 0.06480459104433489,
+            "idle_adjusted_w": {
+              "direct": -0.024824859907440988,
+              "orchestrated": 0.07948078667511815
+            },
+            "order": "AB",
+            "pair": 1,
+            "platform_baseline_w": 4.661115230261128,
+            "steady_w": {
+              "direct": 4.7226698525510225,
+              "orchestrated": 4.787474443595357
+            },
+            "trials": {
+              "direct": "paired-power-p01-1-direct-10hz",
+              "orchestrated": "paired-power-p01-2-orchestrated-10hz"
+            }
+          },
+          {
+            "delta_idle_adjusted_w": 0.06135600311863776,
+            "delta_steady_w": 0.06500979016737407,
+            "idle_adjusted_w": {
+              "direct": 0.010349659424379709,
+              "orchestrated": 0.07170566254301747
+            },
+            "order": "BA",
+            "pair": 2,
+            "platform_baseline_w": 4.656945274965965,
+            "steady_w": {
+              "direct": 4.722121444662399,
+              "orchestrated": 4.787131234829773
+            },
+            "trials": {
+              "direct": "paired-power-p02-2-direct-10hz",
+              "orchestrated": "paired-power-p02-1-orchestrated-10hz"
+            }
+          },
+          {
+            "delta_idle_adjusted_w": -0.05600873950336638,
+            "delta_steady_w": 0.06614680921248706,
+            "idle_adjusted_w": {
+              "direct": 0.007445811427950311,
+              "orchestrated": -0.04856292807541607
+            },
+            "order": "AB",
+            "pair": 3,
+            "platform_baseline_w": 4.734774534357328,
+            "steady_w": {
+              "direct": 4.721005293939347,
+              "orchestrated": 4.7871521031518345
+            },
+            "trials": {
+              "direct": "paired-power-p03-1-direct-10hz",
+              "orchestrated": "paired-power-p03-2-orchestrated-10hz"
+            }
+          },
+          {
+            "delta_idle_adjusted_w": 0.06966344887336362,
+            "delta_steady_w": 0.06747199235305779,
+            "idle_adjusted_w": {
+              "direct": 0.006788708756245043,
+              "orchestrated": 0.07645215762960866
+            },
+            "order": "BA",
+            "pair": 4,
+            "platform_baseline_w": 4.661811771902096,
+            "steady_w": {
+              "direct": 4.720744284704013,
+              "orchestrated": 4.788216277057071
+            },
+            "trials": {
+              "direct": "paired-power-p04-2-direct-10hz",
+              "orchestrated": "paired-power-p04-1-orchestrated-10hz"
+            }
+          },
+          {
+            "delta_idle_adjusted_w": 0.06633051454456584,
+            "delta_steady_w": 0.07243001990179909,
+            "idle_adjusted_w": {
+              "direct": 0.009997279435473239,
+              "orchestrated": 0.07632779398003908
+            },
+            "order": "AB",
+            "pair": 5,
+            "platform_baseline_w": 4.6534695739842995,
+            "steady_w": {
+              "direct": 4.717071649392448,
+              "orchestrated": 4.789501669294247
+            },
+            "trials": {
+              "direct": "paired-power-p05-1-direct-10hz",
+              "orchestrated": "paired-power-p05-2-orchestrated-10hz"
+            }
+          }
+        ]
+      },
+      "planned_trials": 10,
+      "status_counts": {
+        "success": 10
+      }
+    },
+    "pilot": {
+      "conditions": {
+        "direct@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.998648422700814,
+              "mean": 9.998648422700814,
+              "median": 9.998648422700814,
+              "min": 9.998648422700814,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 0.4331335,
+              "mean": 0.4331335,
+              "median": 0.4331335,
+              "min": 0.4331335,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 0.519664,
+              "mean": 0.519664,
+              "median": 0.519664,
+              "min": 0.519664,
+              "n": 1,
+              "stdev": null
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.5287919531581355,
+              "mean": -0.5287919531581355,
+              "median": -0.5287919531581355,
+              "min": -0.5287919531581355,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 0.414381,
+              "mean": 0.414381,
+              "median": 0.414381,
+              "min": 0.414381,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 0.498928,
+              "mean": 0.498928,
+              "median": 0.498928,
+              "min": 0.498928,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.8850809117427545,
+              "mean": 4.8850809117427545,
+              "median": 4.8850809117427545,
+              "min": 4.8850809117427545,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 20,
+              "deadline_misses": 0,
+              "late_dispatches": 20,
+              "maintenance_failures": 0,
+              "planned_releases": 20,
+              "skipped_releases": 0,
+              "successful_requests": 20,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.998648422700814,
+              "completed_requests": 20,
+              "cycle_ms": {
+                "max": 0.653173,
+                "median": 0.4331335,
+                "p95": 0.519664
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.629556,
+                "median": 0.414381,
+                "p95": 0.498928
+              },
+              "late_dispatches": 20,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 20,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.5287919531581355,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.94475586052823,
+                "platform_before_w": 4.718077618258354,
+                "post_idle_w": null,
+                "ready_idle_w": 5.41387286490089,
+                "steady_w": 4.8850809117427545
+              },
+              "release_to_completion_ms": {
+                "max": 0.865124,
+                "median": 0.575847,
+                "p95": 0.815538
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 3,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 82.16015625,
+              "successful_requests": 20,
+              "trial_id": "pilot-r01-direct-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "harness@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.998604084885105,
+              "mean": 9.998604084885105,
+              "median": 9.998604084885105,
+              "min": 9.998604084885105,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 0.0100805,
+              "mean": 0.0100805,
+              "median": 0.0100805,
+              "min": 0.0100805,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 0.013857,
+              "mean": 0.013857,
+              "median": 0.013857,
+              "min": 0.013857,
+              "n": 1,
+              "stdev": null
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.011906588949005759,
+              "mean": -0.011906588949005759,
+              "median": -0.011906588949005759,
+              "min": -0.011906588949005759,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 0.0026405,
+              "mean": 0.0026405,
+              "median": 0.0026405,
+              "min": 0.0026405,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 0.00384,
+              "mean": 0.00384,
+              "median": 0.00384,
+              "min": 0.00384,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.755985382610469,
+              "mean": 4.755985382610469,
+              "median": 4.755985382610469,
+              "min": 4.755985382610469,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 20,
+              "deadline_misses": 0,
+              "late_dispatches": 20,
+              "maintenance_failures": 0,
+              "planned_releases": 20,
+              "skipped_releases": 0,
+              "successful_requests": 20,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.998604084885105,
+              "completed_requests": 20,
+              "cycle_ms": {
+                "max": 0.035617,
+                "median": 0.0100805,
+                "p95": 0.013857
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 0.004352,
+                "median": 0.0026405,
+                "p95": 0.00384
+              },
+              "late_dispatches": 20,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 20,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.011906588949005759,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.671286990218178,
+                "platform_before_w": 4.711500488956392,
+                "post_idle_w": null,
+                "ready_idle_w": 4.767891971559475,
+                "steady_w": 4.755985382610469
+              },
+              "release_to_completion_ms": {
+                "max": 0.376925,
+                "median": 0.16028150000000002,
+                "p95": 0.371232
+              },
+              "repetition": 1,
+              "retained_last": {},
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 18.52734375,
+              "successful_requests": 20,
+              "trial_id": "pilot-r01-harness-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.997579860849134,
+              "mean": 9.997579860849134,
+              "median": 9.997579860849134,
+              "min": 9.997579860849134,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 8.549835999999999,
+              "mean": 8.549835999999999,
+              "median": 8.549835999999999,
+              "min": 8.549835999999999,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 9.339397,
+              "mean": 9.339397,
+              "median": 9.339397,
+              "min": 9.339397,
+              "n": 1,
+              "stdev": null
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.5157367560855111,
+              "mean": -0.5157367560855111,
+              "median": -0.5157367560855111,
+              "min": -0.5157367560855111,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 8.5297235,
+              "mean": 8.5297235,
+              "median": 8.5297235,
+              "min": 8.5297235,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 9.319716,
+              "mean": 9.319716,
+              "median": 9.319716,
+              "min": 9.319716,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.924635092283867,
+              "mean": 4.924635092283867,
+              "median": 4.924635092283867,
+              "min": 4.924635092283867,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 20,
+              "deadline_misses": 0,
+              "late_dispatches": 20,
+              "maintenance_failures": 0,
+              "planned_releases": 20,
+              "skipped_releases": 0,
+              "successful_requests": 20,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.997579860849134,
+              "completed_requests": 20,
+              "cycle_ms": {
+                "max": 9.825556,
+                "median": 8.549835999999999,
+                "p95": 9.339397
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 9.796851,
+                "median": 8.5297235,
+                "p95": 9.319716
+              },
+              "late_dispatches": 20,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 20,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.5157367560855111,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.702116143259712,
+                "platform_before_w": 4.692953768699905,
+                "post_idle_w": null,
+                "ready_idle_w": 5.440371848369378,
+                "steady_w": 4.924635092283867
+              },
+              "release_to_completion_ms": {
+                "max": 9.961428,
+                "median": 8.7970265,
+                "p95": 9.48683
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 123,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.9453125,
+              "successful_requests": 20,
+              "trial_id": "pilot-r01-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 3,
+      "status_counts": {
+        "success": 3
+      }
+    },
+    "sweep": {
+      "conditions": {
+        "orchestrated@10Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999992887738392,
+              "mean": 9.999989833656546,
+              "median": 9.99999272133863,
+              "min": 9.999983891892613,
+              "n": 3,
+              "stdev": 5.146391083700889e-06
+            },
+            "cycle_median_ms": {
+              "max": 12.937193,
+              "mean": 12.334258,
+              "median": 12.338486,
+              "min": 11.727094999999998,
+              "n": 3,
+              "stdev": 0.6050600791566084
+            },
+            "cycle_p95_ms": {
+              "max": 16.456313,
+              "mean": 15.754445,
+              "median": 16.156703,
+              "min": 14.650319,
+              "n": 3,
+              "stdev": 0.9678647663449691
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.003078539838926808,
+              "mean": -0.0147749836351266,
+              "median": -0.009664645766065405,
+              "min": -0.03158176530038759,
+              "n": 3,
+              "stdev": 0.01492297323855696
+            },
+            "invocation_median_ms": {
+              "max": 12.9054155,
+              "mean": 12.302961,
+              "median": 12.307253,
+              "min": 11.6962145,
+              "n": 3,
+              "stdev": 0.6046119255756126
+            },
+            "invocation_p95_ms": {
+              "max": 16.421336,
+              "mean": 15.718518666666666,
+              "median": 16.121566,
+              "min": 14.612654,
+              "n": 3,
+              "stdev": 0.9693647450579864
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.799045788928456,
+              "mean": 4.792651947286186,
+              "median": 4.798392191565468,
+              "min": 4.780517861364633,
+              "n": 3,
+              "stdev": 0.010513506943068551
+            },
+            "totals": {
+              "completed_requests": 9000,
+              "deadline_misses": 1,
+              "late_dispatches": 9000,
+              "maintenance_failures": 0,
+              "planned_releases": 9000,
+              "skipped_releases": 0,
+              "successful_requests": 9000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.99999272133863,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 22.869747,
+                "median": 12.937193,
+                "p95": 16.156703
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 22.829842,
+                "median": 12.9054155,
+                "p95": 16.121566
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.009664645766065405,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.703559644095695,
+                "platform_before_w": 4.704595419962713,
+                "post_idle_w": null,
+                "ready_idle_w": 4.808710434694522,
+                "steady_w": 4.799045788928456
+              },
+              "release_to_completion_ms": {
+                "max": 23.231618,
+                "median": 13.110623,
+                "p95": 16.348855
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 18003,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 110.15625,
+              "successful_requests": 3000,
+              "trial_id": "sweep-r01-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999992887738392,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 19.608299,
+                "median": 12.338486,
+                "p95": 14.650319
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 19.570442,
+                "median": 12.307253,
+                "p95": 14.612654
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.03158176530038759,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.687311810317742,
+                "platform_before_w": 4.700723799789348,
+                "post_idle_w": null,
+                "ready_idle_w": 4.81209962666502,
+                "steady_w": 4.780517861364633
+              },
+              "release_to_completion_ms": {
+                "max": 19.967516,
+                "median": 12.551194,
+                "p95": 14.810338
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 18003,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 104.4609375,
+              "successful_requests": 3000,
+              "trial_id": "sweep-r02-orchestrated-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999983891892613,
+              "completed_requests": 3000,
+              "cycle_ms": {
+                "max": 106.45607,
+                "median": 11.727094999999998,
+                "p95": 16.456313
+              },
+              "deadline_misses": 1,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 106.415333,
+                "median": 11.6962145,
+                "p95": 16.421336
+              },
+              "late_dispatches": 3000,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:1"
+              ],
+              "planned_releases": 3000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.003078539838926808,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.680678759864915,
+                "platform_before_w": 4.7045781728719716,
+                "post_idle_w": null,
+                "ready_idle_w": 4.801470731404395,
+                "steady_w": 4.798392191565468
+              },
+              "release_to_completion_ms": {
+                "max": 106.579398,
+                "median": 11.873146,
+                "p95": 16.730698
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 18003,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 106.109375,
+              "successful_requests": 3000,
+              "trial_id": "sweep-r03-orchestrated-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@1Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 0.9999993276737853,
+              "mean": 0.9999992611761046,
+              "median": 0.9999992667105377,
+              "min": 0.9999991891439908,
+              "n": 3,
+              "stdev": 6.943052970655104e-08
+            },
+            "cycle_median_ms": {
+              "max": 10.3935,
+              "mean": 10.223679166666667,
+              "median": 10.173746000000001,
+              "min": 10.1037915,
+              "n": 3,
+              "stdev": 0.15117124261275094
+            },
+            "cycle_p95_ms": {
+              "max": 11.331034,
+              "mean": 11.209462666666667,
+              "median": 11.187147,
+              "min": 11.110207,
+              "n": 3,
+              "stdev": 0.11209207249548626
+            },
+            "idle_adjusted_power_w": {
+              "max": -0.11026676292839177,
+              "mean": -0.1136544905370706,
+              "median": -0.11195092289835618,
+              "min": -0.11874578578446382,
+              "n": 3,
+              "stdev": 0.0044888822855143245
+            },
+            "invocation_median_ms": {
+              "max": 10.36337,
+              "mean": 10.195229666666666,
+              "median": 10.147665,
+              "min": 10.074653999999999,
+              "n": 3,
+              "stdev": 0.1501200529587351
+            },
+            "invocation_p95_ms": {
+              "max": 11.306201,
+              "mean": 11.175680333333332,
+              "median": 11.136873,
+              "min": 11.083967,
+              "n": 3,
+              "stdev": 0.1160883048775085
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.713012407832045,
+              "mean": 4.706972051248115,
+              "median": 4.705042212537867,
+              "min": 4.702861533374433,
+              "n": 3,
+              "stdev": 0.005343526096991186
+            },
+            "totals": {
+              "completed_requests": 900,
+              "deadline_misses": 0,
+              "late_dispatches": 900,
+              "maintenance_failures": 0,
+              "planned_releases": 900,
+              "skipped_releases": 0,
+              "successful_requests": 900,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 0.9999991891439908,
+              "completed_requests": 300,
+              "cycle_ms": {
+                "max": 15.065532,
+                "median": 10.1037915,
+                "p95": 11.110207
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 15.039547,
+                "median": 10.074653999999999,
+                "p95": 11.083967
+              },
+              "late_dispatches": 300,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 300,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.11026676292839177,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.70141487363752,
+                "platform_before_w": 4.70300704394173,
+                "post_idle_w": null,
+                "ready_idle_w": 4.823279170760436,
+                "steady_w": 4.713012407832045
+              },
+              "release_to_completion_ms": {
+                "max": 15.248836,
+                "median": 10.286456000000001,
+                "p95": 11.331586
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 1803,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 89.19140625,
+              "successful_requests": 300,
+              "trial_id": "sweep-r01-orchestrated-1hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 0.9999993276737853,
+              "completed_requests": 300,
+              "cycle_ms": {
+                "max": 14.74262,
+                "median": 10.173746000000001,
+                "p95": 11.187147
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 14.715611,
+                "median": 10.147665,
+                "p95": 11.136873
+              },
+              "late_dispatches": 300,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 300,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.11195092289835618,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.725131644584015,
+                "platform_before_w": 4.706139857739146,
+                "post_idle_w": null,
+                "ready_idle_w": 4.814812456272789,
+                "steady_w": 4.702861533374433
+              },
+              "release_to_completion_ms": {
+                "max": 14.918137,
+                "median": 10.385901,
+                "p95": 11.485095
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 1803,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 85.328125,
+              "successful_requests": 300,
+              "trial_id": "sweep-r02-orchestrated-1hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 0.9999992667105377,
+              "completed_requests": 300,
+              "cycle_ms": {
+                "max": 14.202448,
+                "median": 10.3935,
+                "p95": 11.331034
+              },
+              "deadline_misses": 0,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 14.167663,
+                "median": 10.36337,
+                "p95": 11.306201
+              },
+              "late_dispatches": 300,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 300,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.11874578578446382,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.6969806962375715,
+                "platform_before_w": 4.700784147043061,
+                "post_idle_w": null,
+                "ready_idle_w": 4.823787998322331,
+                "steady_w": 4.705042212537867
+              },
+              "release_to_completion_ms": {
+                "max": 14.376425,
+                "median": 10.583041,
+                "p95": 11.584017
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 1803,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 0,
+              "status": "success",
+              "steady_tree_rss_max_mib": 87.0703125,
+              "successful_requests": 300,
+              "trial_id": "sweep-r03-orchestrated-1hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@25Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 24.989978706955444,
+              "mean": 24.98997652075098,
+              "median": 24.989976335325412,
+              "min": 24.98997451997208,
+              "n": 3,
+              "stdev": 2.0996414941826166e-06
+            },
+            "cycle_median_ms": {
+              "max": 16.083197,
+              "mean": 15.453509666666665,
+              "median": 15.540034,
+              "min": 14.737298,
+              "n": 3,
+              "stdev": 0.677108466011416
+            },
+            "cycle_p95_ms": {
+              "max": 24.011191,
+              "mean": 23.370822,
+              "median": 23.683031,
+              "min": 22.418244,
+              "n": 3,
+              "stdev": 0.8411158546615316
+            },
+            "idle_adjusted_power_w": {
+              "max": 0.14726961783876558,
+              "mean": 0.14525136032624855,
+              "median": 0.1463160338937195,
+              "min": 0.1421684292462606,
+              "n": 3,
+              "stdev": 0.0027121354350454507
+            },
+            "invocation_median_ms": {
+              "max": 16.049083,
+              "mean": 15.420741333333334,
+              "median": 15.506916,
+              "min": 14.706225,
+              "n": 3,
+              "stdev": 0.6755638066995102
+            },
+            "invocation_p95_ms": {
+              "max": 23.969622,
+              "mean": 23.333808333333334,
+              "median": 23.64572,
+              "min": 22.386083,
+              "n": 3,
+              "stdev": 0.8365797074889726
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 4.953686749007024,
+              "mean": 4.949344813549908,
+              "median": 4.947874691341308,
+              "min": 4.946473000301392,
+              "n": 3,
+              "stdev": 0.0038249819709594486
+            },
+            "totals": {
+              "completed_requests": 22491,
+              "deadline_misses": 9,
+              "late_dispatches": 22491,
+              "maintenance_failures": 0,
+              "planned_releases": 22500,
+              "skipped_releases": 9,
+              "successful_requests": 22491,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 24.989976335325412,
+              "completed_requests": 7497,
+              "cycle_ms": {
+                "max": 143.755712,
+                "median": 16.083197,
+                "p95": 24.011191
+              },
+              "deadline_misses": 3,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 143.716222,
+                "median": 16.049083,
+                "p95": 23.969622
+              },
+              "late_dispatches": 7497,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:3",
+                "deadline_misses:3"
+              ],
+              "planned_releases": 7500,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.1421684292462606,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.744420290621689,
+                "platform_before_w": 4.706905051647508,
+                "post_idle_w": null,
+                "ready_idle_w": 4.811518319760763,
+                "steady_w": 4.953686749007024
+              },
+              "release_to_completion_ms": {
+                "max": 143.87369,
+                "median": 16.20343,
+                "p95": 24.14107
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 44985,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 3,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 136.07421875,
+              "successful_requests": 7497,
+              "trial_id": "sweep-r01-orchestrated-25hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 24.98997451997208,
+              "completed_requests": 7497,
+              "cycle_ms": {
+                "max": 143.003432,
+                "median": 14.737298,
+                "p95": 22.418244
+              },
+              "deadline_misses": 3,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 142.967335,
+                "median": 14.706225,
+                "p95": 22.386083
+              },
+              "late_dispatches": 7497,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:3",
+                "deadline_misses:3"
+              ],
+              "planned_releases": 7500,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.1463160338937195,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.7184678218803295,
+                "platform_before_w": 4.691742306293455,
+                "post_idle_w": null,
+                "ready_idle_w": 4.800156966407672,
+                "steady_w": 4.946473000301392
+              },
+              "release_to_completion_ms": {
+                "max": 143.115586,
+                "median": 14.854741,
+                "p95": 22.546786
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 44985,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 3,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 135.86328125,
+              "successful_requests": 7497,
+              "trial_id": "sweep-r02-orchestrated-25hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 24.989978706955444,
+              "completed_requests": 7497,
+              "cycle_ms": {
+                "max": 145.028588,
+                "median": 15.540034,
+                "p95": 23.683031
+              },
+              "deadline_misses": 3,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 144.993387,
+                "median": 15.506916,
+                "p95": 23.64572
+              },
+              "late_dispatches": 7497,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:3",
+                "deadline_misses:3"
+              ],
+              "planned_releases": 7500,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.14726961783876558,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.729147829403522,
+                "platform_before_w": 4.684159724602193,
+                "post_idle_w": null,
+                "ready_idle_w": 4.800605073502543,
+                "steady_w": 4.947874691341308
+              },
+              "release_to_completion_ms": {
+                "max": 145.147783,
+                "median": 15.653165,
+                "p95": 23.81156
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 44985,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 3,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 136.07421875,
+              "successful_requests": 7497,
+              "trial_id": "sweep-r03-orchestrated-25hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@50Hz": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 45.42996211610602,
+              "mean": 45.37572328341101,
+              "median": 45.36631152954391,
+              "min": 45.33089620458311,
+              "n": 3,
+              "stdev": 0.05019909899198706
+            },
+            "cycle_median_ms": {
+              "max": 17.131646,
+              "mean": 16.963236333333334,
+              "median": 16.961368,
+              "min": 16.796695,
+              "n": 3,
+              "stdev": 0.16748331589245946
+            },
+            "cycle_p95_ms": {
+              "max": 28.996084,
+              "mean": 28.951482666666667,
+              "median": 28.958259,
+              "min": 28.900105,
+              "n": 3,
+              "stdev": 0.048346986776151187
+            },
+            "idle_adjusted_power_w": {
+              "max": 0.5748431201685156,
+              "mean": 0.5693037303449365,
+              "median": 0.5745864137475287,
+              "min": 0.5584816571187652,
+              "n": 3,
+              "stdev": 0.009373069200166208
+            },
+            "invocation_median_ms": {
+              "max": 17.102045,
+              "mean": 16.9327555,
+              "median": 16.925975,
+              "min": 16.7702465,
+              "n": 3,
+              "stdev": 0.16600314013822218
+            },
+            "invocation_p95_ms": {
+              "max": 28.963699,
+              "mean": 28.918084333333333,
+              "median": 28.921458,
+              "min": 28.869096,
+              "n": 3,
+              "stdev": 0.04739164612390363
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "steady_power_w": {
+              "max": 5.389270724955915,
+              "mean": 5.380516946976817,
+              "median": 5.377231988014957,
+              "min": 5.375048127959579,
+              "n": 3,
+              "stdev": 0.007659228607756073
+            },
+            "totals": {
+              "completed_requests": 40840,
+              "deadline_misses": 16269,
+              "late_dispatches": 40840,
+              "maintenance_failures": 0,
+              "planned_releases": 45000,
+              "skipped_releases": 4160,
+              "successful_requests": 40840,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 3
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 45.42996211610602,
+              "completed_requests": 13629,
+              "cycle_ms": {
+                "max": 176.313925,
+                "median": 16.961368,
+                "p95": 28.958259
+              },
+              "deadline_misses": 5412,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 176.277732,
+                "median": 16.925975,
+                "p95": 28.921458
+              },
+              "late_dispatches": 13629,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:1371",
+                "deadline_misses:5412"
+              ],
+              "planned_releases": 15000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.5584816571187652,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.751144194290381,
+                "platform_before_w": 4.704735647816165,
+                "post_idle_w": null,
+                "ready_idle_w": 4.818750330896192,
+                "steady_w": 5.377231988014957
+              },
+              "release_to_completion_ms": {
+                "max": 194.166755,
+                "median": 17.096793,
+                "p95": 42.971535
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 81777,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 1371,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 179.22265625,
+              "successful_requests": 13629,
+              "trial_id": "sweep-r01-orchestrated-50hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 45.36631152954391,
+              "completed_requests": 13611,
+              "cycle_ms": {
+                "max": 174.967034,
+                "median": 17.131646,
+                "p95": 28.996084
+              },
+              "deadline_misses": 5498,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 174.928696,
+                "median": 17.102045,
+                "p95": 28.963699
+              },
+              "late_dispatches": 13611,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:1389",
+                "deadline_misses:5498"
+              ],
+              "planned_releases": 15000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.5748431201685156,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.78781660107848,
+                "platform_before_w": 4.697090788798636,
+                "post_idle_w": null,
+                "ready_idle_w": 4.800205007791064,
+                "steady_w": 5.375048127959579
+              },
+              "release_to_completion_ms": {
+                "max": 186.975757,
+                "median": 17.26244,
+                "p95": 43.166915
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 81669,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 1389,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 181.04296875,
+              "successful_requests": 13611,
+              "trial_id": "sweep-r02-orchestrated-50hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 45.33089620458311,
+              "completed_requests": 13600,
+              "cycle_ms": {
+                "max": 178.905064,
+                "median": 16.796695,
+                "p95": 28.900105
+              },
+              "deadline_misses": 5359,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 178.861543,
+                "median": 16.7702465,
+                "p95": 28.869096
+              },
+              "late_dispatches": 13600,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:1400",
+                "deadline_misses:5359"
+              ],
+              "planned_releases": 15000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.5745864137475287,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.78050950486231,
+                "platform_before_w": 4.697922610497269,
+                "post_idle_w": null,
+                "ready_idle_w": 4.814684311208386,
+                "steady_w": 5.389270724955915
+              },
+              "release_to_completion_ms": {
+                "max": 197.280313,
+                "median": 16.9345405,
+                "p95": 43.094567
+              },
+              "repetition": 3,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 81603,
+                "lifecycle.states": 3
+              },
+              "skipped_releases": 1400,
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 179.0,
+              "successful_requests": 13600,
+              "trial_id": "sweep-r03-orchestrated-50hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 12,
+      "status_counts": {
+        "performance_failure": 7,
+        "success": 5
+      }
+    }
+  },
+  "phases_without_output": [],
+  "schema_version": 1
+}

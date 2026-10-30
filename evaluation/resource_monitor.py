@@ -3,11 +3,49 @@
 from __future__ import annotations
 
 import json
+import os
+import signal
+import subprocess
 import time
 from pathlib import Path
 from statistics import mean
 
 import psutil
+
+
+def _group_exists(pgid: int) -> bool:
+    try:
+        os.killpg(pgid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
+def stop_process_group(process: subprocess.Popen, grace_s: float = 3.0, poll_s: float = 0.02) -> dict:
+    """Stop an owned session leader and anything left in its group; a vanished group is the normal end state."""
+    record = {"root_exited_before_stop": process.poll() is not None, "signals": [], "permission_denied": False}
+    for signum in (signal.SIGTERM, signal.SIGKILL):
+        if not _group_exists(process.pid):
+            break
+        try:
+            os.killpg(process.pid, signum)
+        except ProcessLookupError:
+            break
+        except PermissionError:
+            record["permission_denied"] = True
+            break
+        record["signals"].append(signum.name)
+        deadline = time.monotonic() + grace_s
+        while time.monotonic() < deadline and (process.poll() is None or _group_exists(process.pid)):
+            time.sleep(poll_s)
+    try:
+        process.wait(timeout=grace_s)
+    except subprocess.TimeoutExpired:
+        pass
+    record.update(returncode=process.returncode, root_reaped=process.returncode is not None, group_remaining=_group_exists(process.pid))
+    return record
 
 
 class ProcessTreeSampler:
@@ -117,13 +155,50 @@ def thermal_guard_limit() -> tuple[float, list[dict]]:
     return min([80.0, *[trip["temperature_c"] - 5 for trip in trips]]), trips
 
 
+def memory_guard_reason(available_bytes: int, tree_rss_sum_kib: float, *, reserve_bytes: int = 1024 ** 3, limit_kib: int = 1024 ** 2) -> str | None:
+    if available_bytes < reserve_bytes:
+        return "system_memory_reserve"
+    if tree_rss_sum_kib > limit_kib:
+        return "workload_resident_memory_limit"
+    return None
+
+
+def valid_window(bounds) -> bool:
+    return isinstance(bounds, (list, tuple)) and len(bounds) == 2 and all(type(value) is int for value in bounds) and bounds[0] < bounds[1]
+
+
+def read_samples(path: Path) -> tuple[list[dict], int]:
+    """Read timestamped JSON lines, counting (not failing on) lines truncated by an interrupted writer."""
+    rows, rejected = [], 0
+    if not path.exists():
+        return rows, rejected
+    with path.open(encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                rejected += 1
+                continue
+            if isinstance(row, dict) and type(row.get("monotonic_ns")) is int:
+                rows.append(row)
+            else:
+                rejected += 1
+    return rows, rejected
+
+
 def summarize_profile(folder: Path, windows: dict, interval_ms: int) -> dict:
     from evaluation.evaluate_tegra_resources import power_integral
 
-    power_samples = [json.loads(line) for line in (folder / "tegrastats.jsonl").read_text().splitlines()]
-    snapshots = [json.loads(line) for line in (folder / "process_tree.jsonl").read_text().splitlines()]
+    power_samples, power_rejected = read_samples(folder / "tegrastats.jsonl")
+    snapshots, tree_rejected = read_samples(folder / "process_tree.jsonl")
     result = {}
-    for name, (started, finished) in windows.items():
+    ignored = sorted(name for name, bounds in windows.items() if not valid_window(bounds))
+    for name, bounds in windows.items():
+        if name in ignored:
+            continue
+        started, finished = bounds
         selected = [sample for sample in power_samples if started <= sample["monotonic_ns"] <= finished]
         tree = [sample for sample in snapshots if started <= sample["monotonic_ns"] <= finished]
         safe_power = []
@@ -170,6 +245,8 @@ def summarize_profile(folder: Path, windows: dict, interval_ms: int) -> dict:
         }
     return {
         "windows": result,
+        "ignored_windows": ignored,
+        "rejected_lines": {"tegrastats": power_rejected, "process_tree": tree_rejected},
         "limitations": [
             "Whole-command interval includes imports, warmup, execution, output and plotting; it is not pure control-plane cost.",
             "Sampled process trees can miss children that start and exit between samples; summed RSS double-counts shared pages.",

@@ -1,0 +1,147 @@
+{
+  "config": {
+    "ambient_temperature_c": null,
+    "cooldown_s": 60,
+    "cooling": "Developer-kit fan and heatsink, open air",
+    "desktop_comparison": false,
+    "interval_ms": 250,
+    "phases": {
+      "allocation-profiling": {
+        "diagnostic_counts": false,
+        "duration_s": 300,
+        "idle_s": 3,
+        "implemented": true,
+        "intrusive_profile": "allocation",
+        "kind": "sustained",
+        "modes": [
+          "direct",
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 1
+      },
+      "attribution": {
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "implemented": true,
+        "kind": "sustained",
+        "modes": [
+          "harness",
+          "direct",
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 3
+      },
+      "call-profiling": {
+        "diagnostic_counts": false,
+        "duration_s": 300,
+        "idle_s": 3,
+        "implemented": true,
+        "intrusive_profile": "calls",
+        "kind": "sustained",
+        "modes": [
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 1
+      },
+      "local-control": {
+        "backend": "pinned",
+        "duration_s": 90,
+        "implemented": true,
+        "kind": "local-control",
+        "rate_hz": 10,
+        "repetitions": 3,
+        "seed": 20261029,
+        "timeout_margin_s": 120
+      },
+      "long-baseline": {
+        "diagnostic_counts": true,
+        "duration_s": 1800,
+        "idle_s": 3,
+        "implemented": true,
+        "kind": "sustained",
+        "modes": [
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 3
+      },
+      "paired-power": {
+        "active_s": 120,
+        "diagnostic_counts": false,
+        "implemented": true,
+        "kind": "paired-power",
+        "modes": [
+          "direct",
+          "orchestrated"
+        ],
+        "pairs": 5,
+        "platform_baseline_s": 60,
+        "post_idle_s": 60,
+        "pre_idle_s": 60,
+        "rate_hz": 10
+      },
+      "pilot": {
+        "diagnostic_counts": true,
+        "duration_s": 2,
+        "idle_s": 0,
+        "implemented": true,
+        "kind": "sustained",
+        "modes": [
+          "harness",
+          "direct",
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 1
+      },
+      "sweep": {
+        "diagnostic_counts": true,
+        "duration_s": 300,
+        "idle_s": 3,
+        "implemented": true,
+        "kind": "sustained",
+        "modes": [
+          "orchestrated"
+        ],
+        "rates_hz": [
+          1,
+          10,
+          25,
+          50
+        ],
+        "repetitions": 3
+      }
+    },
+    "platform_idle_s": 3,
+    "schema_version": 2,
+    "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb"
+  },
+  "phase": "long-baseline",
+  "python": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/bin/python",
+  "source_sha256": {
+    "evaluation/__init__.py": "4b8a0aed470cbad89dacdc0136a7cc4ae25813e23495366d911fac51c594705a",
+    "evaluation/evaluate_tegra_resources.py": "dc0560d6a93a540c8a0dbcda3ec8e42491c3cc5ba00822809ec09961b1c66539",
+    "evaluation/growth_diagnostics.py": "41583828ca62e9086693e121b752442ffd80fc0e26916f6e0e38d0346f3b3e74",
+    "evaluation/local_control_experiment.py": "e0a0bb48340c791e3a8bf65ac94c35ffcb53e0f031e281f3e84697c2ff313f19",
+    "evaluation/operating_limits.py": "a53650a6074ffccf1a133ae35aff5f3c9e7349a352c28e4639007646e2e72346",
+    "evaluation/reproduce_original.py": "7bee5a290bbfbeab02e01dc0ba895f468f8e58c63ddf25460388cdefddebf78c",
+    "evaluation/resource_monitor.py": "32eb09e8aabf57fdb72765cc549b74a702fc2f9741ff74a61e308f0d851c2528",
+    "evaluation/summarize_profiles.py": "3bb153e5a2f1c59d84120a37de2af29bbe1adc86ea2080c419dbe915acff1520",
+    "evaluation/upstream_sustained.py": "560e4cc753883bcd01542d5605d8dee8140341c9ebcf4b74537ff4084d20c2bd"
+  },
+  "upstream": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1"
+}

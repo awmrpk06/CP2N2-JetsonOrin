@@ -1,0 +1,70 @@
+{
+  "calls": {
+    "late_window_reached": true,
+    "late_window_start_s": 295.0,
+    "windows": [
+      {
+        "end_clock_ns": 34466072216521,
+        "instrumentation_ns": 21656172,
+        "label": "early",
+        "profiled_ns": 5009845317,
+        "start_clock_ns": 34461062371204,
+        "start_elapsed_ns": 1890012
+      },
+      {
+        "end_clock_ns": 34761063470451,
+        "instrumentation_ns": 12864214,
+        "label": "late",
+        "profiled_ns": 5000558812,
+        "start_clock_ns": 34756062911639,
+        "start_elapsed_ns": 295002430447
+      }
+    ]
+  },
+  "clock": {
+    "is_default_monotonic_ns": true,
+    "name": "time.monotonic_ns",
+    "unit": "ns"
+  },
+  "closed_clock_ns": 34761076875098,
+  "completed_requests": 3000,
+  "elapsed_ns": 300016393906,
+  "errors": [],
+  "files": [
+    "calls-early.json",
+    "calls-early.pstats",
+    "calls-late.json",
+    "calls-late.pstats",
+    "gc-events.jsonl",
+    "diagnostics.json"
+  ],
+  "gc": {
+    "callback_errors": 0,
+    "delivery": "buffered in the callback and written outside it by request hooks and close()",
+    "dropped": 0,
+    "events_written": 123
+  },
+  "instrumentation": {
+    "close_ns": 13552972,
+    "hook_calls": 6000,
+    "hook_max_ns": 31816109,
+    "hook_total_ns": 87702948,
+    "start_ns": 1975647,
+    "total_ns": 103231567
+  },
+  "intrusive": true,
+  "kind": "calls",
+  "python": "3.12.15",
+  "schema_version": 1,
+  "scope": "Diagnostics only. Allocation and calls kinds are intrusive (tracemalloc, cProfile, gc callbacks); timings from such runs are not primary evidence.",
+  "settings": {
+    "allocation_checkpoint_s": 60,
+    "duration_s": 300.0,
+    "gc_buffer_limit": 10000,
+    "interval_s": 10,
+    "profile_window_s": 5,
+    "top_n": 25,
+    "traceback_frames": 1
+  },
+  "started_clock_ns": 34461060481192
+}

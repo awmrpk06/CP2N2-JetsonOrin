@@ -1,0 +1,219 @@
+{
+  "clock_ns": 33774335821906,
+  "compared_to": "allocation-start.tracemalloc",
+  "elapsed_ns": 60005718770,
+  "filtered_total_count": 222,
+  "filtered_total_size_bytes": 157638,
+  "key_type": "lineno",
+  "label": "60s",
+  "raw_snapshot": "allocation-60s.tracemalloc",
+  "scope": "Diagnostics only. Allocation and calls kinds are intrusive (tracemalloc, cProfile, gc callbacks); timings from such runs are not primary evidence.",
+  "top_differences": [
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/csv.py",
+      "line": 164,
+      "size_bytes": 131072,
+      "size_diff_bytes": 131072
+    },
+    {
+      "count": 78,
+      "count_diff": 78,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "line": 54,
+      "size_bytes": 9360,
+      "size_diff_bytes": 9360
+    },
+    {
+      "count": 13,
+      "count_diff": 13,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/pathlib.py",
+      "line": 1013,
+      "size_bytes": 5243,
+      "size_diff_bytes": 5243
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/re/_compiler.py",
+      "line": 766,
+      "size_bytes": 2736,
+      "size_diff_bytes": 2736
+    },
+    {
+      "count": 22,
+      "count_diff": 22,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 254,
+      "size_bytes": 880,
+      "size_diff_bytes": 880
+    },
+    {
+      "count": 3,
+      "count_diff": 3,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "line": 147,
+      "size_bytes": 816,
+      "size_diff_bytes": 816
+    },
+    {
+      "count": 4,
+      "count_diff": 4,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "line": 374,
+      "size_bytes": 656,
+      "size_diff_bytes": 656
+    },
+    {
+      "count": 4,
+      "count_diff": 4,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/twins/edge_twin.py",
+      "line": 52,
+      "size_bytes": 624,
+      "size_diff_bytes": 624
+    },
+    {
+      "count": 3,
+      "count_diff": 3,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "line": 364,
+      "size_bytes": 424,
+      "size_diff_bytes": 424
+    },
+    {
+      "count": 5,
+      "count_diff": 5,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/pydantic/main.py",
+      "line": 280,
+      "size_bytes": 376,
+      "size_diff_bytes": 376
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 334,
+      "size_bytes": 368,
+      "size_diff_bytes": 368
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/__init__.py",
+      "line": 173,
+      "size_bytes": 304,
+      "size_diff_bytes": 304
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/twins/edge_twin.py",
+      "line": 56,
+      "size_bytes": 296,
+      "size_diff_bytes": 296
+    },
+    {
+      "count": 3,
+      "count_diff": 3,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/fnmatch.py",
+      "line": 70,
+      "size_bytes": 272,
+      "size_diff_bytes": 272
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/fnmatch.py",
+      "line": 185,
+      "size_bytes": 259,
+      "size_diff_bytes": 259
+    },
+    {
+      "count": 3,
+      "count_diff": 3,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/runtimes/twin_runtimes.py",
+      "line": 53,
+      "size_bytes": 224,
+      "size_diff_bytes": 224
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/pathlib.py",
+      "line": 432,
+      "size_bytes": 202,
+      "size_diff_bytes": 202
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/fnmatch.py",
+      "line": 46,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/csv.py",
+      "line": 149,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 414,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 342,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 278,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 224,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "line": 225,
+      "size_bytes": 160,
+      "size_diff_bytes": 160
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/pathlib.py",
+      "line": 404,
+      "size_bytes": 125,
+      "size_diff_bytes": 125
+    }
+  ],
+  "total_count_diff": 222,
+  "total_size_diff_bytes": 157638,
+  "traceback_limit": 1,
+  "traced_current_bytes": 173893,
+  "traced_peak_bytes": 210693,
+  "tracemalloc_overhead_bytes": 51360
+}

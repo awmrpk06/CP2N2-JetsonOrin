@@ -1,0 +1,219 @@
+{
+  "clock_ns": 34145497220353,
+  "compared_to": "allocation-start.tracemalloc",
+  "elapsed_ns": 60005592143,
+  "filtered_total_count": 32151,
+  "filtered_total_size_bytes": 4757767,
+  "key_type": "lineno",
+  "label": "60s",
+  "raw_snapshot": "allocation-60s.tracemalloc",
+  "scope": "Diagnostics only. Allocation and calls kinds are intrusive (tracemalloc, cProfile, gc callbacks); timings from such runs are not primary evidence.",
+  "top_differences": [
+    {
+      "count": 14523,
+      "count_diff": 14523,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/pydantic/main.py",
+      "line": 280,
+      "size_bytes": 3609377,
+      "size_diff_bytes": 3609377
+    },
+    {
+      "count": 3600,
+      "count_diff": 3600,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "line": 233,
+      "size_bytes": 259200,
+      "size_diff_bytes": 259200
+    },
+    {
+      "count": 3600,
+      "count_diff": 3600,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "line": 224,
+      "size_bytes": 172800,
+      "size_diff_bytes": 172800
+    },
+    {
+      "count": 2170,
+      "count_diff": 2170,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "line": 253,
+      "size_bytes": 137016,
+      "size_diff_bytes": 137016
+    },
+    {
+      "count": 11,
+      "count_diff": 11,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/csv.py",
+      "line": 164,
+      "size_bytes": 133516,
+      "size_diff_bytes": 133516
+    },
+    {
+      "count": 3345,
+      "count_diff": 3345,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "line": 228,
+      "size_bytes": 107040,
+      "size_diff_bytes": 107040
+    },
+    {
+      "count": 1906,
+      "count_diff": 1906,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "line": 242,
+      "size_bytes": 91488,
+      "size_diff_bytes": 91488
+    },
+    {
+      "count": 600,
+      "count_diff": 600,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "line": 446,
+      "size_bytes": 61200,
+      "size_diff_bytes": 61200
+    },
+    {
+      "count": 950,
+      "count_diff": 950,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/json/encoder.py",
+      "line": 258,
+      "size_bytes": 53200,
+      "size_diff_bytes": 53200
+    },
+    {
+      "count": 600,
+      "count_diff": 600,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/uuid.py",
+      "line": 282,
+      "size_bytes": 46200,
+      "size_diff_bytes": 46200
+    },
+    {
+      "count": 1,
+      "count_diff": 1,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "line": 244,
+      "size_bytes": 29280,
+      "size_diff_bytes": 29280
+    },
+    {
+      "count": 404,
+      "count_diff": 404,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/descriptors/resource_contract.py",
+      "line": 142,
+      "size_bytes": 20200,
+      "size_diff_bytes": 20200
+    },
+    {
+      "count": 12,
+      "count_diff": 12,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/pathlib.py",
+      "line": 1013,
+      "size_bytes": 5184,
+      "size_diff_bytes": 5184
+    },
+    {
+      "count": 35,
+      "count_diff": 35,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "line": 71,
+      "size_bytes": 4200,
+      "size_diff_bytes": 4200
+    },
+    {
+      "count": 61,
+      "count_diff": 61,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/queue.py",
+      "line": 165,
+      "size_bytes": 3904,
+      "size_diff_bytes": 3904
+    },
+    {
+      "count": 61,
+      "count_diff": 61,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/queue.py",
+      "line": 54,
+      "size_bytes": 2928,
+      "size_diff_bytes": 2928
+    },
+    {
+      "count": 2,
+      "count_diff": 2,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/re/_compiler.py",
+      "line": 766,
+      "size_bytes": 2736,
+      "size_diff_bytes": 2736
+    },
+    {
+      "count": 49,
+      "count_diff": 49,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/descriptors/resource_contract.py",
+      "line": 336,
+      "size_bytes": 2450,
+      "size_diff_bytes": 2450
+    },
+    {
+      "count": 35,
+      "count_diff": 35,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "line": 151,
+      "size_bytes": 1960,
+      "size_diff_bytes": 1960
+    },
+    {
+      "count": 13,
+      "count_diff": 13,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "line": 51,
+      "size_bytes": 1560,
+      "size_diff_bytes": 1560
+    },
+    {
+      "count": 8,
+      "count_diff": 8,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "line": 54,
+      "size_bytes": 960,
+      "size_diff_bytes": 960
+    },
+    {
+      "count": 3,
+      "count_diff": 3,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "line": 147,
+      "size_bytes": 816,
+      "size_diff_bytes": 816
+    },
+    {
+      "count": 4,
+      "count_diff": 4,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "line": 374,
+      "size_bytes": 656,
+      "size_diff_bytes": 656
+    },
+    {
+      "count": 10,
+      "count_diff": 10,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "line": 218,
+      "size_bytes": 640,
+      "size_diff_bytes": 640
+    },
+    {
+      "count": 4,
+      "count_diff": 4,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/twins/edge_twin.py",
+      "line": 52,
+      "size_bytes": 624,
+      "size_diff_bytes": 624
+    }
+  ],
+  "total_count_diff": 32151,
+  "total_size_diff_bytes": 4757767,
+  "traceback_limit": 1,
+  "traced_current_bytes": 4775363,
+  "traced_peak_bytes": 7456940,
+  "tracemalloc_overhead_bytes": 1608928
+}

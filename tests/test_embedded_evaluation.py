@@ -596,7 +596,8 @@ def test_sustained_stage_does_not_modify_original_entry_points(tmp_path):
     assert stage_command("overhead", tmp_path, duration_s=999)[1:] == ["-m", "evaluation.evaluate_overhead"]
     command = stage_command("sustained", tmp_path, duration_s=2, rate_hz=10)
     assert "upstream_sustained.py" in command[1]
-    assert command[-4:] == ["--duration-s", "2", "--rate-hz", "10"]
+    assert command[command.index("--duration-s") + 1] == "2"
+    assert command[command.index("--rate-hz") + 1] == "10"
 
 
 def test_sustained_schedule_skips_releases_missed_during_sleep():
@@ -664,3 +665,116 @@ def test_results_export_does_not_write_a_manuscript(tmp_path, monkeypatch):
     assert not (tmp_path / "paper.pdf").exists()
     assert (tmp_path / "v511-results.json").exists()
     assert (tmp_path / "results-manifest.json").exists()
+
+
+def test_operating_cycle_deadline_miss_does_not_mean_skipped_arrival():
+    from evaluation.upstream_sustained import execute_cycle
+
+    times = iter([0, 109_000_000, 109_000_000, 110_000_000, 111_000_000])
+    row = execute_cycle("harness", None, None, None, 0, 100_000_000, clock=lambda: next(times))
+    assert row["invocation_ms"] == 109
+    assert row["reset_ms"] == row["recalibrate_ms"] == 1
+    assert row["cycle_ms"] == 111
+    assert row["deadline_missed"]
+    assert row["dispatch_lateness_ms"] == 0
+
+
+def test_operating_cycle_keeps_prepare_and_both_maintenance_failures():
+    from evaluation.upstream_sustained import execute_cycle
+
+    calls = []
+
+    def failed_reset():
+        calls.append("reset")
+        raise RuntimeError("reset failed")
+
+    adapter = SimpleNamespace(
+        prepare=lambda task: SimpleNamespace(prepared=False, details="not ready"),
+        reset=failed_reset, recalibrate=lambda: calls.append("recalibrate") or False,
+        backend_id=lambda: "edge-backend",
+    )
+    row = execute_cycle("direct", None, adapter, None, 0, 100_000_000)
+    assert not row["success"]
+    assert row["error_phase"] == "prepare"
+    assert row["backend_invoke_ms"] is None
+    assert row["reset_error"] == "RuntimeError: reset failed"
+    assert not row["maintenance_ok"]
+    assert calls == ["reset", "recalibrate"]
+
+
+def test_interrupted_run_does_not_count_future_slots_as_misses():
+    from evaluation.upstream_sustained import arrival_accounting
+
+    result = arrival_accounting(0, 550_000_000, 1_000_000_000, 100_000_000, 5)
+    assert result == {"planned_releases": 10, "arrived_releases": 6, "skipped_releases": 1, "unreleased_slots": 4}
+
+
+def test_retained_counts_never_query_or_copy_history():
+    from threading import RLock
+
+    from evaluation.growth_diagnostics import retained_counts
+
+    def forbidden_history():
+        raise AssertionError("History must not be queried for diagnostics")
+
+    lifecycle = SimpleNamespace(_lock=RLock(), _states={"edge": 1}, _history=[1, 2, 3], history=forbidden_history)
+    leases = SimpleNamespace(_lock=RLock(), _leases_by_resource={}, _resource_by_lease={})
+    idempotency = SimpleNamespace(_lock=RLock(), _entries={})
+    orchestrator = SimpleNamespace(registry=SimpleNamespace(lifecycle_store=lifecycle, lease_store=leases, idempotency_store=idempotency))
+    snapshot = retained_counts(orchestrator)
+    assert snapshot["collections"]["lifecycle.history"] == 3
+    assert snapshot["collections"]["idempotency.entries"] == 0
+    assert retained_counts(None)["control_plane_present"] is False
+
+
+def test_operating_cycle_failure_is_not_labeled_as_harness():
+    from evaluation.upstream_sustained import execute_cycle
+
+    def fail(task):
+        raise RuntimeError("injected")
+
+    adapter = SimpleNamespace(reset=lambda: True, recalibrate=lambda: True)
+    row = execute_cycle("orchestrated", SimpleNamespace(execute_task=fail), adapter, None, 0, 1)
+    assert not row["success"]
+    assert row["selected_backend"] is None
+    assert row["error_code"] == "RuntimeError"
+
+
+def test_memory_guards_report_limits_without_treating_growth_as_failure():
+    from evaluation.resource_monitor import memory_guard_reason
+
+    assert memory_guard_reason(2 * 1024 ** 3, 200 * 1024) is None
+    assert memory_guard_reason(512 * 1024 ** 2, 200 * 1024) == "system_memory_reserve"
+    assert memory_guard_reason(2 * 1024 ** 3, 2 * 1024 ** 2) == "workload_resident_memory_limit"
+
+
+def test_operating_limits_matrix_is_bounded_and_unimplemented_phases_fail():
+    from evaluation.operating_limits import trial_specs
+
+    config = json.loads((ROOT / "docs/experiments/operating-limits/plan.json").read_text())
+    assert len(trial_specs(config, "attribution")) == 9
+    assert len(trial_specs(config, "long-baseline")) == 3
+    assert len(trial_specs(config, "sweep")) == 12
+    assert sum(row["duration_s"] for row in trial_specs(config, "long-baseline")) == 5400
+    assert len(trial_specs(config, "local-control")) == 24
+    config["phases"]["local-control"]["implemented"] = False
+    with pytest.raises(ValueError, match="not implemented"):
+        trial_specs(config, "local-control")
+
+
+def test_operating_analysis_reports_cycle_quantiles_and_distinct_misses(tmp_path):
+    from evaluation.operating_limits import summarize_requests
+
+    workload = tmp_path / "workload"
+    workload.mkdir()
+    (workload / "summary.json").write_text(json.dumps({
+        "mode": "harness", "completed_requests": 2, "successful_requests": 2,
+        "skipped_releases": 0, "deadline_misses": 1, "late_dispatches": 0,
+        "unreleased_slots": 0, "completed_duration": True, "achieved_requests_per_s": 10,
+    }))
+    (workload / "requests.csv").write_text("deadline_missed,invocation_ms,cycle_ms\nFalse,1,2\nTrue,109,111\n")
+    result = summarize_requests(tmp_path)
+    assert result["skipped_releases"] == 0
+    assert result["deadline_misses"] == 1
+    assert result["metrics"]["cycle_ms"]["median"] == 56.5
+    assert result["metrics"]["cycle_ms"]["p95"] is None

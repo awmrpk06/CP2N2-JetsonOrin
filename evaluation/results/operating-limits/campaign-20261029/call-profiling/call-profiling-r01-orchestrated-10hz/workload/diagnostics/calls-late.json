@@ -1,0 +1,239 @@
+{
+  "end_clock_ns": 34761063470451,
+  "label": "late",
+  "profiled_ns": 5000558812,
+  "profiler_timer": "cProfile default timer",
+  "pstats": "calls-late.pstats",
+  "scope": "Diagnostics only. Allocation and calls kinds are intrusive (tracemalloc, cProfile, gc callbacks); timings from such runs are not primary evidence.",
+  "sort": "cumulative",
+  "start_clock_ns": 34756062911639,
+  "start_elapsed_ns": 295002430447,
+  "threads": "calling thread only",
+  "top_cumulative": [
+    {
+      "cumulative_time_s": 3.6396364730000004,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "function": "scheduled_slots",
+      "line": 223,
+      "own_time_s": 0.001303342,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 3.637638932,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "function": "wait",
+      "line": 91,
+      "own_time_s": 0.00044826800000000004,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 3.6371057990000004,
+      "file": "~",
+      "function": "<built-in method time.sleep>",
+      "line": 0,
+      "own_time_s": 3.6371057990000004,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 1.343323641,
+      "file": "/home/uit/Projects/phys-mcp/evaluation/upstream_sustained.py",
+      "function": "execute_cycle",
+      "line": 106,
+      "own_time_s": 0.002792506,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 1.337947597,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "execute_task",
+      "line": 228,
+      "own_time_s": 0.001196416,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 1.320203035,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "_execute_task_once",
+      "line": 279,
+      "own_time_s": 0.001914328,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 0.958489239,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "_execute_candidate",
+      "line": 375,
+      "own_time_s": 0.009877443000000001,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 0.45849673300000005,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/pydantic/main.py",
+      "function": "model_copy",
+      "line": 410,
+      "own_time_s": 0.007141098,
+      "primitive_calls": 1950,
+      "total_calls": 1950
+    },
+    {
+      "cumulative_time_s": 0.441184471,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/pydantic/main.py",
+      "function": "__deepcopy__",
+      "line": 1053,
+      "own_time_s": 0.024850649000000002,
+      "primitive_calls": 1650,
+      "total_calls": 1650
+    },
+    {
+      "cumulative_time_s": 0.40332595400000004,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "function": "deepcopy",
+      "line": 118,
+      "own_time_s": 0.169586213,
+      "primitive_calls": 3300,
+      "total_calls": 34800
+    },
+    {
+      "cumulative_time_s": 0.375627396,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "function": "_deepcopy_dict",
+      "line": 217,
+      "own_time_s": 0.029913328000000003,
+      "primitive_calls": 1650,
+      "total_calls": 1650
+    },
+    {
+      "cumulative_time_s": 0.370942994,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "_history",
+      "line": 1411,
+      "own_time_s": 0.000234121,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 0.37068483900000004,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "function": "history",
+      "line": 247,
+      "own_time_s": 0.292093569,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 0.358099477,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "plan_task",
+      "line": 144,
+      "own_time_s": 0.001644599,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 0.301728418,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "_selection_runtime_snapshot",
+      "line": 160,
+      "own_time_s": 0.008986552,
+      "primitive_calls": 50,
+      "total_calls": 50
+    },
+    {
+      "cumulative_time_s": 0.24951693100000003,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "function": "snapshot",
+      "line": 167,
+      "own_time_s": 0.006113679,
+      "primitive_calls": 900,
+      "total_calls": 900
+    },
+    {
+      "cumulative_time_s": 0.243754138,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/twin_registry.py",
+      "function": "resource_contract_for",
+      "line": 134,
+      "own_time_s": 0.007735041000000001,
+      "primitive_calls": 150,
+      "total_calls": 150
+    },
+    {
+      "cumulative_time_s": 0.242709997,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/execution.py",
+      "function": "run_with_timeout",
+      "line": 24,
+      "own_time_s": 0.008359945,
+      "primitive_calls": 300,
+      "total_calls": 300
+    },
+    {
+      "cumulative_time_s": 0.22412162500000002,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/orchestrator.py",
+      "function": "_transition",
+      "line": 1349,
+      "own_time_s": 0.002274386,
+      "primitive_calls": 250,
+      "total_calls": 250
+    },
+    {
+      "cumulative_time_s": 0.207334809,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/adapters/base_adapter.py",
+      "function": "resource_contract",
+      "line": 115,
+      "own_time_s": 0.02646582,
+      "primitive_calls": 200,
+      "total_calls": 200
+    },
+    {
+      "cumulative_time_s": 0.197007856,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/threading.py",
+      "function": "start",
+      "line": 975,
+      "own_time_s": 0.0037284930000000003,
+      "primitive_calls": 300,
+      "total_calls": 300
+    },
+    {
+      "cumulative_time_s": 0.19512395200000002,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "function": "_reconstruct",
+      "line": 247,
+      "own_time_s": 0.038973091,
+      "primitive_calls": 1800,
+      "total_calls": 5100
+    },
+    {
+      "cumulative_time_s": 0.180962694,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1/core/lifecycle.py",
+      "function": "transition",
+      "line": 177,
+      "own_time_s": 0.011374213000000001,
+      "primitive_calls": 300,
+      "total_calls": 300
+    },
+    {
+      "cumulative_time_s": 0.180890564,
+      "file": "/root/.local/share/uv/python/cpython-3.12.15-linux-aarch64-gnu/lib/python3.12/copy.py",
+      "function": "<genexpr>",
+      "line": 252,
+      "own_time_s": 0.018567180000000003,
+      "primitive_calls": 5400,
+      "total_calls": 15300
+    },
+    {
+      "cumulative_time_s": 0.17474312,
+      "file": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/lib/python3.12/site-packages/pydantic/main.py",
+      "function": "__init__",
+      "line": 270,
+      "own_time_s": 0.013176076,
+      "primitive_calls": 7650,
+      "total_calls": 7650
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{"estimate": {"active_s": 15966.0, "assumptions": "platform baselines before and after each sustained trial, 10 s start/teardown per sustained trial, 15 s per local-control trial, 60 s cooldown between consecutive trials", "estimated_wall_h": 6.28, "estimated_wall_s": 22597.0, "trials": 64}, "event": "campaign_started", "monotonic_ns": 30158838255340, "phases": ["pilot", "attribution", "allocation-profiling", "call-profiling", "long-baseline", "sweep", "local-control", "paired-power"], "utc": "2026-10-29T17:42:19.252810+00:00"}
+{"diagnostics_path": "workload/diagnostics/diagnostics.json", "event": "intrusive_preflight", "failures": [], "monotonic_ns": 30159506873230, "profile": "allocation", "returncode": 0, "stderr_tail": "", "utc": "2026-10-29T17:42:19.921414+00:00"}
+{"diagnostics_path": "workload/diagnostics/diagnostics.json", "event": "intrusive_preflight", "failures": [], "monotonic_ns": 30160230806518, "profile": "calls", "returncode": 0, "stderr_tail": "", "utc": "2026-10-29T17:42:20.645344+00:00"}
+{"event": "phase_started", "monotonic_ns": 30160234763762, "phase": "pilot", "utc": "2026-10-29T17:42:20.649322+00:00"}
+{"accounted": 3, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 30309161599154, "phase": "pilot", "planned": 3, "utc": "2026-10-29T17:44:49.576162+00:00"}
+{"event": "phase_started", "monotonic_ns": 30309163051392, "phase": "attribution", "utc": "2026-10-29T17:44:49.577617+00:00"}
+{"accounted": 9, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 33646708803416, "phase": "attribution", "planned": 9, "utc": "2026-10-29T18:40:27.123366+00:00"}
+{"event": "phase_started", "monotonic_ns": 33646710228741, "phase": "allocation-profiling", "utc": "2026-10-29T18:40:27.124799+00:00"}
+{"accounted": 2, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 34393408737963, "phase": "allocation-profiling", "planned": 2, "utc": "2026-10-29T18:52:53.823301+00:00"}
+{"event": "phase_started", "monotonic_ns": 34393410016883, "phase": "call-profiling", "utc": "2026-10-29T18:52:53.824586+00:00"}
+{"accounted": 1, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 34764757124470, "phase": "call-profiling", "planned": 1, "utc": "2026-10-29T18:59:05.171687+00:00"}
+{"event": "phase_started", "monotonic_ns": 34764758396670, "phase": "long-baseline", "utc": "2026-10-29T18:59:05.172965+00:00"}
+{"accounted": 3, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 40381275802974, "phase": "long-baseline", "planned": 3, "utc": "2026-10-29T20:32:41.690360+00:00"}
+{"event": "phase_started", "monotonic_ns": 40381277804253, "phase": "sweep", "utc": "2026-10-29T20:32:41.692367+00:00"}
+{"accounted": 12, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 44836856605679, "phase": "sweep", "planned": 12, "utc": "2026-10-29T21:46:57.271169+00:00"}
+{"event": "phase_started", "monotonic_ns": 44836857919543, "phase": "local-control", "utc": "2026-10-29T21:46:57.272489+00:00"}
+{"accounted": 24, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 48513058580735, "phase": "local-control", "planned": 24, "utc": "2026-10-29T22:48:13.473139+00:00"}
+{"event": "phase_started", "monotonic_ns": 48513059967754, "phase": "paired-power", "utc": "2026-10-29T22:48:13.474532+00:00"}
+{"accounted": 10, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 52165734829075, "phase": "paired-power", "planned": 10, "utc": "2026-10-29T23:49:06.149388+00:00"}

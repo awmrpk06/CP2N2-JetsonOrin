@@ -1,0 +1,98 @@
+{
+  "allocation": {
+    "checkpoints": [
+      {
+        "clock_ns": 34085493516270,
+        "elapsed_ns": 1888060,
+        "filtered_total_count": 0,
+        "filtered_total_size_bytes": 0,
+        "instrumentation_ns": 3236518,
+        "label": "start",
+        "raw_snapshot": "allocation-start.tracemalloc",
+        "total_count_diff": 0,
+        "total_size_diff_bytes": 0,
+        "traced_current_bytes": 5833,
+        "traced_peak_bytes": 11023,
+        "tracemalloc_overhead_bytes": 12432
+      },
+      {
+        "clock_ns": 34145497220353,
+        "elapsed_ns": 60005592143,
+        "filtered_total_count": 32151,
+        "filtered_total_size_bytes": 4757767,
+        "instrumentation_ns": 999934773,
+        "label": "60s",
+        "raw_snapshot": "allocation-60s.tracemalloc",
+        "total_count_diff": 32151,
+        "total_size_diff_bytes": 4757767,
+        "traced_current_bytes": 4775363,
+        "traced_peak_bytes": 7456940,
+        "tracemalloc_overhead_bytes": 1608928
+      },
+      {
+        "clock_ns": 34385497668468,
+        "elapsed_ns": 300006040258,
+        "filtered_total_count": 132664,
+        "filtered_total_size_bytes": 21567490,
+        "instrumentation_ns": 4049216653,
+        "label": "end",
+        "raw_snapshot": "allocation-end.tracemalloc",
+        "total_count_diff": 132664,
+        "total_size_diff_bytes": 21567490,
+        "traced_current_bytes": 21590006,
+        "traced_peak_bytes": 27937893,
+        "tracemalloc_overhead_bytes": 8519584
+      }
+    ],
+    "traceback_limit": 1,
+    "tracemalloc_preexisting": false
+  },
+  "clock": {
+    "is_default_monotonic_ns": true,
+    "name": "time.monotonic_ns",
+    "unit": "ns"
+  },
+  "closed_clock_ns": 34389638590323,
+  "completed_requests": 2991,
+  "elapsed_ns": 304146962113,
+  "errors": [],
+  "files": [
+    "allocation-60s.json",
+    "allocation-60s.tracemalloc",
+    "allocation-end.json",
+    "allocation-end.tracemalloc",
+    "allocation-start.json",
+    "allocation-start.tracemalloc",
+    "gc-events.jsonl",
+    "diagnostics.json"
+  ],
+  "gc": {
+    "callback_errors": 0,
+    "delivery": "buffered in the callback and written outside it by request hooks and close()",
+    "dropped": 0,
+    "events_written": 108
+  },
+  "instrumentation": {
+    "close_ns": 4140958464,
+    "hook_calls": 5982,
+    "hook_max_ns": 1000199614,
+    "hook_total_ns": 1071469253,
+    "start_ns": 5143779,
+    "total_ns": 5217571496
+  },
+  "intrusive": true,
+  "kind": "allocation",
+  "python": "3.12.15",
+  "schema_version": 1,
+  "scope": "Diagnostics only. Allocation and calls kinds are intrusive (tracemalloc, cProfile, gc callbacks); timings from such runs are not primary evidence.",
+  "settings": {
+    "allocation_checkpoint_s": 60,
+    "duration_s": 300.0,
+    "gc_buffer_limit": 10000,
+    "interval_s": 10,
+    "profile_window_s": 5,
+    "top_n": 25,
+    "traceback_frames": 1
+  },
+  "started_clock_ns": 34085491628210
+}

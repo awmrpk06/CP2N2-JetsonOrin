@@ -1,0 +1,1 @@
+{"body": {"duplicate": false, "job": {"committed": 0, "executed": 0, "job_id": "lc-r02-local-connected-fault-job", "missed": 0, "mode": "local", "owner": "campaign-client", "plan_hash": "78b9126d2b4f8c73c8e5f2e0382f4c0159d9c3d53d4ef58e678d6810cdf4be66", "state": "running", "steps": 900}}, "event": "start_response", "ns": 47196549060980, "status": 201}

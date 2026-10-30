@@ -11,6 +11,8 @@ Any previously published manuscript is an earlier working draft, not the current
 interpretation of these experiments or an accepted publication.
 
 - [Results index and reproduction guide](docs/embedded-feasibility/README.md)
+- [October 29 operating-limits campaign: verified results](evaluation/results/operating-limits/campaign-20261029/results-summary.md)
+- [Long-run, load-sweep, local-control and power run guide](docs/experiments/operating-limits/README.md)
 - [Original-paper protocol and comparison](docs/embedded-feasibility/original-protocol.md)
 - [CPU, memory, temperature, GPU and power report](evaluation/results/upstream-profile-20261024/profile-report.md)
 - [Resource measurement protocol](docs/embedded-feasibility/upstream-resource-protocol.md)
@@ -21,6 +23,14 @@ remains incomplete. A separate five-minute run completed 3,000 requests at 10 Hz
 but showed rising memory, CPU and latency. Raw observations, failures, plots,
 tables, complete software-simulator recordings and checksum manifests are retained.
 This is evidence about embedded feasibility and its limits, not Jetson superiority.
+
+The October 29 campaign completed all 64 planned trials, including three
+30-minute runs, repeated 1/10/25/50 Hz loads, 24 local-control scenarios, and five
+direct/orchestrated power pairs. All trial archives verified without infrastructure
+failures. Fourteen trials recorded performance-limit events such as completion
+deadline misses or skipped releases; they are completed measurements, not missing
+or discarded trials. The linked summary keeps these outcomes and the diagnostic
+profiles separate from ordinary timing measurements.
 
 `phys-MCP` is a substrate-aware control-plane prototype for exposing heterogeneous **physical neural network (PNN)** resources as discoverable, invocable, and monitorable software-visible backends.
 

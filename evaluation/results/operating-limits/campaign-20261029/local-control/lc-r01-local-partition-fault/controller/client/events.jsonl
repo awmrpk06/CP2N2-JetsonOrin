@@ -1,0 +1,3 @@
+{"body": {"duplicate": false, "job": {"committed": 0, "executed": 0, "job_id": "lc-r01-local-partition-fault-job", "missed": 0, "mode": "local", "owner": "campaign-client", "plan_hash": "2cc746b4663e80c161dfe6e766de9fa563088f8606b3171e714b706c2aefd86b", "state": "running", "steps": 900}}, "event": "start_response", "ns": 45205350519495, "status": 201}
+{"error": "RemoteDisconnected('Remote end closed connection without response')", "event": "poll_link_lost", "ns": 45235577015013}
+{"cursor": 604, "event": "reconnected_and_reconciled", "job_state": "running", "ns": 45265654710178}

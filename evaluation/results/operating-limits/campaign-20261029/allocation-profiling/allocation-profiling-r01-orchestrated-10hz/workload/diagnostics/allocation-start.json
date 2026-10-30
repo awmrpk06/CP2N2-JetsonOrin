@@ -1,0 +1,18 @@
+{
+  "clock_ns": 34085493516270,
+  "compared_to": null,
+  "elapsed_ns": 1888060,
+  "filtered_total_count": 0,
+  "filtered_total_size_bytes": 0,
+  "key_type": "lineno",
+  "label": "start",
+  "raw_snapshot": "allocation-start.tracemalloc",
+  "scope": "Diagnostics only. Allocation and calls kinds are intrusive (tracemalloc, cProfile, gc callbacks); timings from such runs are not primary evidence.",
+  "top_differences": [],
+  "total_count_diff": 0,
+  "total_size_diff_bytes": 0,
+  "traceback_limit": 1,
+  "traced_current_bytes": 5833,
+  "traced_peak_bytes": 11023,
+  "tracemalloc_overhead_bytes": 12432
+}

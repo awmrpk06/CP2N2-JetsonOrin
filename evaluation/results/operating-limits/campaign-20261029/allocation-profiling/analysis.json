@@ -1,0 +1,773 @@
+{
+  "phase": "allocation-profiling",
+  "planned_trials": 2,
+  "status_counts": {
+    "performance_failure": 1,
+    "success": 1
+  },
+  "trials": {
+    "allocation-profiling-r01-direct-10hz": {
+      "diagnostics": {
+        "intrusive": {
+          "allocation_checkpoints": [
+            {
+              "elapsed_ns": 1946461,
+              "label": "start",
+              "raw_snapshot": "allocation-start.tracemalloc",
+              "total_count_diff": 0,
+              "total_size_diff_bytes": 0,
+              "traced_current_bytes": 5827,
+              "traced_peak_bytes": 11017,
+              "tracemalloc_overhead_bytes": 12432
+            },
+            {
+              "elapsed_ns": 60005718770,
+              "label": "60s",
+              "raw_snapshot": "allocation-60s.tracemalloc",
+              "total_count_diff": 222,
+              "total_size_diff_bytes": 157638,
+              "traced_current_bytes": 173893,
+              "traced_peak_bytes": 210693,
+              "tracemalloc_overhead_bytes": 51360
+            },
+            {
+              "elapsed_ns": 300005892510,
+              "label": "end",
+              "raw_snapshot": "allocation-end.tracemalloc",
+              "total_count_diff": 225,
+              "total_size_diff_bytes": 153632,
+              "traced_current_bytes": 173014,
+              "traced_peak_bytes": 218540,
+              "tracemalloc_overhead_bytes": 57184
+            }
+          ],
+          "call_windows": [],
+          "errors": [],
+          "files": [
+            "workload/diagnostics/allocation-60s.json",
+            "workload/diagnostics/allocation-60s.tracemalloc",
+            "workload/diagnostics/allocation-end.json",
+            "workload/diagnostics/allocation-end.tracemalloc",
+            "workload/diagnostics/allocation-start.json",
+            "workload/diagnostics/allocation-start.tracemalloc",
+            "workload/diagnostics/gc-events.jsonl",
+            "workload/diagnostics/diagnostics.json"
+          ],
+          "gc": {
+            "callback_errors": 0,
+            "delivery": "buffered in the callback and written outside it by request hooks and close()",
+            "dropped": 0,
+            "events_written": 1
+          },
+          "instrumentation": {
+            "close_ns": 26375426,
+            "hook_calls": 6000,
+            "hook_max_ns": 21757744,
+            "hook_total_ns": 68110013,
+            "start_ns": 5203620,
+            "total_ns": 99689059
+          },
+          "kind": "allocation",
+          "late_window_reached": null,
+          "path": "workload/diagnostics/diagnostics.json",
+          "role": "diagnostic only; timings from this trial are not primary evidence"
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [],
+      "primary_timing": false,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 304.551435847,
+          "energy_j": 1434.0469940024423,
+          "max_temperature_c": 55.0,
+          "mean_power_w": 4.708718545404843,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 3.2448861999423797,
+          "tree_pss_max_mib": 75.4755859375,
+          "tree_rss_max_mib": 82.91796875
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9535589292935768,
+          "duration_s": 3.000089035,
+          "energy_j": 13.433227810902743,
+          "max_temperature_c": 54.875,
+          "mean_power_w": 4.6956822259089,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.8333333333333334,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9058202691388788,
+          "duration_s": 3.000098996,
+          "energy_j": 12.76642175311683,
+          "max_temperature_c": 54.812,
+          "mean_power_w": 4.69776802568055,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.6515151515151515,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.006170868,
+          "energy_j": 14.456928518502224,
+          "max_temperature_c": 54.875,
+          "mean_power_w": 4.809084098443277,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.621212121212121,
+          "tree_pss_max_mib": 75.072265625,
+          "tree_rss_max_mib": 82.34765625
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000327951,
+          "energy_j": 1411.5409429747197,
+          "max_temperature_c": 55.0,
+          "mean_power_w": 4.70513133307398,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 3.139473684210526,
+          "tree_pss_max_mib": 75.4755859375,
+          "tree_rss_max_mib": 82.91796875
+        }
+      },
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 311.01061461099744,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 34017797775563,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            33710048951004,
+            34014600386851
+          ],
+          "platform_after": [
+            34014600390083,
+            34017600479118
+          ],
+          "platform_before": [
+            33707048447739,
+            33710048546735
+          ],
+          "ready_worker_idle": [
+            33711329413721,
+            33714335584589
+          ],
+          "steady_workload": [
+            33714335584589,
+            34014335912540
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": false,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "allocation",
+        "kind": "sustained",
+        "mode": "direct",
+        "phase": "allocation-profiling",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 1,
+        "trial_id": "allocation-profiling-r01-direct-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.999989068311951,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 3000,
+        "deadline_misses": 0,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 3000,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": 1.52456,
+            "mean": 0.82398774,
+            "median": 0.822234,
+            "missing": 0,
+            "p95": 0.917917,
+            "samples": 3000,
+            "supported": true
+          },
+          "cycle_ms": {
+            "max": 1.84265,
+            "mean": 1.0563428306666667,
+            "median": 1.0512335,
+            "missing": 0,
+            "p95": 1.180645,
+            "samples": 3000,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": 1.770712,
+            "mean": 0.9933434563333333,
+            "median": 0.9880795,
+            "missing": 0,
+            "p95": 1.11306,
+            "samples": 3000,
+            "supported": true
+          },
+          "dispatch_lateness_ms": {
+            "max": 22.027478,
+            "mean": 0.298891309,
+            "median": 0.2661885,
+            "missing": 0,
+            "p95": 0.513031,
+            "samples": 3000,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 1.770712,
+            "mean": 0.9933434563333333,
+            "median": 0.9880795,
+            "missing": 0,
+            "p95": 1.11306,
+            "samples": 3000,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 3000,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "prepare_ms": {
+            "max": 0.244424,
+            "mean": 0.077174543,
+            "median": 0.0745305,
+            "missing": 0,
+            "p95": 0.097155,
+            "samples": 3000,
+            "supported": true
+          },
+          "recalibrate_ms": {
+            "max": 0.062146,
+            "mean": 0.019054655,
+            "median": 0.019137,
+            "missing": 0,
+            "p95": 0.020897,
+            "samples": 3000,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 23.092727,
+            "mean": 1.3552341396666667,
+            "median": 1.334332,
+            "missing": 0,
+            "p95": 1.545959,
+            "samples": 3000,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.045282,
+            "mean": 0.022274280333333334,
+            "median": 0.022305,
+            "missing": 0,
+            "p95": 0.025025,
+            "samples": 3000,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": 0.105091,
+            "mean": 0.041835598333333335,
+            "median": 0.042017,
+            "missing": 0,
+            "p95": 0.045826,
+            "samples": 3000,
+            "supported": true
+          }
+        },
+        "mode": "direct",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": null,
+        "retained_last": null,
+        "skipped_releases": 0,
+        "success_fraction": 1.0,
+        "successful_requests": 3000,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    },
+    "allocation-profiling-r01-orchestrated-10hz": {
+      "diagnostics": {
+        "intrusive": {
+          "allocation_checkpoints": [
+            {
+              "elapsed_ns": 1888060,
+              "label": "start",
+              "raw_snapshot": "allocation-start.tracemalloc",
+              "total_count_diff": 0,
+              "total_size_diff_bytes": 0,
+              "traced_current_bytes": 5833,
+              "traced_peak_bytes": 11023,
+              "tracemalloc_overhead_bytes": 12432
+            },
+            {
+              "elapsed_ns": 60005592143,
+              "label": "60s",
+              "raw_snapshot": "allocation-60s.tracemalloc",
+              "total_count_diff": 32151,
+              "total_size_diff_bytes": 4757767,
+              "traced_current_bytes": 4775363,
+              "traced_peak_bytes": 7456940,
+              "tracemalloc_overhead_bytes": 1608928
+            },
+            {
+              "elapsed_ns": 300006040258,
+              "label": "end",
+              "raw_snapshot": "allocation-end.tracemalloc",
+              "total_count_diff": 132664,
+              "total_size_diff_bytes": 21567490,
+              "traced_current_bytes": 21590006,
+              "traced_peak_bytes": 27937893,
+              "tracemalloc_overhead_bytes": 8519584
+            }
+          ],
+          "call_windows": [],
+          "errors": [],
+          "files": [
+            "workload/diagnostics/allocation-60s.json",
+            "workload/diagnostics/allocation-60s.tracemalloc",
+            "workload/diagnostics/allocation-end.json",
+            "workload/diagnostics/allocation-end.tracemalloc",
+            "workload/diagnostics/allocation-start.json",
+            "workload/diagnostics/allocation-start.tracemalloc",
+            "workload/diagnostics/gc-events.jsonl",
+            "workload/diagnostics/diagnostics.json"
+          ],
+          "gc": {
+            "callback_errors": 0,
+            "delivery": "buffered in the callback and written outside it by request hooks and close()",
+            "dropped": 0,
+            "events_written": 108
+          },
+          "instrumentation": {
+            "close_ns": 4140958464,
+            "hook_calls": 5982,
+            "hook_max_ns": 1000199614,
+            "hook_total_ns": 1071469253,
+            "start_ns": 5143779,
+            "total_ns": 5217571496
+          },
+          "kind": "allocation",
+          "late_window_reached": null,
+          "path": "workload/diagnostics/diagnostics.json",
+          "role": "diagnostic only; timings from this trial are not primary evidence"
+        }
+      },
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "performance_failures": [
+        "skipped_releases:9",
+        "deadline_misses:2"
+      ],
+      "primary_timing": false,
+      "resources": {
+        "command": {
+          "coverage_fraction": 1.0,
+          "duration_s": 308.959429742,
+          "energy_j": 1510.28398969644,
+          "max_temperature_c": 55.812,
+          "mean_power_w": 4.888292262054016,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 8.600851063829786,
+          "tree_pss_max_mib": 135.99609375,
+          "tree_rss_max_mib": 143.68359375
+        },
+        "platform_after": {
+          "coverage_fraction": 0.9550471689072917,
+          "duration_s": 3.000091334,
+          "energy_j": 13.540109247590756,
+          "max_temperature_c": 55.75,
+          "mean_power_w": 4.725664336041484,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.5151515151515151,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "platform_before": {
+          "coverage_fraction": 0.9051574425062772,
+          "duration_s": 3.000100298,
+          "energy_j": 12.74211383770054,
+          "max_temperature_c": 54.843,
+          "mean_power_w": 4.69225472120358,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 0.8333333333333334,
+          "tree_pss_max_mib": null,
+          "tree_rss_max_mib": null
+        },
+        "ready_worker_idle": {
+          "coverage_fraction": 1.0,
+          "duration_s": 3.006341903,
+          "energy_j": 14.44364211383182,
+          "max_temperature_c": 54.937,
+          "mean_power_w": 4.804391043952335,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 2.6515151515151514,
+          "tree_pss_max_mib": 77.087890625,
+          "tree_rss_max_mib": 84.38671875
+        },
+        "steady_workload": {
+          "coverage_fraction": 1.0,
+          "duration_s": 300.000548309,
+          "energy_j": 1464.2421051638137,
+          "max_temperature_c": 55.812,
+          "mean_power_w": 4.8807980965943,
+          "power_gaps": 0,
+          "system_cpu_mean_percent": 8.431931054630441,
+          "tree_pss_max_mib": 115.31640625,
+          "tree_rss_max_mib": 122.80078125
+        }
+      },
+      "status": "performance_failure",
+      "terminal": {
+        "elapsed_s": 315.44349724399945,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 34393358375667,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "ignored_windows": {},
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": true,
+        "profile_complete": true,
+        "profile_error": null,
+        "returncode": 0,
+        "stage": "sustained",
+        "timed_out": false,
+        "upstream_sources_unchanged": true,
+        "windows_ns": {
+          "command": [
+            34081197325598,
+            34390156755340
+          ],
+          "platform_after": [
+            34390156758540,
+            34393156849874
+          ],
+          "platform_before": [
+            34078196792998,
+            34081196893296
+          ],
+          "ready_worker_idle": [
+            34082490697006,
+            34085497038909
+          ],
+          "steady_workload": [
+            34085497038909,
+            34385497587218
+          ]
+        },
+        "workload_summary_error": null
+      },
+      "trial": {
+        "baseline_s": 3,
+        "diagnostic_counts": false,
+        "duration_s": 300,
+        "idle_s": 3,
+        "intrusive_profile": "allocation",
+        "kind": "sustained",
+        "mode": "orchestrated",
+        "phase": "allocation-profiling",
+        "post_idle_s": 0,
+        "rate_hz": 10,
+        "repetition": 1,
+        "trial_id": "allocation-profiling-r01-orchestrated-10hz"
+      },
+      "workload": {
+        "achieved_requests_per_s": 9.969981777897537,
+        "arrived_releases": 3000,
+        "completed_duration": true,
+        "completed_requests": 2991,
+        "deadline_misses": 2,
+        "failed_requests": 0,
+        "interruption": null,
+        "late_dispatches": 2991,
+        "maintenance_failures": 0,
+        "metrics": {
+          "backend_invoke_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 2991,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "cycle_ms": {
+            "max": 127.604097,
+            "mean": 31.906830513874958,
+            "median": 32.697417,
+            "missing": 0,
+            "p95": 36.672327,
+            "samples": 2991,
+            "supported": true
+          },
+          "direct_path_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 2991,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "dispatch_lateness_ms": {
+            "max": 1000.41277,
+            "mean": 0.6505870210631896,
+            "median": 0.252374,
+            "missing": 0,
+            "p95": 0.510161,
+            "samples": 2991,
+            "supported": true
+          },
+          "invocation_ms": {
+            "max": 127.510398,
+            "mean": 31.822363073888333,
+            "median": 32.612647,
+            "missing": 0,
+            "p95": 36.581221,
+            "samples": 2991,
+            "supported": true
+          },
+          "orchestrated_ms": {
+            "max": 127.510398,
+            "mean": 31.822363073888333,
+            "median": 32.612647,
+            "missing": 0,
+            "p95": 36.581221,
+            "samples": 2991,
+            "supported": true
+          },
+          "prepare_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 2991,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          },
+          "recalibrate_ms": {
+            "max": 0.614612,
+            "mean": 0.02324628452022735,
+            "median": 0.024001,
+            "missing": 0,
+            "p95": 0.026081,
+            "samples": 2991,
+            "supported": true
+          },
+          "release_to_completion_ms": {
+            "max": 1021.263093,
+            "mean": 32.557417534938146,
+            "median": 33.014057,
+            "missing": 0,
+            "p95": 37.033142,
+            "samples": 2991,
+            "supported": true
+          },
+          "reset_ms": {
+            "max": 0.091171,
+            "mean": 0.027938732530926113,
+            "median": 0.028769,
+            "missing": 0,
+            "p95": 0.033249,
+            "samples": 2991,
+            "supported": true
+          },
+          "telemetry_ms": {
+            "max": null,
+            "mean": null,
+            "median": null,
+            "missing": 2991,
+            "p95": null,
+            "samples": 0,
+            "supported": false
+          }
+        },
+        "mode": "orchestrated",
+        "planned_releases": 3000,
+        "quantile_method": "nearest rank; p95 withheld below 20 observations; empty or absent timings are excluded, never zero",
+        "retained_first": null,
+        "retained_last": null,
+        "skipped_releases": 9,
+        "success_fraction": 1.0,
+        "successful_requests": 2991,
+        "unexpected_backends": 0,
+        "unreleased_slots": 0,
+        "unsuccessful": false
+      }
+    }
+  }
+}

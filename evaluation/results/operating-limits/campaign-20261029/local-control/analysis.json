@@ -1,0 +1,4377 @@
+{
+  "phase": "local-control",
+  "planned_trials": 24,
+  "status_counts": {
+    "success": 24
+  },
+  "trials": {
+    "lc-r01-client-connected-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            450
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 122240,
+        "timeline": {
+          "fault_armed_offset_s": 45.00025643,
+          "fault_consumed_offset_s": 45.006219559,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 450,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 45511658724276
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.130309501,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 45602645118276,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "connected-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-client-connected-fault"
+      }
+    },
+    "lc-r01-client-connected-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 119788,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 45818042947477
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.12704138,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 45909026729292,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "connected-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-client-connected-nofault"
+      }
+    },
+    "lc-r01-client-partition-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 1,
+            "down_ns": 45388499427838,
+            "up_cut_connections": 0,
+            "up_ns": 45418498999258
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 299,
+              "missed": 1,
+              "opportunities": 300,
+              "succeeded": 299,
+              "used_fallback": 1
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 1,
+              "missed": 299,
+              "opportunities": 300,
+              "succeeded": 1,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 600,
+          "fallback_steps": [
+            601
+          ],
+          "missed": 300,
+          "planned": 900,
+          "succeeded": 600
+        },
+        "supervisor_peak_rss_kib": 110724,
+        "timeline": {
+          "fault_armed_offset_s": 45.000150524,
+          "fault_consumed_offset_s": 60.107852333,
+          "fault_consumed_phase": "after",
+          "fault_consumed_step": 601,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": 30.002599023,
+          "link_up_offset_s": 60.002170443,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 45358496828815
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.1076575,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 45449459909794,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "partition-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-client-partition-fault"
+      }
+    },
+    "lc-r01-client-partition-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 1,
+            "down_ns": 45082191874504,
+            "up_cut_connections": 0,
+            "up_ns": 45112191171295
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 299,
+              "missed": 1,
+              "opportunities": 300,
+              "succeeded": 299,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 0,
+              "missed": 300,
+              "opportunities": 300,
+              "succeeded": 0,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 599,
+          "fallback_steps": [],
+          "missed": 301,
+          "planned": 900,
+          "succeeded": 599
+        },
+        "supervisor_peak_rss_kib": 108488,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": 30.002862762,
+          "link_up_offset_s": 60.002159553,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 45052189011742
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.097458885,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 45143139615901,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "partition-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-client-partition-nofault"
+      }
+    },
+    "lc-r01-local-connected-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            451
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 123924,
+        "timeline": {
+          "fault_armed_offset_s": 45.012960404,
+          "fault_consumed_offset_s": 45.105333049,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 451,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 45971225893455
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.105917039,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46062187183564,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "connected-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-local-connected-fault"
+      }
+    },
+    "lc-r01-local-connected-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 119824,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 44899007972869
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.110423096,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 44989990586530,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "connected-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-local-connected-nofault"
+      }
+    },
+    "lc-r01-local-partition-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 45235343433297,
+            "up_cut_connections": 0,
+            "up_ns": 45265343278825
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            451
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 118236,
+        "timeline": {
+          "fault_armed_offset_s": 45.01166553,
+          "fault_consumed_offset_s": 45.105457228,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 451,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": 30.002174689,
+          "link_up_offset_s": 60.002020217,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 45205341258608
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.104125627,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 45296298068033,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "partition-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-local-partition-fault"
+      }
+    },
+    "lc-r01-local-partition-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 45694866388074,
+            "up_cut_connections": 0,
+            "up_ns": 45724865999488
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 119864,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": 30.002471605,
+          "link_up_offset_s": 60.002083019,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 45664863916469
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.145808106,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 45755846049399,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 1,
+        "scenario": "partition-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r01-local-partition-nofault"
+      }
+    },
+    "lc-r02-client-connected-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            450
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 119904,
+        "timeline": {
+          "fault_armed_offset_s": 45.00024927,
+          "fault_consumed_offset_s": 45.006471414,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 450,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 47043329596945
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.135653536,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 47134339658516,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "connected-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-client-connected-fault"
+      }
+    },
+    "lc-r02-client-connected-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 119980,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 46890137658259
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.158778175,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46981150539841,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "connected-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-client-connected-nofault"
+      }
+    },
+    "lc-r02-client-partition-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 46767011004202,
+            "up_cut_connections": 0,
+            "up_ns": 46797010496966
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 299,
+              "missed": 1,
+              "opportunities": 300,
+              "succeeded": 299,
+              "used_fallback": 1
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 0,
+              "missed": 300,
+              "opportunities": 300,
+              "succeeded": 0,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 599,
+          "fallback_steps": [
+            601
+          ],
+          "missed": 301,
+          "planned": 900,
+          "succeeded": 599
+        },
+        "supervisor_peak_rss_kib": 110560,
+        "timeline": {
+          "fault_armed_offset_s": 45.000325233,
+          "fault_consumed_offset_s": 60.106737197,
+          "fault_consumed_phase": "after",
+          "fault_consumed_step": 601,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": 30.002641202,
+          "link_up_offset_s": 60.002133966,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 46737008363000
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.05410201,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46827937163516,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "partition-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-client-partition-fault"
+      }
+    },
+    "lc-r02-client-partition-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 1,
+            "down_ns": 46460740650244,
+            "up_cut_connections": 0,
+            "up_ns": 46490739939990
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 299,
+              "missed": 1,
+              "opportunities": 300,
+              "succeeded": 299,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 1,
+              "missed": 299,
+              "opportunities": 300,
+              "succeeded": 1,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 600,
+          "fallback_steps": [],
+          "missed": 300,
+          "planned": 900,
+          "succeeded": 600
+        },
+        "supervisor_peak_rss_kib": 112516,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": 30.002827062,
+          "link_up_offset_s": 60.002116808,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 46430737823182
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.086162417,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46521677273714,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "partition-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-client-partition-nofault"
+      }
+    },
+    "lc-r02-local-connected-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            450
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 118060,
+        "timeline": {
+          "fault_armed_offset_s": 45.000137034,
+          "fault_consumed_offset_s": 45.005846107,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 450,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 47196539958825
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.109996856,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 47287503689670,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "connected-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-local-connected-fault"
+      }
+    },
+    "lc-r02-local-connected-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 117804,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 46277544528487
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.119189073,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46368537754379,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "connected-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-local-connected-nofault"
+      }
+    },
+    "lc-r02-local-partition-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 46154386726096,
+            "up_cut_connections": 0,
+            "up_ns": 46184386665450
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            450
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 120092,
+        "timeline": {
+          "fault_armed_offset_s": 45.000139112,
+          "fault_consumed_offset_s": 45.00616317,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 450,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": 30.002249083,
+          "link_up_offset_s": 60.002188437,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 46124384477013
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.122353807,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46215363645504,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "partition-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-local-partition-fault"
+      }
+    },
+    "lc-r02-local-partition-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 46613879705187,
+            "up_cut_connections": 0,
+            "up_ns": 46643879648698
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 118236,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": 30.002159599,
+          "link_up_offset_s": 60.00210311,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 46583877545588
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.095668163,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 46674826774676,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 2,
+        "scenario": "partition-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r02-local-partition-nofault"
+      }
+    },
+    "lc-r03-client-connected-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            450
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 118084,
+        "timeline": {
+          "fault_armed_offset_s": 45.000154231,
+          "fault_consumed_offset_s": 45.00660803,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 450,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 48422043723294
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.149765181,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 48513024997042,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "connected-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-client-connected-fault"
+      }
+    },
+    "lc-r03-client-connected-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 118024,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 48115750862111
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.131674162,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 48206710770946,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "connected-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-client-connected-nofault"
+      }
+    },
+    "lc-r03-client-partition-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 47839413712535,
+            "up_cut_connections": 0,
+            "up_ns": 47869413466301
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 299,
+              "missed": 1,
+              "opportunities": 300,
+              "succeeded": 299,
+              "used_fallback": 1
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 0,
+              "missed": 300,
+              "opportunities": 300,
+              "succeeded": 0,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 599,
+          "fallback_steps": [
+            601
+          ],
+          "missed": 301,
+          "planned": 900,
+          "succeeded": 599
+        },
+        "supervisor_peak_rss_kib": 108652,
+        "timeline": {
+          "fault_armed_offset_s": 45.000347617,
+          "fault_consumed_offset_s": 60.106828177,
+          "fault_consumed_phase": "after",
+          "fault_consumed_step": 601,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": 30.002501005,
+          "link_up_offset_s": 60.002254771,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 47809411211530
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.267437176,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 47900345030957,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "partition-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-client-partition-fault"
+      }
+    },
+    "lc-r03-client-partition-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 47379705639691,
+            "up_cut_connections": 0,
+            "up_ns": 47409705332694
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 299,
+              "missed": 1,
+              "opportunities": 300,
+              "succeeded": 299,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 0,
+              "missed": 300,
+              "opportunities": 300,
+              "succeeded": 0,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 599,
+          "fallback_steps": [],
+          "missed": 301,
+          "planned": 900,
+          "succeeded": 599
+        },
+        "supervisor_peak_rss_kib": 110500,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": 30.002491891,
+          "link_up_offset_s": 60.002184894,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 47349703147800
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.082997196,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 47440638909162,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "client",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "partition-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-client-partition-nofault"
+      }
+    },
+    "lc-r03-local-connected-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            451
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 120160,
+        "timeline": {
+          "fault_armed_offset_s": 45.012461501,
+          "fault_consumed_offset_s": 45.105453909,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 451,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 47502840072427
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.100270105,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 47593792959622,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "connected-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-local-connected-fault"
+      }
+    },
+    "lc-r03-local-connected-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": null,
+          "link": {}
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 119740,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": null,
+          "link_up_offset_s": null,
+          "planned_partition_s": null,
+          "t0_ns": 47656013049898
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.181600642,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 47747024808377,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": false,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "connected-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-local-connected-nofault"
+      }
+    },
+    "lc-r03-local-partition-fault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 47992614740230,
+            "up_cut_connections": 0,
+            "up_ns": 48022614649936
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 1
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [
+            451
+          ],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 120288,
+        "timeline": {
+          "fault_armed_offset_s": 45.013633082,
+          "fault_consumed_offset_s": 45.105738966,
+          "fault_consumed_phase": "during",
+          "fault_consumed_step": 451,
+          "fault_planned_offset_s": 45.0,
+          "link_down_offset_s": 30.002170305,
+          "link_up_offset_s": 60.002080011,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 47962612569925
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.12860831,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 48053526835945,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": true,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "partition-fault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-local-partition-fault"
+      }
+    },
+    "lc-r03-local-partition-nofault": {
+      "infrastructure_failures": [],
+      "ledger": [
+        "started",
+        "finished"
+      ],
+      "local": {
+        "backend_counters": {
+          "duplicate_starts": 2,
+          "early_triggers": 0,
+          "execution_errors": 0,
+          "in_progress_conflicts": 0,
+          "late_triggers": 0,
+          "native_idempotent_replays": 0,
+          "rejected_starts": 0,
+          "supervisor_dedup_hits": 0
+        },
+        "failed_assertions": [],
+        "job_state": "completed",
+        "passed": true,
+        "proxy": {
+          "client_requests_reaching_supervisor_during_partition": 0,
+          "link": {
+            "down_cut_connections": 0,
+            "down_ns": 48298929826425,
+            "up_cut_connections": 0,
+            "up_ns": 48328929626687
+          }
+        },
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "status": "passed",
+        "steps": {
+          "by_phase": {
+            "after": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "before": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            },
+            "during": {
+              "executed": 300,
+              "missed": 0,
+              "opportunities": 300,
+              "succeeded": 300,
+              "used_fallback": 0
+            }
+          },
+          "committed": 900,
+          "executed": 900,
+          "fallback_steps": [],
+          "missed": 0,
+          "planned": 900,
+          "succeeded": 900
+        },
+        "supervisor_peak_rss_kib": 124104,
+        "timeline": {
+          "fault_armed_offset_s": null,
+          "fault_consumed_offset_s": null,
+          "fault_consumed_phase": null,
+          "fault_consumed_step": null,
+          "fault_planned_offset_s": null,
+          "link_down_offset_s": 30.002249122,
+          "link_up_offset_s": 60.002049384,
+          "planned_partition_s": [
+            30.0,
+            60.0
+          ],
+          "t0_ns": 48268927577303
+        }
+      },
+      "performance_failures": [],
+      "status": "success",
+      "terminal": {
+        "elapsed_s": 93.056771047,
+        "guard_reason": null,
+        "hardware_postflight": {
+          "cpu_online": "0-5",
+          "cpu_present": "0-5",
+          "cpufreq": {
+            "cpu0": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu1": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu2": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu3": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "1344000",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu4": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            },
+            "cpu5": {
+              "cpuinfo_max_freq": "1728000",
+              "cpuinfo_min_freq": "115200",
+              "scaling_cur_freq": "729600",
+              "scaling_driver": "tegra194",
+              "scaling_governor": "schedutil",
+              "scaling_max_freq": "1344000",
+              "scaling_min_freq": "729600"
+            }
+          },
+          "monotonic_ns": 48359822834796,
+          "power_mode": {
+            "output": "NV Power Mode: 25W\n1",
+            "output_truncated": false,
+            "returncode": 0
+          }
+        },
+        "parent_error": null,
+        "process_cleanup": {
+          "group_remaining": false,
+          "owned_remaining": [],
+          "owned_stopped": [],
+          "permission_denied": false,
+          "returncode": 0,
+          "root_exited_before_stop": true,
+          "root_reaped": true,
+          "signals": []
+        },
+        "profile": false,
+        "profile_complete": null,
+        "resource_profile": "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained",
+        "returncode": 0,
+        "stage": "local-control",
+        "timed_out": false,
+        "timeout_s": 210.0,
+        "upstream_sources_unchanged": true
+      },
+      "trial": {
+        "backend": "pinned",
+        "duration_s": 90.0,
+        "fault": false,
+        "kind": "local-control",
+        "mode": "local",
+        "partition": true,
+        "phase": "local-control",
+        "rate_hz": 10.0,
+        "repetition": 3,
+        "scenario": "partition-nofault",
+        "seed": 20261029,
+        "timeout_s": 210.0,
+        "trial_id": "lc-r03-local-partition-nofault"
+      }
+    }
+  }
+}

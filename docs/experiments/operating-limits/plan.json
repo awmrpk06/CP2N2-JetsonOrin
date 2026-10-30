@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb",
+  "cooling": "Developer-kit fan and heatsink, open air",
+  "ambient_temperature_c": null,
+  "desktop_comparison": false,
+  "interval_ms": 250,
+  "platform_idle_s": 3,
+  "cooldown_s": 60,
+  "phases": {
+    "pilot": {"implemented": true, "kind": "sustained", "duration_s": 2, "idle_s": 0, "modes": ["harness", "direct", "orchestrated"], "rates_hz": [10], "repetitions": 1, "diagnostic_counts": true},
+    "attribution": {"implemented": true, "kind": "sustained", "duration_s": 300, "idle_s": 3, "modes": ["harness", "direct", "orchestrated"], "rates_hz": [10], "repetitions": 3, "diagnostic_counts": true},
+    "allocation-profiling": {"implemented": true, "kind": "sustained", "duration_s": 300, "idle_s": 3, "modes": ["direct", "orchestrated"], "rates_hz": [10], "repetitions": 1, "diagnostic_counts": false, "intrusive_profile": "allocation"},
+    "call-profiling": {"implemented": true, "kind": "sustained", "duration_s": 300, "idle_s": 3, "modes": ["orchestrated"], "rates_hz": [10], "repetitions": 1, "diagnostic_counts": false, "intrusive_profile": "calls"},
+    "long-baseline": {"implemented": true, "kind": "sustained", "duration_s": 1800, "idle_s": 3, "modes": ["orchestrated"], "rates_hz": [10], "repetitions": 3, "diagnostic_counts": true},
+    "sweep": {"implemented": true, "kind": "sustained", "duration_s": 300, "idle_s": 3, "modes": ["orchestrated"], "rates_hz": [1, 10, 25, 50], "repetitions": 3, "diagnostic_counts": true},
+    "local-control": {"implemented": true, "kind": "local-control", "repetitions": 3, "seed": 20261029, "backend": "pinned", "duration_s": 90, "rate_hz": 10, "timeout_margin_s": 120},
+    "paired-power": {"implemented": true, "kind": "paired-power", "pairs": 5, "modes": ["direct", "orchestrated"], "rate_hz": 10, "active_s": 120, "pre_idle_s": 60, "post_idle_s": 60, "platform_baseline_s": 60, "diagnostic_counts": false}
+  }
+}

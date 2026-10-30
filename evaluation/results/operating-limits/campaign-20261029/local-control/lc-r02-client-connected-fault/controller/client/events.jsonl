@@ -1,0 +1,2 @@
+{"body": {"duplicate": false, "job": {"committed": 0, "executed": 0, "job_id": "lc-r02-client-connected-fault-job", "missed": 0, "mode": "client", "owner": "campaign-client", "plan_hash": "707d45863cb33fd2327cc64d4b27002433d9e4cf002fd0f9d17f65b6a893f575", "state": "running", "steps": 900}}, "event": "start_response", "ns": 47043333698209, "status": 201}
+{"error": "TimeoutError('timed out')", "event": "trigger_link_error", "ns": 47090230781692, "sent_ns": 47090129687754, "step": 468}

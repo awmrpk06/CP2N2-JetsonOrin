@@ -1,0 +1,2 @@
+{"event": "proxy_stopped", "stats": {"accepted": 184, "cut_connections": 0, "refused_while_down": 0, "upstream_connect_errors": 0}}
+{"changed": true, "changed_ns": 47746710870905, "cut_connections": 0, "event": "link_down"}
