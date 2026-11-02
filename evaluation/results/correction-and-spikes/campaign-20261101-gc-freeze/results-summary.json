@@ -1,0 +1,1214 @@
+{
+  "generated_utc": "2026-11-02T07:01:00.286868+00:00",
+  "notes": [
+    "Generated offline from verified trial archives; never run concurrently with measurements.",
+    "Per-trial nearest-rank statistics; across-trial values summarize trials, not pooled requests.",
+    "Deadlines are experimental release-relative deadlines of one interarrival period unless stated otherwise.",
+    "Intrusive allocation/calls trials are diagnostics only; their timings are not primary evidence.",
+    "Power is platform VDD_IN; idle-adjusted values subtract the same worker's ready/post idle windows."
+  ],
+  "phases": {
+    "gc-freeze": {
+      "conditions": {
+        "orchestrated@10Hz/indexed/gc-freeze": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.99999763898389,
+              "mean": 9.999997606242239,
+              "median": 9.999997606242239,
+              "min": 9.99999757350059,
+              "n": 2,
+              "stdev": 4.6303685880294863e-08
+            },
+            "cycle_median_ms": {
+              "max": 9.630639500000001,
+              "mean": 9.5998445,
+              "median": 9.5998445,
+              "min": 9.569049499999998,
+              "n": 2,
+              "stdev": 0.04355070665328121
+            },
+            "cycle_p95_ms": {
+              "max": 11.101855,
+              "mean": 10.907337,
+              "median": 10.907337,
+              "min": 10.712819,
+              "n": 2,
+              "stdev": 0.2750899937256903
+            },
+            "explained_spike_fraction": {
+              "max": 1.0,
+              "mean": 1.0,
+              "median": 1.0,
+              "min": 1.0,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": 0.921565,
+              "mean": 0.919245,
+              "median": 0.919245,
+              "min": 0.916925,
+              "n": 2,
+              "stdev": 0.0032809754647055646
+            },
+            "gc_freeze_runs": {
+              "max": 121,
+              "mean": 121,
+              "median": 121.0,
+              "min": 121,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "gc_freeze_total_ms": {
+              "max": 86.83153,
+              "mean": 86.2193065,
+              "median": 86.2193065,
+              "min": 85.607083,
+              "n": 2,
+              "stdev": 0.865814776903523
+            },
+            "gc_frozen_objects_end": {
+              "max": 220064,
+              "mean": 220063.5,
+              "median": 220063.5,
+              "min": 220063,
+              "n": 2,
+              "stdev": 0.7071067811865476
+            },
+            "gc_policy": [
+              "freeze"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.041478560156762434,
+              "mean": -0.042298112465004145,
+              "median": -0.042298112465004145,
+              "min": -0.043117664773245856,
+              "n": 2,
+              "stdev": 0.0011590219893896031
+            },
+            "invocation_median_ms": {
+              "max": 9.6080315,
+              "mean": 9.5754105,
+              "median": 9.5754105,
+              "min": 9.542789500000001,
+              "n": 2,
+              "stdev": 0.04613306061817118
+            },
+            "invocation_p95_ms": {
+              "max": 11.073916,
+              "mean": 10.878871,
+              "median": 10.878871,
+              "min": 10.683826,
+              "n": 2,
+              "stdev": 0.2758352842730608
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": -0.054984645363408545,
+              "mean": -0.06948490914786967,
+              "median": -0.06948490914786967,
+              "min": -0.0839851729323308,
+              "n": 2,
+              "stdev": 0.02050646970197235
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 72003,
+              "mean": 72003,
+              "median": 72003.0,
+              "min": 72003,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "spikes": {
+              "max": 7,
+              "mean": 4,
+              "median": 4.0,
+              "min": 1,
+              "n": 2,
+              "stdev": 4.242640687119285
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "steady_power_w": {
+              "max": 4.785647486311804,
+              "mean": 4.78470530978337,
+              "median": 4.78470530978337,
+              "min": 4.783763133254936,
+              "n": 2,
+              "stdev": 0.0013324388246607776
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 177.64453125,
+              "mean": 177.482421875,
+              "median": 177.482421875,
+              "min": 177.3203125,
+              "n": 2,
+              "stdev": 0.22925727671282595
+            },
+            "totals": {
+              "completed_requests": 24000,
+              "deadline_misses": 0,
+              "late_dispatches": 24000,
+              "maintenance_failures": 0,
+              "planned_releases": 24000,
+              "skipped_releases": 0,
+              "successful_requests": 24000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 2
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.99999763898389,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 20.550634,
+                "median": 9.630639500000001,
+                "p95": 11.101855
+              },
+              "deadline_misses": 0,
+              "gc_policy": "freeze",
+              "gc_policy_summary": {
+                "every_requests": 100,
+                "frozen_objects_at_end": 220064,
+                "gc_threshold": [
+                  700,
+                  10,
+                  10
+                ],
+                "max_ms": 0.921565,
+                "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+                "policy": "freeze",
+                "runs": 121,
+                "total_ms": 85.607083
+              },
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 20.521257,
+                "median": 9.6080315,
+                "p95": 11.073916
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 72003,
+                "indexed_correlations": 12001,
+                "indexed_records": 72003
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.043117664773245856,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.700583399150487,
+                "platform_before_w": 4.691107368184851,
+                "post_idle_w": null,
+                "ready_idle_w": 4.826880798028182,
+                "steady_w": 4.783763133254936
+              },
+              "release_to_completion_ms": {
+                "max": 20.917636,
+                "median": 9.809286499999999,
+                "p95": 11.315728
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.indexed_correlations": 12001,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "off_cpu": 7
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 10.013901,
+                "invocation_slope_ms_per_1k": -0.054984645363408545,
+                "off_cpu_subcauses": {
+                  "voluntary_wait": 7
+                },
+                "spikes": 7,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 177.3203125,
+              "successful_requests": 12000,
+              "trial_id": "gc-freeze-r01-orchestrated-indexed-gcfreeze-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.99999757350059,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 19.755514,
+                "median": 9.569049499999998,
+                "p95": 10.712819
+              },
+              "deadline_misses": 0,
+              "gc_policy": "freeze",
+              "gc_policy_summary": {
+                "every_requests": 100,
+                "frozen_objects_at_end": 220063,
+                "gc_threshold": [
+                  700,
+                  10,
+                  10
+                ],
+                "max_ms": 0.916925,
+                "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+                "policy": "freeze",
+                "runs": 121,
+                "total_ms": 86.83153
+              },
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 19.732506,
+                "median": 9.542789500000001,
+                "p95": 10.683826
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 72003,
+                "indexed_correlations": 12001,
+                "indexed_records": 72003
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.041478560156762434,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.692993767728185,
+                "platform_before_w": 4.692894998752952,
+                "post_idle_w": null,
+                "ready_idle_w": 4.827126046468567,
+                "steady_w": 4.785647486311804
+              },
+              "release_to_completion_ms": {
+                "max": 19.928932,
+                "median": 9.7584215,
+                "p95": 10.936966
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.indexed_correlations": 12001,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "off_cpu": 1
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 9.3261775,
+                "invocation_slope_ms_per_1k": -0.0839851729323308,
+                "off_cpu_subcauses": {
+                  "voluntary_wait": 1
+                },
+                "spikes": 1,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 177.64453125,
+              "successful_requests": 12000,
+              "trial_id": "gc-freeze-r02-orchestrated-indexed-gcfreeze-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/pinned/gc-freeze": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999997694308865,
+              "mean": 9.999996577167963,
+              "median": 9.999996577167963,
+              "min": 9.999995460027062,
+              "n": 2,
+              "stdev": 1.5798758140722687e-06
+            },
+            "cycle_median_ms": {
+              "max": 22.8395255,
+              "mean": 21.9035715,
+              "median": 21.9035715,
+              "min": 20.967617500000003,
+              "n": 2,
+              "stdev": 1.3236388405573463
+            },
+            "cycle_p95_ms": {
+              "max": 35.402005,
+              "mean": 35.305476,
+              "median": 35.305476,
+              "min": 35.208947,
+              "n": 2,
+              "stdev": 0.13651262096231292
+            },
+            "explained_spike_fraction": {
+              "max": 1.0,
+              "mean": 1.0,
+              "median": 1.0,
+              "min": 1.0,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": 0.915869,
+              "mean": 0.884332,
+              "median": 0.884332,
+              "min": 0.852795,
+              "n": 2,
+              "stdev": 0.04460005311656035
+            },
+            "gc_freeze_runs": {
+              "max": 121,
+              "mean": 121,
+              "median": 121.0,
+              "min": 121,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "gc_freeze_total_ms": {
+              "max": 86.569041,
+              "mean": 86.1451255,
+              "median": 86.1451255,
+              "min": 85.72121,
+              "n": 2,
+              "stdev": 0.5995070494001713
+            },
+            "gc_frozen_objects_end": {
+              "max": 208041,
+              "mean": 208041,
+              "median": 208041.0,
+              "min": 208041,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "gc_policy": [
+              "freeze"
+            ],
+            "idle_adjusted_power_w": {
+              "max": 0.02765824715496823,
+              "mean": 0.010736847036957098,
+              "median": 0.010736847036957098,
+              "min": -0.006184553081054034,
+              "n": 2,
+              "stdev": 0.023930473541233035
+            },
+            "invocation_median_ms": {
+              "max": 22.799523999999998,
+              "mean": 21.864994,
+              "median": 21.864994,
+              "min": 20.930464,
+              "n": 2,
+              "stdev": 1.3216250004445267
+            },
+            "invocation_p95_ms": {
+              "max": 35.352147,
+              "mean": 35.2603705,
+              "median": 35.2603705,
+              "min": 35.168594,
+              "n": 2,
+              "stdev": 0.12979157100713676
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": 2.3238741065162904,
+              "mean": 2.2739630025062656,
+              "median": 2.2739630025062656,
+              "min": 2.2240518984962407,
+              "n": 2,
+              "stdev": 0.07058496020399131
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 72003,
+              "mean": 72003,
+              "median": 72003.0,
+              "min": 72003,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "spikes": {
+              "max": 6,
+              "mean": 5,
+              "median": 5.0,
+              "min": 4,
+              "n": 2,
+              "stdev": 1.4142135623730951
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "steady_power_w": {
+              "max": 4.88889352869703,
+              "mean": 4.872720646922254,
+              "median": 4.872720646922254,
+              "min": 4.856547765147478,
+              "n": 2,
+              "stdev": 0.022871908748544785
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 167.82421875,
+              "mean": 167.7734375,
+              "median": 167.7734375,
+              "min": 167.72265625,
+              "n": 2,
+              "stdev": 0.07181553246425873
+            },
+            "totals": {
+              "completed_requests": 24000,
+              "deadline_misses": 0,
+              "late_dispatches": 24000,
+              "maintenance_failures": 0,
+              "planned_releases": 24000,
+              "skipped_releases": 0,
+              "successful_requests": 24000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 2
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999997694308865,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 45.751482,
+                "median": 22.8395255,
+                "p95": 35.402005
+              },
+              "deadline_misses": 0,
+              "gc_policy": "freeze",
+              "gc_policy_summary": {
+                "every_requests": 100,
+                "frozen_objects_at_end": 208041,
+                "gc_threshold": [
+                  700,
+                  10,
+                  10
+                ],
+                "max_ms": 0.915869,
+                "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+                "policy": "freeze",
+                "runs": 121,
+                "total_ms": 86.569041
+              },
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 45.703512,
+                "median": 22.799523999999998,
+                "p95": 35.352147
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "pinned",
+              "lifecycle_variant_final_counts": null,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.006184553081054034,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.713140363716289,
+                "platform_before_w": 4.799638732310982,
+                "post_idle_w": null,
+                "ready_idle_w": 4.895078081778084,
+                "steady_w": 4.88889352869703
+              },
+              "release_to_completion_ms": {
+                "max": 46.169393,
+                "median": 23.0341605,
+                "p95": 35.69301
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "off_cpu": 4
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 35.8763725,
+                "invocation_slope_ms_per_1k": 2.2240518984962407,
+                "off_cpu_subcauses": {
+                  "unclassified": 1,
+                  "voluntary_wait": 3
+                },
+                "spikes": 4,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 167.72265625,
+              "successful_requests": 12000,
+              "trial_id": "gc-freeze-r01-orchestrated-pinned-gcfreeze-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999995460027062,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 45.853985,
+                "median": 20.967617500000003,
+                "p95": 35.208947
+              },
+              "deadline_misses": 0,
+              "gc_policy": "freeze",
+              "gc_policy_summary": {
+                "every_requests": 100,
+                "frozen_objects_at_end": 208041,
+                "gc_threshold": [
+                  700,
+                  10,
+                  10
+                ],
+                "max_ms": 0.852795,
+                "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+                "policy": "freeze",
+                "runs": 121,
+                "total_ms": 85.72121
+              },
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 45.808832,
+                "median": 20.930464,
+                "p95": 35.168594
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "pinned",
+              "lifecycle_variant_final_counts": null,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.02765824715496823,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.732779989367565,
+                "platform_before_w": 4.695068539202745,
+                "post_idle_w": null,
+                "ready_idle_w": 4.8288895179925095,
+                "steady_w": 4.856547765147478
+              },
+              "release_to_completion_ms": {
+                "max": 46.009804,
+                "median": 21.157248000000003,
+                "p95": 35.448482
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "off_cpu": 6
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 35.597983,
+                "invocation_slope_ms_per_1k": 2.3238741065162904,
+                "off_cpu_subcauses": {
+                  "voluntary_wait": 6
+                },
+                "spikes": 6,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 167.82421875,
+              "successful_requests": 12000,
+              "trial_id": "gc-freeze-r02-orchestrated-pinned-gcfreeze-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 4,
+      "status_counts": {
+        "success": 4
+      }
+    },
+    "pilot": {
+      "conditions": {
+        "orchestrated@10Hz/indexed/gc-freeze": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999860537944993,
+              "mean": 9.999860537944993,
+              "median": 9.999860537944993,
+              "min": 9.999860537944993,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 10.345593999999998,
+              "mean": 10.345593999999998,
+              "median": 10.345593999999998,
+              "min": 10.345593999999998,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 11.345418,
+              "mean": 11.345418,
+              "median": 11.345418,
+              "min": 11.345418,
+              "n": 1,
+              "stdev": null
+            },
+            "explained_spike_fraction": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": 0.93235,
+              "mean": 0.93235,
+              "median": 0.93235,
+              "min": 0.93235,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": 3,
+              "mean": 3,
+              "median": 3,
+              "min": 3,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": 2.579666,
+              "mean": 2.579666,
+              "median": 2.579666,
+              "min": 2.579666,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": 66663,
+              "mean": 66663,
+              "median": 66663,
+              "min": 66663,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_policy": [
+              "freeze"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.039761273868420766,
+              "mean": -0.039761273868420766,
+              "median": -0.039761273868420766,
+              "min": -0.039761273868420766,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 10.318425,
+              "mean": 10.318425,
+              "median": 10.318425,
+              "min": 10.318425,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 11.310376,
+              "mean": 11.310376,
+              "median": 11.310376,
+              "min": 11.310376,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 1203,
+              "mean": 1203,
+              "median": 1203,
+              "min": 1203,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_power_w": {
+              "max": 4.857971834479913,
+              "mean": 4.857971834479913,
+              "median": 4.857971834479913,
+              "min": 4.857971834479913,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 84.86328125,
+              "mean": 84.86328125,
+              "median": 84.86328125,
+              "min": 84.86328125,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 200,
+              "deadline_misses": 0,
+              "late_dispatches": 200,
+              "maintenance_failures": 0,
+              "planned_releases": 200,
+              "skipped_releases": 0,
+              "successful_requests": 200,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999860537944993,
+              "completed_requests": 200,
+              "cycle_ms": {
+                "max": 15.334632,
+                "median": 10.345593999999998,
+                "p95": 11.345418
+              },
+              "deadline_misses": 0,
+              "gc_policy": "freeze",
+              "gc_policy_summary": {
+                "every_requests": 100,
+                "frozen_objects_at_end": 66663,
+                "gc_threshold": [
+                  700,
+                  10,
+                  10
+                ],
+                "max_ms": 0.93235,
+                "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+                "policy": "freeze",
+                "runs": 3,
+                "total_ms": 2.579666
+              },
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 15.306279,
+                "median": 10.318425,
+                "p95": 11.310376
+              },
+              "late_dispatches": 200,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 1203,
+                "indexed_correlations": 201,
+                "indexed_records": 1203
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.039761273868420766,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.713631700358364,
+                "platform_before_w": 4.782417411962315,
+                "post_idle_w": null,
+                "ready_idle_w": 4.8977331083483335,
+                "steady_w": 4.857971834479913
+              },
+              "release_to_completion_ms": {
+                "max": 15.491306,
+                "median": 10.5414915,
+                "p95": 11.531353
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 1203,
+                "lifecycle.indexed_correlations": 201,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {},
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": null,
+                "invocation_slope_ms_per_1k": null,
+                "off_cpu_subcauses": {},
+                "spikes": 0,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.86328125,
+              "successful_requests": 200,
+              "trial_id": "pilot-r01-orchestrated-indexed-gcfreeze-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/pinned/gc-freeze": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.9998573265356,
+              "mean": 9.9998573265356,
+              "median": 9.9998573265356,
+              "min": 9.9998573265356,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 9.51984,
+              "mean": 9.51984,
+              "median": 9.51984,
+              "min": 9.51984,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 10.709237,
+              "mean": 10.709237,
+              "median": 10.709237,
+              "min": 10.709237,
+              "n": 1,
+              "stdev": null
+            },
+            "explained_spike_fraction": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": 0.750808,
+              "mean": 0.750808,
+              "median": 0.750808,
+              "min": 0.750808,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": 3,
+              "mean": 3,
+              "median": 3,
+              "min": 3,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": 1.99968,
+              "mean": 1.99968,
+              "median": 1.99968,
+              "min": 1.99968,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": 66441,
+              "mean": 66441,
+              "median": 66441,
+              "min": 66441,
+              "n": 1,
+              "stdev": null
+            },
+            "gc_policy": [
+              "freeze"
+            ],
+            "idle_adjusted_power_w": {
+              "max": 0.050591310085151164,
+              "mean": 0.050591310085151164,
+              "median": 0.050591310085151164,
+              "min": 0.050591310085151164,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 9.496446500000001,
+              "mean": 9.496446500000001,
+              "median": 9.496446500000001,
+              "min": 9.496446500000001,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 10.679124,
+              "mean": 10.679124,
+              "median": 10.679124,
+              "min": 10.679124,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 1203,
+              "mean": 1203,
+              "median": 1203,
+              "min": 1203,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_power_w": {
+              "max": 4.925440613394732,
+              "mean": 4.925440613394732,
+              "median": 4.925440613394732,
+              "min": 4.925440613394732,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 84.66015625,
+              "mean": 84.66015625,
+              "median": 84.66015625,
+              "min": 84.66015625,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 200,
+              "deadline_misses": 0,
+              "late_dispatches": 200,
+              "maintenance_failures": 0,
+              "planned_releases": 200,
+              "skipped_releases": 0,
+              "successful_requests": 200,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.9998573265356,
+              "completed_requests": 200,
+              "cycle_ms": {
+                "max": 12.658068,
+                "median": 9.51984,
+                "p95": 10.709237
+              },
+              "deadline_misses": 0,
+              "gc_policy": "freeze",
+              "gc_policy_summary": {
+                "every_requests": 100,
+                "frozen_objects_at_end": 66441,
+                "gc_threshold": [
+                  700,
+                  10,
+                  10
+                ],
+                "max_ms": 0.750808,
+                "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+                "policy": "freeze",
+                "runs": 3,
+                "total_ms": 1.99968
+              },
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 12.633011,
+                "median": 9.496446500000001,
+                "p95": 10.679124
+              },
+              "late_dispatches": 200,
+              "lifecycle_variant": "pinned",
+              "lifecycle_variant_final_counts": null,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.050591310085151164,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.9018648108550185,
+                "platform_before_w": 4.989789701189881,
+                "post_idle_w": null,
+                "ready_idle_w": 4.874849303309581,
+                "steady_w": 4.925440613394732
+              },
+              "release_to_completion_ms": {
+                "max": 12.838571,
+                "median": 9.7128105,
+                "p95": 10.931312
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 1203,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {},
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": null,
+                "invocation_slope_ms_per_1k": null,
+                "off_cpu_subcauses": {},
+                "spikes": 0,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 84.66015625,
+              "successful_requests": 200,
+              "trial_id": "pilot-r01-orchestrated-pinned-gcfreeze-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 2,
+      "status_counts": {
+        "success": 2
+      }
+    }
+  },
+  "phases_without_output": [],
+  "schema_version": 1
+}

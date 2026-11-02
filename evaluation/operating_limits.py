@@ -29,6 +29,7 @@ from statistics import mean, median, stdev
 import psutil
 
 from evaluation import local_control_experiment as lce
+from evaluation import spike_analysis
 from evaluation.reproduce_original import (
     HARNESS_SOURCES,
     PINNED_COMMIT,
@@ -43,7 +44,13 @@ from evaluation.reproduce_original import (
 )
 from evaluation.resource_monitor import stop_process_group
 from evaluation.summarize_profiles import verify_profile
-from evaluation.upstream_sustained import INTRUSIVE_PROFILES, MODES, validate_options
+from evaluation.upstream_sustained import (
+    GC_POLICIES,
+    INTRUSIVE_PROFILES,
+    LIFECYCLE_VARIANTS,
+    MODES,
+    validate_options,
+)
 
 SCHEMA_VERSIONS = (1, 2)
 # Fixed order for --phase all: attribution and diagnostics come before the long unchanged baseline.
@@ -51,7 +58,7 @@ ALL_PHASES = ("pilot", "attribution", "allocation-profiling", "call-profiling", 
 TOP_KEYS = frozenset({"schema_version", "upstream_commit", "cooling", "ambient_temperature_c", "desktop_comparison", "interval_ms", "platform_idle_s", "cooldown_s", "phases"})
 SUSTAINED_KEYS = frozenset({"implemented", "duration_s", "idle_s", "modes", "rates_hz", "repetitions", "diagnostic_counts"})
 PHASE_SCHEMAS = {  # kind: (required keys, optional keys); schema 1 phases are implicitly sustained without a kind
-    "sustained": (SUSTAINED_KEYS | {"kind"}, frozenset({"intrusive_profile", "post_idle_s"})),
+    "sustained": (SUSTAINED_KEYS | {"kind"}, frozenset({"intrusive_profile", "post_idle_s", "lifecycle_variants", "retention_limit", "spike_instrumentation", "gc_policy"})),
     "local-control": (frozenset({"implemented", "kind", "repetitions", "seed", "backend", "duration_s", "rate_hz", "timeout_margin_s"}), frozenset()),
     "paired-power": (frozenset({"implemented", "kind", "pairs", "modes", "rate_hz", "active_s", "pre_idle_s", "post_idle_s", "platform_baseline_s", "diagnostic_counts"}), frozenset()),
 }
@@ -71,6 +78,18 @@ LOCK_PATH = ROOT / "_temp" / "operating-limits.lock"
 SCRATCH_ROOT = ROOT / "_temp"
 UTC = timezone.utc  # datetime.UTC needs Python 3.11; the root test venv is 3.10
 LOCAL_RESOURCE_SCOPE = "not_measured: no external process or platform sampler runs during local-control trials; only the supervisor's self-reported peak RSS is retained"
+VARIANT_DEFAULTS = {"lifecycle_variant": "pinned", "retention_limit": None, "spike_instrumentation": False, "gc_policy": "default"}
+
+
+def variant_options(spec: dict) -> dict:
+    """Lifecycle-variant and spike settings of a trial; specs of earlier campaigns omit them and mean the defaults."""
+    return {key: spec.get(key, default) for key, default in VARIANT_DEFAULTS.items()}
+
+
+def phase_order(config: dict) -> tuple:
+    """--phase all runs a configuration's phases in declaration order (the operating-limits plan declares ALL_PHASES)."""
+    _validate_top(config)
+    return tuple(config["phases"])
 
 
 def _number(value, name: str, *, allow_zero: bool = False):
@@ -148,26 +167,45 @@ def _sustained_specs(config: dict, phase: str, settings: dict) -> list[dict]:
         raise ValueError("The worker disables retained counters under intrusive profiles; set diagnostic_counts false")
     repetitions = _integer(settings["repetitions"], "repetitions")
     modes, rates = settings["modes"], settings["rates_hz"]
+    declared_variants = "lifecycle_variants" in settings
+    variants = settings.get("lifecycle_variants", ["pinned"])
+    if not isinstance(variants, list) or not variants or len(set(variants)) != len(variants) or not all(isinstance(item, str) and item in LIFECYCLE_VARIANTS for item in variants):
+        raise ValueError(f"lifecycle_variants must be a nonempty list of distinct values from {LIFECYCLE_VARIANTS}")
+    retention = settings.get("retention_limit")
+    if ("bounded" in variants) != (retention is not None):
+        raise ValueError("retention_limit is required exactly when the bounded variant is declared")
+    spikes = _boolean(settings.get("spike_instrumentation", False), "spike_instrumentation")
+    gc_policy = settings.get("gc_policy", "default")
+    if not isinstance(gc_policy, str) or gc_policy not in GC_POLICIES:
+        raise ValueError(f"gc_policy must be one of {GC_POLICIES}")
+    extended = declared_variants or "spike_instrumentation" in settings or "gc_policy" in settings
     if not isinstance(modes, list) or not all(isinstance(mode, str) and mode in MODES for mode in modes):
         raise ValueError(f"modes must be a list drawn from {sorted(MODES)}")
     if not isinstance(rates, list) or not rates:
         raise ValueError("rates_hz must be a nonempty list of rates in (0, 1000] Hz")
     for rate in rates:
         _rate(rate)
-    combinations = [(mode, rate) for mode in modes for rate in rates]
+    combinations = [(mode, rate, variant) for mode in modes for rate in rates for variant in variants]
     if not combinations or len(set(modes)) != len(modes) or len(set(rates)) != len(rates):
         raise ValueError("Trial conditions must be nonempty and unique")
     trials = []
     for repetition in range(repetitions):
         rotated = combinations[repetition % len(combinations):] + combinations[:repetition % len(combinations)]
-        for mode, rate in rotated:
-            validate_options(duration, rate, mode, None, idle, post_idle_s=post_idle, intrusive_profile=intrusive)
-            trials.append({
-                "kind": "sustained", "phase": phase, "trial_id": f"{phase}-r{repetition + 1:02d}-{mode}-{rate:g}hz",
+        for mode, rate, variant in rotated:
+            limit = retention if variant == "bounded" else None
+            validate_options(duration, rate, mode, None, idle, post_idle_s=post_idle, intrusive_profile=intrusive, lifecycle_variant=variant, retention_limit=limit, spike_instrumentation=spikes, gc_policy=gc_policy)
+            label = (f"{mode}-{variant}" if declared_variants else mode) + ("" if gc_policy == "default" else f"-gc{gc_policy}")
+            trial = {
+                "kind": "sustained", "phase": phase, "trial_id": f"{phase}-r{repetition + 1:02d}-{label}-{rate:g}hz",
                 "mode": mode, "rate_hz": rate, "duration_s": duration, "idle_s": idle, "post_idle_s": post_idle,
                 "diagnostic_counts": counts, "intrusive_profile": intrusive, "baseline_s": config["platform_idle_s"],
                 "repetition": repetition + 1,
-            })
+            }
+            if extended:
+                trial.update(lifecycle_variant=variant, retention_limit=limit, spike_instrumentation=spikes)
+                if "gc_policy" in settings:
+                    trial["gc_policy"] = gc_policy
+            trials.append(trial)
     return trials
 
 
@@ -230,8 +268,8 @@ def trial_specs(config: dict, phase: str) -> list[dict]:
     return trials
 
 
-def campaign_specs(config: dict, phases=ALL_PHASES) -> dict[str, list[dict]]:
-    return {phase: trial_specs(config, phase) for phase in phases}
+def campaign_specs(config: dict, phases=None) -> dict[str, list[dict]]:
+    return {phase: trial_specs(config, phase) for phase in (phase_order(config) if phases is None else phases)}
 
 
 def _flag(value, column: str) -> bool:
@@ -303,6 +341,9 @@ def summarize_requests(folder: Path) -> dict:
     retained = [json.loads(line) for line in counters.read_text().splitlines()] if counters.exists() else []
     return {
         "mode": worker["mode"], "interruption": worker.get("interruption"),
+        "lifecycle_variant": worker.get("lifecycle_variant", "pinned"), "retention_limit": worker.get("retention_limit"),
+        "gc_policy": worker.get("gc_policy", "default"), "gc_policy_summary": worker.get("gc_policy_summary"),
+        "lifecycle_variant_final_counts": worker.get("lifecycle_variant_final_counts"),
         "planned_releases": worker.get("planned_releases"), "arrived_releases": worker.get("arrived_releases"),
         "completed_requests": completed, "successful_requests": successful,
         "failed_requests": completed - successful, "success_fraction": successful / completed if completed else None,
@@ -318,7 +359,7 @@ def summarize_requests(folder: Path) -> dict:
 
 def source_fingerprint() -> dict:
     """Hashes of every module whose code shapes a trial, its monitoring, its verification or its analysis."""
-    paths = sorted({*HARNESS_SOURCES, ROOT / "evaluation/operating_limits.py", ROOT / "evaluation/summarize_profiles.py", ROOT / "evaluation/local_control_experiment.py"})
+    paths = sorted({*HARNESS_SOURCES, ROOT / "evaluation/operating_limits.py", ROOT / "evaluation/summarize_profiles.py", ROOT / "evaluation/local_control_experiment.py", ROOT / "evaluation/spike_analysis.py"})
     return {str(path.relative_to(ROOT)): digest(path) for path in paths}
 
 
@@ -397,6 +438,10 @@ def _command_settings(command: list) -> dict:
             # stage_command omits default-valued flags, so absent means the worker default.
             "intrusive_profile": value("--intrusive-profile") if "--intrusive-profile" in command else "none",
             "post_idle_s": float(value("--post-idle-s")) if "--post-idle-s" in command else 0.0,
+            "lifecycle_variant": value("--lifecycle-variant") if "--lifecycle-variant" in command else "pinned",
+            "retention_limit": int(value("--retention-limit")) if "--retention-limit" in command else None,
+            "spike_instrumentation": "--spike-instrumentation" in command,
+            "gc_policy": value("--gc-policy") if "--gc-policy" in command else "default",
         }
     except (IndexError, TypeError, ValueError):
         return {}
@@ -421,6 +466,7 @@ def verify_trial(folder: Path, spec: dict, config: dict) -> tuple[dict, dict | N
         "duration_s": float(spec["duration_s"]), "idle_s": float(spec["idle_s"]),
         "deadline_ms": None, "diagnostic_counts": spec["diagnostic_counts"],
         "intrusive_profile": spec["intrusive_profile"], "post_idle_s": float(spec["post_idle_s"]),
+        **variant_options(spec),
     }
     command = json.loads((folder / "provenance.json").read_text()).get("command")
     if result.get("stage") != "sustained" or not isinstance(command, list) or _command_settings(command) != intended:
@@ -433,9 +479,9 @@ def verify_trial(folder: Path, spec: dict, config: dict) -> tuple[dict, dict | N
         summary = json.loads((folder / "workload/summary.json").read_text())
         recorded = tuple(summary.get(key, default) for key, default in (
             ("mode", None), ("rate_hz", None), ("duration_s", None), ("idle_s", None), ("diagnostic_counts", None),
-            ("intrusive_profile", "none"), ("post_idle_s", 0),
+            ("intrusive_profile", "none"), ("post_idle_s", 0), *VARIANT_DEFAULTS.items(),
         ))
-        if recorded != tuple(spec[key] for key in ("mode", "rate_hz", "duration_s", "idle_s", "diagnostic_counts", "intrusive_profile", "post_idle_s")):
+        if recorded != tuple(spec.get(key, default) for key, default in (*((key, None) for key in ("mode", "rate_hz", "duration_s", "idle_s", "diagnostic_counts", "intrusive_profile", "post_idle_s")), *VARIANT_DEFAULTS.items())):
             raise ValueError(f"Recorded workload of {folder.name} does not match the intended trial")
     return result, summary
 
@@ -506,14 +552,26 @@ def diagnostic_failures(folder: Path, spec: dict, summary: dict) -> list[str]:
     """Instrumentation that was requested but is missing, incomplete or reports errors invalidates the trial."""
     manifest = json.loads((folder / "reproduction-manifest.json").read_text())
     failures = []
+    if variant_options(spec)["spike_instrumentation"]:
+        recorder = summary.get("spike_recorder")
+        if "workload/gc-events.jsonl" not in manifest or not isinstance(recorder, dict):
+            failures.append("spike_instrumentation_missing")
+        elif recorder.get("dropped") or recorder.get("callback_errors") or recorder.get("marks") != summary.get("completed_requests"):
+            failures.append("spike_instrumentation_incomplete")
+    if variant_options(spec)["lifecycle_variant"] != "pinned":
+        installed = summary.get("lifecycle_variant_install") or {}
+        if installed.get("variant") != spec["lifecycle_variant"] or installed.get("retention_limit") != spec["retention_limit"] or not installed.get("installed_class"):
+            failures.append("lifecycle_variant_not_installed")
+    if variant_options(spec)["gc_policy"] != "default" and (summary.get("gc_policy_summary") or {}).get("policy") != spec["gc_policy"]:
+        failures.append("gc_policy_not_applied")
     if spec["intrusive_profile"] == "none":
         if spec["diagnostic_counts"]:
             if "workload/retained-state.jsonl" not in manifest:
-                return ["retained_counts_missing"]
+                return [*failures, "retained_counts_missing"]
             try:
                 samples = _jsonl(folder / "workload/retained-state.jsonl")
             except ValueError:
-                return ["retained_counts_unreadable"]
+                return [*failures, "retained_counts_unreadable"]
             if len(samples) < 2 or samples[-1].get("completed_requests") != summary.get("completed_requests"):
                 failures.append("retained_counts_incomplete")
         return failures
@@ -822,7 +880,7 @@ def _execute_trial(spec: dict, folder: Path, upstream: Path, config: dict) -> di
         upstream, folder, "sustained", timeout_s=_trial_timeout_s(spec), profile=True, interval_ms=config["interval_ms"],
         baseline_s=spec["baseline_s"], duration_s=spec["duration_s"], rate_hz=spec["rate_hz"], mode=spec["mode"],
         idle_s=spec["idle_s"], diagnostic_counts=spec["diagnostic_counts"], intrusive_profile=spec["intrusive_profile"],
-        post_idle_s=spec["post_idle_s"],
+        post_idle_s=spec["post_idle_s"], **{key: spec[key] for key in VARIANT_DEFAULTS if key in spec},
     )
 
 
@@ -899,19 +957,20 @@ def _run_phase_locked(config: dict, phase: str, output: Path, upstream: Path, *,
 
 
 def run_all(config: dict, output: Path, upstream: Path, *, resume: bool = False) -> dict[str, list[dict]]:
-    """Run every phase in ALL_PHASES order under one source fingerprint; stop at the first phase that is not fully accounted for."""
+    """Run every phase in declaration order under one source fingerprint; stop at the first phase that is not fully accounted for."""
+    order = phase_order(config)
     plans = campaign_specs(config)
     specs = [spec for phase_specs in plans.values() for spec in phase_specs]
     with measurement_lock():
         _host_preflight(specs, output)
         fingerprint = source_fingerprint()
-        frozen = {"config": config, "phases": list(ALL_PHASES), "source_sha256": fingerprint, "python": sys.executable, "upstream": str(upstream.resolve())}
+        frozen = {"config": config, "phases": list(order), "source_sha256": fingerprint, "python": sys.executable, "upstream": str(upstream.resolve())}
         if resume:
             if not (output / "campaign.json").is_file():
                 raise ValueError("Cannot resume without a frozen campaign configuration")
             if json.loads((output / "campaign.json").read_text()) != frozen:
                 raise ValueError("Cannot resume with changed configuration or experiment code")
-            unexpected = sorted({path.name for path in output.iterdir() if path.is_dir()} - set(ALL_PHASES))
+            unexpected = sorted({path.name for path in output.iterdir() if path.is_dir()} - set(order))
             if unexpected:
                 raise RuntimeError(f"Unexpected folders in campaign output: {unexpected}")
         else:
@@ -920,7 +979,7 @@ def run_all(config: dict, output: Path, upstream: Path, *, resume: bool = False)
         results: dict[str, list[dict]] = {}
         preflighted: set = set()
         with (output / "campaign-ledger.jsonl").open("a", encoding="utf-8") as ledger:
-            _record(ledger, "campaign_resumed" if resume else "campaign_started", phases=list(ALL_PHASES), estimate=estimate_runtime(config, plans))
+            _record(ledger, "campaign_resumed" if resume else "campaign_started", phases=list(order), estimate=estimate_runtime(config, plans))
             phase = None
             try:
                 if not resume:
@@ -930,10 +989,10 @@ def run_all(config: dict, output: Path, upstream: Path, *, resume: bool = False)
                         if check["failures"]:
                             raise RuntimeError(f"Intrusive {profile} preflight failed before any measured trial: {check['failures']}")
                         preflighted.add(profile)
-                for index, phase in enumerate(ALL_PHASES):
+                for index, phase in enumerate(order):
                     folder = output / phase
                     _record(ledger, "phase_started", phase=phase)
-                    _say(f"phase {index + 1}/{len(ALL_PHASES)} {phase}: {len(plans[phase])} trials")
+                    _say(f"phase {index + 1}/{len(order)} {phase}: {len(plans[phase])} trials")
                     records = _run_phase_locked(config, phase, folder, upstream, resume=folder.exists(), fingerprint=fingerprint, cooldown_before_first=index > 0, preflighted=preflighted)
                     results[phase] = records
                     stopping = [row["trial_id"] for row in records if row["infrastructure_failures"]]
@@ -1062,6 +1121,8 @@ def analyze_phase(output: Path) -> dict:
                 except (OSError, KeyError, ValueError) as exc:
                     entry.update(workload=None, workload_error=f"{type(exc).__name__}: {exc}")
                     classification["infrastructure_failures"].append("workload_unreconciled")
+                if entry["workload"] and entry["workload"]["completed_requests"] and spec["intrusive_profile"] == "none":
+                    entry["spikes"] = spike_analysis.analyze_workload(folder / "workload", spec["rate_hz"])
             entry["status"] = _status_of(classification)
         trials[spec["trial_id"]] = entry
     counts = dict(Counter(entry["status"] for entry in trials.values()))
@@ -1080,6 +1141,18 @@ def _stats(values) -> dict:
 TRIAL_COUNTERS = ("planned_releases", "completed_requests", "successful_requests", "skipped_releases", "deadline_misses", "late_dispatches", "maintenance_failures", "unexpected_backends", "achieved_requests_per_s")
 
 
+def _spike_row(spikes: dict | None) -> dict | None:
+    if not spikes:
+        return None
+    gc = spikes.get("gc") or {}
+    return {
+        "instrumented": spikes["instrumented"], "spikes": spikes["spikes"], "causes": spikes["causes"], "off_cpu_subcauses": spikes.get("off_cpu_subcauses"), "explained_fraction": spikes["explained_fraction"],
+        "spikes_with_full_collection": spikes["spikes_with_full_collection"], "full_collections": len(gc.get("full_collections") or []) if gc else None,
+        "full_collection_max_ms": gc.get("full_collection_max_ms"), "invocation_slope_ms_per_1k": spikes["invocation_trend"]["slope_ms_per_1k_requests"],
+        "invocation_last_window_median_ms": spikes["invocation_trend"]["last_window_median_ms"],
+    }
+
+
 def _trial_row(trial_id: str, entry: dict) -> dict:
     workload = entry.get("workload") or {}
     metrics = workload.get("metrics") or {}
@@ -1089,11 +1162,16 @@ def _trial_row(trial_id: str, entry: dict) -> dict:
 
     return {
         "trial_id": trial_id, "status": entry["status"], "repetition": entry["trial"]["repetition"],
+        "lifecycle_variant": workload.get("lifecycle_variant", entry["trial"].get("lifecycle_variant", "pinned")),
+        "retention_limit": workload.get("retention_limit", entry["trial"].get("retention_limit")),
+        "gc_policy": workload.get("gc_policy", entry["trial"].get("gc_policy", "default")),
+        "gc_policy_summary": workload.get("gc_policy_summary"),
+        "lifecycle_variant_final_counts": workload.get("lifecycle_variant_final_counts"),
         **{key: workload.get(key) for key in TRIAL_COUNTERS},
         "cycle_ms": stats("cycle_ms"), "invocation_ms": stats("invocation_ms"), "release_to_completion_ms": stats("release_to_completion_ms"),
         "retained_last": (workload.get("retained_last") or {}).get("collections"),
         "steady_tree_rss_max_mib": ((entry.get("resources") or {}).get("steady_workload") or {}).get("tree_rss_max_mib"),
-        "power": power_estimate(entry.get("resources")),
+        "power": power_estimate(entry.get("resources")), "spikes": _spike_row(entry.get("spikes")),
         "infrastructure_failures": entry.get("infrastructure_failures", []), "performance_failures": entry.get("performance_failures", []),
     }
 
@@ -1111,6 +1189,18 @@ def _across(rows: list[dict]) -> dict:
         "totals": {key: sum(row[key] or 0 for row in measured) for key in TRIAL_COUNTERS if key != "achieved_requests_per_s"},
         "steady_power_w": _stats(row["power"]["steady_w"] for row in measured),
         "idle_adjusted_power_w": _stats(row["power"]["idle_adjusted_w"] for row in measured),
+        "invocation_slope_ms_per_1k": _stats((row["spikes"] or {}).get("invocation_slope_ms_per_1k") for row in measured),
+        "spikes": _stats((row["spikes"] or {}).get("spikes") for row in measured),
+        "explained_spike_fraction": _stats((row["spikes"] or {}).get("explained_fraction") for row in measured),
+        "full_collection_max_ms": _stats((row["spikes"] or {}).get("full_collection_max_ms") for row in measured),
+        "spikes_with_full_collection": _stats((row["spikes"] or {}).get("spikes_with_full_collection") for row in measured),
+        "gc_policy": sorted({row["gc_policy"] for row in measured}),
+        "gc_freeze_runs": _stats(((row["gc_policy_summary"] or {}).get("runs")) for row in measured),
+        "gc_freeze_total_ms": _stats(((row["gc_policy_summary"] or {}).get("total_ms")) for row in measured),
+        "gc_freeze_max_ms": _stats(((row["gc_policy_summary"] or {}).get("max_ms")) for row in measured),
+        "gc_frozen_objects_end": _stats(((row["gc_policy_summary"] or {}).get("frozen_objects_at_end")) for row in measured),
+        "retained_history_last": _stats(((row["retained_last"] or {}).get("lifecycle.history")) for row in measured),
+        "steady_tree_rss_max_mib": _stats(row["steady_tree_rss_max_mib"] for row in measured),
     }
 
 
@@ -1169,7 +1259,7 @@ def _local_conditions(trials: dict) -> dict:
     } for key, rows in groups.items()}
 
 
-def results_summary(analyses: dict[str, dict]) -> dict:
+def results_summary(analyses: dict[str, dict], phases=ALL_PHASES) -> dict:
     """Results-first condition summary across phases; offline only, nothing is rendered into a manuscript."""
     phases = {}
     for phase, analysis in analyses.items():
@@ -1182,7 +1272,7 @@ def results_summary(analyses: dict[str, dict]) -> dict:
             roles = {}
             for trial_id, item in trials.items():
                 spec = item["trial"]
-                key = f"{spec['mode']}@{spec['rate_hz']:g}Hz" + ("" if spec["intrusive_profile"] == "none" else f"/{spec['intrusive_profile']}")
+                key = f"{spec['mode']}@{spec['rate_hz']:g}Hz" + ("" if spec["intrusive_profile"] == "none" else f"/{spec['intrusive_profile']}") + ("" if "lifecycle_variant" not in spec else f"/{spec['lifecycle_variant']}") + ("" if spec.get("gc_policy", "default") == "default" else f"/gc-{spec['gc_policy']}")
                 groups.setdefault(key, []).append(_trial_row(trial_id, item))
                 roles[key] = "primary" if spec["intrusive_profile"] == "none" else "diagnostic_not_primary"
             entry.update(kind="sustained", conditions={key: {"timing_role": roles[key], "trials": rows, "across_trials": _across(rows)} for key, rows in groups.items()})
@@ -1194,7 +1284,7 @@ def results_summary(analyses: dict[str, dict]) -> dict:
         phases[phase] = entry
     return {
         "schema_version": 1, "generated_utc": datetime.now(UTC).isoformat(), "phases": phases,
-        "phases_without_output": [phase for phase in ALL_PHASES if phase not in analyses],
+        "phases_without_output": [phase for phase in phases if phase not in analyses],
         "notes": [
             "Generated offline from verified trial archives; never run concurrently with measurements.",
             "Per-trial nearest-rank statistics; across-trial values summarize trials, not pooled requests.",
@@ -1232,6 +1322,21 @@ def results_markdown(summary: dict) -> str:
             if "paired_power" in entry:
                 paired = entry["paired_power"]
                 lines += ["", f"Paired {paired['difference']}: steady W median {_fmt(paired['delta_steady_w']['median'], 3)} (n={paired['delta_steady_w']['n']}, stdev {_fmt(paired['delta_steady_w']['stdev'], 3)}); idle-adjusted W median {_fmt(paired['delta_idle_adjusted_w']['median'], 3)} (n={paired['delta_idle_adjusted_w']['n']}). Excluded pairs: {paired['excluded_pairs'] or 'none'}."]
+            if any(row["spikes"] and row["spikes"]["instrumented"] for condition in entry["conditions"].values() for row in condition["trials"]):
+                lines += [
+                    "", "Spike attribution (per trial; threshold 10 ms over the 30-s block median, plus every deadline miss):", "",
+                    "| Trial | Lifecycle | GC policy | Invocation slope ms/1k req | Last-window median ms | Spikes | Causes | Off-CPU sub-causes | Explained | Gen-2 collections | Max gen-2 ms | Freeze max ms | Frozen objects | History entries | RSS max MiB |",
+                    "| --- | --- | --- | ---: | ---: | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+                ]
+                for condition in entry["conditions"].values():
+                    for row in condition["trials"]:
+                        spikes = row["spikes"] or {}
+                        lines.append(
+                            f"| {row['trial_id']} | {row['lifecycle_variant']} | {row['gc_policy']} | {_fmt(spikes.get('invocation_slope_ms_per_1k'), 3)} | {_fmt(spikes.get('invocation_last_window_median_ms'), 2)} | {_fmt(spikes.get('spikes'))} "
+                            f"| {spikes.get('causes') or '-'} | {spikes.get('off_cpu_subcauses') or '-'} | {_fmt(spikes.get('explained_fraction'), 3)} | {_fmt(spikes.get('full_collections'))} | {_fmt(spikes.get('full_collection_max_ms'), 1)} "
+                            f"| {_fmt((row['gc_policy_summary'] or {}).get('max_ms'), 3)} | {_fmt((row['gc_policy_summary'] or {}).get('frozen_objects_at_end'))} "
+                            f"| {_fmt((row['retained_last'] or {}).get('lifecycle.history'))} | {_fmt(row['steady_tree_rss_max_mib'], 1)} |"
+                        )
         lines.append("")
     return "\n".join(lines)
 
@@ -1242,11 +1347,13 @@ def analyze_campaign(output: Path) -> dict:
         if (output / "frozen.json").is_file():
             analysis = analyze_phase(output)
             analyses = {analysis["phase"]: analysis}
+            phases = (analysis["phase"],)
         elif (output / "campaign.json").is_file():
-            analyses = {phase: analyze_phase(output / phase) for phase in ALL_PHASES if (output / phase / "frozen.json").is_file()}
+            phases = tuple(json.loads((output / "campaign.json").read_text())["phases"])
+            analyses = {phase: analyze_phase(output / phase) for phase in phases if (output / phase / "frozen.json").is_file()}
         else:
             raise ValueError("Not a phase folder (frozen.json) or campaign root (campaign.json)")
-        summary = results_summary(analyses)
+        summary = results_summary(analyses, phases)
         (output / "results-summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
         (output / "results-summary.md").write_text(results_markdown(summary), encoding="utf-8")
     return summary
@@ -1293,7 +1400,8 @@ def campaign_status(output: Path) -> dict:
     if (output / "frozen.json").is_file() or not (output / "campaign.json").is_file():
         return phase_status(output)
     events = read_ledger_file(output / "campaign-ledger.jsonl")
-    return {"phases": {phase: phase_status(output / phase) for phase in ALL_PHASES}, "campaign_events": [_compact(event) for event in events[-5:]]}
+    phases = json.loads((output / "campaign.json").read_text())["phases"]
+    return {"phases": {phase: phase_status(output / phase) for phase in phases}, "campaign_events": [_compact(event) for event in events[-5:]]}
 
 
 def _run_report(records: list[dict], planned: int) -> dict:
@@ -1309,15 +1417,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("command", choices=["validate", "run", "analyze", "status"])
     parser.add_argument("--config", type=Path, default=ROOT / "docs/experiments/operating-limits/plan.json")
-    parser.add_argument("--phase", default="pilot", help=f"validate/run: one of {', '.join(ALL_PHASES)}, or 'all' for that ordered sequence")
+    parser.add_argument("--phase", default="pilot", help="validate/run: one phase of the configuration, or 'all' for its declared order")
     parser.add_argument("--output-dir", type=Path, help="run: new (or --resume) phase folder, or campaign root with --phase all; analyze/status: either kind")
     parser.add_argument("--upstream", type=Path, default=ROOT / "_temp/cp2n2-v5.1.1")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--list-trials", action="store_true", help="validate: also print every planned trial")
     args = parser.parse_args()
-    phases = ALL_PHASES if args.phase == "all" else (args.phase,)
+    config = json.loads(args.config.read_text()) if args.command in ("validate", "run") else None
+    phases = phase_order(config) if config is not None and args.phase == "all" else (args.phase,)
     if args.command == "validate":
-        config = json.loads(args.config.read_text())
         plans = campaign_specs(config, phases)
         report = {
             "phases": {phase: {"trials": len(specs), "active_s": sum(spec["duration_s"] for spec in specs), "estimated_wall_s": estimate_runtime(config, {phase: specs})["estimated_wall_s"]} for phase, specs in plans.items()},
@@ -1331,7 +1439,6 @@ def main() -> None:
         parser.error("This command requires --output-dir")
     output = args.output_dir.resolve()
     if args.command == "run":
-        config = json.loads(args.config.read_text())
         plans = campaign_specs(config, phases)
         if args.phase == "all":
             results = run_all(config, output, args.upstream, resume=args.resume)

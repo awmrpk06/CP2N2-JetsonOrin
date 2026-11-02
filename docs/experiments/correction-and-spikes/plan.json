@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb",
+  "cooling": "Developer-kit fan and heatsink, open air",
+  "ambient_temperature_c": null,
+  "desktop_comparison": false,
+  "interval_ms": 250,
+  "platform_idle_s": 3,
+  "cooldown_s": 60,
+  "phases": {
+    "pilot": {"implemented": true, "kind": "sustained", "duration_s": 20, "idle_s": 3, "modes": ["orchestrated"], "rates_hz": [10], "repetitions": 1, "diagnostic_counts": true, "lifecycle_variants": ["pinned", "indexed", "bounded"], "retention_limit": 6000, "spike_instrumentation": true},
+    "correction": {"implemented": true, "kind": "sustained", "duration_s": 1200, "idle_s": 3, "modes": ["orchestrated"], "rates_hz": [10], "repetitions": 2, "diagnostic_counts": true, "lifecycle_variants": ["pinned", "indexed", "bounded"], "retention_limit": 6000, "spike_instrumentation": true}
+  }
+}

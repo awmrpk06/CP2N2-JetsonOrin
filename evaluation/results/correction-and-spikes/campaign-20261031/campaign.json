@@ -1,0 +1,75 @@
+{
+  "config": {
+    "ambient_temperature_c": null,
+    "cooldown_s": 60,
+    "cooling": "Developer-kit fan and heatsink, open air",
+    "desktop_comparison": false,
+    "interval_ms": 250,
+    "phases": {
+      "correction": {
+        "diagnostic_counts": true,
+        "duration_s": 1200,
+        "idle_s": 3,
+        "implemented": true,
+        "kind": "sustained",
+        "lifecycle_variants": [
+          "pinned",
+          "indexed",
+          "bounded"
+        ],
+        "modes": [
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 2,
+        "retention_limit": 6000,
+        "spike_instrumentation": true
+      },
+      "pilot": {
+        "diagnostic_counts": true,
+        "duration_s": 20,
+        "idle_s": 3,
+        "implemented": true,
+        "kind": "sustained",
+        "lifecycle_variants": [
+          "pinned",
+          "indexed",
+          "bounded"
+        ],
+        "modes": [
+          "orchestrated"
+        ],
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 1,
+        "retention_limit": 6000,
+        "spike_instrumentation": true
+      }
+    },
+    "platform_idle_s": 3,
+    "schema_version": 2,
+    "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb"
+  },
+  "phases": [
+    "pilot",
+    "correction"
+  ],
+  "python": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/bin/python",
+  "source_sha256": {
+    "evaluation/__init__.py": "4b8a0aed470cbad89dacdc0136a7cc4ae25813e23495366d911fac51c594705a",
+    "evaluation/evaluate_tegra_resources.py": "dc0560d6a93a540c8a0dbcda3ec8e42491c3cc5ba00822809ec09961b1c66539",
+    "evaluation/growth_diagnostics.py": "b36ec72f06cd5459df959df736f2608d1e1130a6e3f7a99e03db7fc0d55dcd88",
+    "evaluation/lifecycle_variants.py": "f5da2ba40877b2a3192339c6ddbecba2d77594ffb1cae80ec3cb775a221568fe",
+    "evaluation/local_control_experiment.py": "e0a0bb48340c791e3a8bf65ac94c35ffcb53e0f031e281f3e84697c2ff313f19",
+    "evaluation/operating_limits.py": "3e943142d4219c1a617fabb36119bc32a3c098f7ab99c54af1a6097635b34b64",
+    "evaluation/reproduce_original.py": "d592762afcdfc7af8877c723682f786168e78bc992839480e75117297fc5c601",
+    "evaluation/resource_monitor.py": "32eb09e8aabf57fdb72765cc549b74a702fc2f9741ff74a61e308f0d851c2528",
+    "evaluation/spike_analysis.py": "7461fb133119829d89ffb50298480028504274a2eaef3165677287843d966459",
+    "evaluation/summarize_profiles.py": "3bb153e5a2f1c59d84120a37de2af29bbe1adc86ea2080c419dbe915acff1520",
+    "evaluation/upstream_sustained.py": "f289194108f481b83bc208d6ab6d31b85eb016b77e0817cb64a2512198638ac3"
+  },
+  "upstream": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1"
+}

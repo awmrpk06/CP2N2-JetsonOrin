@@ -1,0 +1,110 @@
+{
+  "elapsed_s": 1211.6592820149963,
+  "guard_reason": null,
+  "hardware_postflight": {
+    "cpu_online": "0-5",
+    "cpu_present": "0-5",
+    "cpufreq": {
+      "cpu0": {
+        "cpuinfo_max_freq": "1728000",
+        "cpuinfo_min_freq": "115200",
+        "scaling_cur_freq": "1344000",
+        "scaling_driver": "tegra194",
+        "scaling_governor": "schedutil",
+        "scaling_max_freq": "1344000",
+        "scaling_min_freq": "729600"
+      },
+      "cpu1": {
+        "cpuinfo_max_freq": "1728000",
+        "cpuinfo_min_freq": "115200",
+        "scaling_cur_freq": "1344000",
+        "scaling_driver": "tegra194",
+        "scaling_governor": "schedutil",
+        "scaling_max_freq": "1344000",
+        "scaling_min_freq": "729600"
+      },
+      "cpu2": {
+        "cpuinfo_max_freq": "1728000",
+        "cpuinfo_min_freq": "115200",
+        "scaling_cur_freq": "1344000",
+        "scaling_driver": "tegra194",
+        "scaling_governor": "schedutil",
+        "scaling_max_freq": "1344000",
+        "scaling_min_freq": "729600"
+      },
+      "cpu3": {
+        "cpuinfo_max_freq": "1728000",
+        "cpuinfo_min_freq": "115200",
+        "scaling_cur_freq": "1344000",
+        "scaling_driver": "tegra194",
+        "scaling_governor": "schedutil",
+        "scaling_max_freq": "1344000",
+        "scaling_min_freq": "729600"
+      },
+      "cpu4": {
+        "cpuinfo_max_freq": "1728000",
+        "cpuinfo_min_freq": "115200",
+        "scaling_cur_freq": "729600",
+        "scaling_driver": "tegra194",
+        "scaling_governor": "schedutil",
+        "scaling_max_freq": "1344000",
+        "scaling_min_freq": "729600"
+      },
+      "cpu5": {
+        "cpuinfo_max_freq": "1728000",
+        "cpuinfo_min_freq": "115200",
+        "scaling_cur_freq": "729600",
+        "scaling_driver": "tegra194",
+        "scaling_governor": "schedutil",
+        "scaling_max_freq": "1344000",
+        "scaling_min_freq": "729600"
+      }
+    },
+    "monotonic_ns": 169776915173268,
+    "power_mode": {
+      "output": "NV Power Mode: 25W\n1",
+      "output_truncated": false,
+      "returncode": 0
+    }
+  },
+  "ignored_windows": {},
+  "parent_error": null,
+  "process_cleanup": {
+    "group_remaining": false,
+    "permission_denied": false,
+    "returncode": 0,
+    "root_exited_before_stop": true,
+    "root_reaped": true,
+    "signals": []
+  },
+  "profile": true,
+  "profile_complete": true,
+  "profile_error": null,
+  "returncode": 0,
+  "stage": "sustained",
+  "timed_out": false,
+  "upstream_sources_unchanged": true,
+  "windows_ns": {
+    "command": [
+      168568545456565,
+      169773320757794
+    ],
+    "platform_after": [
+      169773320761154,
+      169776320841460
+    ],
+    "platform_before": [
+      168565544720108,
+      168568545066184
+    ],
+    "ready_worker_idle": [
+      168569894730366,
+      168572895934283
+    ],
+    "steady_workload": [
+      168572895934283,
+      169772896260697
+    ]
+  },
+  "workload_summary_error": null
+}

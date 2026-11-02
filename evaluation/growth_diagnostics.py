@@ -59,6 +59,9 @@ def retained_counts(orchestrator) -> dict:
         with store._lock:
             for field in fields:
                 collections[f"{name}.{field.removeprefix('_')}"] = len(getattr(store, field))
+    if hasattr(registry.lifecycle_store, "variant_counts"):
+        variant = registry.lifecycle_store.variant_counts()
+        collections.update({"lifecycle.indexed_correlations": variant["indexed_correlations"], "lifecycle.evicted": variant["evicted"]})
     return {
         "control_plane_present": True, "collections": collections,
         "audit_scope": "No MCP audit surface is called by this workload; other allocation sources require separate allocation profiling.",
@@ -442,3 +445,111 @@ class DiagnosticSession:
             }
         metadata["files"] = sorted(path.name for path in self.output_dir.iterdir()) + ["diagnostics.json"]
         return metadata
+
+
+SPIKE_COLUMNS = (
+    "spike_window_ms", "gc_collections", "gc_max_generation", "gc_ms", "process_cpu_ms", "off_cpu_ms",
+    "voluntary_switches", "involuntary_switches", "minor_faults", "major_faults",
+)
+
+
+class SpikeRecorder:
+    """Low-cost per-request attribution data: gc callback timing, process CPU time and rusage deltas.
+
+    Process-wide (not per-thread) values are used because the pinned orchestrator runs adapter phases in
+    short-lived worker threads. Every collection is also streamed to gc-events.jsonl outside the callback.
+    """
+
+    def __init__(self, output: Path, *, buffer_limit: int = 100_000, clock: Callable[[], int] = time.monotonic_ns):
+        import resource
+        import threading
+
+        self._resource, self._threading = resource, threading
+        self._clock = clock
+        self._buffer_limit = _positive_int("buffer_limit", buffer_limit)
+        self._main_thread = threading.main_thread().ident
+        self._handle = output.open("x", encoding="utf-8")
+        self._registered = False
+        self._gc_start_ns = None
+        self._gc_total_ns = 0
+        self._gc_count = 0
+        self._max_generation = -1
+        self._pending: list[tuple] = []
+        self._written = self._dropped = self._callback_errors = 0
+        self._overhead_ns = self._overhead_max_ns = self._marks = 0
+
+    def start(self) -> None:
+        gc.callbacks.append(self._on_gc)
+        self._registered = True
+        self._started_ns = self._clock()
+
+    def _on_gc(self, phase: str, info: dict) -> None:
+        # Runs inside the collector: no I/O and no references kept to info.
+        try:
+            now = self._clock()
+            if phase == "start":
+                self._gc_start_ns = now
+                return
+            started, self._gc_start_ns = self._gc_start_ns, None
+            duration = now - started if started is not None else 0
+            self._gc_total_ns += duration
+            self._gc_count += 1
+            self._max_generation = max(self._max_generation, info["generation"])
+            if len(self._pending) < self._buffer_limit:
+                self._pending.append((started, now, info["generation"], info["collected"], info["uncollectable"], self._threading.get_ident() == self._main_thread))
+            else:
+                self._dropped += 1
+        except Exception:  # noqa: BLE001 - a gc callback must never raise into the collector
+            self._callback_errors += 1
+
+    def begin(self) -> tuple:
+        usage = self._resource.getrusage(self._resource.RUSAGE_SELF)
+        self._max_generation = -1
+        return (self._clock(), time.process_time_ns(), self._gc_total_ns, self._gc_count, usage.ru_nvcsw, usage.ru_nivcsw, usage.ru_minflt, usage.ru_majflt)
+
+    def end(self, mark: tuple) -> dict:
+        process_ns, now = time.process_time_ns(), self._clock()
+        usage = self._resource.getrusage(self._resource.RUSAGE_SELF)
+        wall_ns, cpu_ns = now - mark[0], process_ns - mark[1]
+        row = {
+            "spike_window_ms": wall_ns / 1e6, "gc_collections": self._gc_count - mark[3],
+            "gc_max_generation": self._max_generation if self._gc_count > mark[3] else None,
+            "gc_ms": (self._gc_total_ns - mark[2]) / 1e6, "process_cpu_ms": cpu_ns / 1e6, "off_cpu_ms": max(0, wall_ns - cpu_ns) / 1e6,
+            "voluntary_switches": usage.ru_nvcsw - mark[4], "involuntary_switches": usage.ru_nivcsw - mark[5],
+            "minor_faults": usage.ru_minflt - mark[6], "major_faults": usage.ru_majflt - mark[7],
+        }
+        self._flush()
+        spent = self._clock() - now
+        self._overhead_ns += spent
+        self._overhead_max_ns = max(self._overhead_max_ns, spent)
+        self._marks += 1
+        return row
+
+    def _flush(self) -> None:
+        if not self._pending:
+            return
+        pending, self._pending = self._pending, []
+        for started, finished, generation, collected, uncollectable, main_thread in pending:
+            self._handle.write(json.dumps({
+                "start_ns": started, "end_ns": finished, "duration_ns": None if started is None else finished - started,
+                "generation": generation, "collected": collected, "uncollectable": uncollectable, "main_thread": main_thread,
+            }) + "\n")
+        self._written += len(pending)
+
+    def close(self) -> dict:
+        if self._registered:
+            gc.callbacks.remove(self._on_gc)
+            self._registered = False
+        try:
+            self._flush()
+        finally:
+            self._handle.close()
+        return {
+            "file": "gc-events.jsonl", "events_written": self._written, "dropped": self._dropped, "callback_errors": self._callback_errors,
+            "collections": self._gc_count, "gc_total_ms": self._gc_total_ns / 1e6, "gc_threshold": list(gc.get_threshold()),
+            "gc_stats": gc.get_stats(), "gc_frozen": gc.get_freeze_count(), "marks": self._marks,
+            "row_overhead_total_ms": self._overhead_ns / 1e6, "row_overhead_max_ms": self._overhead_max_ns / 1e6,
+            "columns": list(SPIKE_COLUMNS),
+            "scope": "Process-wide CPU time and rusage over each request window (begin to end); off_cpu_ms = window minus process CPU. "
+                     "Collections are timed by gc callbacks in whichever thread triggered them.",
+        }

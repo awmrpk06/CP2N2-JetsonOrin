@@ -13,6 +13,7 @@ interpretation of these experiments or an accepted publication.
 - [Results index and reproduction guide](docs/embedded-feasibility/README.md)
 - [October 29 operating-limits campaign: verified results](evaluation/results/operating-limits/campaign-20261029/results-summary.md)
 - [Long-run, load-sweep, local-control and power run guide](docs/experiments/operating-limits/README.md)
+- [Lifecycle-history corrections and latency-spike attribution](docs/experiments/correction-and-spikes/README.md)
 - [Original-paper protocol and comparison](docs/embedded-feasibility/original-protocol.md)
 - [CPU, memory, temperature, GPU and power report](evaluation/results/upstream-profile-20261024/profile-report.md)
 - [Resource measurement protocol](docs/embedded-feasibility/upstream-resource-protocol.md)

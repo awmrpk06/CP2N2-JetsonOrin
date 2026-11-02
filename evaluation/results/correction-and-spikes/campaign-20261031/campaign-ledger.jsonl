@@ -1,0 +1,5 @@
+{"estimate": {"active_s": 7260, "assumptions": "platform baselines before and after each sustained trial, 10 s start/teardown per sustained trial, 15 s per local-control trial, 60 s cooldown between consecutive trials", "estimated_wall_h": 2.2, "estimated_wall_s": 7911, "trials": 9}, "event": "campaign_started", "monotonic_ns": 164476053284383, "phases": ["pilot", "correction"], "utc": "2026-10-31T07:00:56.467839+00:00"}
+{"event": "phase_started", "monotonic_ns": 164476055111513, "phase": "pilot", "utc": "2026-10-31T07:00:56.469677+00:00"}
+{"accounted": 3, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 164689691751215, "phase": "pilot", "planned": 3, "utc": "2026-10-31T07:04:30.106308+00:00"}
+{"event": "phase_started", "monotonic_ns": 164689693150876, "phase": "correction", "utc": "2026-10-31T07:04:30.107715+00:00"}
+{"accounted": 6, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 172320550610576, "phase": "correction", "planned": 6, "utc": "2026-10-31T09:11:40.965172+00:00"}

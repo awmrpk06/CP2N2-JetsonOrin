@@ -1,0 +1,1711 @@
+{
+  "generated_utc": "2026-11-02T07:00:56.341259+00:00",
+  "notes": [
+    "Generated offline from verified trial archives; never run concurrently with measurements.",
+    "Per-trial nearest-rank statistics; across-trial values summarize trials, not pooled requests.",
+    "Deadlines are experimental release-relative deadlines of one interarrival period unless stated otherwise.",
+    "Intrusive allocation/calls trials are diagnostics only; their timings are not primary evidence.",
+    "Power is platform VDD_IN; idle-adjusted values subtract the same worker's ready/post idle windows."
+  ],
+  "phases": {
+    "correction": {
+      "conditions": {
+        "orchestrated@10Hz/bounded": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999997816033812,
+              "mean": 9.99999687840523,
+              "median": 9.99999687840523,
+              "min": 9.999995940776648,
+              "n": 2,
+              "stdev": 1.3260070569738065e-06
+            },
+            "cycle_median_ms": {
+              "max": 10.226174499999999,
+              "mean": 9.7295195,
+              "median": 9.7295195,
+              "min": 9.232864500000002,
+              "n": 2,
+              "stdev": 0.7023762368204077
+            },
+            "cycle_p95_ms": {
+              "max": 11.528942,
+              "mean": 11.2805,
+              "median": 11.2805,
+              "min": 11.032058,
+              "n": 2,
+              "stdev": 0.3513500458630975
+            },
+            "explained_spike_fraction": {
+              "max": 1.0,
+              "mean": 1.0,
+              "median": 1.0,
+              "min": 1.0,
+              "n": 1,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.028751084033826757,
+              "mean": -0.03860881002721994,
+              "median": -0.03860881002721994,
+              "min": -0.04846653602061313,
+              "n": 2,
+              "stdev": 0.013940929794014434
+            },
+            "invocation_median_ms": {
+              "max": 10.197244000000001,
+              "mean": 9.702644750000001,
+              "median": 9.702644750000001,
+              "min": 9.2080455,
+              "n": 2,
+              "stdev": 0.6994689672895614
+            },
+            "invocation_p95_ms": {
+              "max": 11.49739,
+              "mean": 11.2505955,
+              "median": 11.2505955,
+              "min": 11.003801,
+              "n": 2,
+              "stdev": 0.34902012901908686
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": 0.042883644110275745,
+              "mean": 0.02944651347117798,
+              "median": 0.02944651347117798,
+              "min": 0.016009382832080216,
+              "n": 2,
+              "stdev": 0.019002972389191113
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 6000,
+              "mean": 6000,
+              "median": 6000.0,
+              "min": 6000,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "spikes": {
+              "max": 11,
+              "mean": 5.5,
+              "median": 5.5,
+              "min": 0,
+              "n": 2,
+              "stdev": 7.7781745930520225
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "steady_power_w": {
+              "max": 4.848371304842133,
+              "mean": 4.812635146386743,
+              "median": 4.812635146386743,
+              "min": 4.776898987931352,
+              "n": 2,
+              "stdev": 0.05053855995472731
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 93.48046875,
+              "mean": 92.443359375,
+              "median": 92.443359375,
+              "min": 91.40625,
+              "n": 2,
+              "stdev": 1.4666941437892842
+            },
+            "totals": {
+              "completed_requests": 24000,
+              "deadline_misses": 0,
+              "late_dispatches": 24000,
+              "maintenance_failures": 0,
+              "planned_releases": 24000,
+              "skipped_releases": 0,
+              "successful_requests": 24000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 2
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999995940776648,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 86.391258,
+                "median": 10.226174499999999,
+                "p95": 11.528942
+              },
+              "deadline_misses": 0,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 86.351608,
+                "median": 10.197244000000001,
+                "p95": 11.49739
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "bounded",
+              "lifecycle_variant_final_counts": {
+                "evicted": 66003,
+                "history": 6000,
+                "indexed_correlations": 1000,
+                "indexed_records": 6000
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.028751084033826757,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.722254110637662,
+                "platform_before_w": 4.769092324342066,
+                "post_idle_w": null,
+                "ready_idle_w": 4.87712238887596,
+                "steady_w": 4.848371304842133
+              },
+              "release_to_completion_ms": {
+                "max": 86.652393,
+                "median": 10.403765,
+                "p95": 11.745375
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 66003,
+                "lifecycle.history": 6000,
+                "lifecycle.indexed_correlations": 1000,
+                "lifecycle.states": 3
+              },
+              "retention_limit": 6000,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "off_cpu": 11
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 10.5172215,
+                "invocation_slope_ms_per_1k": 0.042883644110275745,
+                "off_cpu_subcauses": {
+                  "cpu_contention": 6,
+                  "unclassified": 5
+                },
+                "spikes": 11,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 93.48046875,
+              "successful_requests": 12000,
+              "trial_id": "correction-r01-orchestrated-bounded-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999997816033812,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 16.767438,
+                "median": 9.232864500000002,
+                "p95": 11.032058
+              },
+              "deadline_misses": 0,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 16.736461,
+                "median": 9.2080455,
+                "p95": 11.003801
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "bounded",
+              "lifecycle_variant_final_counts": {
+                "evicted": 66003,
+                "history": 6000,
+                "indexed_correlations": 1000,
+                "indexed_records": 6000
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.04846653602061313,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.695355212210223,
+                "platform_before_w": 4.691137132815969,
+                "post_idle_w": null,
+                "ready_idle_w": 4.825365523951965,
+                "steady_w": 4.776898987931352
+              },
+              "release_to_completion_ms": {
+                "max": 16.901098,
+                "median": 9.429611999999999,
+                "p95": 11.254526
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 66003,
+                "lifecycle.history": 6000,
+                "lifecycle.indexed_correlations": 1000,
+                "lifecycle.states": 3
+              },
+              "retention_limit": 6000,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {},
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 8.960011,
+                "invocation_slope_ms_per_1k": 0.016009382832080216,
+                "off_cpu_subcauses": {},
+                "spikes": 0,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 91.40625,
+              "successful_requests": 12000,
+              "trial_id": "correction-r02-orchestrated-bounded-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/indexed": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999997279884074,
+              "mean": 9.999996425409684,
+              "median": 9.999996425409684,
+              "min": 9.999995570935296,
+              "n": 2,
+              "stdev": 1.2084092696562837e-06
+            },
+            "cycle_median_ms": {
+              "max": 10.2071085,
+              "mean": 9.80007325,
+              "median": 9.80007325,
+              "min": 9.393038,
+              "n": 2,
+              "stdev": 0.5756347709139231
+            },
+            "cycle_p95_ms": {
+              "max": 11.384874,
+              "mean": 11.2183435,
+              "median": 11.2183435,
+              "min": 11.051813,
+              "n": 2,
+              "stdev": 0.23550969164877322
+            },
+            "explained_spike_fraction": {
+              "max": 1.0,
+              "mean": 1.0,
+              "median": 1.0,
+              "min": 1.0,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "full_collection_max_ms": {
+              "max": 161.0023,
+              "mean": 157.80309549999998,
+              "median": 157.80309549999998,
+              "min": 154.603891,
+              "n": 2,
+              "stdev": 4.524358392705027
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.0020904239862584717,
+              "mean": -0.02783581839369864,
+              "median": -0.02783581839369864,
+              "min": -0.05358121280113881,
+              "n": 2,
+              "stdev": 0.036409485939646324
+            },
+            "invocation_median_ms": {
+              "max": 10.179011500000001,
+              "mean": 9.773320250000001,
+              "median": 9.773320250000001,
+              "min": 9.367629,
+              "n": 2,
+              "stdev": 0.5737340678860943
+            },
+            "invocation_p95_ms": {
+              "max": 11.355593,
+              "mean": 11.188581,
+              "median": 11.188581,
+              "min": 11.021569,
+              "n": 2,
+              "stdev": 0.2361906354790562
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": 0.07266923308270677,
+              "mean": 0.05833316008771931,
+              "median": 0.05833316008771931,
+              "min": 0.04399708709273186,
+              "n": 2,
+              "stdev": 0.020274268860681934
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 72003,
+              "mean": 72003,
+              "median": 72003.0,
+              "min": 72003,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "spikes": {
+              "max": 21,
+              "mean": 19,
+              "median": 19.0,
+              "min": 17,
+              "n": 2,
+              "stdev": 2.8284271247461903
+            },
+            "spikes_with_full_collection": {
+              "max": 3,
+              "mean": 3,
+              "median": 3.0,
+              "min": 3,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "steady_power_w": {
+              "max": 4.845897560251734,
+              "mean": 4.814710314106973,
+              "median": 4.814710314106973,
+              "min": 4.783523067962213,
+              "n": 2,
+              "stdev": 0.044105426470987905
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 185.34765625,
+              "mean": 183.427734375,
+              "median": 183.427734375,
+              "min": 181.5078125,
+              "n": 2,
+              "stdev": 2.7151795543217823
+            },
+            "totals": {
+              "completed_requests": 24000,
+              "deadline_misses": 6,
+              "late_dispatches": 24000,
+              "maintenance_failures": 0,
+              "planned_releases": 24000,
+              "skipped_releases": 0,
+              "successful_requests": 24000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 2
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999995570935296,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 170.912343,
+                "median": 10.2071085,
+                "p95": 11.384874
+              },
+              "deadline_misses": 3,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 170.88431,
+                "median": 10.179011500000001,
+                "p95": 11.355593
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 72003,
+                "indexed_correlations": 12001,
+                "indexed_records": 72003
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:3"
+              ],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.0020904239862584717,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.793596840801647,
+                "platform_before_w": 4.7365296176476726,
+                "post_idle_w": null,
+                "ready_idle_w": 4.847987984237992,
+                "steady_w": 4.845897560251734
+              },
+              "release_to_completion_ms": {
+                "max": 171.05486,
+                "median": 10.426807499999999,
+                "p95": 11.611872
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.indexed_correlations": 12001,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "gc": 3,
+                  "off_cpu": 18
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": 161.0023,
+                "full_collections": 3,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 10.368537,
+                "invocation_slope_ms_per_1k": 0.07266923308270677,
+                "off_cpu_subcauses": {
+                  "cpu_contention": 2,
+                  "voluntary_wait": 16
+                },
+                "spikes": 21,
+                "spikes_with_full_collection": 3
+              },
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 185.34765625,
+              "successful_requests": 12000,
+              "trial_id": "correction-r01-orchestrated-indexed-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999997279884074,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 165.445646,
+                "median": 9.393038,
+                "p95": 11.051813
+              },
+              "deadline_misses": 3,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 165.413677,
+                "median": 9.367629,
+                "p95": 11.021569
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 72003,
+                "indexed_correlations": 12001,
+                "indexed_records": 72003
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:3"
+              ],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.05358121280113881,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.722294292367094,
+                "platform_before_w": 4.702550667258189,
+                "post_idle_w": null,
+                "ready_idle_w": 4.837104280763352,
+                "steady_w": 4.783523067962213
+              },
+              "release_to_completion_ms": {
+                "max": 165.617777,
+                "median": 9.577489,
+                "p95": 11.30925
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.indexed_correlations": 12001,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "gc": 3,
+                  "off_cpu": 14
+                },
+                "explained_fraction": 1.0,
+                "full_collection_max_ms": 154.603891,
+                "full_collections": 3,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 9.093171000000002,
+                "invocation_slope_ms_per_1k": 0.04399708709273186,
+                "off_cpu_subcauses": {
+                  "voluntary_wait": 14
+                },
+                "spikes": 17,
+                "spikes_with_full_collection": 3
+              },
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 181.5078125,
+              "successful_requests": 12000,
+              "trial_id": "correction-r02-orchestrated-indexed-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/pinned": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999998088817032,
+              "mean": 9.999997895017113,
+              "median": 9.999997895017113,
+              "min": 9.999997701217195,
+              "n": 2,
+              "stdev": 2.740744728968026e-07
+            },
+            "cycle_median_ms": {
+              "max": 22.004730000000002,
+              "mean": 21.92440025,
+              "median": 21.92440025,
+              "min": 21.8440705,
+              "n": 2,
+              "stdev": 0.11360342191204104
+            },
+            "cycle_p95_ms": {
+              "max": 34.888476,
+              "mean": 34.3804085,
+              "median": 34.3804085,
+              "min": 33.872341,
+              "n": 2,
+              "stdev": 0.7185159491009914
+            },
+            "explained_spike_fraction": {
+              "max": 0.9333333333333333,
+              "mean": 0.8833333333333333,
+              "median": 0.8833333333333333,
+              "min": 0.8333333333333334,
+              "n": 2,
+              "stdev": 0.07071067811865474
+            },
+            "full_collection_max_ms": {
+              "max": 155.336938,
+              "mean": 151.964431,
+              "median": 151.964431,
+              "min": 148.591924,
+              "n": 2,
+              "stdev": 4.769445138598198
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": 0.06486661473067556,
+              "mean": 0.043570565184710475,
+              "median": 0.043570565184710475,
+              "min": 0.022274515638745385,
+              "n": 2,
+              "stdev": 0.030117162092873222
+            },
+            "invocation_median_ms": {
+              "max": 21.968313,
+              "mean": 21.885942999999997,
+              "median": 21.885942999999997,
+              "min": 21.803573,
+              "n": 2,
+              "stdev": 0.11648877113267066
+            },
+            "invocation_p95_ms": {
+              "max": 34.847739,
+              "mean": 34.337767,
+              "median": 34.337767,
+              "min": 33.827795,
+              "n": 2,
+              "stdev": 0.7212093188305286
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": 2.3021993427318295,
+              "mean": 2.247328139097744,
+              "median": 2.247328139097744,
+              "min": 2.1924569354636585,
+              "n": 2,
+              "stdev": 0.07759960036305955
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 72003,
+              "mean": 72003,
+              "median": 72003.0,
+              "min": 72003,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "spikes": {
+              "max": 15,
+              "mean": 10.5,
+              "median": 10.5,
+              "min": 6,
+              "n": 2,
+              "stdev": 6.363961030678928
+            },
+            "spikes_with_full_collection": {
+              "max": 3,
+              "mean": 3,
+              "median": 3.0,
+              "min": 3,
+              "n": 2,
+              "stdev": 0.0
+            },
+            "steady_power_w": {
+              "max": 4.900744228788455,
+              "mean": 4.874918775765719,
+              "median": 4.874918775765719,
+              "min": 4.849093322742983,
+              "n": 2,
+              "stdev": 0.03652270591918246
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 171.4609375,
+              "mean": 169.724609375,
+              "median": 169.724609375,
+              "min": 167.98828125,
+              "n": 2,
+              "stdev": 2.4555387831048465
+            },
+            "totals": {
+              "completed_requests": 24000,
+              "deadline_misses": 8,
+              "late_dispatches": 24000,
+              "maintenance_failures": 0,
+              "planned_releases": 24000,
+              "skipped_releases": 0,
+              "successful_requests": 24000,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 2
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999998088817032,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 180.026619,
+                "median": 21.8440705,
+                "p95": 33.872341
+              },
+              "deadline_misses": 4,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 179.990522,
+                "median": 21.803573,
+                "p95": 33.827795
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "pinned",
+              "lifecycle_variant_final_counts": null,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:4"
+              ],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.06486661473067556,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.783001386056771,
+                "platform_before_w": 4.702669622171216,
+                "post_idle_w": null,
+                "ready_idle_w": 4.83587761405778,
+                "steady_w": 4.900744228788455
+              },
+              "release_to_completion_ms": {
+                "max": 180.195331,
+                "median": 22.0372175,
+                "p95": 34.133053
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "deadline_only": 1,
+                  "gc": 3,
+                  "off_cpu": 11
+                },
+                "explained_fraction": 0.9333333333333333,
+                "full_collection_max_ms": 148.591924,
+                "full_collections": 3,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 33.699790500000006,
+                "invocation_slope_ms_per_1k": 2.1924569354636585,
+                "off_cpu_subcauses": {
+                  "unclassified": 3,
+                  "voluntary_wait": 8
+                },
+                "spikes": 15,
+                "spikes_with_full_collection": 3
+              },
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 171.4609375,
+              "successful_requests": 12000,
+              "trial_id": "correction-r01-orchestrated-pinned-10hz",
+              "unexpected_backends": 0
+            },
+            {
+              "achieved_requests_per_s": 9.999997701217195,
+              "completed_requests": 12000,
+              "cycle_ms": {
+                "max": 187.429196,
+                "median": 22.004730000000002,
+                "p95": 34.888476
+              },
+              "deadline_misses": 4,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 187.390539,
+                "median": 21.968313,
+                "p95": 34.847739
+              },
+              "late_dispatches": 12000,
+              "lifecycle_variant": "pinned",
+              "lifecycle_variant_final_counts": null,
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "deadline_misses:4"
+              ],
+              "planned_releases": 12000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.022274515638745385,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.766776807269696,
+                "platform_before_w": 4.685287808004249,
+                "post_idle_w": null,
+                "ready_idle_w": 4.826818807104238,
+                "steady_w": 4.849093322742983
+              },
+              "release_to_completion_ms": {
+                "max": 187.581885,
+                "median": 22.192535499999998,
+                "p95": 35.077904
+              },
+              "repetition": 2,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 72003,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {
+                  "deadline_only": 1,
+                  "gc": 3,
+                  "off_cpu": 2
+                },
+                "explained_fraction": 0.8333333333333334,
+                "full_collection_max_ms": 155.336938,
+                "full_collections": 3,
+                "instrumented": true,
+                "invocation_last_window_median_ms": 35.2308075,
+                "invocation_slope_ms_per_1k": 2.3021993427318295,
+                "off_cpu_subcauses": {
+                  "voluntary_wait": 2
+                },
+                "spikes": 6,
+                "spikes_with_full_collection": 3
+              },
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 167.98828125,
+              "successful_requests": 12000,
+              "trial_id": "correction-r02-orchestrated-pinned-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 6,
+      "status_counts": {
+        "performance_failure": 4,
+        "success": 2
+      }
+    },
+    "pilot": {
+      "conditions": {
+        "orchestrated@10Hz/bounded": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.99985698254543,
+              "mean": 9.99985698254543,
+              "median": 9.99985698254543,
+              "min": 9.99985698254543,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 9.19138,
+              "mean": 9.19138,
+              "median": 9.19138,
+              "min": 9.19138,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 10.315816,
+              "mean": 10.315816,
+              "median": 10.315816,
+              "min": 10.315816,
+              "n": 1,
+              "stdev": null
+            },
+            "explained_spike_fraction": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.03383612847819517,
+              "mean": -0.03383612847819517,
+              "median": -0.03383612847819517,
+              "min": -0.03383612847819517,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 9.166467,
+              "mean": 9.166467,
+              "median": 9.166467,
+              "min": 9.166467,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 10.286247,
+              "mean": 10.286247,
+              "median": 10.286247,
+              "min": 10.286247,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 1203,
+              "mean": 1203,
+              "median": 1203,
+              "min": 1203,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_power_w": {
+              "max": 4.798858793336385,
+              "mean": 4.798858793336385,
+              "median": 4.798858793336385,
+              "min": 4.798858793336385,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 88.80078125,
+              "mean": 88.80078125,
+              "median": 88.80078125,
+              "min": 88.80078125,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 200,
+              "deadline_misses": 0,
+              "late_dispatches": 200,
+              "maintenance_failures": 0,
+              "planned_releases": 200,
+              "skipped_releases": 0,
+              "successful_requests": 200,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.99985698254543,
+              "completed_requests": 200,
+              "cycle_ms": {
+                "max": 11.241221,
+                "median": 9.19138,
+                "p95": 10.315816
+              },
+              "deadline_misses": 0,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 11.218117,
+                "median": 9.166467,
+                "p95": 10.286247
+              },
+              "late_dispatches": 200,
+              "lifecycle_variant": "bounded",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 1203,
+                "indexed_correlations": 201,
+                "indexed_records": 1203
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.03383612847819517,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.725846249194071,
+                "platform_before_w": 4.706534789813088,
+                "post_idle_w": null,
+                "ready_idle_w": 4.83269492181458,
+                "steady_w": 4.798858793336385
+              },
+              "release_to_completion_ms": {
+                "max": 11.406599,
+                "median": 9.3746675,
+                "p95": 10.521123
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 1203,
+                "lifecycle.indexed_correlations": 201,
+                "lifecycle.states": 3
+              },
+              "retention_limit": 6000,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {},
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": null,
+                "invocation_slope_ms_per_1k": null,
+                "off_cpu_subcauses": {},
+                "spikes": 0,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 88.80078125,
+              "successful_requests": 200,
+              "trial_id": "pilot-r01-orchestrated-bounded-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/indexed": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.99990879133191,
+              "mean": 9.99990879133191,
+              "median": 9.99990879133191,
+              "min": 9.99990879133191,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 9.03608,
+              "mean": 9.03608,
+              "median": 9.03608,
+              "min": 9.03608,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 9.928796,
+              "mean": 9.928796,
+              "median": 9.928796,
+              "min": 9.928796,
+              "n": 1,
+              "stdev": null
+            },
+            "explained_spike_fraction": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.028878769957341177,
+              "mean": -0.028878769957341177,
+              "median": -0.028878769957341177,
+              "min": -0.028878769957341177,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 9.011855,
+              "mean": 9.011855,
+              "median": 9.011855,
+              "min": 9.011855,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 9.901211,
+              "mean": 9.901211,
+              "median": 9.901211,
+              "min": 9.901211,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 1203,
+              "mean": 1203,
+              "median": 1203,
+              "min": 1203,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_power_w": {
+              "max": 4.810462940546472,
+              "mean": 4.810462940546472,
+              "median": 4.810462940546472,
+              "min": 4.810462940546472,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 86.953125,
+              "mean": 86.953125,
+              "median": 86.953125,
+              "min": 86.953125,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 200,
+              "deadline_misses": 0,
+              "late_dispatches": 200,
+              "maintenance_failures": 0,
+              "planned_releases": 200,
+              "skipped_releases": 0,
+              "successful_requests": 200,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.99990879133191,
+              "completed_requests": 200,
+              "cycle_ms": {
+                "max": 14.737909,
+                "median": 9.03608,
+                "p95": 9.928796
+              },
+              "deadline_misses": 0,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 14.707796,
+                "median": 9.011855,
+                "p95": 9.901211
+              },
+              "late_dispatches": 200,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 1203,
+                "indexed_correlations": 201,
+                "indexed_records": 1203
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.028878769957341177,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.760624512743373,
+                "platform_before_w": 4.896926071087392,
+                "post_idle_w": null,
+                "ready_idle_w": 4.839341710503813,
+                "steady_w": 4.810462940546472
+              },
+              "release_to_completion_ms": {
+                "max": 14.947301,
+                "median": 9.2200065,
+                "p95": 10.156207
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 1203,
+                "lifecycle.indexed_correlations": 201,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {},
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": null,
+                "invocation_slope_ms_per_1k": null,
+                "off_cpu_subcauses": {},
+                "spikes": 0,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 86.953125,
+              "successful_requests": 200,
+              "trial_id": "pilot-r01-orchestrated-indexed-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        },
+        "orchestrated@10Hz/pinned": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 9.999843910936418,
+              "mean": 9.999843910936418,
+              "median": 9.999843910936418,
+              "min": 9.999843910936418,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 10.365562,
+              "mean": 10.365562,
+              "median": 10.365562,
+              "min": 10.365562,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 11.596081,
+              "mean": 11.596081,
+              "median": 11.596081,
+              "min": 11.596081,
+              "n": 1,
+              "stdev": null
+            },
+            "explained_spike_fraction": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": -0.02244297038406362,
+              "mean": -0.02244297038406362,
+              "median": -0.02244297038406362,
+              "min": -0.02244297038406362,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 10.336665,
+              "mean": 10.336665,
+              "median": 10.336665,
+              "min": 10.336665,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 11.566384,
+              "mean": 11.566384,
+              "median": 11.566384,
+              "min": 11.566384,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 1203,
+              "mean": 1203,
+              "median": 1203,
+              "min": 1203,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_power_w": {
+              "max": 4.881325033889554,
+              "mean": 4.881325033889554,
+              "median": 4.881325033889554,
+              "min": 4.881325033889554,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 92.70703125,
+              "mean": 92.70703125,
+              "median": 92.70703125,
+              "min": 92.70703125,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 200,
+              "deadline_misses": 0,
+              "late_dispatches": 200,
+              "maintenance_failures": 0,
+              "planned_releases": 200,
+              "skipped_releases": 0,
+              "successful_requests": 200,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 9.999843910936418,
+              "completed_requests": 200,
+              "cycle_ms": {
+                "max": 14.54603,
+                "median": 10.365562,
+                "p95": 11.596081
+              },
+              "deadline_misses": 0,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 14.523501,
+                "median": 10.336665,
+                "p95": 11.566384
+              },
+              "late_dispatches": 200,
+              "lifecycle_variant": "pinned",
+              "lifecycle_variant_final_counts": null,
+              "maintenance_failures": 0,
+              "performance_failures": [],
+              "planned_releases": 200,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": -0.02244297038406362,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.747637674588981,
+                "platform_before_w": 4.805633096685143,
+                "post_idle_w": null,
+                "ready_idle_w": 4.903768004273617,
+                "steady_w": 4.881325033889554
+              },
+              "release_to_completion_ms": {
+                "max": 14.679335,
+                "median": 10.52898,
+                "p95": 11.776535
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.history": 1203,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 0,
+              "spikes": {
+                "causes": {},
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": 0,
+                "instrumented": true,
+                "invocation_last_window_median_ms": null,
+                "invocation_slope_ms_per_1k": null,
+                "off_cpu_subcauses": {},
+                "spikes": 0,
+                "spikes_with_full_collection": 0
+              },
+              "status": "success",
+              "steady_tree_rss_max_mib": 92.70703125,
+              "successful_requests": 200,
+              "trial_id": "pilot-r01-orchestrated-pinned-10hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 3,
+      "status_counts": {
+        "success": 3
+      }
+    }
+  },
+  "phases_without_output": [],
+  "schema_version": 1
+}

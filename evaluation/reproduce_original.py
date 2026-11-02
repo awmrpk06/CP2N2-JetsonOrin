@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Every parent-monitor and worker module whose code shapes a run or its measurements.
 HARNESS_SOURCES = tuple(ROOT / "evaluation" / name for name in (
     "__init__.py", "reproduce_original.py", "resource_monitor.py", "evaluate_tegra_resources.py",
-    "upstream_sustained.py", "growth_diagnostics.py",
+    "upstream_sustained.py", "growth_diagnostics.py", "lifecycle_variants.py",
 ))
 OUTPUT_LIMIT_BYTES = 64 * 1024
 WORKLOAD_SUMMARY_LIMIT_BYTES = 16 * 1024 ** 2
@@ -55,7 +55,7 @@ def source_hashes(upstream: Path) -> dict:
     return {name.decode(): digest(upstream / name.decode()) for name in paths if name and (upstream / name.decode()).is_file()}
 
 
-def stage_command(stage: str, output_dir: Path, *, upstream: Path | None = None, duration_s: float = 300, rate_hz: float = 10, mode: str = "orchestrated", deadline_ms: float | None = None, idle_s: float = 3, diagnostic_counts: bool = False, intrusive_profile: str = "none", post_idle_s: float = 0) -> list[str]:
+def stage_command(stage: str, output_dir: Path, *, upstream: Path | None = None, duration_s: float = 300, rate_hz: float = 10, mode: str = "orchestrated", deadline_ms: float | None = None, idle_s: float = 3, diagnostic_counts: bool = False, intrusive_profile: str = "none", post_idle_s: float = 0, lifecycle_variant: str = "pinned", retention_limit: int | None = None, spike_instrumentation: bool = False, gc_policy: str = "default") -> list[str]:
     commands = {
         "tests": ["-m", "pytest", "-q"],
         "core": ["-m", "evaluation.run_all_evaluations"],
@@ -68,8 +68,8 @@ def stage_command(stage: str, output_dir: Path, *, upstream: Path | None = None,
     }
     if stage not in commands:
         raise ValueError("Only non-hosted, software-only reproduction stages are permitted")
-    if stage != "sustained" and (intrusive_profile != "none" or post_idle_s != 0):
-        raise ValueError("Intrusive profiles and post-idle windows apply only to the sustained stage")
+    if stage != "sustained" and (intrusive_profile != "none" or post_idle_s != 0 or lifecycle_variant != "pinned" or retention_limit is not None or spike_instrumentation or gc_policy != "default"):
+        raise ValueError("Intrusive profiles, post-idle windows, lifecycle variants and spike instrumentation apply only to the sustained stage")
     if stage == "sustained":
         commands[stage].extend(["--mode", mode, "--idle-s", str(idle_s)])
         if deadline_ms is not None:
@@ -81,6 +81,14 @@ def stage_command(stage: str, output_dir: Path, *, upstream: Path | None = None,
             commands[stage].extend(["--intrusive-profile", intrusive_profile])
         if post_idle_s != 0:
             commands[stage].extend(["--post-idle-s", str(post_idle_s)])
+        if lifecycle_variant != "pinned":
+            commands[stage].extend(["--lifecycle-variant", lifecycle_variant])
+        if retention_limit is not None:
+            commands[stage].extend(["--retention-limit", str(retention_limit)])
+        if spike_instrumentation:
+            commands[stage].append("--spike-instrumentation")
+        if gc_policy != "default":
+            commands[stage].extend(["--gc-policy", gc_policy])
     return [sys.executable, *commands[stage]]
 
 
@@ -186,7 +194,7 @@ def profile_complete(profile_summary: dict | None) -> bool:
     )
 
 
-def run_stage(upstream: Path, output_dir: Path, stage: str, timeout_s: float = 1800, *, profile: bool = False, interval_ms: int = 250, baseline_s: float = 3, duration_s: float = 300, rate_hz: float = 10, mode: str = "orchestrated", deadline_ms: float | None = None, idle_s: float = 3, diagnostic_counts: bool = False, intrusive_profile: str = "none", post_idle_s: float = 0) -> dict:
+def run_stage(upstream: Path, output_dir: Path, stage: str, timeout_s: float = 1800, *, profile: bool = False, interval_ms: int = 250, baseline_s: float = 3, duration_s: float = 300, rate_hz: float = 10, mode: str = "orchestrated", deadline_ms: float | None = None, idle_s: float = 3, diagnostic_counts: bool = False, intrusive_profile: str = "none", post_idle_s: float = 0, lifecycle_variant: str = "pinned", retention_limit: int | None = None, spike_instrumentation: bool = False, gc_policy: str = "default") -> dict:
     if not math.isfinite(timeout_s) or timeout_s <= 0:
         raise ValueError("timeout_s must be finite and positive")
     if type(interval_ms) is not int or interval_ms <= 0 or not math.isfinite(baseline_s) or baseline_s < 0:
@@ -195,11 +203,12 @@ def run_stage(upstream: Path, output_dir: Path, stage: str, timeout_s: float = 1
         raise RuntimeError("Resource profiling requires tegrastats")
     if stage == "sustained" and (not profile or not math.isfinite(duration_s) or duration_s <= 0 or not math.isfinite(rate_hz) or not 0 < rate_hz <= 1000):
         raise ValueError("Sustained trials require profiling and valid duration/rate settings")
+    variant = {"lifecycle_variant": lifecycle_variant, "retention_limit": retention_limit, "spike_instrumentation": spike_instrumentation, "gc_policy": gc_policy}
     if stage == "sustained":
-        validate_options(duration_s, rate_hz, mode, deadline_ms, idle_s, post_idle_s=post_idle_s, intrusive_profile=intrusive_profile)
+        validate_options(duration_s, rate_hz, mode, deadline_ms, idle_s, post_idle_s=post_idle_s, intrusive_profile=intrusive_profile, **variant)
     upstream = upstream.resolve()
     output_dir = output_dir.resolve()
-    command = stage_command(stage, output_dir, upstream=upstream, duration_s=duration_s, rate_hz=rate_hz, mode=mode, deadline_ms=deadline_ms, idle_s=idle_s, diagnostic_counts=diagnostic_counts, intrusive_profile=intrusive_profile, post_idle_s=post_idle_s)
+    command = stage_command(stage, output_dir, upstream=upstream, duration_s=duration_s, rate_hz=rate_hz, mode=mode, deadline_ms=deadline_ms, idle_s=idle_s, diagnostic_counts=diagnostic_counts, intrusive_profile=intrusive_profile, post_idle_s=post_idle_s, **variant)
     if git_fact(upstream, "rev-parse", "HEAD") != PINNED_COMMIT:
         raise ValueError("Upstream checkout does not match the paper's v5.1.1 commit")
     if git_fact(upstream, "status", "--porcelain", "--untracked-files=no"):

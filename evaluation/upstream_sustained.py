@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gc
 import importlib
 import importlib.util
 import json
@@ -23,7 +24,46 @@ PINNED_COMMIT = "36fbae002b0a9e066416ea9cafbb966a33fe53bb"
 # Top-level packages defined by both the pinned upstream and this repository's legacy control plane.
 CONTROL_PLANE_PACKAGES = ("adapters", "core", "demos", "descriptors", "twins", "remote")
 DIAGNOSTICS_MODULE = "_phys_mcp_growth_diagnostics"
+VARIANTS_MODULE = "_phys_mcp_lifecycle_variants"
+LIFECYCLE_VARIANTS = ("pinned", "indexed", "bounded")
+GC_POLICIES = ("default", "freeze")
+GC_FREEZE_EVERY = 100
 logger = logging.getLogger(__name__)
+
+
+class GcFreezePolicy:
+    """Every ``every`` requests, outside the timed cycle: collect the young generations, then gc.freeze() the survivors.
+
+    Frozen objects are never examined again, so full collections no longer traverse the retained history.
+    Cyclic garbage that survives the young collection is frozen too and is never reclaimed (measured via RSS).
+    """
+
+    def __init__(self, every: int = GC_FREEZE_EVERY, clock=time.monotonic_ns):
+        self.every, self.clock = every, clock
+        self.runs = 0
+        self.total_ns = self.max_ns = 0
+        self.last_ms = None
+
+    def freeze(self) -> None:
+        started = self.clock()
+        gc.collect(1)
+        gc.freeze()
+        spent = self.clock() - started
+        self.runs += 1
+        self.total_ns += spent
+        self.max_ns = max(self.max_ns, spent)
+        self.last_ms = spent / 1e6
+
+    def after_request(self, completed: int) -> None:
+        if completed % self.every == 0:
+            self.freeze()
+
+    def summary(self) -> dict:
+        return {
+            "policy": "freeze", "every_requests": self.every, "runs": self.runs, "total_ms": self.total_ns / 1e6, "max_ms": self.max_ns / 1e6,
+            "frozen_objects_at_end": gc.get_freeze_count(), "gc_threshold": list(gc.get_threshold()),
+            "placement": "after the request row is logged and before the next release wait; never inside a timed cycle",
+        }
 
 
 class FailureLog:
@@ -199,9 +239,16 @@ def execute_cycle(mode, orchestrator, adapter, task, release_ns, deadline_ns, cl
     return record
 
 
-def validate_options(duration_s, rate_hz, mode, deadline_ms, idle_s, *, post_idle_s=0, intrusive_profile="none"):
+def validate_options(duration_s, rate_hz, mode, deadline_ms, idle_s, *, post_idle_s=0, intrusive_profile="none", lifecycle_variant="pinned", retention_limit=None, spike_instrumentation=False, gc_policy="default"):
     if mode not in MODES:
         raise ValueError("Unknown workload mode")
+    if gc_policy not in GC_POLICIES or (gc_policy != "default" and (mode != "orchestrated" or intrusive_profile != "none")):
+        raise ValueError(f"gc_policy must be one of {GC_POLICIES}; non-default policies apply only to orchestrated runs without intrusive profiles")
+    load_lifecycle_variants().validate(lifecycle_variant, retention_limit)
+    if lifecycle_variant != "pinned" and mode != "orchestrated":
+        raise ValueError("Lifecycle variants apply only to orchestrated mode")
+    if type(spike_instrumentation) is not bool or (spike_instrumentation and intrusive_profile != "none"):
+        raise ValueError("Spike instrumentation is a boolean and cannot be combined with an intrusive profile")
     if not math.isfinite(duration_s) or duration_s < 1e-9 or not math.isfinite(rate_hz) or not 0 < rate_hz <= 1000:
         raise ValueError("Duration must be positive and rate must be in (0, 1000] Hz")
     if deadline_ms is not None and (not math.isfinite(deadline_ms) or deadline_ms <= 0):
@@ -263,19 +310,27 @@ def _upstream_revision(upstream: Path) -> str:
     return revision
 
 
-def load_growth_diagnostics():
-    """Load growth_diagnostics by file location under a private name, independent of sys.path and of script or -m use."""
-    module = sys.modules.get(DIAGNOSTICS_MODULE)
+def _load_private(name: str, filename: str):
+    """Load a sibling module by file location under a private name, independent of sys.path and of script or -m use."""
+    module = sys.modules.get(name)
     if module is None:
-        spec = importlib.util.spec_from_file_location(DIAGNOSTICS_MODULE, Path(__file__).resolve().with_name("growth_diagnostics.py"))
+        spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().with_name(filename))
         module = importlib.util.module_from_spec(spec)
-        sys.modules[DIAGNOSTICS_MODULE] = module
+        sys.modules[name] = module
         try:
             spec.loader.exec_module(module)
         except BaseException:
-            sys.modules.pop(DIAGNOSTICS_MODULE, None)
+            sys.modules.pop(name, None)
             raise
     return module
+
+
+def load_growth_diagnostics():
+    return _load_private(DIAGNOSTICS_MODULE, "growth_diagnostics.py")
+
+
+def load_lifecycle_variants():
+    return _load_private(VARIANTS_MODULE, "lifecycle_variants.py")
 
 
 def foreign_control_plane_modules(root: Path) -> list[str]:
@@ -341,12 +396,16 @@ def _close_all(closers: list, error: BaseException | None) -> None:
         raise first
 
 
-def _run_active(state: dict, tally: _Tally, stop, failure_log: FailureLog, options: dict, workload: tuple, output_dir: Path, diagnostics) -> None:
+def _run_active(state: dict, tally: _Tally, stop, failure_log: FailureLog, options: dict, workload: tuple, output_dir: Path, diagnostics, policy=None) -> None:
     orchestrator, adapter, task = workload
     closers = []
     error = None
     try:
-        sampler = session = None
+        sampler = session = recorder = None
+        if options["spike_instrumentation"]:
+            recorder = diagnostics.SpikeRecorder(output_dir / "gc-events.jsonl")
+            closers.append(lambda: state.__setitem__("spike_recorder", recorder.close()))
+            recorder.start()
         if options["diagnostic_counts_active"]:
             sampler = diagnostics.RetainedStateSampler(orchestrator, output_dir / "retained-state.jsonl")
             closers.append(lambda: sampler.close(tally.completed))
@@ -365,10 +424,16 @@ def _run_active(state: dict, tally: _Tally, stop, failure_log: FailureLog, optio
                 state.update(started_ns=started_ns, deadline_ns=deadline_ns, planned=planned)
                 if session is not None:
                     session.before_request()
+                mark = recorder.begin() if recorder is not None else None
                 record = execute_cycle(options["mode"], orchestrator, adapter, task, release_ns, release_ns + options["relative_deadline_ns"], failure_log=failure_log)
+                if recorder is not None:
+                    record.update(recorder.end(mark))
                 if session is not None:
                     session.after_request()
                 record.update(slot=slot, skipped_before=slot - previous_slot - 1, previous_row_logging_ms=tally.last_logging_ms)
+                if policy is not None:
+                    record["previous_gc_maintenance_ms"] = policy.last_ms
+                    policy.last_ms = None
                 logging_started = time.monotonic_ns()
                 if writer is None:
                     writer = csv.DictWriter(handle, fieldnames=list(record))
@@ -381,6 +446,8 @@ def _run_active(state: dict, tally: _Tally, stop, failure_log: FailureLog, optio
                 tally.add(record, (time.monotonic_ns() - logging_started) / 1e6)
                 if sampler is not None:
                     sampler.sample(tally.completed)
+                if policy is not None:
+                    policy.after_request(tally.completed)
     except BaseException as exc:
         error = exc
         raise
@@ -406,6 +473,10 @@ def _summary(state: dict, tally: _Tally, stop, failure_log: FailureLog, options:
         "fatal_error": state["fatal_error"], "last_phase": state["phase"],
         "diagnostic_counts": options["diagnostic_counts"], "diagnostic_counts_active": options["diagnostic_counts_active"],
         "intrusive_profile": options["intrusive_profile"],
+        "lifecycle_variant": options["lifecycle_variant"], "retention_limit": options["retention_limit"],
+        "lifecycle_variant_install": state["lifecycle_variant_install"], "lifecycle_variant_final_counts": state["lifecycle_variant_final_counts"],
+        "spike_instrumentation": options["spike_instrumentation"], "spike_recorder": state["spike_recorder"],
+        "gc_policy": options["gc_policy"], "gc_policy_summary": state["gc_policy_summary"],
         "completed_duration": state["interruption"] is None and state["fatal_error"] is None and finished is not None and deadline is not None and finished >= deadline,
         "upstream_commit": state["revision"], "duration_s": options["duration_s"], "rate_hz": options["rate_hz"],
         "idle_s": options["idle_s"], "post_idle_s": options["post_idle_s"],
@@ -438,20 +509,23 @@ def _write_json_atomic(path: Path, payload: dict) -> None:
     os.replace(partial, path)
 
 
-def run(upstream: Path, output_dir: Path, duration_s: float, rate_hz: float, *, mode: str = "orchestrated", deadline_ms: float | None = None, idle_s: float = 3, diagnostic_counts: bool = False, intrusive_profile: str = "none", post_idle_s: float = 0, stop: GracefulStop | None = None) -> dict:
-    validate_options(duration_s, rate_hz, mode, deadline_ms, idle_s, post_idle_s=post_idle_s, intrusive_profile=intrusive_profile)
+def run(upstream: Path, output_dir: Path, duration_s: float, rate_hz: float, *, mode: str = "orchestrated", deadline_ms: float | None = None, idle_s: float = 3, diagnostic_counts: bool = False, intrusive_profile: str = "none", post_idle_s: float = 0, stop: GracefulStop | None = None, lifecycle_variant: str = "pinned", retention_limit: int | None = None, spike_instrumentation: bool = False, gc_policy: str = "default") -> dict:
+    validate_options(duration_s, rate_hz, mode, deadline_ms, idle_s, post_idle_s=post_idle_s, intrusive_profile=intrusive_profile, lifecycle_variant=lifecycle_variant, retention_limit=retention_limit, spike_instrumentation=spike_instrumentation, gc_policy=gc_policy)
     stop = GracefulStop() if stop is None else stop
     period_ns = round(1e9 / rate_hz)
     options = {
         "mode": mode, "duration_s": duration_s, "rate_hz": rate_hz, "idle_s": idle_s, "post_idle_s": post_idle_s,
         "diagnostic_counts": diagnostic_counts, "diagnostic_counts_active": diagnostic_counts and intrusive_profile == "none",
         "intrusive_profile": intrusive_profile, "period_ns": period_ns,
+        "lifecycle_variant": lifecycle_variant, "retention_limit": retention_limit, "spike_instrumentation": spike_instrumentation,
+        "gc_policy": gc_policy,
         "relative_deadline_ns": round(deadline_ms * 1e6) if deadline_ms is not None else period_ns,
     }
     state = {
         "phase": "setup", "revision": None, "ready_ns": None, "started_ns": None, "finished_ns": None, "deadline_ns": None,
         "planned": math.ceil(round(duration_s * 1e9) / period_ns), "post_idle_started_ns": None, "post_idle_finished_ns": None,
         "post_idle_completed": False, "interruption": None, "interruption_phase": None, "fatal_error": None,
+        "lifecycle_variant_install": None, "lifecycle_variant_final_counts": None, "spike_recorder": None, "gc_policy_summary": None,
     }
     tally = _Tally("harness-noop" if mode == "harness" else "edge-backend")
     failure_log = FailureLog()
@@ -459,16 +533,26 @@ def run(upstream: Path, output_dir: Path, duration_s: float, rate_hz: float, *, 
     try:
         state["revision"] = _upstream_revision(upstream)
         # Loaded before the upstream path is inserted so no upstream module can shadow its imports.
-        diagnostics = load_growth_diagnostics() if diagnostic_counts or intrusive_profile != "none" else None
+        diagnostics = load_growth_diagnostics() if diagnostic_counts or intrusive_profile != "none" or spike_instrumentation else None
+        variants = load_lifecycle_variants()
         orchestrator = adapter = task = None
         if mode != "harness":
             orchestrator, adapter, task = build_control_plane(upstream)
+            store = orchestrator.registry.lifecycle_store if lifecycle_variant != "pinned" else None
+            state["lifecycle_variant_install"] = variants.install(store, lifecycle_variant, retention_limit) if store is not None else {"variant": "pinned", "retention_limit": None, "semantics": variants.SEMANTICS["pinned"]}
         (output_dir / "task.json").write_text(task.model_dump_json(indent=2) if task is not None else json.dumps({"mode": "harness", "substrate_executed": False}), encoding="utf-8")
+        policy = GcFreezePolicy() if gc_policy == "freeze" else None
+        if policy is not None:
+            policy.freeze()
         state["phase"] = "pre_idle"
         state["ready_ns"] = time.monotonic_ns()
         if not stop.wait(idle_s):
             state["phase"] = "active"
-            _run_active(state, tally, stop, failure_log, options, (orchestrator, adapter, task), output_dir, diagnostics)
+            _run_active(state, tally, stop, failure_log, options, (orchestrator, adapter, task), output_dir, diagnostics, policy)
+            if policy is not None:
+                state["gc_policy_summary"] = policy.summary()
+            if lifecycle_variant != "pinned":
+                state["lifecycle_variant_final_counts"] = variants.counts(orchestrator.registry.lifecycle_store)
         if post_idle_s > 0 and not stop.is_set():
             state["phase"] = "post_idle"
             state["post_idle_started_ns"] = time.monotonic_ns()
@@ -504,13 +588,18 @@ def main() -> None:
     parser.add_argument("--diagnostic-counts", action="store_true")
     parser.add_argument("--intrusive-profile", choices=INTRUSIVE_PROFILES, default="none")
     parser.add_argument("--post-idle-s", type=float, default=0)
+    parser.add_argument("--lifecycle-variant", choices=LIFECYCLE_VARIANTS, default="pinned")
+    parser.add_argument("--retention-limit", type=int)
+    parser.add_argument("--spike-instrumentation", action="store_true")
+    parser.add_argument("--gc-policy", choices=GC_POLICIES, default="default")
     args = parser.parse_args()
     stop = GracefulStop()
     stop.install()
     summary = run(
         args.upstream, args.output_dir, args.duration_s, args.rate_hz, mode=args.mode, deadline_ms=args.deadline_ms,
         idle_s=args.idle_s, diagnostic_counts=args.diagnostic_counts, intrusive_profile=args.intrusive_profile,
-        post_idle_s=args.post_idle_s, stop=stop,
+        post_idle_s=args.post_idle_s, stop=stop, lifecycle_variant=args.lifecycle_variant,
+        retention_limit=args.retention_limit, spike_instrumentation=args.spike_instrumentation, gc_policy=args.gc_policy,
     )
     print(json.dumps(summary, indent=2))
     if stop.signum is not None:

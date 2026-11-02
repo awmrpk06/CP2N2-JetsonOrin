@@ -1,0 +1,15 @@
+{"start_ns": 164666438333212, "end_ns": 164666438524098, "duration_ns": 190886, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164666937905062, "end_ns": 164666938009514, "duration_ns": 104452, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164667438057763, "end_ns": 164667438172774, "duration_ns": 115011, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164667938206879, "end_ns": 164667938320067, "duration_ns": 113188, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164668438116468, "end_ns": 164668438230199, "duration_ns": 113731, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164668938087178, "end_ns": 164668938196846, "duration_ns": 109668, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164669438360618, "end_ns": 164669438494127, "duration_ns": 133509, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164670138022477, "end_ns": 164670139981452, "duration_ns": 1958975, "generation": 1, "collected": 30, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164670838300868, "end_ns": 164670838438920, "duration_ns": 138052, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164671538056266, "end_ns": 164671538188942, "duration_ns": 132676, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164672642146278, "end_ns": 164672642287851, "duration_ns": 141573, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": false}
+{"start_ns": 164675638256568, "end_ns": 164675638563554, "duration_ns": 306986, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164678540339228, "end_ns": 164678540581284, "duration_ns": 242056, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": false}
+{"start_ns": 164681538205701, "end_ns": 164681538545456, "duration_ns": 339755, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": true}
+{"start_ns": 164684442472495, "end_ns": 164684442720919, "duration_ns": 248424, "generation": 0, "collected": 0, "uncollectable": 0, "main_thread": false}
