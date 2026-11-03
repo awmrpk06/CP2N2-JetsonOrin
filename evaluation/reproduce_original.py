@@ -265,6 +265,7 @@ def _write_provenance(output_dir: Path, stage: str, command: list[str], upstream
         "cpu_governors": {str(path): path.read_text().strip() for path in Path("/sys/devices/system/cpu").glob("cpu[0-9]*/cpufreq/scaling_governor")},
         "hardware_preflight": preflight,
         "power_mode": preflight["power_mode"],
+        "jetson_release": _query(["jetson_release", "-v"]),
         "jetpack_packages": _query(["dpkg-query", "-W", "-f=${Package} ${Version}\n", "nvidia-jetpack", "nvidia-l4t-core"]),
     }
     (output_dir / "provenance.json").write_text(json.dumps(metadata, indent=2, sort_keys=True) + "\n", encoding="utf-8")

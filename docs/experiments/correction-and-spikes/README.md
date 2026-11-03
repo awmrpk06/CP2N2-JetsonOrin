@@ -149,7 +149,7 @@ cooldowns, using the same sequential runner and guards.
 The recorded board model is `NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super`.
 That SKU has **8 GB nominal installed LPDDR5** ([NVIDIA product specification](https://developer.nvidia.com/embedded/jetson-orin-nano-super-developer-kit)); this is board capacity, not memory available to applications. Trial provenance records `MemTotal: 7,789,948 kB` and `psutil` total memory `7,976,906,752` bytes (about 7.43 GiB reported by the OS).
 
-The exact archived Jetson Linux/L4T package is `nvidia-l4t-core 36.5.0-20260115194252` (`R36`, revision `5.0`). The `nvidia-jetpack` meta-package was not installed, and its package query returned no version. Consequently, these archives establish the exact L4T build but **do not establish a separately named JetPack SDK release**. Do not infer one from the L4T package identifier alone. Future campaigns should record the flashed image's JetPack release manifest or other authoritative SDK installation metadata before starting.
+The exact archived Jetson Linux/L4T package is `nvidia-l4t-core 36.5.0-20260115194252` (`R36`, revision `5.0`). A follow-up check on the same board with `jetson_release -v` (jetson-stats 7.2.1) reports **JetPack 6.2.2 [L4T 36.5.0]**, matching the L4T build archived for both campaigns. This reconciles the release post hoc; the JetPack label itself was not captured during the trials. The `nvidia-jetpack` meta-package is not installed. APT currently offers 6.2.3 as a candidate, but that is not the installed SDK release. Future campaigns should preserve `jetson_release -v` output and the image's JetPack release metadata in each provenance record.
 
 ## Commands
 
