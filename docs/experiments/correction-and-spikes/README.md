@@ -144,6 +144,13 @@ infrastructure-versus-performance classification are the same as in the operatin
 `gc_policy: freeze`, plus two short pilots. The four measured trials took about 1.5 h including
 cooldowns, using the same sequential runner and guards.
 
+## Hardware and Software Identity
+
+The recorded board model is `NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super`.
+That SKU has **8 GB nominal installed LPDDR5** ([NVIDIA product specification](https://developer.nvidia.com/embedded/jetson-orin-nano-super-developer-kit)); this is board capacity, not memory available to applications. Trial provenance records `MemTotal: 7,789,948 kB` and `psutil` total memory `7,976,906,752` bytes (about 7.43 GiB reported by the OS).
+
+The exact archived Jetson Linux/L4T package is `nvidia-l4t-core 36.5.0-20260115194252` (`R36`, revision `5.0`). The `nvidia-jetpack` meta-package was not installed, and its package query returned no version. Consequently, these archives establish the exact L4T build but **do not establish a separately named JetPack SDK release**. Do not infer one from the L4T package identifier alone. Future campaigns should record the flashed image's JetPack release manifest or other authoritative SDK installation metadata before starting.
+
 ## Commands
 
 ```bash
