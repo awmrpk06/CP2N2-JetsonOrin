@@ -1,0 +1,17 @@
+{
+  "phases": {
+    "M02-F": {
+      "planned": 1,
+      "accounted": 1,
+      "complete": true,
+      "infrastructure_failures": {},
+      "performance_failures": {
+        "M02-F-r01-orchestrated-pinned-10hz": [
+          "skipped_releases:1",
+          "deadline_misses:5"
+        ]
+      }
+    }
+  },
+  "not_reached": []
+}

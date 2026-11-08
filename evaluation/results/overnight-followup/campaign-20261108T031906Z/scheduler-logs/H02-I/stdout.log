@@ -1,0 +1,17 @@
+{
+  "phases": {
+    "H02-I": {
+      "planned": 1,
+      "accounted": 1,
+      "complete": true,
+      "infrastructure_failures": {},
+      "performance_failures": {
+        "H02-I-r01-orchestrated-indexed-50hz": [
+          "skipped_releases:24",
+          "deadline_misses:9"
+        ]
+      }
+    }
+  },
+  "not_reached": []
+}

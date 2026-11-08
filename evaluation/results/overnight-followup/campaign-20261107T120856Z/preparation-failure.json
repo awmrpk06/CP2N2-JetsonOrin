@@ -1,0 +1,8 @@
+{
+  "state": "preparation_failed_before_measurement",
+  "occurred_utc": "2026-11-07T12:08:56Z",
+  "reason": "The first generated schedule CSV omitted the pair_condition column included in its rows, causing preparation to stop after configs and validations were written.",
+  "scientific_trials_started": 0,
+  "outputs_overwritten": false,
+  "resolution": "Keep this partial preparation intact; add pair_condition to the schema and prepare a new timestamped bundle."
+}

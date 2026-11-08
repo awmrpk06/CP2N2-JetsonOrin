@@ -1,0 +1,22 @@
+{
+  "archive_file": "campaign-20261108T031906Z.tar.zst",
+  "archive_sha256": "a31c8b83c5ef7758138dccd632963a05ffe4d3f085ff2c6501ec69caf68b3306",
+  "archive_size_bytes": 20557032,
+  "archived_files": 435,
+  "checks": {
+    "archive_digest_matches_manifest": true,
+    "extracted_file_set_equals_manifest": true,
+    "extracted_sha256_match_every_file": true,
+    "extracted_sizes_match": true,
+    "sha256sum_sidecar_check": true,
+    "source_bundle_unchanged_during_packaging": true,
+    "tar_members_equal_manifest_files_plus_parent_directories": true,
+    "zstd_frame_integrity": true
+  },
+  "instructions": "See README.md section \"Archive and Verification\" inside the bundle.",
+  "sha256_manifest": "campaign-20261108T031906Z.archive-sha256.json",
+  "sha256_manifest_sha256": "9efc6b85c57d49025b157f0d22c0b07855955069afe5e03e89b74739059dbf72",
+  "sha256_sidecar": "campaign-20261108T031906Z.tar.zst.sha256",
+  "verified": true,
+  "verified_utc": "2026-11-08T08:00:03.665208+00:00"
+}

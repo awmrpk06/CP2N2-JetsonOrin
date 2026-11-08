@@ -1,0 +1,52 @@
+{
+  "evaluation_helper_changes": [
+    {
+      "changes": [
+        "Corrected the pinned-store identity assertion: the first version required class metadata the pinned runtime does not record, so it rejected a valid P01 run (P01-A1).",
+        "Added an all-success lifecycle-history check (six transitions per successful request).",
+        "Added preservation and corrected re-verification of P01-A1 under prior-attempts/, renamed the repeated pilot P01-A2, and recorded the 16 protocol IDs.",
+        "Added a gate that copies the completed upstream suite report and requires pinned/indexed/bounded-6000 to pass 146 tests and bounded/1 to fail 2 as the positive control."
+      ],
+      "effect_on_measurement": "none; the measured runner, workload, monitoring and guard code were unchanged",
+      "from_sha256": "a1375c0efb370f64647d37fbf2451e0d9f93f04b64e8b263a212037ef962d820",
+      "helper": "tools/overnight.py (scheduler/verifier/analyzer wrapper; not CP2N2 and not the measured runner)",
+      "to_sha256": "c4bbbc81f59d1af509240deb91c11f0da783715f2173505c3244ad75864da045",
+      "when": "after P01-A1 and before freezing this campaign; no edits during measurement (scheduler verified its own hash before running)"
+    }
+  ],
+  "evaluation_source": {
+    "changes": "none; see source-change-log.json for the two later live-checkout documentation/provenance commits that were not used for measurement",
+    "evaluation_source_sha256_fingerprint_verified_by_scheduler_before_each_trial": true,
+    "reference_commit": "5f4d05291a0e37d7f88b7a6874b8a7f57befd695",
+    "worktree": "_temp/overnight-followup-ref-5f4d (detached, clean after campaign and analysis)"
+  },
+  "post_measurement_analysis_supplements": {
+    "added_files": {
+      "analysis-review.json": "post-analysis validation and immutability checks",
+      "high-rate-prefix-pairs.csv": "matched first-10,000 completed requests per primary H run, paired indexed minus pinned (frozen helper reported only 1,000-request blocks and mixed in partial pilot blocks)",
+      "long-cycle-slots.csv": "every primary-run request with cycle > 100 ms or a deadline miss",
+      "post-measurement-change-log.json": "this file",
+      "prior-criterion-spikes-high-rate.json": "unchanged reference evaluation/spike_analysis.py --rate-hz 50 over the six H trial folders (exact prior local-block criterion)",
+      "prior-criterion-spikes-monitoring.json": "unchanged reference evaluation/spike_analysis.py --rate-hz 10 over the six M trial folders"
+    },
+    "edited_generated_files": {
+      "README.md": "fixed the reproduction example ID (P01 -> P01-A2), the power-mode line, and added supplement and archive-verification instructions",
+      "manuscript-insertions.md": "replaced template directives with result-grounded Results text and responses to professor comments 4 and 6",
+      "results-summary.md": "appended a labeled 'Supplementary post-analysis checks' section (exact denominators, matched prefix, resources, long cycles, supported interpretation); generated tables above it are unchanged"
+    },
+    "frozen_analyzer_command": "tools/overnight.py analyze --bundle <bundle> --repo _temp/overnight-followup-ref-5f4d (run once after measurements-complete.json; generated per-run, paired, summary, trend, prefix, outlier, plot and manuscript files and set manifest state analysis_complete)",
+    "raw_trial_contents_changed": false,
+    "superseded_package": {
+      "archive_sha256": "8806f2803837c4f35f0ae3181febff7fb5b868c230523cacc3d8962db91f7018",
+      "note": "A first compressed package was built before these supplements and never committed or published; it was moved out of the repository and replaced by the current package."
+    }
+  },
+  "schema_version": 1,
+  "upstream_software": {
+    "changes": "none",
+    "commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb",
+    "dirty_paths_after_campaign": 0,
+    "every_trial_result_upstream_sources_unchanged": true,
+    "repository": "https://github.com/fischesn/cp2n2"
+  }
+}

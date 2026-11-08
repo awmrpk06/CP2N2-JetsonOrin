@@ -1,0 +1,17 @@
+{
+  "phases": {
+    "H03-B": {
+      "planned": 1,
+      "accounted": 1,
+      "complete": true,
+      "infrastructure_failures": {},
+      "performance_failures": {
+        "H03-B-r01-orchestrated-pinned-50hz": [
+          "skipped_releases:639",
+          "deadline_misses:4012"
+        ]
+      }
+    }
+  },
+  "not_reached": []
+}

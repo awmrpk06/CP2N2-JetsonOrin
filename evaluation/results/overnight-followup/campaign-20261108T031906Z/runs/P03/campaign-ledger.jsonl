@@ -1,0 +1,3 @@
+{"estimate": {"active_s": 60, "assumptions": "platform baselines before and after each sustained trial, 10 s start/teardown per sustained trial, 15 s per local-control trial, 60 s cooldown between consecutive trials", "estimated_wall_h": 0.02, "estimated_wall_s": 79, "trials": 1}, "event": "campaign_started", "monotonic_ns": 842659247298264, "phases": ["P03"], "utc": "2026-11-08T03:23:59.661854+00:00"}
+{"event": "phase_started", "monotonic_ns": 842659251176014, "phase": "P03", "utc": "2026-11-08T03:23:59.665741+00:00"}
+{"accounted": 1, "event": "phase_finished", "infrastructure_failures": [], "monotonic_ns": 842730542093308, "phase": "P03", "planned": 1, "utc": "2026-11-08T03:25:10.956652+00:00"}

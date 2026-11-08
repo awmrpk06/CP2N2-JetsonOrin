@@ -1,0 +1,33 @@
+{
+  "ambient_temperature_c": null,
+  "cooldown_s": 60,
+  "cooling": "Stock developer-kit fan and heatsink, open air",
+  "desktop_comparison": false,
+  "interval_ms": 250,
+  "phases": {
+    "M02-F": {
+      "diagnostic_counts": true,
+      "duration_s": 1800,
+      "gc_policy": "default",
+      "idle_s": 3,
+      "implemented": true,
+      "intrusive_profile": "none",
+      "kind": "sustained",
+      "lifecycle_variants": [
+        "pinned"
+      ],
+      "modes": [
+        "orchestrated"
+      ],
+      "post_idle_s": 0,
+      "rates_hz": [
+        10
+      ],
+      "repetitions": 1,
+      "spike_instrumentation": false
+    }
+  },
+  "platform_idle_s": 3,
+  "schema_version": 2,
+  "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb"
+}

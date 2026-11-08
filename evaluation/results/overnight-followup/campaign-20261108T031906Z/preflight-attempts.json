@@ -1,0 +1,50 @@
+[
+  {
+    "attempt": "prepare-1",
+    "reason": "Python venv launcher path was resolved through its symlink; validation subprocess could not import psutil.",
+    "resolution": "Preserve the venv launcher path.",
+    "status": "failed_before_measurement",
+    "utc": "2026-11-07T12:07:33Z"
+  },
+  {
+    "attempt": "prepare-2",
+    "reason": "Schedule CSV schema omitted pair_condition.",
+    "resolution": "Add pair_condition to the schedule CSV fields.",
+    "status": "failed_before_measurement",
+    "utc": "2026-11-07T12:08:56Z"
+  },
+  {
+    "attempt": "prepare-3",
+    "bundle": "evaluation/results/overnight-followup/campaign-20261107T122214Z",
+    "reason": "Pinned-store identity validator incorrectly required class metadata; the raw run was complete and has been reverified. It is retained and repeated as P01-A2.",
+    "status": "pilot_completed_but_wrapper_gate_failed",
+    "trial_id": "P01-A1",
+    "utc": null
+  },
+  {
+    "attempt": "prepare-4",
+    "bundle": "evaluation/results/overnight-followup/campaign-20261107T120944Z",
+    "reason": "Its source-change log included its own untracked bundle and its embedded helper predates the final README/metrics fixes.",
+    "status": "prepared_then_superseded_before_measurement",
+    "utc": null
+  },
+  {
+    "attempt": "variant-suite-1",
+    "reason": "The first suite-check process received KeyboardInterrupt before writing a report; no upstream changes and no experiments started.",
+    "status": "interrupted_without_report",
+    "utc": null
+  },
+  {
+    "attempt": "variant-suite-2",
+    "outcome": "pinned/indexed/bounded-6000 each 146 passed; bounded-1 positive control 2 expected failures.",
+    "report": "variant-suite-check.json",
+    "status": "completed",
+    "utc": "2026-11-07T12:14:17Z"
+  },
+  {
+    "attempt": "reference-evaluation-tests",
+    "outcome": "pip check clean; 206 passed, 2 environment-conditional skipped.",
+    "status": "passed",
+    "utc": null
+  }
+]

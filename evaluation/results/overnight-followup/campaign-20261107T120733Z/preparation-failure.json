@@ -1,0 +1,8 @@
+{
+  "state": "preparation_failed_before_measurement",
+  "occurred_utc": "2026-11-07T12:07:33Z",
+  "reason": "The scheduler resolved the Python 3.12 virtual-environment launcher symlink to its base interpreter, which does not include the venv site-packages; the config-validation subprocess could not import psutil.",
+  "scientific_trials_started": 0,
+  "outputs_overwritten": false,
+  "resolution": "Preserve the venv launcher path without resolving the symlink and prepare a new timestamped bundle."
+}

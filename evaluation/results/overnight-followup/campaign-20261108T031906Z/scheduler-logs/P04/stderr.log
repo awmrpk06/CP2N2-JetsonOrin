@@ -1,0 +1,7 @@
+[operating-limits 03:26:11Z] phase 1/1 P04: 1 trials
+[operating-limits 03:26:11Z] P04: started P04-r01-orchestrated-indexed-50hz (~79 s)
+[operating-limits 03:26:26Z] P04/P04-r01-orchestrated-indexed-50hz: 15 s elapsed of ~79 s
+[operating-limits 03:26:41Z] P04/P04-r01-orchestrated-indexed-50hz: 30 s elapsed of ~79 s
+[operating-limits 03:26:56Z] P04/P04-r01-orchestrated-indexed-50hz: 45 s elapsed of ~79 s
+[operating-limits 03:27:11Z] P04/P04-r01-orchestrated-indexed-50hz: 60 s elapsed of ~79 s
+[operating-limits 03:27:22Z] P04: finished P04-r01-orchestrated-indexed-50hz: performance_failure ['skipped_releases:3', 'deadline_misses:3']

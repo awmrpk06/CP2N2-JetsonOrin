@@ -1,0 +1,17 @@
+order,trial_id,role,block,pair_condition,store,rate_hz,duration_s,interval_ms,deadline_ms,planned_releases,config,config_sha256,output
+1,P01-A2,pilot,,pilot,pinned,10,60,250,100.0,600,configs/P01-A2.json,862c5285693e33de92a4ae47596f23eccbc8c38f6ec54c19b07f4d16a987b0cd,runs/P01-A2
+2,P02,pilot,,pilot,pinned,10,60,2000,100.0,600,configs/P02.json,c8cafe98df572534ddd8ea790c66c9c2c4132a05bc953ea16b901f7a9847c3d7,runs/P02
+3,P03,pilot,,pilot,pinned,50,60,250,20.0,3000,configs/P03.json,6e14f317e2b49a666d6771b137715f5a3266bc31bfd805db12b9c134f7c6b4b1,runs/P03
+4,P04,pilot,,pilot,indexed,50,60,250,20.0,3000,configs/P04.json,8c2b2d31221d70a0e7b2dc2244344b3e36ed5c8e3df39e2022dc0ab9e1b06503,runs/P04
+5,H01-B,primary,H01,baseline,pinned,50,300,250,20.0,15000,configs/H01-B.json,19b1957acbc1f009103b1d746249e48fd5e2bd270e08e41446fa29e5f56d805a,runs/H01-B
+6,H01-I,primary,H01,indexed,indexed,50,300,250,20.0,15000,configs/H01-I.json,e3df12cb2e5932bcf0e1d9fb6e4ca04db27d9ae9e16bde33a8f2714b10459750,runs/H01-I
+7,H02-I,primary,H02,indexed,indexed,50,300,250,20.0,15000,configs/H02-I.json,c006509f61303eb5553d59ce9f42d7fa1a4a7466493fea8082645fff5d0ec067,runs/H02-I
+8,H02-B,primary,H02,baseline,pinned,50,300,250,20.0,15000,configs/H02-B.json,b915811d7f1c696c67968810fc37b9ac86b1a398596f66c4b80bbe30269c269d,runs/H02-B
+9,H03-B,primary,H03,baseline,pinned,50,300,250,20.0,15000,configs/H03-B.json,114788ea017d55dd86c2d38b2835c81193367c6a6c3f12f071848541a9f8b59e,runs/H03-B
+10,H03-I,primary,H03,indexed,indexed,50,300,250,20.0,15000,configs/H03-I.json,60a45003563318bc7e747602fd1ef4633949feb9f2e2132a27df18d2cc4c900e,runs/H03-I
+11,M01-F,primary,M01,fast,pinned,10,1800,250,100.0,18000,configs/M01-F.json,5a7c7cff270dc3839f12a7ddf5f71d90d7f7493166e22c86d863ddc05adf2a2f,runs/M01-F
+12,M01-S,primary,M01,slow,pinned,10,1800,2000,100.0,18000,configs/M01-S.json,f9ae40be129f5af6f01bcf720ecfbd90b5120035e54bfe6e484ce3c3eb04b1e1,runs/M01-S
+13,M02-S,primary,M02,slow,pinned,10,1800,2000,100.0,18000,configs/M02-S.json,29b9fd2dc41180a952f12ce598825dad3307163b6f72c394019b1b7790f1f4d2,runs/M02-S
+14,M02-F,primary,M02,fast,pinned,10,1800,250,100.0,18000,configs/M02-F.json,c2f7c3dc1f110a10fbc3f9754827c5d6e72735d472e03382e527226105459a70,runs/M02-F
+15,M03-F,primary,M03,fast,pinned,10,1800,250,100.0,18000,configs/M03-F.json,e2b497b3bce681e8db9b8e8bf770cb8273cdf12975f12cc8d6322d178e7de41f,runs/M03-F
+16,M03-S,primary,M03,slow,pinned,10,1800,2000,100.0,18000,configs/M03-S.json,9da0e1306cbb58a036b66b7fda1094e04bff3d45ddd501b9717a1d209f5fe712,runs/M03-S

@@ -1,0 +1,204 @@
+{
+  "ignored_windows": [],
+  "limitations": [
+    "Whole-command interval includes imports, warmup, execution, output and plotting; it is not pure control-plane cost.",
+    "Sampled process trees can miss children that start and exit between samples; summed RSS double-counts shared pages.",
+    "CPU percentages use one-core normalization and first samples are undefined; PSS/USS are sampled at most once per second.",
+    "Temperature is not heat flow; platform power and background load are not attributable solely to this workload."
+  ],
+  "rejected_lines": {
+    "process_tree": 0,
+    "tegrastats": 0
+  },
+  "windows": {
+    "command": {
+      "duration_s": 1804.692042316,
+      "gpu_max_percent": 9,
+      "max_temperature_c": 57.281,
+      "observed_tree_pss_sum_max_mib": 201.2275390625,
+      "observed_tree_rss_sum_max_mib": 210.45703125,
+      "power": {
+        "coverage_fraction": 1.0,
+        "idle_subtracted": false,
+        "observed_interval_s": 1804.692042316,
+        "platform_energy_j_over_observed_interval": 8894.190487155745,
+        "platform_mean_power_w": 4.928370203118777
+      },
+      "power_gaps_s": [],
+      "process_tree_samples": 6387,
+      "processes": [
+        {
+          "cpu_mean_percent_one_core": 27.620300343233218,
+          "identity": "2486089:1794110739.33",
+          "name": "python",
+          "pss_max_mib": 201.2275390625,
+          "role": "root",
+          "rss_max_mib": 210.45703125,
+          "samples": 6387
+        },
+        {
+          "cpu_mean_percent_one_core": 11.562943481253912,
+          "identity": "2486079:1794110735.76",
+          "name": "python",
+          "pss_max_mib": 22.55078125,
+          "role": "observer",
+          "rss_max_mib": 29.8125,
+          "samples": 6387
+        },
+        {
+          "cpu_mean_percent_one_core": 1.0709761397238342,
+          "identity": "2486087:1794110736.33",
+          "name": "tegrastats",
+          "pss_max_mib": 0.205078125,
+          "role": "observer",
+          "rss_max_mib": 1.3125,
+          "samples": 6387
+        }
+      ],
+      "sensor_samples": 6860,
+      "system_cpu_mean_percent": 8.273906705539359,
+      "system_ram_max_mb": 4096,
+      "system_swap_max_mb": 564
+    },
+    "platform_after": {
+      "duration_s": 3.000097821,
+      "gpu_max_percent": 0,
+      "max_temperature_c": 56.843,
+      "observed_tree_pss_sum_max_mib": null,
+      "observed_tree_rss_sum_max_mib": null,
+      "power": {
+        "coverage_fraction": 0.9975776609852083,
+        "idle_subtracted": false,
+        "observed_interval_s": 2.992830567,
+        "platform_energy_j_over_observed_interval": 14.589523457109062,
+        "platform_mean_power_w": 4.874824394664458
+      },
+      "power_gaps_s": [],
+      "process_tree_samples": 0,
+      "processes": [],
+      "sensor_samples": 12,
+      "system_cpu_mean_percent": 4.680555555555555,
+      "system_ram_max_mb": 3765,
+      "system_swap_max_mb": 564
+    },
+    "platform_before": {
+      "duration_s": 3.000092091,
+      "gpu_max_percent": 0,
+      "max_temperature_c": 56.343,
+      "observed_tree_pss_sum_max_mib": null,
+      "observed_tree_rss_sum_max_mib": null,
+      "power": {
+        "coverage_fraction": 0.9060404422765435,
+        "idle_subtracted": false,
+        "observed_interval_s": 2.718204765,
+        "platform_energy_j_over_observed_interval": 12.78247624958467,
+        "platform_mean_power_w": 4.702543536886439
+      },
+      "power_gaps_s": [],
+      "process_tree_samples": 0,
+      "processes": [],
+      "sensor_samples": 11,
+      "system_cpu_mean_percent": 0.9393939393939393,
+      "system_ram_max_mb": 3838,
+      "system_swap_max_mb": 564
+    },
+    "ready_worker_idle": {
+      "duration_s": 3.00103548,
+      "gpu_max_percent": 0,
+      "max_temperature_c": 56.218,
+      "observed_tree_pss_sum_max_mib": 73.6259765625,
+      "observed_tree_rss_sum_max_mib": 82.5703125,
+      "power": {
+        "coverage_fraction": 1.0,
+        "idle_subtracted": false,
+        "observed_interval_s": 3.00103548,
+        "platform_energy_j_over_observed_interval": 14.516721562001683,
+        "platform_mean_power_w": 4.83723756641547
+      },
+      "power_gaps_s": [],
+      "process_tree_samples": 11,
+      "processes": [
+        {
+          "cpu_mean_percent_one_core": 6.0343674452538245,
+          "identity": "2486089:1794110739.33",
+          "name": "python",
+          "pss_max_mib": 73.6259765625,
+          "role": "root",
+          "rss_max_mib": 82.5703125,
+          "samples": 11
+        },
+        {
+          "cpu_mean_percent_one_core": 11.01097010577363,
+          "identity": "2486079:1794110735.76",
+          "name": "python",
+          "pss_max_mib": 22.287109375,
+          "role": "observer",
+          "rss_max_mib": 29.8125,
+          "samples": 11
+        },
+        {
+          "cpu_mean_percent_one_core": 0.6514452920680128,
+          "identity": "2486087:1794110736.33",
+          "name": "tegrastats",
+          "pss_max_mib": 0.205078125,
+          "role": "observer",
+          "rss_max_mib": 1.3125,
+          "samples": 11
+        }
+      ],
+      "sensor_samples": 11,
+      "system_cpu_mean_percent": 3.1666666666666665,
+      "system_ram_max_mb": 3891,
+      "system_swap_max_mb": 564
+    },
+    "steady_workload": {
+      "duration_s": 1800.000260138,
+      "gpu_max_percent": 9,
+      "max_temperature_c": 57.281,
+      "observed_tree_pss_sum_max_mib": 201.2275390625,
+      "observed_tree_rss_sum_max_mib": 210.45703125,
+      "power": {
+        "coverage_fraction": 1.0,
+        "idle_subtracted": false,
+        "observed_interval_s": 1800.000260138,
+        "platform_energy_j_over_observed_interval": 8870.743690251027,
+        "platform_mean_power_w": 4.9281902268008215
+      },
+      "power_gaps_s": [],
+      "process_tree_samples": 6370,
+      "processes": [
+        {
+          "cpu_mean_percent_one_core": 27.567348787226905,
+          "identity": "2486089:1794110739.33",
+          "name": "python",
+          "pss_max_mib": 201.2275390625,
+          "role": "root",
+          "rss_max_mib": 210.45703125,
+          "samples": 6370
+        },
+        {
+          "cpu_mean_percent_one_core": 11.56666818771702,
+          "identity": "2486079:1794110735.76",
+          "name": "python",
+          "pss_max_mib": 22.396484375,
+          "role": "observer",
+          "rss_max_mib": 29.8125,
+          "samples": 6370
+        },
+        {
+          "cpu_mean_percent_one_core": 1.0713898243608855,
+          "identity": "2486087:1794110736.33",
+          "name": "tegrastats",
+          "pss_max_mib": 0.205078125,
+          "role": "observer",
+          "rss_max_mib": 1.3125,
+          "samples": 6370
+        }
+      ],
+      "sensor_samples": 6843,
+      "system_cpu_mean_percent": 8.268035462029324,
+      "system_ram_max_mb": 4096,
+      "system_swap_max_mb": 564
+    }
+  }
+}

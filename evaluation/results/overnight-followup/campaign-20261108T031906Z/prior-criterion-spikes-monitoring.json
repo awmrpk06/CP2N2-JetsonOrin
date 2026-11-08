@@ -1,0 +1,1067 @@
+{
+  "alignment": {
+    "note": "index = completed-request position (0-based); slot = scheduled release slot",
+    "runs": {
+      "M01-F-r01-orchestrated-pinned-10hz": [
+        {
+          "cycle_ms": 102.869648,
+          "dispatch_lateness_ms": 0.13317,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "cycle_ms": 149.044983,
+          "dispatch_lateness_ms": 0.118836,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "cycle_ms": 190.832022,
+          "dispatch_lateness_ms": 0.381397,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "cycle_ms": 234.49355,
+          "dispatch_lateness_ms": 0.130164,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "cycle_ms": 58.067258,
+          "dispatch_lateness_ms": 0.122647,
+          "index": 17190,
+          "slot": 17191
+        },
+        {
+          "cycle_ms": 58.883469,
+          "dispatch_lateness_ms": 0.143262,
+          "index": 17598,
+          "slot": 17599
+        },
+        {
+          "cycle_ms": 59.269875,
+          "dispatch_lateness_ms": 0.202014,
+          "index": 17938,
+          "slot": 17939
+        },
+        {
+          "cycle_ms": 61.037038,
+          "dispatch_lateness_ms": 0.11968,
+          "index": 17972,
+          "slot": 17973
+        }
+      ],
+      "M01-S-r01-orchestrated-pinned-10hz": [
+        {
+          "cycle_ms": 105.137025,
+          "dispatch_lateness_ms": 0.114573,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "cycle_ms": 145.572146,
+          "dispatch_lateness_ms": 0.116432,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "cycle_ms": 190.011981,
+          "dispatch_lateness_ms": 0.354699,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "cycle_ms": 234.745072,
+          "dispatch_lateness_ms": 0.365666,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "cycle_ms": 55.922957,
+          "dispatch_lateness_ms": 0.395657,
+          "index": 17112,
+          "slot": 17113
+        },
+        {
+          "cycle_ms": 55.409277,
+          "dispatch_lateness_ms": 0.459262,
+          "index": 17255,
+          "slot": 17256
+        },
+        {
+          "cycle_ms": 55.421405,
+          "dispatch_lateness_ms": 0.187929,
+          "index": 17582,
+          "slot": 17583
+        },
+        {
+          "cycle_ms": 56.084178,
+          "dispatch_lateness_ms": 0.374835,
+          "index": 17868,
+          "slot": 17869
+        }
+      ],
+      "M02-F-r01-orchestrated-pinned-10hz": [
+        {
+          "cycle_ms": 104.811484,
+          "dispatch_lateness_ms": 0.129747,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "cycle_ms": 140.858925,
+          "dispatch_lateness_ms": 0.129621,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "cycle_ms": 183.968469,
+          "dispatch_lateness_ms": 0.126316,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "cycle_ms": 230.145494,
+          "dispatch_lateness_ms": 0.124854,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "cycle_ms": 50.081421,
+          "dispatch_lateness_ms": 0.120302,
+          "index": 15856,
+          "slot": 15857
+        },
+        {
+          "cycle_ms": 54.711679,
+          "dispatch_lateness_ms": 0.119914,
+          "index": 16367,
+          "slot": 16368
+        },
+        {
+          "cycle_ms": 50.373047,
+          "dispatch_lateness_ms": 0.113845,
+          "index": 17250,
+          "slot": 17251
+        },
+        {
+          "cycle_ms": 51.048876,
+          "dispatch_lateness_ms": 0.138035,
+          "index": 17987,
+          "slot": 17988
+        }
+      ],
+      "M02-S-r01-orchestrated-pinned-10hz": [
+        {
+          "cycle_ms": 105.386113,
+          "dispatch_lateness_ms": 0.149881,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "cycle_ms": 147.62014,
+          "dispatch_lateness_ms": 0.370462,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "cycle_ms": 192.227461,
+          "dispatch_lateness_ms": 0.115329,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "cycle_ms": 236.677314,
+          "dispatch_lateness_ms": 0.134801,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "cycle_ms": 56.338675,
+          "dispatch_lateness_ms": 0.147079,
+          "index": 16310,
+          "slot": 16311
+        },
+        {
+          "cycle_ms": 55.974158,
+          "dispatch_lateness_ms": 0.395973,
+          "index": 16535,
+          "slot": 16536
+        },
+        {
+          "cycle_ms": 57.827257,
+          "dispatch_lateness_ms": 0.363947,
+          "index": 17435,
+          "slot": 17436
+        },
+        {
+          "cycle_ms": 57.381521,
+          "dispatch_lateness_ms": 0.122745,
+          "index": 17701,
+          "slot": 17702
+        }
+      ],
+      "M03-F-r01-orchestrated-pinned-10hz": [
+        {
+          "cycle_ms": 106.441602,
+          "dispatch_lateness_ms": 0.13701,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "cycle_ms": 146.974531,
+          "dispatch_lateness_ms": 0.114578,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "cycle_ms": 193.923471,
+          "dispatch_lateness_ms": 0.372254,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "cycle_ms": 235.42219,
+          "dispatch_lateness_ms": 0.151472,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "cycle_ms": 56.598208,
+          "dispatch_lateness_ms": 0.13219,
+          "index": 17586,
+          "slot": 17587
+        },
+        {
+          "cycle_ms": 57.593408,
+          "dispatch_lateness_ms": 0.366535,
+          "index": 17620,
+          "slot": 17621
+        },
+        {
+          "cycle_ms": 57.178898,
+          "dispatch_lateness_ms": 0.121309,
+          "index": 17688,
+          "slot": 17689
+        },
+        {
+          "cycle_ms": 58.54195,
+          "dispatch_lateness_ms": 0.138458,
+          "index": 17722,
+          "slot": 17723
+        }
+      ],
+      "M03-S-r01-orchestrated-pinned-10hz": [
+        {
+          "cycle_ms": 103.967415,
+          "dispatch_lateness_ms": 0.359107,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "cycle_ms": 146.056579,
+          "dispatch_lateness_ms": 0.13621,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "cycle_ms": 185.363579,
+          "dispatch_lateness_ms": 0.367118,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "cycle_ms": 234.332805,
+          "dispatch_lateness_ms": 0.398482,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "cycle_ms": 78.715198,
+          "dispatch_lateness_ms": 0.205057,
+          "index": 16749,
+          "slot": 16750
+        },
+        {
+          "cycle_ms": 71.601213,
+          "dispatch_lateness_ms": 0.180643,
+          "index": 16751,
+          "slot": 16752
+        },
+        {
+          "cycle_ms": 66.795557,
+          "dispatch_lateness_ms": 0.173327,
+          "index": 16802,
+          "slot": 16803
+        },
+        {
+          "cycle_ms": 69.74493,
+          "dispatch_lateness_ms": 0.195991,
+          "index": 17504,
+          "slot": 17505
+        }
+      ]
+    }
+  },
+  "trials": {
+    "M01-F-r01-orchestrated-pinned-10hz": {
+      "block_requests": 300,
+      "carried_delays": {
+        "dispatches_late_by_1ms_or_more": 5,
+        "of_which_after_over_period_predecessor": 4,
+        "of_which_after_over_period_predecessor_skips": 1,
+        "skipped_releases_in_rows": 1
+      },
+      "causes": {
+        "unattributed_no_instrumentation": 15
+      },
+      "cycle_trend": {
+        "first_window_median_ms": 9.620343,
+        "last_window_median_ms": 47.636523,
+        "slope_ms_per_1k_requests": 2.2906518555008213,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "deadline_missed_spikes": 5,
+      "explained_fraction": null,
+      "gc": null,
+      "instrumented": false,
+      "invocation_trend": {
+        "first_window_median_ms": 9.592806,
+        "last_window_median_ms": 47.596139,
+        "slope_ms_per_1k_requests": 2.2898411227422004,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "largest": [
+        {
+          "block_median_ms": 43.0974565,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 234.49355,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.130164,
+          "excess_ms": 191.3960935,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "block_median_ms": 33.767103500000005,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 190.832022,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.381397,
+          "excess_ms": 157.06491849999998,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "block_median_ms": 24.797240000000002,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 149.044983,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.118836,
+          "excess_ms": 124.247743,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "block_median_ms": 14.455211,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 102.869648,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.13317,
+          "excess_ms": 88.41443699999999,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "block_median_ms": 49.332807,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 61.037038,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.11968,
+          "excess_ms": 11.704231,
+          "index": 17972,
+          "slot": 17973
+        },
+        {
+          "block_median_ms": 45.4249,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 57.060676,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.266527,
+          "excess_ms": 11.635776,
+          "index": 16679,
+          "slot": 16680
+        },
+        {
+          "block_median_ms": 46.6063905,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 57.455178,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.40767,
+          "excess_ms": 10.848787499999993,
+          "index": 16997,
+          "slot": 16998
+        },
+        {
+          "block_median_ms": 44.2982175,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 54.765623,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.135526,
+          "excess_ms": 10.467405499999998,
+          "index": 15454,
+          "slot": 15455
+        },
+        {
+          "block_median_ms": 46.359421499999996,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 56.789895,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.13513,
+          "excess_ms": 10.430473500000005,
+          "index": 16226,
+          "slot": 16227
+        },
+        {
+          "block_median_ms": 46.6063905,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 56.834265,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.188941,
+          "excess_ms": 10.227874499999999,
+          "index": 16838,
+          "slot": 16839
+        }
+      ],
+      "method": "Offline latency-spike attribution and latency-trend estimates for sustained-workload archives.",
+      "off_cpu_subcauses": {},
+      "primary_threshold_ms": 10.0,
+      "requests": 17999,
+      "spike_counts_by_threshold": {
+        "10ms": 15,
+        "20ms": 5,
+        "5ms": 91
+      },
+      "spikes": 15,
+      "spikes_with_full_collection": 0
+    },
+    "M01-S-r01-orchestrated-pinned-10hz": {
+      "block_requests": 300,
+      "carried_delays": {
+        "dispatches_late_by_1ms_or_more": 5,
+        "of_which_after_over_period_predecessor": 4,
+        "of_which_after_over_period_predecessor_skips": 1,
+        "skipped_releases_in_rows": 1
+      },
+      "causes": {
+        "unattributed_no_instrumentation": 5
+      },
+      "cycle_trend": {
+        "first_window_median_ms": 9.712565,
+        "last_window_median_ms": 47.5190065,
+        "slope_ms_per_1k_requests": 2.288704554187192,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "deadline_missed_spikes": 5,
+      "explained_fraction": null,
+      "gc": null,
+      "instrumented": false,
+      "invocation_trend": {
+        "first_window_median_ms": 9.691092000000001,
+        "last_window_median_ms": 47.477981,
+        "slope_ms_per_1k_requests": 2.2878099831691294,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "largest": [
+        {
+          "block_median_ms": 42.867915999999994,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 234.745072,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.365666,
+          "excess_ms": 191.877156,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "block_median_ms": 33.570074,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 190.011981,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.354699,
+          "excess_ms": 156.441907,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "block_median_ms": 22.9809215,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 145.572146,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.116432,
+          "excess_ms": 122.59122450000001,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "block_median_ms": 15.354873000000001,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 105.137025,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.114573,
+          "excess_ms": 89.782152,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "block_median_ms": 33.570074,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 30.247279,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 90.708355,
+          "excess_ms": -3.3227949999999993,
+          "index": 10625,
+          "slot": 10625
+        }
+      ],
+      "method": "Offline latency-spike attribution and latency-trend estimates for sustained-workload archives.",
+      "off_cpu_subcauses": {},
+      "primary_threshold_ms": 10.0,
+      "requests": 17999,
+      "spike_counts_by_threshold": {
+        "10ms": 5,
+        "20ms": 5,
+        "5ms": 41
+      },
+      "spikes": 5,
+      "spikes_with_full_collection": 0
+    },
+    "M02-F-r01-orchestrated-pinned-10hz": {
+      "block_requests": 300,
+      "carried_delays": {
+        "dispatches_late_by_1ms_or_more": 5,
+        "of_which_after_over_period_predecessor": 4,
+        "of_which_after_over_period_predecessor_skips": 1,
+        "skipped_releases_in_rows": 1
+      },
+      "causes": {
+        "unattributed_no_instrumentation": 18
+      },
+      "cycle_trend": {
+        "first_window_median_ms": 9.760455499999999,
+        "last_window_median_ms": 40.430189,
+        "slope_ms_per_1k_requests": 1.7998250106732345,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "deadline_missed_spikes": 5,
+      "explained_fraction": null,
+      "gc": null,
+      "instrumented": false,
+      "invocation_trend": {
+        "first_window_median_ms": 9.7330785,
+        "last_window_median_ms": 40.3929555,
+        "slope_ms_per_1k_requests": 1.7991378866995076,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "largest": [
+        {
+          "block_median_ms": 36.1650615,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 230.145494,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.124854,
+          "excess_ms": 193.9804325,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "block_median_ms": 30.215972999999998,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 183.968469,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.126316,
+          "excess_ms": 153.752496,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "block_median_ms": 21.366459,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 140.858925,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.129621,
+          "excess_ms": 119.49246600000001,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "block_median_ms": 14.5636805,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 104.811484,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.129747,
+          "excess_ms": 90.24780349999999,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "block_median_ms": 39.963678,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 54.711679,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.119914,
+          "excess_ms": 14.748000999999995,
+          "index": 16367,
+          "slot": 16368
+        },
+        {
+          "block_median_ms": 36.1650615,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 48.273681,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.13594,
+          "excess_ms": 12.108619500000003,
+          "index": 14709,
+          "slot": 14709
+        },
+        {
+          "block_median_ms": 33.779303999999996,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 45.349045,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.128446,
+          "excess_ms": 11.569741,
+          "index": 13608,
+          "slot": 13608
+        },
+        {
+          "block_median_ms": 33.695749000000006,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 45.148973,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.147125,
+          "excess_ms": 11.453223999999992,
+          "index": 13358,
+          "slot": 13358
+        },
+        {
+          "block_median_ms": 37.268135,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 48.376725,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.137001,
+          "excess_ms": 11.10859,
+          "index": 14436,
+          "slot": 14436
+        },
+        {
+          "block_median_ms": 39.366074999999995,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 50.373047,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.113845,
+          "excess_ms": 11.006972000000005,
+          "index": 17250,
+          "slot": 17251
+        }
+      ],
+      "method": "Offline latency-spike attribution and latency-trend estimates for sustained-workload archives.",
+      "off_cpu_subcauses": {},
+      "primary_threshold_ms": 10.0,
+      "requests": 17999,
+      "spike_counts_by_threshold": {
+        "10ms": 18,
+        "20ms": 5,
+        "5ms": 100
+      },
+      "spikes": 18,
+      "spikes_with_full_collection": 0
+    },
+    "M02-S-r01-orchestrated-pinned-10hz": {
+      "block_requests": 300,
+      "carried_delays": {
+        "dispatches_late_by_1ms_or_more": 5,
+        "of_which_after_over_period_predecessor": 4,
+        "of_which_after_over_period_predecessor_skips": 1,
+        "skipped_releases_in_rows": 1
+      },
+      "causes": {
+        "unattributed_no_instrumentation": 7
+      },
+      "cycle_trend": {
+        "first_window_median_ms": 9.8673745,
+        "last_window_median_ms": 47.2554645,
+        "slope_ms_per_1k_requests": 2.285179749589491,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "deadline_missed_spikes": 5,
+      "explained_fraction": null,
+      "gc": null,
+      "instrumented": false,
+      "invocation_trend": {
+        "first_window_median_ms": 9.841677,
+        "last_window_median_ms": 47.2147265,
+        "slope_ms_per_1k_requests": 2.284160947044335,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "largest": [
+        {
+          "block_median_ms": 42.67599,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 236.677314,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.134801,
+          "excess_ms": 194.001324,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "block_median_ms": 31.407586000000002,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 192.227461,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.115329,
+          "excess_ms": 160.819875,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "block_median_ms": 24.2062345,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 147.62014,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.370462,
+          "excess_ms": 123.4139055,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "block_median_ms": 14.325724999999998,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 105.386113,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.149881,
+          "excess_ms": 91.06038799999999,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "block_median_ms": 44.628703,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 55.021851,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.391026,
+          "excess_ms": 10.393147999999997,
+          "index": 15635,
+          "slot": 15636
+        },
+        {
+          "block_median_ms": 45.9769495,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 56.338675,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.147079,
+          "excess_ms": 10.361725499999999,
+          "index": 16310,
+          "slot": 16311
+        },
+        {
+          "block_median_ms": 31.407586000000002,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 26.81011,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 92.557517,
+          "excess_ms": -4.597476,
+          "index": 10625,
+          "slot": 10625
+        }
+      ],
+      "method": "Offline latency-spike attribution and latency-trend estimates for sustained-workload archives.",
+      "off_cpu_subcauses": {},
+      "primary_threshold_ms": 10.0,
+      "requests": 17999,
+      "spike_counts_by_threshold": {
+        "10ms": 7,
+        "20ms": 5,
+        "5ms": 54
+      },
+      "spikes": 7,
+      "spikes_with_full_collection": 0
+    },
+    "M03-F-r01-orchestrated-pinned-10hz": {
+      "block_requests": 300,
+      "carried_delays": {
+        "dispatches_late_by_1ms_or_more": 5,
+        "of_which_after_over_period_predecessor": 4,
+        "of_which_after_over_period_predecessor_skips": 1,
+        "skipped_releases_in_rows": 1
+      },
+      "causes": {
+        "unattributed_no_instrumentation": 8
+      },
+      "cycle_trend": {
+        "first_window_median_ms": 9.500668,
+        "last_window_median_ms": 47.471309,
+        "slope_ms_per_1k_requests": 2.2850376781609194,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "deadline_missed_spikes": 5,
+      "explained_fraction": null,
+      "gc": null,
+      "instrumented": false,
+      "invocation_trend": {
+        "first_window_median_ms": 9.476827,
+        "last_window_median_ms": 47.4276275,
+        "slope_ms_per_1k_requests": 2.2842397725779966,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "largest": [
+        {
+          "block_median_ms": 43.219638,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 235.42219,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.151472,
+          "excess_ms": 192.202552,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "block_median_ms": 34.122342,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 193.923471,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.372254,
+          "excess_ms": 159.801129,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "block_median_ms": 25.048151,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 146.974531,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.114578,
+          "excess_ms": 121.92638000000001,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "block_median_ms": 15.864453000000001,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 106.441602,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.13701,
+          "excess_ms": 90.577149,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "block_median_ms": 45.7752865,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 56.175887,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.368037,
+          "excess_ms": 10.400600500000003,
+          "index": 16135,
+          "slot": 16136
+        },
+        {
+          "block_median_ms": 38.6397805,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 48.925418,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.111577,
+          "excess_ms": 10.2856375,
+          "index": 12812,
+          "slot": 12812
+        },
+        {
+          "block_median_ms": 40.901804,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 51.103311,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.39211,
+          "excess_ms": 10.201507,
+          "index": 14513,
+          "slot": 14513
+        },
+        {
+          "block_median_ms": 34.122342,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 31.265724,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 94.536692,
+          "excess_ms": -2.8566180000000045,
+          "index": 10625,
+          "slot": 10625
+        }
+      ],
+      "method": "Offline latency-spike attribution and latency-trend estimates for sustained-workload archives.",
+      "off_cpu_subcauses": {},
+      "primary_threshold_ms": 10.0,
+      "requests": 17999,
+      "spike_counts_by_threshold": {
+        "10ms": 8,
+        "20ms": 5,
+        "5ms": 92
+      },
+      "spikes": 8,
+      "spikes_with_full_collection": 0
+    },
+    "M03-S-r01-orchestrated-pinned-10hz": {
+      "block_requests": 300,
+      "carried_delays": {
+        "dispatches_late_by_1ms_or_more": 7,
+        "of_which_after_over_period_predecessor": 4,
+        "of_which_after_over_period_predecessor_skips": 1,
+        "skipped_releases_in_rows": 1
+      },
+      "causes": {
+        "unattributed_no_instrumentation": 21
+      },
+      "cycle_trend": {
+        "first_window_median_ms": 9.241001,
+        "last_window_median_ms": 47.825756,
+        "slope_ms_per_1k_requests": 2.223377918308703,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "deadline_missed_spikes": 5,
+      "explained_fraction": null,
+      "gc": null,
+      "instrumented": false,
+      "invocation_trend": {
+        "first_window_median_ms": 9.219591999999999,
+        "last_window_median_ms": 47.7786825,
+        "slope_ms_per_1k_requests": 2.222552727422004,
+        "window_requests": 600,
+        "windows": 29
+      },
+      "largest": [
+        {
+          "block_median_ms": 42.487667,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 234.332805,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.398482,
+          "excess_ms": 191.84513800000002,
+          "index": 14813,
+          "slot": 14813
+        },
+        {
+          "block_median_ms": 33.440469,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 185.363579,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.367118,
+          "excess_ms": 151.92310999999998,
+          "index": 10624,
+          "slot": 10624
+        },
+        {
+          "block_median_ms": 23.037709,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 146.056579,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.13621,
+          "excess_ms": 123.01886999999999,
+          "index": 6807,
+          "slot": 6807
+        },
+        {
+          "block_median_ms": 15.551776499999999,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 103.967415,
+          "deadline_missed": true,
+          "dispatch_lateness_ms": 0.359107,
+          "excess_ms": 88.4156385,
+          "index": 2990,
+          "slot": 2990
+        },
+        {
+          "block_median_ms": 46.126374,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 78.715198,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.205057,
+          "excess_ms": 32.588824,
+          "index": 16749,
+          "slot": 16750
+        },
+        {
+          "block_median_ms": 46.126374,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 71.601213,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.180643,
+          "excess_ms": 25.474839000000003,
+          "index": 16751,
+          "slot": 16752
+        },
+        {
+          "block_median_ms": 48.156310500000004,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 69.74493,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.195991,
+          "excess_ms": 21.588619499999993,
+          "index": 17504,
+          "slot": 17505
+        },
+        {
+          "block_median_ms": 47.897086,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 66.795557,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.173327,
+          "excess_ms": 18.898471,
+          "index": 16802,
+          "slot": 16803
+        },
+        {
+          "block_median_ms": 48.156310500000004,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 62.867113,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.184794,
+          "excess_ms": 14.7108025,
+          "index": 17583,
+          "slot": 17584
+        },
+        {
+          "block_median_ms": 46.126374,
+          "cause": "unattributed_no_instrumentation",
+          "cycle_ms": 59.707237,
+          "deadline_missed": false,
+          "dispatch_lateness_ms": 0.141312,
+          "excess_ms": 13.580863,
+          "index": 16624,
+          "slot": 16625
+        }
+      ],
+      "method": "Offline latency-spike attribution and latency-trend estimates for sustained-workload archives.",
+      "off_cpu_subcauses": {},
+      "primary_threshold_ms": 10.0,
+      "requests": 17999,
+      "spike_counts_by_threshold": {
+        "10ms": 21,
+        "20ms": 8,
+        "5ms": 91
+      },
+      "spikes": 21,
+      "spikes_with_full_collection": 0
+    }
+  }
+}

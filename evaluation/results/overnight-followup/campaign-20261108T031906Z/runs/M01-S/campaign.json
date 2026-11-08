@@ -1,0 +1,53 @@
+{
+  "config": {
+    "ambient_temperature_c": null,
+    "cooldown_s": 60,
+    "cooling": "Stock developer-kit fan and heatsink, open air",
+    "desktop_comparison": false,
+    "interval_ms": 2000,
+    "phases": {
+      "M01-S": {
+        "diagnostic_counts": true,
+        "duration_s": 1800,
+        "gc_policy": "default",
+        "idle_s": 3,
+        "implemented": true,
+        "intrusive_profile": "none",
+        "kind": "sustained",
+        "lifecycle_variants": [
+          "pinned"
+        ],
+        "modes": [
+          "orchestrated"
+        ],
+        "post_idle_s": 0,
+        "rates_hz": [
+          10
+        ],
+        "repetitions": 1,
+        "spike_instrumentation": false
+      }
+    },
+    "platform_idle_s": 3,
+    "schema_version": 2,
+    "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb"
+  },
+  "phases": [
+    "M01-S"
+  ],
+  "python": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/bin/python",
+  "source_sha256": {
+    "evaluation/__init__.py": "4b8a0aed470cbad89dacdc0136a7cc4ae25813e23495366d911fac51c594705a",
+    "evaluation/evaluate_tegra_resources.py": "dc0560d6a93a540c8a0dbcda3ec8e42491c3cc5ba00822809ec09961b1c66539",
+    "evaluation/growth_diagnostics.py": "b36ec72f06cd5459df959df736f2608d1e1130a6e3f7a99e03db7fc0d55dcd88",
+    "evaluation/lifecycle_variants.py": "f5da2ba40877b2a3192339c6ddbecba2d77594ffb1cae80ec3cb775a221568fe",
+    "evaluation/local_control_experiment.py": "e0a0bb48340c791e3a8bf65ac94c35ffcb53e0f031e281f3e84697c2ff313f19",
+    "evaluation/operating_limits.py": "99e0fc752e0dc000f2c9509eaa064aab7c8d5c195ed2b3fe396f9b62c15a44cc",
+    "evaluation/reproduce_original.py": "8df4cad0f1e504b25f570c4ec62d25cbc1980ac29b765e822e40e445100d1101",
+    "evaluation/resource_monitor.py": "32eb09e8aabf57fdb72765cc549b74a702fc2f9741ff74a61e308f0d851c2528",
+    "evaluation/spike_analysis.py": "f78821f590cab25b8291791002b48af6c3894bd594b81435fd57e2452fc0e1d7",
+    "evaluation/summarize_profiles.py": "3bb153e5a2f1c59d84120a37de2af29bbe1adc86ea2080c419dbe915acff1520",
+    "evaluation/upstream_sustained.py": "21d55c0ac0fbfccd7db546da1b1f0737af1f51d5515e6ec36f6f1d6d3870126f"
+  },
+  "upstream": "/home/uit/Projects/phys-mcp/_temp/cp2n2-v5.1.1"
+}

@@ -1,0 +1,16 @@
+{
+  "self_test": "passed",
+  "rows": 16,
+  "reference_commit": "5f4d05291a0e37d7f88b7a6874b8a7f57befd695"
+}
+Traceback (most recent call last):
+  File "/home/uit/Projects/phys-mcp/_temp/overnight-followup/overnight.py", line 1002, in <module>
+    main()
+  File "/home/uit/Projects/phys-mcp/_temp/overnight-followup/overnight.py", line 996, in main
+    run_campaign(bundle, args.repo.resolve(), args.upstream.resolve(), Path(os.path.abspath(args.python)))
+  File "/home/uit/Projects/phys-mcp/_temp/overnight-followup/overnight.py", line 543, in run_campaign
+    checked = verify_trial(bundle, repo, row)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/uit/Projects/phys-mcp/_temp/overnight-followup/overnight.py", line 432, in verify_trial
+    raise RuntimeError(f"Recorded settings do not match frozen row {row['trial_id']}: {exact}")
+RuntimeError: Recorded settings do not match frozen row P01: {'mode': True, 'duration': True, 'rate': True, 'interval': True, 'relative_deadline': True, 'gc': True, 'diagnostic_counts': True, 'spike_instrumentation': True, 'intrusive_profile': True, 'upstream': True, 'profile': True, 'planned_releases': True, 'lifecycle_variant': True, 'store_identity': False}

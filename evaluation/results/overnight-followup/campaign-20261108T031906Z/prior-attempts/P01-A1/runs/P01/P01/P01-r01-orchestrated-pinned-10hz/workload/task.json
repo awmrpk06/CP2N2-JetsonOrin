@@ -1,0 +1,45 @@
+{
+  "task_id": "embedded-sustained-original-edge",
+  "client_id": "anonymous",
+  "correlation_id": null,
+  "idempotency_key": null,
+  "task_kind": "classification",
+  "summary": "Low-latency edge classification task.",
+  "required_input_modalities": [
+    "digital_vector"
+  ],
+  "preferred_output": "score",
+  "latency_budget_ms": 20.0,
+  "max_estimated_cost": null,
+  "cost_currency": null,
+  "selection_policy": "lexicographic",
+  "selection_seed": 7,
+  "min_confidence": 0.2,
+  "stochasticity_tolerance": 0.5,
+  "continuous_monitoring_required": false,
+  "repeated_invocation_expected": false,
+  "reset_free_preferred": false,
+  "preferred_locality": "edge",
+  "allow_fallback": true,
+  "direct_backend_id": null,
+  "expected_resource_state_version": null,
+  "lease_id": null,
+  "expected_lease_version": null,
+  "lease_ttl_ms": 60000.0,
+  "preparation_timeout_ms": 10000.0,
+  "invocation_timeout_ms": 30000.0,
+  "validation_timeout_ms": 5000.0,
+  "abort_timeout_ms": 5000.0,
+  "cooldown_timeout_ms": 5000.0,
+  "max_twin_age_ms": null,
+  "required_telemetry_fields": [],
+  "human_supervision_available": false,
+  "metadata": {
+    "input_vector": [
+      0.1,
+      0.3,
+      0.5,
+      0.7
+    ]
+  }
+}

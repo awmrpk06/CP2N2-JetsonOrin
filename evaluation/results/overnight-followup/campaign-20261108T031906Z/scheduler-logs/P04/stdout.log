@@ -1,0 +1,17 @@
+{
+  "phases": {
+    "P04": {
+      "planned": 1,
+      "accounted": 1,
+      "complete": true,
+      "infrastructure_failures": {},
+      "performance_failures": {
+        "P04-r01-orchestrated-indexed-50hz": [
+          "skipped_releases:3",
+          "deadline_misses:3"
+        ]
+      }
+    }
+  },
+  "not_reached": []
+}

@@ -1,0 +1,45 @@
+{
+  "cases": [
+    {
+      "failed_tests": [],
+      "plugin_header": null,
+      "retention_limit": null,
+      "returncode": 0,
+      "summary": "146 passed in 22.56s",
+      "variant": "pinned"
+    },
+    {
+      "failed_tests": [],
+      "plugin_header": null,
+      "retention_limit": null,
+      "returncode": 0,
+      "summary": "146 passed in 22.03s",
+      "variant": "indexed"
+    },
+    {
+      "failed_tests": [],
+      "plugin_header": null,
+      "retention_limit": 6000,
+      "returncode": 0,
+      "summary": "146 passed in 21.87s",
+      "variant": "bounded"
+    },
+    {
+      "failed_tests": [
+        "tests/test_biopattern_gate_mcp_e3.py::test_deterministic_client_executes_complete_audited_e3_lifecycle",
+        "tests/test_lifecycle_protocol.py::test_happy_path_follows_the_normative_lifecycle"
+      ],
+      "plugin_header": null,
+      "retention_limit": 1,
+      "returncode": 1,
+      "summary": "2 failed, 144 passed in 22.27s",
+      "variant": "bounded"
+    }
+  ],
+  "generated_utc": "2026-11-07T12:14:17.576741+00:00",
+  "lifecycle_variants_sha256": "f5da2ba40877b2a3192339c6ddbecba2d77594ffb1cae80ec3cb775a221568fe",
+  "note": "retention_limit=1 is a positive control expected to fail history-dependent tests; it is not a proposed setting.",
+  "python": "/home/uit/Projects/phys-mcp/_temp/cp2n2-python312/bin/python",
+  "upstream_commit": "36fbae002b0a9e066416ea9cafbb966a33fe53bb",
+  "upstream_unmodified_after": true
+}

@@ -1,0 +1,12 @@
+{
+  "phases": {
+    "P01": {
+      "planned": 1,
+      "accounted": 1,
+      "complete": true,
+      "infrastructure_failures": {},
+      "performance_failures": {}
+    }
+  },
+  "not_reached": []
+}

@@ -1,0 +1,268 @@
+{
+  "generated_utc": "2026-11-08T07:41:17.311602+00:00",
+  "notes": [
+    "Generated offline from verified trial archives; never run concurrently with measurements.",
+    "Per-trial nearest-rank statistics; across-trial values summarize trials, not pooled requests.",
+    "Deadlines are experimental release-relative deadlines of one interarrival period unless stated otherwise.",
+    "Intrusive allocation/calls trials are diagnostics only; their timings are not primary evidence.",
+    "Power is platform VDD_IN; idle-adjusted values subtract the same worker's ready/post idle windows."
+  ],
+  "phases": {
+    "H03-I": {
+      "conditions": {
+        "orchestrated@50Hz/indexed": {
+          "across_trials": {
+            "achieved_requests_per_s": {
+              "max": 49.91995321984544,
+              "mean": 49.91995321984544,
+              "median": 49.91995321984544,
+              "min": 49.91995321984544,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_median_ms": {
+              "max": 9.229707,
+              "mean": 9.229707,
+              "median": 9.229707,
+              "min": 9.229707,
+              "n": 1,
+              "stdev": null
+            },
+            "cycle_p95_ms": {
+              "max": 10.213049,
+              "mean": 10.213049,
+              "median": 10.213049,
+              "min": 10.213049,
+              "n": 1,
+              "stdev": null
+            },
+            "explained_spike_fraction": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "full_collection_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_max_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_runs": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_freeze_total_ms": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_frozen_objects_end": {
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "n": 0,
+              "stdev": null
+            },
+            "gc_policy": [
+              "default"
+            ],
+            "idle_adjusted_power_w": {
+              "max": 0.1569716222686406,
+              "mean": 0.1569716222686406,
+              "median": 0.1569716222686406,
+              "min": 0.1569716222686406,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_median_ms": {
+              "max": 9.202874000000001,
+              "mean": 9.202874000000001,
+              "median": 9.202874000000001,
+              "min": 9.202874000000001,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_p95_ms": {
+              "max": 10.18748,
+              "mean": 10.18748,
+              "median": 10.18748,
+              "min": 10.18748,
+              "n": 1,
+              "stdev": null
+            },
+            "invocation_slope_ms_per_1k": {
+              "max": -0.022461377898550766,
+              "mean": -0.022461377898550766,
+              "median": -0.022461377898550766,
+              "min": -0.022461377898550766,
+              "n": 1,
+              "stdev": null
+            },
+            "method": "statistics over per-trial values of trials without infrastructure failures; requests are not pooled as replicates",
+            "retained_history_last": {
+              "max": 89859,
+              "mean": 89859,
+              "median": 89859,
+              "min": 89859,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes": {
+              "max": 8,
+              "mean": 8,
+              "median": 8,
+              "min": 8,
+              "n": 1,
+              "stdev": null
+            },
+            "spikes_with_full_collection": {
+              "max": 0,
+              "mean": 0,
+              "median": 0,
+              "min": 0,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_power_w": {
+              "max": 5.007233408475413,
+              "mean": 5.007233408475413,
+              "median": 5.007233408475413,
+              "min": 5.007233408475413,
+              "n": 1,
+              "stdev": null
+            },
+            "steady_tree_rss_max_mib": {
+              "max": 200.69140625,
+              "mean": 200.69140625,
+              "median": 200.69140625,
+              "min": 200.69140625,
+              "n": 1,
+              "stdev": null
+            },
+            "totals": {
+              "completed_requests": 14976,
+              "deadline_misses": 7,
+              "late_dispatches": 14976,
+              "maintenance_failures": 0,
+              "planned_releases": 15000,
+              "skipped_releases": 24,
+              "successful_requests": 14976,
+              "unexpected_backends": 0
+            },
+            "trials_with_data": 1
+          },
+          "timing_role": "primary",
+          "trials": [
+            {
+              "achieved_requests_per_s": 49.91995321984544,
+              "completed_requests": 14976,
+              "cycle_ms": {
+                "max": 202.25583,
+                "median": 9.229707,
+                "p95": 10.213049
+              },
+              "deadline_misses": 7,
+              "gc_policy": "default",
+              "gc_policy_summary": null,
+              "infrastructure_failures": [],
+              "invocation_ms": {
+                "max": 202.222165,
+                "median": 9.202874000000001,
+                "p95": 10.18748
+              },
+              "late_dispatches": 14976,
+              "lifecycle_variant": "indexed",
+              "lifecycle_variant_final_counts": {
+                "evicted": 0,
+                "history": 89859,
+                "indexed_correlations": 14977,
+                "indexed_records": 89859
+              },
+              "maintenance_failures": 0,
+              "performance_failures": [
+                "skipped_releases:24",
+                "deadline_misses:7"
+              ],
+              "planned_releases": 15000,
+              "power": {
+                "excluded_windows": [],
+                "idle_adjusted_w": 0.1569716222686406,
+                "idle_reference": "ready_worker_idle",
+                "minimum_coverage_fraction": 0.9,
+                "platform_after_w": 4.73478745841494,
+                "platform_before_w": 4.716440648052946,
+                "post_idle_w": null,
+                "ready_idle_w": 4.850261786206772,
+                "steady_w": 5.007233408475413
+              },
+              "release_to_completion_ms": {
+                "max": 202.36046,
+                "median": 9.3483675,
+                "p95": 10.328395
+              },
+              "repetition": 1,
+              "retained_last": {
+                "idempotency.entries": 0,
+                "leases.leases_by_resource": 0,
+                "leases.resource_by_lease": 0,
+                "lifecycle.evicted": 0,
+                "lifecycle.history": 89859,
+                "lifecycle.indexed_correlations": 14977,
+                "lifecycle.states": 3
+              },
+              "retention_limit": null,
+              "skipped_releases": 24,
+              "spikes": {
+                "causes": {
+                  "unattributed_no_instrumentation": 8
+                },
+                "explained_fraction": null,
+                "full_collection_max_ms": null,
+                "full_collections": null,
+                "instrumented": false,
+                "invocation_last_window_median_ms": 9.903247499999999,
+                "invocation_slope_ms_per_1k": -0.022461377898550766,
+                "off_cpu_subcauses": {},
+                "spikes": 8,
+                "spikes_with_full_collection": 0
+              },
+              "status": "performance_failure",
+              "steady_tree_rss_max_mib": 200.69140625,
+              "successful_requests": 14976,
+              "trial_id": "H03-I-r01-orchestrated-indexed-50hz",
+              "unexpected_backends": 0
+            }
+          ]
+        }
+      },
+      "kind": "sustained",
+      "planned_trials": 1,
+      "status_counts": {
+        "performance_failure": 1
+      }
+    }
+  },
+  "phases_without_output": [],
+  "schema_version": 1
+}

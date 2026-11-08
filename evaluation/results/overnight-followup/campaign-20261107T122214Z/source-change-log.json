@@ -1,0 +1,27 @@
+{
+  "commits_since_reference": [
+    "943e26a6c252e6c24414ced7d19b12c8fde688fe Record JetPack release in hardware provenance",
+    "52101fd3944609ef6aaaae2aabaf7aa5addaf74e Document nominal RAM and recorded L4T release"
+  ],
+  "current_bundle": "evaluation/results/overnight-followup/campaign-20261107T122214Z",
+  "earlier_setup_attempt_outputs": [
+    "?? evaluation/results/overnight-followup/"
+  ],
+  "live_checkout_commit_at_prepare": "943e26a6c252e6c24414ced7d19b12c8fde688fe",
+  "measured_evaluation_source_changes": [],
+  "note": "Runs use the detached clean reference worktree. The live checkout's later commits only document JetPack and add jetson_release provenance; dirty manuscript drafts are excluded.",
+  "preexisting_dirty_paths_not_used_or_modified": [
+    "M docs/embedded-feasibility/paper-manifest.json",
+    " M docs/embedded-feasibility/paper-results.json",
+    " M docs/embedded-feasibility/paper-source.md",
+    " M docs/embedded-feasibility/paper.md",
+    " M docs/embedded-feasibility/paper.pdf",
+    " M evaluation/workshop_paper.py",
+    "?? docs/embedded-feasibility/legacy-20261019/"
+  ],
+  "reference_commit_used": "5f4d05291a0e37d7f88b7a6874b8a7f57befd695",
+  "tracked_source_diff_since_reference": [
+    "M\tdocs/experiments/correction-and-spikes/README.md",
+    "M\tevaluation/reproduce_original.py"
+  ]
+}
