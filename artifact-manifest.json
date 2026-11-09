@@ -1,0 +1,52 @@
+{
+  "artifact": "CP2N2 Jetson Orin Nano case study",
+  "baseline_source_manifest": "third_party/cp2n2-v5.1.1.manifest.json",
+  "measured_runner_provenance": {
+    "reference_commit": "5f4d05291a0e37d7f88b7a6874b8a7f57befd695",
+    "files_sha256": {
+      "evaluation/__init__.py": "4b8a0aed470cbad89dacdc0136a7cc4ae25813e23495366d911fac51c594705a",
+      "evaluation/common.py": "a49a84ce5a85222b36f01cc82d73e7f5e449fc0da719a7507d7a4401c10324eb",
+      "evaluation/create_embedded_edge_report_pdf.py": "0bb641961f4fbb87b533947c4def5f6112164cdcde8ceb30a5b92c47c875f779",
+      "evaluation/embedded_worker.py": "a3bfc86785472da9959ea27f6ea31f10eeb3a0a50a01625a951ecbf2100d41c2",
+      "evaluation/evaluate_cortical_runtime.py": "271a183df80d6f8098cbf3ea79bcfd2fe37b3a1de00869e24be60ee15d4d8fa7",
+      "evaluation/evaluate_externalized_backend.py": "d3749e2c9b21049d557985c5f051d545098e17f516828fef525737b32da09dd9",
+      "evaluation/evaluate_failure_campaign.py": "0c46e414a03390c2710e20b5974a0cb7309784bdcf53ccb917339c24c06c6ada",
+      "evaluation/evaluate_gemini_agent.py": "a701592e77766644e34753735a48cb0b41dbdade72cab8dbbe8b2142d7d9d36c",
+      "evaluation/evaluate_matching.py": "d6c9c27e55f0101a8041cf4cf9c84b9da02581109b8241d913768e2b55840b4a",
+      "evaluation/evaluate_matching_baselines.py": "354d756e8e1f54041eef07f42321150c5fb14d367472420312d43c7471132881",
+      "evaluation/evaluate_overhead.py": "af23a00a359871b1f83f62a820c053d46078ba8d6fac05d7eb3a59502746be09",
+      "evaluation/evaluate_portability.py": "da15c07e73f5cde7fb5064cbc48f6b9ad28e48b25a07e11484da44d2810f5cc0",
+      "evaluation/evaluate_tegra_resources.py": "dc0560d6a93a540c8a0dbcda3ec8e42491c3cc5ba00822809ec09961b1c66539",
+      "evaluation/growth_diagnostics.py": "b36ec72f06cd5459df959df736f2608d1e1130a6e3f7a99e03db7fc0d55dcd88",
+      "evaluation/lifecycle_variants.py": "f5da2ba40877b2a3192339c6ddbecba2d77594ffb1cae80ec3cb775a221568fe",
+      "evaluation/local_control_experiment.py": "e0a0bb48340c791e3a8bf65ac94c35ffcb53e0f031e281f3e84697c2ff313f19",
+      "evaluation/operating_limits.py": "99e0fc752e0dc000f2c9509eaa064aab7c8d5c195ed2b3fe396f9b62c15a44cc",
+      "evaluation/plots.py": "786f2a092173f23894f683b60259b2e1cd0ffbca5219fc25348ea85aa926c1d3",
+      "evaluation/reproduce_original.py": "8df4cad0f1e504b25f570c4ec62d25cbc1980ac29b765e822e40e445100d1101",
+      "evaluation/resource_monitor.py": "32eb09e8aabf57fdb72765cc549b74a702fc2f9741ff74a61e308f0d851c2528",
+      "evaluation/run_all_evaluations.py": "1ec8579afbeb865cd7dcef94b4cbd4564226ff446c8a94d56a6315116d52be97",
+      "evaluation/spike_analysis.py": "f78821f590cab25b8291791002b48af6c3894bd594b81435fd57e2452fc0e1d7",
+      "evaluation/summarize_profiles.py": "3bb153e5a2f1c59d84120a37de2af29bbe1adc86ea2080c419dbe915acff1520",
+      "evaluation/upstream_paper.py": "e3e21bf2052d21078872ab8b92d276145cb073a131b7157cada77fe5a48fe33c",
+      "evaluation/upstream_sustained.py": "21d55c0ac0fbfccd7db546da1b1f0737af1f51d5515e6ec36f6f1d6d3870126f",
+      "evaluation/variant_suite_check.py": "5be3faf6eb07ce96bc216b46c44be51722e99c5ac5271104d18b3bc587c1a9a7",
+      "evaluation/workshop_paper.py": "11226ec9d77a5c83166e60354f715b05d5e28657309a1cf70cf1ab2c906c7527"
+    }
+  },
+  "campaign_directories": [
+    "evaluation/results/operating-limits/campaign-20261029",
+    "evaluation/results/correction-and-spikes/campaign-20261031",
+    "evaluation/results/correction-and-spikes/campaign-20261101-gc-freeze",
+    "evaluation/results/overnight-followup/campaign-20261108T031906Z",
+    "evaluation/results/original-paper-20261024",
+    "evaluation/results/upstream-profile-20261024"
+  ],
+  "entry_points": {
+    "verify": "scripts/verify_study_artifact.py",
+    "baseline_setup": "third_party/README.md",
+    "resource_load_protocol": "docs/experiments/operating-limits/README.md",
+    "history_protocol": "docs/experiments/correction-and-spikes/README.md",
+    "paired_comparisons": "evaluation/results/overnight-followup/campaign-20261108T031906Z/README.md"
+  },
+  "measurements_modified": false
+}
