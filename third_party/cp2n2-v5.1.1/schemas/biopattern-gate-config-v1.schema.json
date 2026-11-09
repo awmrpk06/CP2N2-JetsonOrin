@@ -1,0 +1,446 @@
+{
+  "$defs": {
+    "DecoderConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_ref": {
+          "minLength": 1,
+          "title": "Artifact Ref",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "decision_threshold": {
+          "default": 0.5,
+          "exclusiveMaximum": 1.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Decision Threshold",
+          "type": "number"
+        },
+        "kind": {
+          "const": "frozen_linear",
+          "default": "frozen_linear",
+          "title": "Kind",
+          "type": "string"
+        },
+        "training_run_ref": {
+          "minLength": 1,
+          "title": "Training Run Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_ref",
+        "artifact_sha256",
+        "training_run_ref"
+      ],
+      "title": "DecoderConfig",
+      "type": "object"
+    },
+    "EvidenceContext": {
+      "additionalProperties": false,
+      "properties": {
+        "approval_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Approval Refs",
+          "type": "array"
+        },
+        "calibration_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calibration Ref"
+        },
+        "evidence_ceiling": {
+          "$ref": "#/$defs/EvidenceLevel"
+        },
+        "provider_contract_verified": {
+          "default": false,
+          "title": "Provider Contract Verified",
+          "type": "boolean"
+        },
+        "runtime_kind": {
+          "$ref": "#/$defs/RuntimeKind"
+        }
+      },
+      "required": [
+        "runtime_kind",
+        "evidence_ceiling"
+      ],
+      "title": "EvidenceContext",
+      "type": "object"
+    },
+    "EvidenceLevel": {
+      "enum": [
+        "E3",
+        "E5"
+      ],
+      "title": "EvidenceLevel",
+      "type": "string"
+    },
+    "FeatureConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "bin_width_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Bin Width Ms",
+          "type": "integer"
+        },
+        "include_active_group_count": {
+          "default": true,
+          "title": "Include Active Group Count",
+          "type": "boolean"
+        },
+        "include_burst_count": {
+          "default": false,
+          "title": "Include Burst Count",
+          "type": "boolean"
+        },
+        "include_first_spike_latency": {
+          "default": true,
+          "title": "Include First Spike Latency",
+          "type": "boolean"
+        },
+        "schema_version": {
+          "const": "pattern-gate-features-v1",
+          "default": "pattern-gate-features-v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "bin_width_ms"
+      ],
+      "title": "FeatureConfig",
+      "type": "object"
+    },
+    "PatternDefinition": {
+      "additionalProperties": false,
+      "description": "One hidden class expressed only through logical input groups.",
+      "properties": {
+        "charge_equivalence_token": {
+          "minLength": 1,
+          "title": "Charge Equivalence Token",
+          "type": "string"
+        },
+        "label": {
+          "enum": [
+            "A",
+            "B"
+          ],
+          "title": "Label",
+          "type": "string"
+        },
+        "sequence": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Sequence",
+          "type": "array"
+        },
+        "stimulus_design_ref": {
+          "minLength": 1,
+          "title": "Stimulus Design Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "sequence",
+        "stimulus_design_ref",
+        "charge_equivalence_token"
+      ],
+      "title": "PatternDefinition",
+      "type": "object"
+    },
+    "PresetNamespace": {
+      "enum": [
+        "simulator",
+        "provider_approved"
+      ],
+      "title": "PresetNamespace",
+      "type": "string"
+    },
+    "RecordingConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "policy_ref": {
+          "minLength": 1,
+          "title": "Policy Ref",
+          "type": "string"
+        },
+        "retain_feature_vectors": {
+          "default": true,
+          "title": "Retain Feature Vectors",
+          "type": "boolean"
+        },
+        "retain_raw_events": {
+          "default": true,
+          "title": "Retain Raw Events",
+          "type": "boolean"
+        },
+        "retain_state_transitions": {
+          "default": true,
+          "title": "Retain State Transitions",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "policy_ref"
+      ],
+      "title": "RecordingConfig",
+      "type": "object"
+    },
+    "RunMode": {
+      "enum": [
+        "technical_e3",
+        "mapping_e5",
+        "pilot_e5",
+        "measurement_e5"
+      ],
+      "title": "RunMode",
+      "type": "string"
+    },
+    "RuntimeKind": {
+      "enum": [
+        "sdk_simulator",
+        "cloud_simulator",
+        "cl1"
+      ],
+      "title": "RuntimeKind",
+      "type": "string"
+    },
+    "SafetyConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "abort_policy_ref": {
+          "minLength": 1,
+          "title": "Abort Policy Ref",
+          "type": "string"
+        },
+        "admission_policy_ref": {
+          "minLength": 1,
+          "title": "Admission Policy Ref",
+          "type": "string"
+        },
+        "completeness_policy_ref": {
+          "minLength": 1,
+          "title": "Completeness Policy Ref",
+          "type": "string"
+        },
+        "cooldown_policy_ref": {
+          "minLength": 1,
+          "title": "Cooldown Policy Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "admission_policy_ref",
+        "abort_policy_ref",
+        "cooldown_policy_ref",
+        "completeness_policy_ref"
+      ],
+      "title": "SafetyConfig",
+      "type": "object"
+    },
+    "ScheduleConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "block_count": {
+          "default": 4,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Block Count",
+          "type": "integer"
+        },
+        "seed": {
+          "default": 20260728,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "shams_per_block": {
+          "default": 1,
+          "maximum": 20,
+          "minimum": 0,
+          "title": "Shams Per Block",
+          "type": "integer"
+        },
+        "trials_per_class_per_block": {
+          "default": 4,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Trials Per Class Per Block",
+          "type": "integer"
+        }
+      },
+      "title": "ScheduleConfig",
+      "type": "object"
+    },
+    "TimingConfig": {
+      "additionalProperties": false,
+      "description": "Simulator timing; hardware values require a provider-approved preset.",
+      "properties": {
+        "artefact_blanking_ms": {
+          "minimum": 0,
+          "title": "Artefact Blanking Ms",
+          "type": "integer"
+        },
+        "inter_step_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Inter Step Ms",
+          "type": "integer"
+        },
+        "inter_trial_ms": {
+          "minimum": 0,
+          "title": "Inter Trial Ms",
+          "type": "integer"
+        },
+        "observation_duration_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Observation Duration Ms",
+          "type": "integer"
+        },
+        "observation_start_ms": {
+          "minimum": 0,
+          "title": "Observation Start Ms",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inter_step_ms",
+        "artefact_blanking_ms",
+        "observation_start_ms",
+        "observation_duration_ms",
+        "inter_trial_ms"
+      ],
+      "title": "TimingConfig",
+      "type": "object"
+    }
+  },
+  "$id": "https://cp2n2.dev/schemas/biopattern-gate-config-v1.schema.json",
+  "additionalProperties": false,
+  "description": "Versioned application configuration with cross-field validation.",
+  "properties": {
+    "config_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Config Version",
+      "type": "string"
+    },
+    "decoder": {
+      "$ref": "#/$defs/DecoderConfig"
+    },
+    "evidence": {
+      "$ref": "#/$defs/EvidenceContext"
+    },
+    "features": {
+      "$ref": "#/$defs/FeatureConfig"
+    },
+    "input_group_refs": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Input Group Refs",
+      "type": "array"
+    },
+    "mode": {
+      "$ref": "#/$defs/RunMode"
+    },
+    "name": {
+      "default": "cp2n2-biopattern-gate",
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "pattern_a": {
+      "$ref": "#/$defs/PatternDefinition"
+    },
+    "pattern_b": {
+      "$ref": "#/$defs/PatternDefinition"
+    },
+    "preset_id": {
+      "minLength": 1,
+      "title": "Preset Id",
+      "type": "string"
+    },
+    "preset_namespace": {
+      "$ref": "#/$defs/PresetNamespace"
+    },
+    "protocol_version": {
+      "const": "pattern-gate-v1",
+      "default": "pattern-gate-v1",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "readout_group_refs": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Readout Group Refs",
+      "type": "array"
+    },
+    "recording": {
+      "$ref": "#/$defs/RecordingConfig"
+    },
+    "safety": {
+      "$ref": "#/$defs/SafetyConfig"
+    },
+    "schedule": {
+      "$ref": "#/$defs/ScheduleConfig"
+    },
+    "timeout_s": {
+      "exclusiveMinimum": 0,
+      "title": "Timeout S",
+      "type": "integer"
+    },
+    "timing": {
+      "$ref": "#/$defs/TimingConfig"
+    }
+  },
+  "required": [
+    "timeout_s",
+    "mode",
+    "preset_namespace",
+    "preset_id",
+    "input_group_refs",
+    "readout_group_refs",
+    "pattern_a",
+    "pattern_b",
+    "schedule",
+    "timing",
+    "features",
+    "decoder",
+    "recording",
+    "safety",
+    "evidence"
+  ],
+  "title": "CP²N² BioPattern Gate Configuration v1",
+  "type": "object"
+}

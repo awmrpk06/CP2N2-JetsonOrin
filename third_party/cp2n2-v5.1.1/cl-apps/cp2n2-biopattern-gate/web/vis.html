@@ -1,0 +1,185 @@
+<main class="pattern-gate" data-pattern-gate-root>
+  <header class="demo-header">
+    <div>
+      <p class="eyebrow">CP2N2 / BioPattern Gate</p>
+      <h1>Temporal signals. One governed decision.</h1>
+      <p class="lede">
+        A frozen readout routes each blinded temporal pattern while the
+        control plane keeps evidence, lifecycle, and authority visible.
+      </p>
+    </div>
+    <div class="evidence-stack" aria-label="Evidence classification">
+      <span class="badge badge--amber" data-bind="evidence">E3</span>
+      <span class="badge badge--blue" data-bind="mode">REPLAY</span>
+      <span class="badge badge--green" data-bind="run-status">COMPLETE</span>
+      <span class="badge badge--verified" data-bind="cp-proof">MCP AUDITED</span>
+      <span class="claim-boundary">SDK simulator · no biological claim</span>
+    </div>
+  </header>
+
+  <section class="demo-grid">
+    <article class="panel panel--gate">
+      <div class="panel-heading">
+        <div>
+          <p class="panel-kicker">01 / Gate</p>
+          <h2>Pattern routing</h2>
+        </div>
+        <p class="trial-counter">
+          Trial <strong data-bind="trial-number">—</strong>
+          <span>/</span>
+          <span data-bind="trial-total">—</span>
+        </p>
+      </div>
+
+      <div class="gate-stage" data-gate-stage>
+        <div class="route route--left">
+          <span>LEFT</span>
+          <small>class A</small>
+        </div>
+        <div class="route route--right">
+          <span>RIGHT</span>
+          <small>class B</small>
+        </div>
+        <div class="signal-source">
+          <i></i><i></i><i></i>
+          <span>temporal input</span>
+        </div>
+        <div class="decision-core">
+          <span>frozen</span>
+          <strong>readout</strong>
+        </div>
+        <div class="gate-token" data-gate-token aria-hidden="true">
+          <span data-bind="token-label">?</span>
+        </div>
+      </div>
+
+      <div class="gate-result">
+        <div>
+          <span>Input revealed</span>
+          <strong data-bind="expected-label">—</strong>
+        </div>
+        <div>
+          <span>Committed route</span>
+          <strong data-bind="route">—</strong>
+        </div>
+        <div>
+          <span>Outcome</span>
+          <strong data-bind="correctness">—</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel panel--neural">
+      <div class="panel-heading">
+        <div>
+          <p class="panel-kicker">02 / Neural view</p>
+          <h2>Readout activity</h2>
+        </div>
+        <span class="live-dot">SIMULATED</span>
+      </div>
+      <div class="time-axis">
+        <span>0 ms</span><span>50 ms</span><span>100 ms</span>
+      </div>
+      <div class="spike-raster" data-spike-raster aria-label="Spike raster"></div>
+      <div class="window-legend">
+        <span><i class="blanking"></i> artefact blanking</span>
+        <span><i class="observation"></i> observation window</span>
+      </div>
+      <div class="feature-bars" data-feature-bars></div>
+    </article>
+
+    <article class="panel panel--decision">
+      <div class="panel-heading">
+        <div>
+          <p class="panel-kicker">03 / Decision</p>
+          <h2>Frozen linear gate</h2>
+        </div>
+        <span class="model-lock">LOCKED</span>
+      </div>
+      <div class="probability">
+        <div class="probability-labels">
+          <span>B</span>
+          <strong data-bind="probability-a">—</strong>
+          <span>A</span>
+        </div>
+        <div class="probability-track">
+          <div class="probability-fill" data-probability-fill></div>
+          <i class="threshold" title="Decision threshold 0.5"></i>
+        </div>
+      </div>
+      <dl class="decision-facts">
+        <div><dt>Predicted class</dt><dd data-bind="predicted-label">—</dd></div>
+        <div><dt>Decision threshold</dt><dd>0.500</dd></div>
+        <div><dt>Commit</dt><dd data-bind="commit">—</dd></div>
+        <div><dt>Cumulative score</dt><dd data-bind="score">—</dd></div>
+      </dl>
+    </article>
+
+    <article class="panel panel--control">
+      <div class="panel-heading">
+        <div>
+          <p class="panel-kicker">04 / Control plane</p>
+          <h2>Governed lifecycle</h2>
+        </div>
+        <span class="audit-state" data-bind="audit-state">VERIFYING</span>
+      </div>
+      <div class="proof-banner">
+        <div class="proof-mark" aria-hidden="true">✓</div>
+        <div>
+          <strong>Recorded CP2N2 execution</strong>
+          <p>
+            Lifecycle states and MCP calls below are derived from a verified,
+            hash-chained E3 audit capture—not illustrative labels.
+          </p>
+        </div>
+      </div>
+      <section class="control-section">
+        <div class="section-heading">
+          <h3>Resource lifecycle</h3>
+          <span data-bind="correlation-id">—</span>
+        </div>
+        <ol class="lifecycle" data-lifecycle></ol>
+      </section>
+      <section class="control-section">
+        <div class="section-heading">
+          <h3>MCP request evidence</h3>
+          <span><strong data-bind="audit-request-count">—</strong> requests</span>
+        </div>
+        <ol class="mcp-flow" data-mcp-flow></ol>
+      </section>
+      <dl class="control-facts">
+        <div><dt>Resource</dt><dd data-bind="resource-id">—</dd></div>
+        <div><dt>Preset</dt><dd data-bind="preset-id">—</dd></div>
+        <div><dt>Config</dt><dd data-bind="config-hash">—</dd></div>
+        <div><dt>Decoder</dt><dd data-bind="decoder-hash">—</dd></div>
+        <div><dt>Lease</dt><dd data-bind="lease-state">—</dd></div>
+        <div><dt>Audit chain</dt><dd data-bind="audit-chain">—</dd></div>
+        <div><dt>Audit events</dt><dd data-bind="audit-event-count">—</dd></div>
+        <div><dt>Audit head</dt><dd data-bind="audit-head">—</dd></div>
+        <div><dt>Result artifact</dt><dd data-bind="result-artifact">—</dd></div>
+        <div><dt>Application source</dt><dd data-bind="application-source">—</dd></div>
+        <div><dt>Raw agent output</dt><dd data-bind="raw-output-state">—</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  <footer class="replay-controls">
+    <div class="transport">
+      <button type="button" data-action="previous" aria-label="Previous trial">←</button>
+      <button type="button" class="play-button" data-action="play">Play replay</button>
+      <button type="button" data-action="next" aria-label="Next trial">→</button>
+    </div>
+    <label>
+      Speed
+      <select data-action="speed">
+        <option value="0.5">0.5×</option>
+        <option value="1" selected>1×</option>
+        <option value="2">2×</option>
+      </select>
+    </label>
+    <div class="progress-track" aria-hidden="true">
+      <div class="progress-fill" data-progress-fill></div>
+    </div>
+    <p data-bind="demo-status">Loading replay evidence…</p>
+  </footer>
+</main>

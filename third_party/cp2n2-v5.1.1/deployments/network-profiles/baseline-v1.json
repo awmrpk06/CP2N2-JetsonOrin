@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "baseline",
+  "description": "Separate processes with no injected network or telemetry faults.",
+  "seed": 101,
+  "agent_gateway": {},
+  "gateway_control": {},
+  "control_adapter": {},
+  "telemetry_staleness_ms": 0.0
+}

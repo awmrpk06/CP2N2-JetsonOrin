@@ -1,0 +1,5 @@
+task_id,policy,expected_backend,predicted_backend,correct
+holdout-balanced,lexicographic,safe-local,safe-local,True
+holdout-latency,latency_first,fast-remote,fast-remote,True
+holdout-cost,locality_cost_first,fast-remote,fast-remote,True
+holdout-infeasible,lexicographic,,,True

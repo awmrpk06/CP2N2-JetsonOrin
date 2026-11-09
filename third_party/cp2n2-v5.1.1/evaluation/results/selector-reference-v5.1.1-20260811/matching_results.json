@@ -1,0 +1,59 @@
+{
+  "accuracy": 1.0,
+  "cases": [
+    {
+      "case": "edge_classification",
+      "correct": true,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "edge-backend",
+      "score_margin": 121.0,
+      "second_score": 0.0,
+      "top_score": 121.0
+    },
+    {
+      "case": "wetware_temporal_inference",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "score_margin": 128.0,
+      "second_score": 0.0,
+      "top_score": 128.0
+    },
+    {
+      "case": "chemical_sensing",
+      "correct": true,
+      "expected_backend": "chemical-backend",
+      "predicted_backend": "chemical-backend",
+      "score_margin": 117.0,
+      "second_score": 0.0,
+      "top_score": 117.0
+    },
+    {
+      "case": "edge_monitoring",
+      "correct": true,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "edge-backend",
+      "score_margin": 127.0,
+      "second_score": 0.0,
+      "top_score": 127.0
+    },
+    {
+      "case": "wetware_control",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "score_margin": 124.0,
+      "second_score": 0.0,
+      "top_score": 124.0
+    },
+    {
+      "case": "unsupported_control_only",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "score_margin": 0.0,
+      "second_score": 0.0,
+      "top_score": 0.0
+    }
+  ]
+}

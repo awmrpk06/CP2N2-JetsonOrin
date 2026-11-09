@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "rq2-distributed-v1",
+  "deployment": "../local-four-process-v1.json",
+  "profiles": [
+    "../network-profiles/baseline-v1.json",
+    "../network-profiles/latency-jitter-v1.json",
+    "../network-profiles/loss-v1.json",
+    "../network-profiles/partition-v1.json",
+    "../network-profiles/stale-telemetry-v1.json"
+  ],
+  "client_counts": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "repetitions": 3,
+  "request_timeout_s": 10.0,
+  "seed": 20260724
+}

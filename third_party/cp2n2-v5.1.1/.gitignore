@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python caches and test output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.test-tmp/
+
+# Local diagnostics and generated recordings/results
+*.debug
+*.h5
+evaluation/results/run-*/
+cl-apps/.run-output/
+cl-apps/*.zip
+
+# Local environments and editor state
+.venv/
+.vscode/
+.idea/
+.cp2n2/
+# Pre-rename local audit directory; retained for compatibility and history.
+.physmcp/
+
+# Locally generated release-candidate archives
+/release/

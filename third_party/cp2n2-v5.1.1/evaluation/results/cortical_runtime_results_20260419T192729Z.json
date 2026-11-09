@@ -1,0 +1,155 @@
+[
+  {
+    "task_id": "cortical-run-1",
+    "success": true,
+    "selected_backend": "cortical-labs-backend",
+    "used_fallback": false,
+    "failure_reason": null,
+    "execution_latency_ms": 6940.58260001475,
+    "confidence": 0.75,
+    "response_fingerprint": "recording_completed",
+    "stim_channel": 1,
+    "stim_amplitude_ua": 0.4,
+    "observation_window_ms": 100,
+    "recording_path": "C:\\Users\\Stefan Fischer\\Documents\\python\\phys-mcp\\2026-04-19_19-27-06.887+00-00_recording.h5",
+    "recording_name": "2026-04-19_19-27-06.887+00-00_recording.h5",
+    "backend_latency_ms": 6940.58260001475,
+    "observation_latency_ms": 16.44139998825267,
+    "readiness_before": "unavailable",
+    "health_before": "unknown",
+    "readiness_after": "ready",
+    "health_after": "healthy",
+    "channel_count": 64,
+    "fps": 25000,
+    "drift_score": 0.0,
+    "age_of_information_ms": 0.0,
+    "sdk_available": true,
+    "decision_notes": [
+      "Selected primary candidate 'cortical-labs-backend'."
+    ],
+    "validation_failures": [],
+    "recovery_actions": [],
+    "system_attributes": {
+      "project_id": "cl-sdk-project",
+      "chip_id": "cl-sdk-chip",
+      "cell_batch_id": "cl-sdk-cell-batch",
+      "plugin": {},
+      "system_id": "cl1-sdk-000",
+      "hostname": "sf24xps"
+    },
+    "raw_backend_metadata": {
+      "system_attributes": {
+        "project_id": "cl-sdk-project",
+        "chip_id": "cl-sdk-chip",
+        "cell_batch_id": "cl-sdk-cell-batch",
+        "plugin": {},
+        "system_id": "cl1-sdk-000",
+        "hostname": "sf24xps"
+      },
+      "channel_count": 64,
+      "fps": 25000
+    }
+  },
+  {
+    "task_id": "cortical-run-2",
+    "success": true,
+    "selected_backend": "cortical-labs-backend",
+    "used_fallback": false,
+    "failure_reason": null,
+    "execution_latency_ms": 7730.455900018569,
+    "confidence": 0.75,
+    "response_fingerprint": "recording_completed",
+    "stim_channel": 3,
+    "stim_amplitude_ua": 0.4,
+    "observation_window_ms": 120,
+    "recording_path": "C:\\Users\\Stefan Fischer\\Documents\\python\\phys-mcp\\2026-04-19_19-27-14.114+00-00_recording.h5",
+    "recording_name": "2026-04-19_19-27-14.114+00-00_recording.h5",
+    "backend_latency_ms": 7730.455900018569,
+    "observation_latency_ms": 16.778399993199855,
+    "readiness_before": "ready",
+    "health_before": "healthy",
+    "readiness_after": "ready",
+    "health_after": "healthy",
+    "channel_count": 64,
+    "fps": 25000,
+    "drift_score": 0.0,
+    "age_of_information_ms": 0.0,
+    "sdk_available": true,
+    "decision_notes": [
+      "Selected primary candidate 'cortical-labs-backend'."
+    ],
+    "validation_failures": [],
+    "recovery_actions": [],
+    "system_attributes": {
+      "project_id": "cl-sdk-project",
+      "chip_id": "cl-sdk-chip",
+      "cell_batch_id": "cl-sdk-cell-batch",
+      "plugin": {},
+      "system_id": "cl1-sdk-000",
+      "hostname": "sf24xps"
+    },
+    "raw_backend_metadata": {
+      "system_attributes": {
+        "project_id": "cl-sdk-project",
+        "chip_id": "cl-sdk-chip",
+        "cell_batch_id": "cl-sdk-cell-batch",
+        "plugin": {},
+        "system_id": "cl1-sdk-000",
+        "hostname": "sf24xps"
+      },
+      "channel_count": 64,
+      "fps": 25000
+    }
+  },
+  {
+    "task_id": "cortical-run-3",
+    "success": true,
+    "selected_backend": "cortical-labs-backend",
+    "used_fallback": false,
+    "failure_reason": null,
+    "execution_latency_ms": 7436.930000025313,
+    "confidence": 0.75,
+    "response_fingerprint": "recording_completed",
+    "stim_channel": 7,
+    "stim_amplitude_ua": 0.5,
+    "observation_window_ms": 140,
+    "recording_path": "C:\\Users\\Stefan Fischer\\Documents\\python\\phys-mcp\\2026-04-19_19-27-22.121+00-00_recording.h5",
+    "recording_name": "2026-04-19_19-27-22.121+00-00_recording.h5",
+    "backend_latency_ms": 7436.930000025313,
+    "observation_latency_ms": 49.66630000853911,
+    "readiness_before": "ready",
+    "health_before": "healthy",
+    "readiness_after": "ready",
+    "health_after": "healthy",
+    "channel_count": 64,
+    "fps": 25000,
+    "drift_score": 0.0,
+    "age_of_information_ms": 0.0,
+    "sdk_available": true,
+    "decision_notes": [
+      "Selected primary candidate 'cortical-labs-backend'."
+    ],
+    "validation_failures": [],
+    "recovery_actions": [],
+    "system_attributes": {
+      "project_id": "cl-sdk-project",
+      "chip_id": "cl-sdk-chip",
+      "cell_batch_id": "cl-sdk-cell-batch",
+      "plugin": {},
+      "system_id": "cl1-sdk-000",
+      "hostname": "sf24xps"
+    },
+    "raw_backend_metadata": {
+      "system_attributes": {
+        "project_id": "cl-sdk-project",
+        "chip_id": "cl-sdk-chip",
+        "cell_batch_id": "cl-sdk-cell-batch",
+        "plugin": {},
+        "system_id": "cl1-sdk-000",
+        "hostname": "sf24xps"
+      },
+      "channel_count": 64,
+      "fps": 25000
+    }
+  }
+]

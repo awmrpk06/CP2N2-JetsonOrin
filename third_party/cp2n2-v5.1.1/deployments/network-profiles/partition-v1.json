@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "periodic-partition",
+  "description": "Every eighth request on the gateway-control link encounters a deterministic 25 ms partition and fails.",
+  "seed": 104,
+  "agent_gateway": {},
+  "gateway_control": {
+    "partition_every_n_requests": 8,
+    "partition_duration_ms": 25.0
+  },
+  "control_adapter": {},
+  "telemetry_staleness_ms": 0.0
+}

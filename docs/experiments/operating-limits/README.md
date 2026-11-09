@@ -5,6 +5,8 @@ Measures resource costs and operating limits of the pinned CP2N2 v5.1.1 release
 Jetson-versus-desktop comparison and it changes no manuscript files. The frozen matrix is
 [plan.json](plan.json); the driver is [evaluation/operating_limits.py](../../../evaluation/operating_limits.py).
 
+The [included baseline source and Git bundle](../../../third_party/README.md) reconstruct this exact upstream checkout without a second repository download. The experimental stores remain separate from that unmodified baseline.
+
 ## Completed Campaign
 
 The [October 29 campaign](../../../evaluation/results/operating-limits/campaign-20261029/results-summary.md)

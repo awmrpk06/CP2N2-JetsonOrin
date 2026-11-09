@@ -1,0 +1,281 @@
+{
+  "cases": [
+    {
+      "case": "edge_low_latency",
+      "correct": false,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "static_priority"
+    },
+    {
+      "case": "remote_fog_monitoring",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "static_priority"
+    },
+    {
+      "case": "wetware_supervised",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "selector": "static_priority"
+    },
+    {
+      "case": "chemical_fresh",
+      "correct": true,
+      "expected_backend": "chemical-backend",
+      "predicted_backend": "chemical-backend",
+      "selector": "static_priority"
+    },
+    {
+      "case": "edge_primary_drifted",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "static_priority"
+    },
+    {
+      "case": "chemical_stale_twin",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "static_priority"
+    },
+    {
+      "case": "wetware_without_supervision",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "static_priority"
+    },
+    {
+      "case": "edge_low_latency",
+      "correct": true,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "edge-backend",
+      "selector": "constraint_based"
+    },
+    {
+      "case": "remote_fog_monitoring",
+      "correct": false,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "edge-backend",
+      "selector": "constraint_based"
+    },
+    {
+      "case": "wetware_supervised",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "selector": "constraint_based"
+    },
+    {
+      "case": "chemical_fresh",
+      "correct": true,
+      "expected_backend": "chemical-backend",
+      "predicted_backend": "chemical-backend",
+      "selector": "constraint_based"
+    },
+    {
+      "case": "edge_primary_drifted",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "constraint_based"
+    },
+    {
+      "case": "chemical_stale_twin",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "constraint_based"
+    },
+    {
+      "case": "wetware_without_supervision",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "constraint_based"
+    },
+    {
+      "case": "edge_low_latency",
+      "correct": false,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "random_admissible"
+    },
+    {
+      "case": "remote_fog_monitoring",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "random_admissible"
+    },
+    {
+      "case": "wetware_supervised",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "selector": "random_admissible"
+    },
+    {
+      "case": "chemical_fresh",
+      "correct": true,
+      "expected_backend": "chemical-backend",
+      "predicted_backend": "chemical-backend",
+      "selector": "random_admissible"
+    },
+    {
+      "case": "edge_primary_drifted",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "random_admissible"
+    },
+    {
+      "case": "chemical_stale_twin",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "random_admissible"
+    },
+    {
+      "case": "wetware_without_supervision",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "random_admissible"
+    },
+    {
+      "case": "edge_low_latency",
+      "correct": true,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "edge-backend",
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "remote_fog_monitoring",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "wetware_supervised",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "chemical_fresh",
+      "correct": true,
+      "expected_backend": "chemical-backend",
+      "predicted_backend": "chemical-backend",
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "edge_primary_drifted",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "chemical_stale_twin",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "wetware_without_supervision",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "weighted_comparison"
+    },
+    {
+      "case": "edge_low_latency",
+      "correct": true,
+      "expected_backend": "edge-backend",
+      "predicted_backend": "edge-backend",
+      "selector": "cp2n2_lexicographic"
+    },
+    {
+      "case": "remote_fog_monitoring",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "cp2n2_lexicographic"
+    },
+    {
+      "case": "wetware_supervised",
+      "correct": true,
+      "expected_backend": "wetware-backend",
+      "predicted_backend": "wetware-backend",
+      "selector": "cp2n2_lexicographic"
+    },
+    {
+      "case": "chemical_fresh",
+      "correct": true,
+      "expected_backend": "chemical-backend",
+      "predicted_backend": "chemical-backend",
+      "selector": "cp2n2_lexicographic"
+    },
+    {
+      "case": "edge_primary_drifted",
+      "correct": true,
+      "expected_backend": "remote-edge-backend",
+      "predicted_backend": "remote-edge-backend",
+      "selector": "cp2n2_lexicographic"
+    },
+    {
+      "case": "chemical_stale_twin",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "cp2n2_lexicographic"
+    },
+    {
+      "case": "wetware_without_supervision",
+      "correct": true,
+      "expected_backend": null,
+      "predicted_backend": null,
+      "selector": "cp2n2_lexicographic"
+    }
+  ],
+  "summary": {
+    "constraint_based": {
+      "accuracy": 0.857143,
+      "correct": 6,
+      "returned_none": 2,
+      "total": 7
+    },
+    "cp2n2_lexicographic": {
+      "accuracy": 1.0,
+      "correct": 7,
+      "returned_none": 2,
+      "total": 7
+    },
+    "random_admissible": {
+      "accuracy": 0.857143,
+      "correct": 6,
+      "returned_none": 2,
+      "total": 7
+    },
+    "static_priority": {
+      "accuracy": 0.857143,
+      "correct": 6,
+      "returned_none": 2,
+      "total": 7
+    },
+    "weighted_comparison": {
+      "accuracy": 1.0,
+      "correct": 7,
+      "returned_none": 2,
+      "total": 7
+    }
+  }
+}

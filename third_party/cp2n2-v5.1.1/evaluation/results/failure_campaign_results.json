@@ -1,0 +1,65 @@
+{
+  "scenarios": [
+    {
+      "decision_notes": "Selected primary candidate 'remote-edge-backend'.",
+      "expectation_met": true,
+      "expected_behavior": "Select remote edge backend because local edge is runtime-degraded.",
+      "failure_reason": null,
+      "recovery_actions": "",
+      "scenario": "drifted_primary_edge_avoided",
+      "selected_backend": "remote-edge-backend",
+      "success": true,
+      "used_fallback": false,
+      "validation_failures": ""
+    },
+    {
+      "decision_notes": "Selected primary candidate 'edge-backend'. | Preparation failed for backend 'edge-backend': Injected prepare failure for edge backend. | Using fallback candidate 'remote-edge-backend' after earlier failure.",
+      "expectation_met": true,
+      "expected_behavior": "Fallback to remote edge backend after local prepare failure.",
+      "failure_reason": null,
+      "recovery_actions": "",
+      "scenario": "prepare_failure_with_fallback",
+      "selected_backend": "remote-edge-backend",
+      "success": true,
+      "used_fallback": true,
+      "validation_failures": ""
+    },
+    {
+      "decision_notes": "No accepted backend candidates were found.",
+      "expectation_met": true,
+      "expected_behavior": "Reject wetware task because human supervision is unavailable.",
+      "failure_reason": "No compatible backend found.",
+      "recovery_actions": "",
+      "scenario": "policy_violation_rejected",
+      "selected_backend": null,
+      "success": false,
+      "used_fallback": false,
+      "validation_failures": ""
+    },
+    {
+      "decision_notes": "No accepted backend candidates were found.",
+      "expectation_met": true,
+      "expected_behavior": "Reject chemical backend because age_of_information exceeds task bound.",
+      "failure_reason": "No compatible backend found.",
+      "recovery_actions": "",
+      "scenario": "stale_twin_rejected",
+      "selected_backend": null,
+      "success": false,
+      "used_fallback": false,
+      "validation_failures": ""
+    },
+    {
+      "decision_notes": "Selected primary candidate 'edge-backend'. | Postcondition validation failed for backend 'edge-backend': missing required telemetry fields: drift_score | Using fallback candidate 'remote-edge-backend' after earlier failure.",
+      "expectation_met": true,
+      "expected_behavior": "Fallback to remote backend because primary backend cannot satisfy telemetry contract.",
+      "failure_reason": null,
+      "recovery_actions": "",
+      "scenario": "telemetry_loss_triggers_fallback",
+      "selected_backend": "remote-edge-backend",
+      "success": true,
+      "used_fallback": true,
+      "validation_failures": ""
+    }
+  ],
+  "success_rate": 1.0
+}

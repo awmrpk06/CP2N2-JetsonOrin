@@ -4,6 +4,19 @@ Current upstream: [fischesn/cp2n2](https://github.com/fischesn/cp2n2).
 This repository preserves the measured phys-MCP baseline and Jetson evaluation;
 its results must not be attributed to untested newer upstream versions.
 
+## Included evaluated CP²N² v5.1.1 source
+
+The complete, unchanged source used for the v5.1.1 measurements is included in
+[`third_party/cp2n2-v5.1.1/`](third_party/cp2n2-v5.1.1/), fixed at upstream commit
+`36fbae002b0a9e066416ea9cafbb966a33fe53bb`. This is the evaluated baseline for
+those campaigns; the historical prototype code at this repository's root is a
+separate component.
+
+The [baseline guide](third_party/README.md) provides checksums and an included
+portable Git bundle for reconstructing the exact checkout expected by the runner.
+Experimental history-store changes remain separate in
+[`evaluation/lifecycle_variants.py`](evaluation/lifecycle_variants.py).
+
 ## Embedded Experiment Results
 
 **Results and guides are the current deliverable. Paper writing is deferred.**
@@ -11,6 +24,7 @@ Any previously published manuscript is an earlier working draft, not the current
 interpretation of these experiments or an accepted publication.
 
 - [Results index and reproduction guide](docs/embedded-feasibility/README.md)
+- [Paired high-rate indexing and monitoring-frequency results](evaluation/results/overnight-followup/campaign-20261108T031906Z/results-summary.md)
 - [October 29 operating-limits campaign: verified results](evaluation/results/operating-limits/campaign-20261029/results-summary.md)
 - [Long-run, load-sweep, local-control and power run guide](docs/experiments/operating-limits/README.md)
 - [Lifecycle-history corrections and latency-spike attribution](docs/experiments/correction-and-spikes/README.md)

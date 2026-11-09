@@ -1,0 +1,9 @@
+# Keep BioPattern Gate package inputs byte-stable across Windows and Unix.
+applications/biopattern_gate/** text eol=lf
+cl-apps/cp2n2-biopattern-gate/** text eol=lf
+cl-apps/cp2n2-biopattern-gate.package-manifest.json text eol=lf
+evaluation/fixtures/biopattern-gate-*.json text eol=lf
+evaluation/fixtures/biopattern-gate-*.jsonl text eol=lf
+evaluation/results/agent-to-pnn-*/** text eol=lf
+# CSV files are checksum-bearing artefacts; preserve their exact bytes.
+evaluation/results/agent-to-pnn-*/trials.csv binary

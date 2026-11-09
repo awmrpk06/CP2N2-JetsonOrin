@@ -1,0 +1,2 @@
+backend_id,display_name,sdk_available,prepare_ready,prepare_details,required_modalities,telemetry_fields,lifecycle_reset_modes
+cortical-labs-backend,Cortical Labs CL API Backend,False,False,Cortical Labs SDK not available. Install cl-sdk or run on a CL1 system to enable this adapter.,spikes,"last_latency_ms,loop_timeout_events,drift_score","soft_reset,rest,recalibrate"

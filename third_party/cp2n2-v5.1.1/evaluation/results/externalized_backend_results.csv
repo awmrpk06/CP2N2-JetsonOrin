@@ -1,0 +1,2 @@
+iterations,backend_id,endpoint_kind,mean_roundtrip_ms,std_roundtrip_ms,mean_backend_latency_ms,std_backend_latency_ms,transport_overhead_ms
+15,remote-edge-backend,http_remote,8.961387,1.750289,3.946653,0.176037,5.014734

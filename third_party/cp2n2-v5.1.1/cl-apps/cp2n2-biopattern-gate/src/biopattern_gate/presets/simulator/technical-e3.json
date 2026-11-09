@@ -1,0 +1,69 @@
+{
+  "name": "cp2n2-biopattern-gate",
+  "config_version": "1.0",
+  "protocol_version": "pattern-gate-v1",
+  "timeout_s": 30,
+  "mode": "technical_e3",
+  "preset_namespace": "simulator",
+  "preset_id": "technical-e3",
+  "input_group_refs": ["sim-input-left", "sim-input-right"],
+  "readout_group_refs": ["sim-readout"],
+  "pattern_a": {
+    "label": "A",
+    "sequence": ["sim-input-left", "sim-input-right"],
+    "stimulus_design_ref": "simulator://stimulus-design/balanced-v1",
+    "charge_equivalence_token": "simulator-balanced-charge-v1"
+  },
+  "pattern_b": {
+    "label": "B",
+    "sequence": ["sim-input-right", "sim-input-left"],
+    "stimulus_design_ref": "simulator://stimulus-design/balanced-v1",
+    "charge_equivalence_token": "simulator-balanced-charge-v1"
+  },
+  "schedule": {
+    "seed": 20260728,
+    "block_count": 2,
+    "trials_per_class_per_block": 3,
+    "shams_per_block": 1
+  },
+  "timing": {
+    "inter_step_ms": 20,
+    "artefact_blanking_ms": 5,
+    "observation_start_ms": 10,
+    "observation_duration_ms": 100,
+    "inter_trial_ms": 20
+  },
+  "features": {
+    "schema_version": "pattern-gate-features-v1",
+    "bin_width_ms": 20,
+    "include_first_spike_latency": true,
+    "include_active_group_count": true,
+    "include_burst_count": false
+  },
+  "decoder": {
+    "kind": "frozen_linear",
+    "artifact_ref": "simulator://decoder/pattern-gate-linear-v1",
+    "artifact_sha256": "42789a20ea16e048f1a23b28e601ff3445e64b125c48de8656b11e612991afbf",
+    "training_run_ref": "simulator://calibration/pattern-gate-v1",
+    "decision_threshold": 0.5
+  },
+  "recording": {
+    "policy_ref": "simulator://recording/full-v1",
+    "retain_raw_events": true,
+    "retain_feature_vectors": true,
+    "retain_state_transitions": true
+  },
+  "safety": {
+    "admission_policy_ref": "simulator://policy/admission-v1",
+    "abort_policy_ref": "simulator://policy/abort-v1",
+    "cooldown_policy_ref": "simulator://policy/cooldown-v1",
+    "completeness_policy_ref": "simulator://policy/completeness-v1"
+  },
+  "evidence": {
+    "runtime_kind": "sdk_simulator",
+    "evidence_ceiling": "E3",
+    "provider_contract_verified": false,
+    "approval_refs": [],
+    "calibration_ref": null
+  }
+}

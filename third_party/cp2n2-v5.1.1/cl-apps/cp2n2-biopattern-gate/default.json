@@ -1,0 +1,8 @@
+{
+  "name": "Technical E3",
+  "timeout_s": 30,
+  "preset_id": "technical-e3",
+  "config_sha256": "5fccaac3022e223fc181508833eaad38755279556b43b6b2df4e2f7e032a08e4",
+  "decoder_sha256": "42789a20ea16e048f1a23b28e601ff3445e64b125c48de8656b11e612991afbf",
+  "run_id": "cl-local-technical-e3"
+}

@@ -1,0 +1,9 @@
+python-dotenv
+cl-sdk
+pytest
+requests
+pydantic>=2,<3
+mcp>=1.27,<2
+jupyterlab
+ipywidgets
+google-genai

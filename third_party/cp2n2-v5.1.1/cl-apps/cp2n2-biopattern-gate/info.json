@@ -1,0 +1,7 @@
+{
+  "name": "CP2N2 BioPattern Gate",
+  "version": "0.2.0",
+  "description": "Blinded temporal-pattern gate using the CL API, native HDF5 evidence, and a frozen readout.",
+  "author": "CP2N2 project",
+  "config_version": 1
+}

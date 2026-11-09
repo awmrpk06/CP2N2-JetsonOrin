@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "deployment_id": "local-four-process-v1",
+  "description": "Agent campaign runner, gateway, control plane, and adapter runtime are isolated in independent operating-system processes. Host and port fields may be replaced for multi-host deployment.",
+  "services": [
+    {
+      "service_id": "adapter-service",
+      "module": "remote.edge_service",
+      "host": "127.0.0.1",
+      "port": null,
+      "depends_on": []
+    },
+    {
+      "service_id": "control-plane",
+      "module": "remote.control_plane_service",
+      "host": "127.0.0.1",
+      "port": null,
+      "depends_on": [
+        "adapter-service"
+      ]
+    },
+    {
+      "service_id": "gateway",
+      "module": "remote.gateway_service",
+      "host": "127.0.0.1",
+      "port": null,
+      "depends_on": [
+        "control-plane"
+      ]
+    },
+    {
+      "service_id": "agent-client",
+      "module": "evaluation.evaluate_distributed_testbed",
+      "host": "127.0.0.1",
+      "port": null,
+      "depends_on": [
+        "gateway"
+      ]
+    }
+  ]
+}

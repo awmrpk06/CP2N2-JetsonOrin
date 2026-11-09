@@ -1,0 +1,5 @@
+backend_role,selected_backend,success,metadata_key_count,required_modalities,output_keys
+edge,edge-backend,True,1,digital_vector,"label_index,probabilities,vector_norm"
+wetware,wetware-backend,True,2,spikes,"decoded_label,firing_rate_hz,observation_window_ms,spike_count"
+chemical,chemical-backend,True,1,concentration,"activation_score,converged,intermediate_concentration,label,product_concentration"
+remote_edge,remote-edge-backend,True,1,digital_vector,"label_index,probabilities,vector_norm"

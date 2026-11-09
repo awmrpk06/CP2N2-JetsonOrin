@@ -1,0 +1,319 @@
+{
+  "access": {
+    "authentication_required": null,
+    "authorization_scope": null,
+    "locality": "edge",
+    "reservation_required": false,
+    "tenancy": "multi_tenant"
+  },
+  "capabilities": {
+    "backend_id": "edge-backend",
+    "capability": {
+      "health_sensitive": false,
+      "observability": "high",
+      "programmable": true,
+      "repeated_invocation_supported": true,
+      "resettable": true,
+      "stochastic": false,
+      "substrate_class": "edge_accelerator",
+      "supported_task_types": [
+        "classification",
+        "monitoring",
+        "control",
+        "temporal_inference"
+      ],
+      "training_mode": "pretrained"
+    },
+    "custom_metadata": {
+      "paper_role": "fast low-latency substrate regime"
+    },
+    "description": "A low-latency vector/tensor backend with device-like reprogramming and drift semantics.",
+    "display_name": "Fast Edge Twin Backend",
+    "input_contracts": [
+      {
+        "description": "Digital vector input for low-latency inference.",
+        "encoding": "vector",
+        "modality": "digital_vector",
+        "name": "vector_input",
+        "required": true,
+        "shape_hint": [
+          4
+        ],
+        "units": null
+      },
+      {
+        "description": "Optional tensor-like input representation collapsed to a vector for this prototype.",
+        "encoding": "vector",
+        "modality": "tensor",
+        "name": "tensor_input",
+        "required": false,
+        "shape_hint": [
+          4
+        ],
+        "units": null
+      }
+    ],
+    "lifecycle": {
+      "notes": "Repeated use may increase drift, but the backend remains fast and easy to recover.",
+      "recalibration_supported": true,
+      "reprogrammable": true,
+      "stateful": true,
+      "supported_reset_modes": [
+        "soft_reset",
+        "recalibrate",
+        "hard_reset"
+      ]
+    },
+    "output_contracts": [
+      {
+        "description": "Class probabilities and selected label index.",
+        "encoding": "json",
+        "modality": "digital_vector",
+        "name": "classification_output",
+        "required": true,
+        "shape_hint": null,
+        "units": null
+      }
+    ],
+    "policy": {
+      "exclusive_access_required": false,
+      "human_supervision_required": false,
+      "locality": "edge",
+      "safety_notes": "Represents an edge-near low-latency backend.",
+      "tenancy": "multi_tenant"
+    },
+    "telemetry": {
+      "metrics": [
+        {
+          "description": "Device drift proxy.",
+          "lower_is_better": true,
+          "name": "drift_score",
+          "units": "fraction"
+        },
+        {
+          "description": "Most recent execution latency.",
+          "lower_is_better": true,
+          "name": "last_latency_ms",
+          "units": "ms"
+        },
+        {
+          "description": "Energy proxy for the last invocation.",
+          "lower_is_better": true,
+          "name": "energy_proxy_mj",
+          "units": "mJ"
+        }
+      ],
+      "supports_age_of_information": false,
+      "supports_confidence": true,
+      "supports_drift_reporting": true,
+      "supports_health_status": true
+    },
+    "timing": {
+      "latency_jitter_ms": 0.8,
+      "regime": "milliseconds",
+      "streaming_supported": true,
+      "typical_latency_ms": 4.5,
+      "warmup_required": false
+    },
+    "twin_binding": {
+      "calibration_confidence": 0.95,
+      "fidelity_level": "lightweight",
+      "last_calibrated_at": null,
+      "twin_kind": "vector_inference_simulation",
+      "twin_notes": "Simple fast-inference twin representing an edge-near accelerator regime."
+    },
+    "version": "0.1.0"
+  },
+  "cost": {
+    "billing_model": "unknown",
+    "currency": null,
+    "estimated_cost": null,
+    "notes": "No cost information has been published by this prototype adapter."
+  },
+  "data_governance": {
+    "data_residency": [],
+    "notes": "No provider data-retention declaration is available.",
+    "provider_terms_uri": null,
+    "retention_days": null,
+    "stores_inputs": null,
+    "stores_outputs": null
+  },
+  "evidence": {
+    "attestation_details": {},
+    "attestation_method": "in_process_adapter_construction",
+    "attested_at": "2026-07-23T12:00:00Z",
+    "evidence_level": "E1",
+    "runtime_kind": "synthetic_twin"
+  },
+  "identity": {
+    "adapter_id": "adapters.edge_adapter.EdgeAdapter",
+    "hardware_id": null,
+    "provider_id": "cp2n2",
+    "resource_id": "edge-backend",
+    "substrate_id": "edge_accelerator"
+  },
+  "published_at": "2026-07-23T12:00:00Z",
+  "safety": {
+    "emergency_stop_supported": null,
+    "exclusive_access_required": false,
+    "hard_limits": {},
+    "human_supervision_required": false,
+    "notes": "Represents an edge-near low-latency backend.",
+    "operator_acknowledgement_required": false,
+    "permitted_operations": [
+      "describe",
+      "collect_telemetry",
+      "prepare",
+      "invoke",
+      "reset",
+      "recalibrate"
+    ]
+  },
+  "schema_version": "1.0",
+  "state": {
+    "calibration": null,
+    "drift": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "fraction",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.08
+    },
+    "health": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "lifecycle": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "occupancy": null
+  },
+  "telemetry": {
+    "drift_score": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "fraction",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.08
+    },
+    "energy_proxy_mj": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "mJ",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.0
+    },
+    "health_status": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "invocation_count": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0
+    },
+    "last_confidence": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.0
+    },
+    "last_latency_ms": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "ms",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.0
+    },
+    "programming_noise": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.02
+    }
+  }
+}

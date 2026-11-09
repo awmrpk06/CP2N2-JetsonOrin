@@ -1,0 +1,349 @@
+{
+  "access": {
+    "authentication_required": null,
+    "authorization_scope": null,
+    "locality": "lab",
+    "reservation_required": false,
+    "tenancy": "single_tenant"
+  },
+  "capabilities": {
+    "backend_id": "chemical-backend",
+    "capability": {
+      "health_sensitive": false,
+      "observability": "partial",
+      "programmable": true,
+      "repeated_invocation_supported": true,
+      "resettable": true,
+      "stochastic": true,
+      "substrate_class": "chemical",
+      "supported_task_types": [
+        "classification",
+        "sensing",
+        "monitoring",
+        "optimization"
+      ],
+      "training_mode": "ex_situ"
+    },
+    "custom_metadata": {
+      "paper_role": "slow concentration-driven substrate regime"
+    },
+    "description": "A concentration-driven backend with slow convergence and explicit flush/recharge semantics.",
+    "display_name": "Chemical Twin Backend",
+    "input_contracts": [
+      {
+        "description": "Input concentration level for the simulated reaction network.",
+        "encoding": "vector",
+        "modality": "concentration",
+        "name": "chemical_input",
+        "required": true,
+        "shape_hint": [
+          1
+        ],
+        "units": "relative concentration"
+      }
+    ],
+    "lifecycle": {
+      "notes": "Repeated use increases contamination until the backend is flushed or reset.",
+      "recalibration_supported": true,
+      "reprogrammable": true,
+      "stateful": true,
+      "supported_reset_modes": [
+        "flush",
+        "recharge",
+        "hard_reset"
+      ]
+    },
+    "output_contracts": [
+      {
+        "description": "Normalized concentration-derived result payload.",
+        "encoding": "json",
+        "modality": "concentration",
+        "name": "chemical_output",
+        "required": true,
+        "shape_hint": null,
+        "units": null
+      }
+    ],
+    "policy": {
+      "exclusive_access_required": false,
+      "human_supervision_required": false,
+      "locality": "lab",
+      "safety_notes": "Represents wet-lab style resource usage with explicit lifecycle operations.",
+      "tenancy": "single_tenant"
+    },
+    "telemetry": {
+      "metrics": [
+        {
+          "description": "Residual contamination proxy.",
+          "lower_is_better": null,
+          "name": "contamination_level",
+          "units": "fraction"
+        },
+        {
+          "description": "Most recent convergence time.",
+          "lower_is_better": true,
+          "name": "last_convergence_time_ms",
+          "units": "ms"
+        },
+        {
+          "description": "Combined calibration/contamination drift proxy.",
+          "lower_is_better": true,
+          "name": "drift_score",
+          "units": "fraction"
+        }
+      ],
+      "supports_age_of_information": true,
+      "supports_confidence": true,
+      "supports_drift_reporting": true,
+      "supports_health_status": true
+    },
+    "timing": {
+      "latency_jitter_ms": 800.0,
+      "regime": "seconds",
+      "streaming_supported": false,
+      "typical_latency_ms": 9500.0,
+      "warmup_required": true
+    },
+    "twin_binding": {
+      "calibration_confidence": 0.9,
+      "fidelity_level": "lightweight",
+      "last_calibrated_at": null,
+      "twin_kind": "ode_simulation",
+      "twin_notes": "Simple reaction-dynamics twin used for control-plane validation."
+    },
+    "version": "0.1.0"
+  },
+  "cost": {
+    "billing_model": "unknown",
+    "currency": null,
+    "estimated_cost": null,
+    "notes": "No cost information has been published by this prototype adapter."
+  },
+  "data_governance": {
+    "data_residency": [],
+    "notes": "No provider data-retention declaration is available.",
+    "provider_terms_uri": null,
+    "retention_days": null,
+    "stores_inputs": null,
+    "stores_outputs": null
+  },
+  "evidence": {
+    "attestation_details": {},
+    "attestation_method": "in_process_adapter_construction",
+    "attested_at": "2026-07-23T12:00:00Z",
+    "evidence_level": "E1",
+    "runtime_kind": "synthetic_twin"
+  },
+  "identity": {
+    "adapter_id": "adapters.chemical_adapter.ChemicalAdapter",
+    "hardware_id": null,
+    "provider_id": "cp2n2",
+    "resource_id": "chemical-backend",
+    "substrate_id": "chemical"
+  },
+  "published_at": "2026-07-23T12:00:00Z",
+  "safety": {
+    "emergency_stop_supported": null,
+    "exclusive_access_required": false,
+    "hard_limits": {},
+    "human_supervision_required": false,
+    "notes": "Represents wet-lab style resource usage with explicit lifecycle operations.",
+    "operator_acknowledgement_required": false,
+    "permitted_operations": [
+      "describe",
+      "collect_telemetry",
+      "prepare",
+      "invoke",
+      "reset",
+      "recalibrate"
+    ]
+  },
+  "schema_version": "1.0",
+  "state": {
+    "calibration": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.92
+    },
+    "drift": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "fraction",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.1075
+    },
+    "health": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "lifecycle": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "occupancy": null
+  },
+  "telemetry": {
+    "age_of_information_ms": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 500.0
+    },
+    "calibration_confidence": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.92
+    },
+    "contamination_level": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "fraction",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.05
+    },
+    "drift_score": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "fraction",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.1075
+    },
+    "health_status": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "invocation_count": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0
+    },
+    "last_activation_score": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.0
+    },
+    "last_confidence": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.0
+    },
+    "last_convergence_time_ms": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "estimated",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "ms",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": 0.0
+    }
+  }
+}

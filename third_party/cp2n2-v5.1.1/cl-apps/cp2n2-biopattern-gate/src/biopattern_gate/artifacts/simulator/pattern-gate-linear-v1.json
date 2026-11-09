@@ -1,0 +1,12 @@
+{
+  "feature_schema_version": "pattern-gate-features-v1",
+  "weights": {
+    "spike_count::sim-readout::bin-00": 1.0,
+    "spike_count::sim-readout::bin-01": 1.0,
+    "spike_count::sim-readout::bin-03": -1.0,
+    "spike_count::sim-readout::bin-04": -1.0
+  },
+  "bias": 0.0,
+  "threshold": 0.5,
+  "training_run_ref": "simulator://calibration/pattern-gate-v1"
+}

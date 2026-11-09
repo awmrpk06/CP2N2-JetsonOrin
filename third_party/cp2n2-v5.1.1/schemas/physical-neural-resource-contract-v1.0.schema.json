@@ -1,0 +1,1326 @@
+{
+  "$defs": {
+    "AccessContract": {
+      "additionalProperties": false,
+      "description": "How the resource can be reached and allocated.",
+      "properties": {
+        "authentication_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Authentication Required"
+        },
+        "authorization_scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Authorization Scope"
+        },
+        "locality": {
+          "minLength": 1,
+          "title": "Locality",
+          "type": "string"
+        },
+        "reservation_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reservation Required"
+        },
+        "tenancy": {
+          "minLength": 1,
+          "title": "Tenancy",
+          "type": "string"
+        }
+      },
+      "required": [
+        "locality",
+        "tenancy"
+      ],
+      "title": "AccessContract",
+      "type": "object"
+    },
+    "BillingModel": {
+      "enum": [
+        "free",
+        "per_invocation",
+        "per_second",
+        "reservation",
+        "provider_defined",
+        "unknown"
+      ],
+      "title": "BillingModel",
+      "type": "string"
+    },
+    "CapabilityDescriptor": {
+      "additionalProperties": false,
+      "description": "Backend capabilities relevant to control-plane decisions.",
+      "properties": {
+        "health_sensitive": {
+          "default": false,
+          "title": "Health Sensitive",
+          "type": "boolean"
+        },
+        "observability": {
+          "$ref": "#/$defs/ObservabilityLevel",
+          "default": "partial"
+        },
+        "programmable": {
+          "default": true,
+          "title": "Programmable",
+          "type": "boolean"
+        },
+        "repeated_invocation_supported": {
+          "default": true,
+          "title": "Repeated Invocation Supported",
+          "type": "boolean"
+        },
+        "resettable": {
+          "default": true,
+          "title": "Resettable",
+          "type": "boolean"
+        },
+        "stochastic": {
+          "default": false,
+          "title": "Stochastic",
+          "type": "boolean"
+        },
+        "substrate_class": {
+          "$ref": "#/$defs/SubstrateClass"
+        },
+        "supported_task_types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Supported Task Types",
+          "type": "array"
+        },
+        "training_mode": {
+          "$ref": "#/$defs/TrainingMode",
+          "default": "none"
+        }
+      },
+      "required": [
+        "substrate_class"
+      ],
+      "title": "CapabilityDescriptor",
+      "type": "object"
+    },
+    "CostContract": {
+      "additionalProperties": false,
+      "description": "Commercial or accounting properties without assuming a provider model.",
+      "properties": {
+        "billing_model": {
+          "$ref": "#/$defs/BillingModel",
+          "default": "unknown"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "estimated_cost": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TelemetryObservation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "title": "CostContract",
+      "type": "object"
+    },
+    "DataGovernanceContract": {
+      "additionalProperties": false,
+      "description": "Input/output handling and retention declarations.",
+      "properties": {
+        "data_residency": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Data Residency",
+          "type": "array"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "provider_terms_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider Terms Uri"
+        },
+        "retention_days": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retention Days"
+        },
+        "stores_inputs": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stores Inputs"
+        },
+        "stores_outputs": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stores Outputs"
+        }
+      },
+      "title": "DataGovernanceContract",
+      "type": "object"
+    },
+    "EvidenceLevel": {
+      "description": "Strength of evidence behind a published resource.",
+      "enum": [
+        "E0",
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ],
+      "title": "EvidenceLevel",
+      "type": "string"
+    },
+    "IOContract": {
+      "additionalProperties": false,
+      "description": "Describes input or output interface constraints.",
+      "properties": {
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional interface details.",
+          "title": "Description"
+        },
+        "encoding": {
+          "$ref": "#/$defs/IOEncoding",
+          "description": "Interface encoding."
+        },
+        "modality": {
+          "$ref": "#/$defs/SignalModality",
+          "description": "Primary signal modality."
+        },
+        "name": {
+          "description": "Human-readable interface name.",
+          "title": "Name",
+          "type": "string"
+        },
+        "required": {
+          "default": true,
+          "description": "Whether the interface is mandatory.",
+          "title": "Required",
+          "type": "boolean"
+        },
+        "shape_hint": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Optional shape hint, e.g. [128] for a vector or [32, 32] for a matrix.",
+          "title": "Shape Hint"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Optional physical or logical units.",
+          "title": "Units"
+        }
+      },
+      "required": [
+        "name",
+        "modality",
+        "encoding"
+      ],
+      "title": "IOContract",
+      "type": "object"
+    },
+    "IOEncoding": {
+      "description": "How the data is represented at the interface level.",
+      "enum": [
+        "scalar",
+        "vector",
+        "matrix",
+        "time_series",
+        "event_stream",
+        "json",
+        "binary"
+      ],
+      "title": "IOEncoding",
+      "type": "string"
+    },
+    "LifecycleContract": {
+      "additionalProperties": false,
+      "description": "Lifecycle operations and constraints for a backend.",
+      "properties": {
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "recalibration_supported": {
+          "default": false,
+          "title": "Recalibration Supported",
+          "type": "boolean"
+        },
+        "reprogrammable": {
+          "default": false,
+          "title": "Reprogrammable",
+          "type": "boolean"
+        },
+        "stateful": {
+          "default": true,
+          "title": "Stateful",
+          "type": "boolean"
+        },
+        "supported_reset_modes": {
+          "items": {
+            "$ref": "#/$defs/ResetMode"
+          },
+          "title": "Supported Reset Modes",
+          "type": "array"
+        }
+      },
+      "title": "LifecycleContract",
+      "type": "object"
+    },
+    "Locality": {
+      "description": "Deployment locality from the control plane perspective.",
+      "enum": [
+        "edge",
+        "fog",
+        "cloud",
+        "lab",
+        "local"
+      ],
+      "title": "Locality",
+      "type": "string"
+    },
+    "ObservabilityLevel": {
+      "description": "How directly the internal state of a backend can be observed.",
+      "enum": [
+        "low",
+        "partial",
+        "high"
+      ],
+      "title": "ObservabilityLevel",
+      "type": "string"
+    },
+    "ObservationSource": {
+      "description": "Provenance of a dynamic field.",
+      "enum": [
+        "observed",
+        "provider_reported",
+        "estimated",
+        "configured"
+      ],
+      "title": "ObservationSource",
+      "type": "string"
+    },
+    "PolicyConstraints": {
+      "additionalProperties": false,
+      "description": "Policy metadata that constrains scheduling and use.",
+      "properties": {
+        "exclusive_access_required": {
+          "default": false,
+          "title": "Exclusive Access Required",
+          "type": "boolean"
+        },
+        "human_supervision_required": {
+          "default": false,
+          "title": "Human Supervision Required",
+          "type": "boolean"
+        },
+        "locality": {
+          "$ref": "#/$defs/Locality",
+          "default": "local"
+        },
+        "safety_notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Safety Notes"
+        },
+        "tenancy": {
+          "$ref": "#/$defs/TenancyModel",
+          "default": "single_tenant"
+        }
+      },
+      "title": "PolicyConstraints",
+      "type": "object"
+    },
+    "ResetMode": {
+      "description": "Lifecycle reset/recovery mode for a backend.",
+      "enum": [
+        "none",
+        "soft_reset",
+        "hard_reset",
+        "flush",
+        "recharge",
+        "rest",
+        "recalibrate"
+      ],
+      "title": "ResetMode",
+      "type": "string"
+    },
+    "ResourceIdentity": {
+      "additionalProperties": false,
+      "description": "Stable identities at control-plane, provider, adapter, and substrate levels.",
+      "properties": {
+        "adapter_id": {
+          "minLength": 1,
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "hardware_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hardware Id"
+        },
+        "provider_id": {
+          "minLength": 1,
+          "title": "Provider Id",
+          "type": "string"
+        },
+        "resource_id": {
+          "minLength": 1,
+          "title": "Resource Id",
+          "type": "string"
+        },
+        "substrate_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Substrate Id"
+        }
+      },
+      "required": [
+        "resource_id",
+        "provider_id",
+        "adapter_id"
+      ],
+      "title": "ResourceIdentity",
+      "type": "object"
+    },
+    "ResourceState": {
+      "additionalProperties": false,
+      "description": "Dynamic state used by schedulers and policy checks.",
+      "properties": {
+        "calibration": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TelemetryObservation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "drift": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TelemetryObservation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "health": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TelemetryObservation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "lifecycle": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TelemetryObservation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "occupancy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TelemetryObservation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ResourceState",
+      "type": "object"
+    },
+    "RuntimeEvidence": {
+      "additionalProperties": false,
+      "description": "Evidence supporting the claimed runtime kind.",
+      "properties": {
+        "attestation_details": {
+          "additionalProperties": true,
+          "title": "Attestation Details",
+          "type": "object"
+        },
+        "attestation_method": {
+          "minLength": 1,
+          "title": "Attestation Method",
+          "type": "string"
+        },
+        "attested_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Attested At"
+        },
+        "evidence_level": {
+          "$ref": "#/$defs/EvidenceLevel"
+        },
+        "runtime_kind": {
+          "$ref": "#/$defs/RuntimeKind"
+        }
+      },
+      "required": [
+        "runtime_kind",
+        "evidence_level",
+        "attestation_method",
+        "attested_at"
+      ],
+      "title": "RuntimeEvidence",
+      "type": "object"
+    },
+    "RuntimeKind": {
+      "description": "Attested execution environment, independent of substrate family.",
+      "enum": [
+        "unknown",
+        "mock",
+        "synthetic_twin",
+        "same_host_service",
+        "sdk_simulator",
+        "remote_simulator",
+        "physical_hardware"
+      ],
+      "title": "RuntimeKind",
+      "type": "string"
+    },
+    "SafetyContract": {
+      "additionalProperties": false,
+      "description": "Operations and constraints that must be known before execution.",
+      "properties": {
+        "emergency_stop_supported": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Emergency Stop Supported"
+        },
+        "exclusive_access_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exclusive Access Required"
+        },
+        "hard_limits": {
+          "additionalProperties": {
+            "$ref": "#/$defs/SafetyLimit"
+          },
+          "title": "Hard Limits",
+          "type": "object"
+        },
+        "human_supervision_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Supervision Required"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "operator_acknowledgement_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operator Acknowledgement Required"
+        },
+        "permitted_operations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Permitted Operations",
+          "type": "array"
+        }
+      },
+      "title": "SafetyContract",
+      "type": "object"
+    },
+    "SafetyLimit": {
+      "additionalProperties": false,
+      "description": "One configured, provider-reported, or observed hard operational limit.",
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "maximum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maximum"
+        },
+        "minimum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum"
+        },
+        "source": {
+          "$ref": "#/$defs/ObservationSource"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "unit",
+        "source",
+        "description"
+      ],
+      "title": "SafetyLimit",
+      "type": "object"
+    },
+    "SignalModality": {
+      "description": "Primary physical or logical modality used for inputs/outputs.",
+      "enum": [
+        "concentration",
+        "spikes",
+        "analog_vector",
+        "digital_vector",
+        "tensor",
+        "control_signal",
+        "telemetry_stream"
+      ],
+      "title": "SignalModality",
+      "type": "string"
+    },
+    "SubstrateClass": {
+      "description": "High-level class of the represented physical or quasi-physical substrate.",
+      "enum": [
+        "chemical",
+        "dna",
+        "wetware",
+        "memristive",
+        "photonic",
+        "edge_accelerator",
+        "generic_simulation"
+      ],
+      "title": "SubstrateClass",
+      "type": "string"
+    },
+    "SubstrateDescriptor": {
+      "additionalProperties": false,
+      "description": "Top-level descriptor published by a CP²N² backend adapter.",
+      "properties": {
+        "backend_id": {
+          "description": "Stable backend identifier.",
+          "title": "Backend Id",
+          "type": "string"
+        },
+        "capability": {
+          "$ref": "#/$defs/CapabilityDescriptor"
+        },
+        "custom_metadata": {
+          "additionalProperties": true,
+          "title": "Custom Metadata",
+          "type": "object"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "display_name": {
+          "description": "Human-readable backend name.",
+          "title": "Display Name",
+          "type": "string"
+        },
+        "input_contracts": {
+          "items": {
+            "$ref": "#/$defs/IOContract"
+          },
+          "title": "Input Contracts",
+          "type": "array"
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/LifecycleContract"
+        },
+        "output_contracts": {
+          "items": {
+            "$ref": "#/$defs/IOContract"
+          },
+          "title": "Output Contracts",
+          "type": "array"
+        },
+        "policy": {
+          "$ref": "#/$defs/PolicyConstraints"
+        },
+        "telemetry": {
+          "$ref": "#/$defs/TelemetryContract"
+        },
+        "timing": {
+          "$ref": "#/$defs/TimingContract"
+        },
+        "twin_binding": {
+          "$ref": "#/$defs/TwinBinding"
+        },
+        "version": {
+          "default": "0.1.0",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "backend_id",
+        "display_name",
+        "description",
+        "timing",
+        "lifecycle",
+        "telemetry",
+        "twin_binding",
+        "policy",
+        "capability"
+      ],
+      "title": "SubstrateDescriptor",
+      "type": "object"
+    },
+    "TelemetryContract": {
+      "additionalProperties": false,
+      "description": "Describes telemetry made available by the backend.",
+      "properties": {
+        "metrics": {
+          "items": {
+            "$ref": "#/$defs/TelemetryField"
+          },
+          "title": "Metrics",
+          "type": "array"
+        },
+        "supports_age_of_information": {
+          "default": false,
+          "title": "Supports Age Of Information",
+          "type": "boolean"
+        },
+        "supports_confidence": {
+          "default": true,
+          "title": "Supports Confidence",
+          "type": "boolean"
+        },
+        "supports_drift_reporting": {
+          "default": true,
+          "title": "Supports Drift Reporting",
+          "type": "boolean"
+        },
+        "supports_health_status": {
+          "default": true,
+          "title": "Supports Health Status",
+          "type": "boolean"
+        }
+      },
+      "title": "TelemetryContract",
+      "type": "object"
+    },
+    "TelemetryField": {
+      "additionalProperties": false,
+      "description": "One telemetry metric exposed by a backend.",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "lower_is_better": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower Is Better"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Units"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "title": "TelemetryField",
+      "type": "object"
+    },
+    "TelemetryObservation": {
+      "additionalProperties": false,
+      "description": "One value together with mandatory provenance and freshness fields.",
+      "properties": {
+        "observed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Observed At"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/ObservationSource"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/Uncertainty"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Unit"
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Valid Until"
+        },
+        "value": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "source",
+        "observed_at",
+        "received_at",
+        "uncertainty",
+        "valid_until"
+      ],
+      "title": "TelemetryObservation",
+      "type": "object"
+    },
+    "TenancyModel": {
+      "description": "How a backend is intended to be shared.",
+      "enum": [
+        "single_tenant",
+        "multi_tenant",
+        "reserved"
+      ],
+      "title": "TenancyModel",
+      "type": "string"
+    },
+    "TimingContract": {
+      "additionalProperties": false,
+      "description": "Execution-time characteristics exposed to the matcher and scheduler.",
+      "properties": {
+        "latency_jitter_ms": {
+          "default": 0.0,
+          "description": "Expected jitter in milliseconds.",
+          "minimum": 0.0,
+          "title": "Latency Jitter Ms",
+          "type": "number"
+        },
+        "regime": {
+          "$ref": "#/$defs/TimingRegime",
+          "description": "Coarse execution regime."
+        },
+        "streaming_supported": {
+          "default": false,
+          "description": "Whether streaming interaction is supported.",
+          "title": "Streaming Supported",
+          "type": "boolean"
+        },
+        "typical_latency_ms": {
+          "description": "Expected latency in milliseconds.",
+          "minimum": 0.0,
+          "title": "Typical Latency Ms",
+          "type": "number"
+        },
+        "warmup_required": {
+          "default": false,
+          "description": "Whether the backend requires warmup/preparation.",
+          "title": "Warmup Required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "regime",
+        "typical_latency_ms"
+      ],
+      "title": "TimingContract",
+      "type": "object"
+    },
+    "TimingRegime": {
+      "description": "Coarse-grained execution regime used for scheduling and matching.",
+      "enum": [
+        "microseconds",
+        "milliseconds",
+        "seconds",
+        "minutes",
+        "variable"
+      ],
+      "title": "TimingRegime",
+      "type": "string"
+    },
+    "TrainingMode": {
+      "description": "Supported learning/programming mode for a backend.",
+      "enum": [
+        "none",
+        "pretrained",
+        "ex_situ",
+        "in_situ",
+        "hybrid"
+      ],
+      "title": "TrainingMode",
+      "type": "string"
+    },
+    "TwinBinding": {
+      "additionalProperties": false,
+      "description": "Link between a physical/logical backend and its digital twin representation.",
+      "properties": {
+        "calibration_confidence": {
+          "default": 1.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Calibration Confidence",
+          "type": "number"
+        },
+        "fidelity_level": {
+          "description": "Human-readable fidelity label.",
+          "title": "Fidelity Level",
+          "type": "string"
+        },
+        "last_calibrated_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 8601 timestamp if known.",
+          "title": "Last Calibrated At"
+        },
+        "twin_kind": {
+          "description": "Type of twin, e.g. ode_simulation or replay_model.",
+          "title": "Twin Kind",
+          "type": "string"
+        },
+        "twin_notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Twin Notes"
+        }
+      },
+      "required": [
+        "twin_kind",
+        "fidelity_level"
+      ],
+      "title": "TwinBinding",
+      "type": "object"
+    },
+    "Uncertainty": {
+      "additionalProperties": false,
+      "description": "Explicit uncertainty metadata; unknown is never encoded as zero.",
+      "properties": {
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "kind": {
+          "$ref": "#/$defs/UncertaintyKind"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Uncertainty",
+      "type": "object"
+    },
+    "UncertaintyKind": {
+      "description": "Representation used for uncertainty attached to an observation.",
+      "enum": [
+        "unknown",
+        "none",
+        "standard_deviation",
+        "interval",
+        "qualitative"
+      ],
+      "title": "UncertaintyKind",
+      "type": "string"
+    }
+  },
+  "$id": "https://raw.githubusercontent.com/fischesn/cp2n2/main/schemas/physical-neural-resource-contract-v1.0.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Top-level, versioned resource publication envelope.",
+  "properties": {
+    "access": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AccessContract"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "capabilities": {
+      "$ref": "#/$defs/SubstrateDescriptor"
+    },
+    "cost": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CostContract"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "data_governance": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataGovernanceContract"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "evidence": {
+      "$ref": "#/$defs/RuntimeEvidence"
+    },
+    "identity": {
+      "$ref": "#/$defs/ResourceIdentity"
+    },
+    "published_at": {
+      "format": "date-time",
+      "title": "Published At",
+      "type": "string"
+    },
+    "safety": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SafetyContract"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "state": {
+      "$ref": "#/$defs/ResourceState"
+    },
+    "telemetry": {
+      "additionalProperties": {
+        "$ref": "#/$defs/TelemetryObservation"
+      },
+      "title": "Telemetry",
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "published_at",
+    "identity",
+    "evidence",
+    "capabilities",
+    "state"
+  ],
+  "title": "PhysicalNeuralResourceContract",
+  "type": "object"
+}

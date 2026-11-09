@@ -1,0 +1,396 @@
+{
+  "bundle_version": "1.0",
+  "config_sha256": "5fccaac3022e223fc181508833eaad38755279556b43b6b2df4e2f7e032a08e4",
+  "evidence_label": "E3_REPLAY",
+  "observations": [
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 48.94079315924748
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": false,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 0
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 14.880890469529128
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 62.63009379085765
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 71.84705457950034
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 83.34354265213857
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 90.80522954622111
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 1
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 8.880442872522849
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 16.072530716919427
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 26.71835064329674
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 35.122408242721065
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 76.5067900452569
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 2
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 8.187586106914779
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 14.471209144944144
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 26.837567790159508
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 34.637455691673736
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 75.6384577283635
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 3
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 13.656019156211215
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 63.21827160104826
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 71.52002192214516
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 83.26569459217842
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 90.3756613450156
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 4
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 15.033057883297971
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 61.833178959453186
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 71.32459348327272
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 83.56169756683272
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 90.5433091531828
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 5
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 8.783085201610984
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 16.05887605130792
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 28.040296179334998
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 33.91079677738397
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 76.9585678740006
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 6
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 8.935881085466034
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 15.824650051977322
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 27.858547589696453
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 35.973409687484306
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 76.55773580446333
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 7
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 8.429618270437823
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 14.799793831003964
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 25.836437617815214
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 34.70774736242267
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 76.88589410852202
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 8
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 6.91281511320441
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 15.068870167792808
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 28.151800077522346
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 34.80182262392843
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 76.78353277667622
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 9
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 48.0099054037176
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": false,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 10
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 14.542958486476444
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 61.32120663180728
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 71.95189468087118
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 83.21361862060067
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 91.63147525301194
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 11
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 14.942015056287724
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 61.43749593676349
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 72.13527574383471
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 82.27315207612271
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 90.22776840170283
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 12
+    },
+    {
+      "events": [
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 14.875625385805463
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 61.27099135013717
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 70.93251471628736
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 84.17181390064886
+        },
+        {
+          "readout_group_ref": "sim-readout",
+          "timestamp_ms": 91.68526553856988
+        }
+      ],
+      "telemetry": {
+        "biological_claim": false,
+        "logical_sequence_present": true,
+        "source": "deterministic-reservoir-simulator"
+      },
+      "trial_index": 13
+    }
+  ],
+  "runtime_kind": "sdk_simulator"
+}

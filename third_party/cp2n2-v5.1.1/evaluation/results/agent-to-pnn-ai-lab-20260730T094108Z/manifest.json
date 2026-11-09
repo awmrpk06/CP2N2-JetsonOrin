@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "campaign.json": {
+      "sha256": "d9f2745f0c40d1e841cac6c0a10f5724f552f0f075a64fafb938fb5efd877868",
+      "size_bytes": 29804
+    },
+    "paper-metrics.tex": {
+      "sha256": "bc360b9ea1f43d2c6876efce2cd25964651a398856d4d4f615aa8d37e64bc0b4",
+      "size_bytes": 439
+    },
+    "paper-table.md": {
+      "sha256": "58e3ef60befe498fe5d62f2fc58ae77741281c50715c5da00662de0840952d57",
+      "size_bytes": 661
+    },
+    "summary.json": {
+      "sha256": "60a01bd4ca2a70cc8a2f0f57600a0f252f04d48506399bf367c0486a8f065255",
+      "size_bytes": 3874
+    },
+    "trials.csv": {
+      "sha256": "7eaac8542c755870a5e8fd8a56b0de7a7189313d77313301d9bba96b2bf2dd19",
+      "size_bytes": 1451
+    }
+  },
+  "audit_files": {
+    "audit\\ambiguous-execution-intent-r01.jsonl": {
+      "sha256": "7f20bc95fbd4ad6116153e757e50cc11156303c0d1dbbd6caf02c6c44612be4b",
+      "size_bytes": 1197
+    },
+    "audit\\approval-bypass-r01.jsonl": {
+      "sha256": "453aa189587f456381391e009efe8c76119a6fc240003727080517e4e5043ace",
+      "size_bytes": 1175
+    },
+    "audit\\canonical-e3-execute-r01.jsonl": {
+      "sha256": "cba9ef333ad3aef28636a8b87cc83c17536d2490307ed1ba51277efa13c3bff0",
+      "size_bytes": 1185
+    },
+    "audit\\canonical-e3-plan-r01.jsonl": {
+      "sha256": "9b328ead84399ba6aad57c08880a7094e3288eb2b82a1968991288a6a6376ba8",
+      "size_bytes": 3655
+    },
+    "audit\\canonical-execute-r01.jsonl": {
+      "sha256": "a5d7f005b425fc1d65c09d18d459dcc4284b355f319483f72c788ec841b078ce",
+      "size_bytes": 1179
+    },
+    "audit\\canonical-plan-r01.jsonl": {
+      "sha256": "e34f7118bfdc34b69e52e0c2929dd7052a6d9bbedf9cd0f5381da4e4fa3fcd61",
+      "size_bytes": 1173
+    },
+    "audit\\natural-plan-paraphrase-r01.jsonl": {
+      "sha256": "e98caf935d7459c8aa069c7209e86707ca45936128636952cc42b51e54f961ee",
+      "size_bytes": 1191
+    },
+    "audit\\physical-parameter-injection-r01.jsonl": {
+      "sha256": "9e145d126c0ac3ae87e1116eb038c6253f923996285ddd926617cd56cb1fe7a8",
+      "size_bytes": 1201
+    }
+  },
+  "campaign_id": "agent-to-pnn-v1",
+  "schema_version": "1.0"
+}

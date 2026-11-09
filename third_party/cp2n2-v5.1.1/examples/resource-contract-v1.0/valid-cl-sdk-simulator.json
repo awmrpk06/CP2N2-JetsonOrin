@@ -1,0 +1,418 @@
+{
+  "access": {
+    "authentication_required": null,
+    "authorization_scope": null,
+    "locality": "lab",
+    "reservation_required": true,
+    "tenancy": "reserved"
+  },
+  "capabilities": {
+    "backend_id": "cortical-labs-backend",
+    "capability": {
+      "health_sensitive": true,
+      "observability": "partial",
+      "programmable": true,
+      "repeated_invocation_supported": true,
+      "resettable": true,
+      "stochastic": true,
+      "substrate_class": "wetware",
+      "supported_task_types": [
+        "monitoring",
+        "control",
+        "temporal_inference"
+      ],
+      "training_mode": "hybrid"
+    },
+    "custom_metadata": {
+      "evidence_level": "E3",
+      "expected_runtime_kind": "sdk_simulator",
+      "paper_role": "existing wetware API integration target",
+      "sdk_package": "cl-sdk"
+    },
+    "description": "Optional adapter targeting the public Cortical Labs CL API / CL SDK. The active runtime is attested as simulator, physical hardware, or unknown before a session is opened.",
+    "display_name": "Cortical Labs CL API Backend",
+    "input_contracts": [
+      {
+        "description": "Spike-oriented stimulation requests mapped onto CL API stimulation calls.",
+        "encoding": "event_stream",
+        "modality": "spikes",
+        "name": "stimulation_input",
+        "required": true,
+        "shape_hint": null,
+        "units": null
+      },
+      {
+        "description": "Optional session and recording configuration metadata.",
+        "encoding": "json",
+        "modality": "control_signal",
+        "name": "control_input",
+        "required": false,
+        "shape_hint": null,
+        "units": null
+      }
+    ],
+    "lifecycle": {
+      "notes": "Physical reset and wetware handling remain application-specific; the adapter models session-level recovery.",
+      "recalibration_supported": true,
+      "reprogrammable": true,
+      "stateful": true,
+      "supported_reset_modes": [
+        "soft_reset",
+        "rest",
+        "recalibrate"
+      ]
+    },
+    "output_contracts": [
+      {
+        "description": "Recording metadata and session-visible wetware state.",
+        "encoding": "json",
+        "modality": "spikes",
+        "name": "recording_and_state",
+        "required": true,
+        "shape_hint": null,
+        "units": null
+      }
+    ],
+    "policy": {
+      "exclusive_access_required": true,
+      "human_supervision_required": true,
+      "locality": "lab",
+      "safety_notes": "Wetware access with explicit stimulation and recording semantics.",
+      "tenancy": "reserved"
+    },
+    "telemetry": {
+      "metrics": [
+        {
+          "description": "Most recent CL API round-trip latency including the observation cycle.",
+          "lower_is_better": true,
+          "name": "backend_latency_ms",
+          "units": "ms"
+        },
+        {
+          "description": "Latency measured from stimulation until the observation cycle completes.",
+          "lower_is_better": true,
+          "name": "observation_latency_ms",
+          "units": "ms"
+        },
+        {
+          "description": "Current readiness state of the Cortical Labs session.",
+          "lower_is_better": null,
+          "name": "readiness_state",
+          "units": "state"
+        },
+        {
+          "description": "Provider health status when available; otherwise unknown.",
+          "lower_is_better": null,
+          "name": "health_status",
+          "units": "state"
+        },
+        {
+          "description": "Path to the most recent recording artifact when available.",
+          "lower_is_better": null,
+          "name": "recording_path",
+          "units": "path"
+        },
+        {
+          "description": "Channel count reported by the active CL session.",
+          "lower_is_better": null,
+          "name": "channel_count",
+          "units": "count"
+        },
+        {
+          "description": "Frames per second reported by the CL session.",
+          "lower_is_better": null,
+          "name": "fps",
+          "units": "frames_per_second"
+        },
+        {
+          "description": "Attested CL runtime: sdk_simulator, physical_hardware, or unknown.",
+          "lower_is_better": null,
+          "name": "runtime_kind",
+          "units": "kind"
+        },
+        {
+          "description": "Elapsed time since local session attributes were observed.",
+          "lower_is_better": true,
+          "name": "age_of_information_ms",
+          "units": "ms"
+        },
+        {
+          "description": "Provenance of the reported telemetry snapshot.",
+          "lower_is_better": null,
+          "name": "telemetry_source",
+          "units": "source"
+        }
+      ],
+      "supports_age_of_information": true,
+      "supports_confidence": false,
+      "supports_drift_reporting": false,
+      "supports_health_status": false
+    },
+    "timing": {
+      "latency_jitter_ms": 20.0,
+      "regime": "milliseconds",
+      "streaming_supported": true,
+      "typical_latency_ms": 100.0,
+      "warmup_required": true
+    },
+    "twin_binding": {
+      "calibration_confidence": 0.0,
+      "fidelity_level": "interface_compatibility_only",
+      "last_calibrated_at": null,
+      "twin_kind": "sdk_simulator",
+      "twin_notes": "No substrate calibration confidence is inferred by this adapter. The active runtime is attested at session open."
+    },
+    "version": "0.1.1"
+  },
+  "cost": {
+    "billing_model": "unknown",
+    "currency": null,
+    "estimated_cost": null,
+    "notes": "No cost information has been published by this prototype adapter."
+  },
+  "data_governance": {
+    "data_residency": [],
+    "notes": "No provider data-retention declaration is available.",
+    "provider_terms_uri": null,
+    "retention_days": null,
+    "stores_inputs": null,
+    "stores_outputs": null
+  },
+  "evidence": {
+    "attestation_details": {
+      "configured_expectation": "sdk_simulator"
+    },
+    "attestation_method": "cl_sdk_is_simulator",
+    "attested_at": "2026-07-23T12:00:00Z",
+    "evidence_level": "E3",
+    "runtime_kind": "sdk_simulator"
+  },
+  "identity": {
+    "adapter_id": "adapters.cortical_labs_adapter.CorticalLabsAdapter",
+    "hardware_id": null,
+    "provider_id": "cortical-labs",
+    "resource_id": "cortical-labs-backend",
+    "substrate_id": "wetware"
+  },
+  "published_at": "2026-07-23T12:00:00Z",
+  "safety": {
+    "emergency_stop_supported": null,
+    "exclusive_access_required": true,
+    "hard_limits": {},
+    "human_supervision_required": true,
+    "notes": "Wetware access with explicit stimulation and recording semantics.",
+    "operator_acknowledgement_required": true,
+    "permitted_operations": [
+      "describe",
+      "collect_telemetry",
+      "prepare",
+      "invoke",
+      "reset",
+      "recalibrate",
+      "abort"
+    ]
+  },
+  "schema_version": "1.0",
+  "state": {
+    "calibration": null,
+    "drift": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "health": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "unknown"
+    },
+    "lifecycle": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "occupancy": null
+  },
+  "telemetry": {
+    "age_of_information_ms": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "ms",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "backend_latency_ms": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "ms",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "channel_count": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "count",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "drift_score": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "fps": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "frames_per_second",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "health_status": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "unknown"
+    },
+    "observation_latency_ms": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "ms",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": null
+    },
+    "readiness_state": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "state",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "ready"
+    },
+    "runtime_kind": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "kind",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "sdk_simulator"
+    },
+    "sdk_available": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": null,
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": true
+    },
+    "telemetry_source": {
+      "observed_at": "2026-07-23T12:00:00Z",
+      "received_at": "2026-07-23T12:00:00Z",
+      "source": "observed",
+      "uncertainty": {
+        "confidence": null,
+        "kind": "unknown",
+        "unit": null,
+        "value": null
+      },
+      "unit": "source",
+      "valid_until": "2099-01-01T00:00:00Z",
+      "value": "local_session_observation"
+    }
+  }
+}
