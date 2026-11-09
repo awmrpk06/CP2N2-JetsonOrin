@@ -7,3 +7,6 @@ docs/embedded-feasibility/latency-table.csv -text whitespace=cr-at-eol
 # Preserve the included evaluated upstream snapshot byte-for-byte.
 third_party/cp2n2-v5.1.1/** -text -whitespace
 *.bundle binary
+
+# Keep the measured runner byte-stable for the artifact integrity checks.
+evaluation/*.py -text
